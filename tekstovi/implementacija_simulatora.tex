@@ -1,0 +1,80 @@
+\documentclass[../zavrsni.tex]{subfiles}
+
+\begin{document}
+
+\section{Generiranje setova testnih zadataka}
+
+%\subsection{UUniFast algoritam}
+
+%\subsection{Generiranje vrijednosti perioda}
+
+%\subsection{Implementacija generatora testnih zadataka}
+
+Generiranje seta zadataka implementirano je u taskSetGenerator.c datoteci. U strukturi periodic\_task sadržane su sve 
+informacije potrebne za opis pojedinog zadatka, kontrolu njegovog izvođenja te prikupljanje podataka o poštivanju rokova 
+izvršavanja tijekom simulacije.
+\begin{lstlisting}[style=CStyle,caption={Struktura periodic\_task},captionpos=b]
+struct periodic_task{
+    TaskHandle_t handler;
+    char * name;
+    double u;
+    TickType_t period;
+    TickType_t duration;
+    int weakly_hard_constraint;
+    int numOfPeriods;
+    bool report[MAX_PERIOD_CNT];
+    int missed_deadlines;
+    int times_killed;
+} Task_Set[MAX_TASK_CNT];
+\end{lstlisting}
+Za svaki zadatak definirana je jedna inačica ove strukture. Infomacije o periodima i weakly hard ograničenjima zadataka 
+zadane su u tekstuanim datotekama i ranije generirane(OPISI TO KAD NAPRAVIS).
+Ti podatci se procitaju iz datoteka i upišu u odgovarajuće varijable strukture pojedinog zadatka.
+Za generiranje faktora opterećenja za set testnih zadataka korišten je UUniFast algoritam. Algoritam prima ukupan broj zadataka 
+i sumu faktora opterećenja svih zadataka te uniformno raspoređuje faktore opterećenja. Vremenska složenost algoritma je O(n).
+Vrijeme izvršavanja pojedinog zadatka dobiveno je kao umnožak perioda i faktora opterećenja.
+Imena zadataka generiraju se u obliku Task\_xx, gdje xx predstavlja id pojedinog zadatka, počevši od 1 do broja zadataka.
+
+Prije početka svake simulacije poziva se funkcija startTaskSetGenerator koja poziva potrebne funkcije kako bi se izvršili 
+svi ranije navedeni koraci. Navedena funkcija kao argumente prima ukupan broj zadataka koje je potrebno generirati, zadani 
+faktor opterećenja i putanju do datoteke u koju će se pohraniti rezultati simulacije.
+\begin{lstlisting}[style=CStyle,caption={Funckija startTaskSetGenerator},captionpos=b]
+void startTaskSetGenerator(double utilization,int n, char * report_file){
+    TASK_CNT = n; 
+    total_utilization = utilization; 
+    file_path = report_file;
+    calculateUtilization(utilization);
+    readTaskPeriods();
+    readWeaklyHardConstraint();
+    calculateTaskDuration();
+    calculateHiperperiod();
+    calculateNumOfPeriods();
+    generateTaskNames();
+    resetTimesKilled();
+    resetReports();
+}
+\end{lstlisting}
+\section{Tijek simulacije}
+
+Tijekom izvođenja simulacije za svaki zadatak se pamti je li izvršen do roka završetka u svakom periodu. 
+Na taj način se dobije informacija o izvođenju svakog zadatka u svakom vremenskom intervalu perioda. To je implementirano 
+pomoću bool niza čije su vrijednosti na početku simulacije postavljene na 0 i nakon što se zadatak uspješno izvede 
+prije roka završetka ta vrijednost postavi se u 1. Simulacija se prekida nakon hiperperioda (najmanjeg zajedničkog višekratnika perioda 
+svih zadataka).Nakon završetka simulacije, na temelju ranije navedenih podataka, za svaki zadatak se zbraja broj propuštenih rokova završetaka.
+te se u csv (eng. comma-separated values) datoteku izvještaja dodaje novi redak koji opisuje trenutno provedenu simulaciju. 
+Podatci koje je bitno upisati u izvještaj su ukupni broj zadataka koji se nisu izvršili do roka završetka, kao i broj propuštenih rokova 
+završetka svakog pojedinog zadatka. Također je bitno znati jesu li bili zadovoljeni svi weakly hard uvjeti 
+postavljeni nad simulacijom te kolika je stopa uspješnosti izvršenja zadataka (eng. Quality of Service). 
+
+\section{Pokretanje simulacije}
+
+Radi usporedbe različitih algoritama nad generiranim setom zadataka potrebno je pokrenuti program uz različite faktore opterećenja. 
+Za to je implementirana bash skripa kojom se najprije stvara csv datoteka u kojoj će biti pohranjen izvještaj sa podatcima o 
+svim simulacijama pokrenutim za određeni set testnih zadataka. 
+Skripta nadalje pokreće simulaciju od faktora opterećenja 0.9 do 1.5, uz korake 0.01 te se nakon svakog pokretanja simulatora u 
+datoteku izvještaja upisuje jedna linija koja sadrži ranije opisane podatke.
+Pri pokretanju simulacije programu se preko argumenata prosljeđuju 3 parametra, broj zadataka, 
+faktor opterećenja te datoteka na čiji će se kraj upisivati izvještaj nakon završene simulacije.
+Faktor opterećenja se radi jednostavnosti implementacije prosljeđuje pomožen sa 100, jer bash ne podržava rad sa decimalnim brojevima.
+
+\end{document}

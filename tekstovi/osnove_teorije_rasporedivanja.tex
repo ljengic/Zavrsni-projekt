@@ -1,0 +1,103 @@
+\documentclass[../zavrsni.tex]{subfiles}
+
+\begin{document}
+
+\section{Sustavi za rad u stvarnom vremenu}
+
+Sustavi za rad u stvarnom vremenu (eng. Real Time System) danas su neizostavan dio mnogih sustava korištenih u svim
+granama ljudske djelatnosti. Kod njih nam nije bitan samo rezultat izvođenja operacije, nego je jednako važno 
+i vrijeme u kojem se ta operacija izvede. Zbog toga se svakom zadatku pridjeljuje rok do kojeg se mora izvršiti.
+Kako bi sustav radio pouzdano mora se osigurati predvidivo raspoređivanje zadataka koje će osigurati da se što više 
+zadataka izvrši na vrijeme.
+
+S obzirom na posljedice koje izaziva propuštanje roka izvršavanjazadatke djelimo u dvije skupine :
+\begin{itemize}
+    \item[--] Kritični zadatci (eng. hard real time tasks)
+    \item[--] Zadatci koji se mogu preskočiti (eng. soft real time tasks)
+\end{itemize}
+Kritični zadatci niti jednom ne smiju propustiti krajnji rok izvršavanja jer su to zadatci koji obavljaju važan posao. Njihovo 
+propuštanje izaziva katastrofalne posljedice koje mogu biti pogubne za cijeli sustav. Dobar primjer kritičnog zadatka je detekcija 
+pritiska papučice kočnice na automobilu. S druge strane, propuštanje nekih zadataka
+nam nije kritično i neće nanjeti štetu sustavu, nego će smanjiti performanse ili mogućnosti sustava. Primjer ovakvog zadatka je 
+paljenje signalne ledice.
+%preopterećenje ovdje objasni
+%QoS objasni
+
+U ovom radu ispitivati će se raličiti algoritmi za raspoređivanje zadataka u sustavu koji se nalazi u stanju preopterećenja.
+To je slučaj kada je suma faktora opterećenja svih zadataka veća od 1, i kada se svi zadatci ne mogu izvršiti do svog krajnjeg roka 
+izvršenja. U navedenom slučaju važno je osigurati preskakanje zadataka na predvidiv i za sustav siguran način.
+
+Mjera kojom će se uspoređivati učinkovitost pojedinih algoritama naziva se stopa uspješnosti izvršenja zadataka (eng. Quality of Service).
+Računa se kao omjer broj zadataka koji su se izvršili do krajnjeg roka završetka i ukupnopg broja svih zadataka.
+
+%\[QoS = frac{broj izvršenih zadataka do krajnjeg roka}{ukupan broj zadataka}\]
+% popravi da š bude u formuli
+\begin{equation*}
+    QoS = \frac{broj\ izvršenih\ zadataka\ do\ krajnjeg\ roka}{ukupan\ broj\ zadataka}
+\end{equation*}
+
+Zadatci u operacijskim sustavima za rad u stvarnom vremenu općenito se mogu podjeliti u 3 grupe :
+\begin{itemize}
+    \item[--] Zadatak koji se trenutno izvodi (eng. running task)
+    \item[--] Zadatci koji su spremi za izvođenje (eng. ready tasks)
+    \item[--] Zadatci koji su blokirani i čekaju određeni događaj (eng. blocked tasks)
+\end{itemize}
+(OPISI OVO !!)
+
+
+\section{Opis periodičnih zadataka u sustavima za rad u stvarnom vremenu}
+
+Periodični zadatci su zadatci koji se iznova ponavljaju u istim vremenskim intervalima Ti. Taj interval naziva se period zadatka.
+Svaki zadatak opisuje i vrijeme njegova izvršavanja Ci (eng. Computation time). Period i vrijeme izvršavanja zajedno daju veličinu 
+koju nazivamo faktor opterećenja (eng. Utilization) koja opisuje postotak zauzeća procesora pojedinog zadatka u jednom periodu.
+\begin{equation*}
+    U\textsubscript{i} = \frac{C\textsubscript{i}}{D\textsubscript{i}}
+\end{equation*}
+Nadalje, bitna veličina koja opisuje svaki zadatak je krajnji rok njegova završetka (eng. deadline). U ovom radu razmatrani su 
+isključivo zadatci čiji krajnji rok završetka je jednak periodu.
+
+Ukupno opterećenje sustava dobiva se kao zbroj faktora opterećenja svih zadataka. Ukoliko je sustav preopterećen, tj. ukupno opterećenje mu 
+je veće od 1 neki od zadataka se neće izvršiti do svog roka za izvršavanje. U tom slučaju moraju se koristiti algoritmi koji će osigurati 
+da se zadatci ne preskaču nasumično, već na kontroliran način kao bi se sustav zaštitio od potencijalnih oštećenja nastalih preskakanjem 
+kritičnih zadataka. Postoje dvije vrste preopterećenja sustava.
+\begin{itemize}
+    \item[--] Trajno preopterećenje (eng. Permanent Overload)
+    \item[--] Prolazno preopterećenje (eng. Transient Overload)
+\end{itemize}
+Kod prolaznog opterećenja sustava ima ukupno opterećenje manje ili jednako 1, no u nekom trenutku može doći do aktivacije aperiodičnog zadatka 
+koji onda sustav gura u stanje preopterećenja. Nakon što prođe određeno vrijeme i aperiodični zadatak se izvede sustav se vraća u prijašnje
+stanje i svi zadatci se izvršavaju do svog krajnjeg roka. Drugi slučaj je kada je sustav u stanju trajnog preopterećenja, kada je ukupno 
+opterećenje sustava trajno veće od 1. 
+
+%treba li dodati vrste weakly hard uvjeta
+
+U ovom radu ispitivat će se ponašanje sustava sa ublaženo-kritičnim uvjetima (eng. weakly hard constraints). Za razliku od 
+kritičnih zadataka, kod ublaženo-kritičnih zadataka povremeno dopuštamo da se zadatak ne izvede na vrijeme, ali na predvidiv i 
+kontroliran način. Na temelju važnosti pojedinog zadatka za rad cjelokupnog sustava određuje se u koliko slijednih perioda 
+se zadatak može jednom propustiti. Ovaj pristup osigurava znatno bolje ponašanje u uvjetima preopterećenja jer na siguran 
+način preskaćemo izvođenje pojedinih zadataka.
+
+\section{Algoritmi za raspoređivanje zadataka}
+
+\subsection{EDF algoritam}
+
+EDF algoritam (eng. Earliest Deadline First) je algoritam koji pri raspoređivanju zadataka prioritet daje onim zadatcima 
+koji imaju raniji rok za završetak. Ukoliko sustav nije preopterećen (ukoliko je ukupni faktor opterećenja manji od 1) 
+ovim algoritmom optimalno će se rasporediti zadatci i svi će se izvršiti.
+
+\subsection{RTO algoritam}
+
+RTO algoritam (eng. Red Tasks Only) je algoritam prema kojemu se samo izvršavaju kritični zadatci, 
+dok se oni koji se mogu preskočiti uvijek preskaču. Prema ovom algoritmu osigurano je poštivanje zadanih uvjeta, no pri manjim 
+faktorima opterećenja ovaj algoritam 
+nije optimalan. Razlog tomu je što postoji slobodno procesorsko vrijeme u kojem bi se mogli izvršiti zadatci koje nije nužno izvršiti, no 
+oni se automatski izbacuju iz rasporeda. Kritični zadatci raspoređuju se prema ranije opisanom EDF algoritmu. 
+
+\subsection{BWP algoritam}
+
+BWP algoritam (eng. Blue When Possible) je poboljšanje ranije opisanog RTO algoritma. Kod BWP algoritma prioritet imaju kritični zadatci, 
+no i zadatci koji se ne moraju nužno izvršiti su u listi čekanja. Na taj način, ukoliko se svi kritični zadatci izvrše na red će doći
+i opcionalni zadatci. Ovom modifikacijom znatno se poboljša stopa uspješnosti izvršenja zadataka (eng. Quality of Service), pogotovo pri
+ manjim faktorima opterećenja.
+
+\end{document}

@@ -1,5 +1,38 @@
 \documentclass[times, utf8, zavrsni]{fer}
 \usepackage{booktabs}
+\usepackage{import}
+\usepackage{subfiles}
+\usepackage{amsmath}
+
+\usepackage{xcolor}
+\usepackage{listings}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+\renewcommand\lstlistingname{Isječak koda}
 
 \begin{document}
 
@@ -7,10 +40,10 @@
 \thesisnumber{000}
 
 % TODO: Navedite naslov rada.
-\title{Naslov}
+\title{Nadogradnja operacijskog sustava FreeRTOS za primjenu u kontrolnim aplikacijama}
 
 % TODO: Navedite svoje ime i prezime.
-\author{Arthur Dent}
+\author{Luka Jengić}
 
 \maketitle
 
@@ -20,13 +53,27 @@
 % Dodavanje zahvale ili prazne stranice. Ako ne želite dodati zahvalu, naredbu ostavite radi prazne stranice.
 \zahvala{}
 
+\renewcommand\contentsname{Sadržaj}
 \tableofcontents
 
-\chapter{Uvod}
-Uvod rada. Nakon uvoda dolaze poglavlja u kojima se obrađuje tema.
+\chapter{Uvod} 
+\subfile{tekstovi/uvod}
+
+\chapter{Operacijski sustavi za rad u stvarnom vremenu}
+\subfile{tekstovi/osnove_teorije_rasporedivanja}
+
+\chapter{Modifikacija jezgre FreeRTOS-a}
+\subfile{tekstovi/modifikacija_jezgre_FreeRTOS-a}
+
+\chapter{Implementacija simulatora}
+\subfile{tekstovi/implementacija_simulatora}
+
+\chapter{Rezultati}
+
+tu ce biti rezultati
 
 \chapter{Zaključak}
-Zaključak.
+\subfile{tekstovi/zakljucak}
 
 \bibliography{literatura}
 \bibliographystyle{fer}

@@ -1,3 +1,23 @@
 \babel@toc {nil}{}
 \contentsline {chapter}{\numberline {1}Uvod}{1}%
-\contentsline {chapter}{\numberline {2}Zaključak}{2}%
+\contentsline {chapter}{\numberline {2}Operacijski sustavi za rad u stvarnom vremenu}{2}%
+\contentsline {section}{\numberline {2.1}Sustavi za rad u stvarnom vremenu}{2}%
+\contentsline {section}{\numberline {2.2}Opis periodičnih zadataka u sustavima za rad u stvarnom vremenu}{3}%
+\contentsline {section}{\numberline {2.3}Algoritmi za raspoređivanje zadataka}{4}%
+\contentsline {subsection}{\numberline {2.3.1}EDF algoritam}{4}%
+\contentsline {subsection}{\numberline {2.3.2}RTO algoritam}{4}%
+\contentsline {subsection}{\numberline {2.3.3}BWP algoritam}{4}%
+\contentsline {chapter}{\numberline {3}Modifikacija jezgre FreeRTOS-a}{5}%
+\contentsline {section}{\numberline {3.1}Operacijski sustav FreeRTOS}{5}%
+\contentsline {section}{\numberline {3.2}Programska potpora za kontrolu izvršavanja periodičnih zadataka}{5}%
+\contentsline {subsection}{\numberline {3.2.1}Stvaranje periodičnih zadataka}{6}%
+\contentsline {subsection}{\numberline {3.2.2}Kontrola izvršenja priodičnih zadataka}{7}%
+\contentsline {chapter}{\numberline {4}Implementacija simulatora}{9}%
+\contentsline {section}{\numberline {4.1}Generiranje setova testnih zadataka}{9}%
+\contentsline {section}{\numberline {4.2}Tijek simulacije}{10}%
+\contentsline {section}{\numberline {4.3}Pokretanje simulacije}{10}%
+\contentsline {chapter}{\numberline {5}Rezultati}{12}%
+\contentsline {chapter}{\numberline {6}Zaključak}{13}%
+\contentsline {section}{\numberline {6.1}First section}{13}%
+\contentsline {section}{\numberline {6.2}Second section}{13}%
+\contentsline {chapter}{Bibliography}{14}%

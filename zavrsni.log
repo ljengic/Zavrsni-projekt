@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.23)  25 MAY 2022 11:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.23)  9 JUN 2022 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -271,28 +271,77 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count267
 \@thisrulewidth=\dimen176
 )
+(/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+Package: import 2009/03/23  v 5.1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.sty
+Package: subfiles 2020/02/14 v1.6 Multi-file projects (package)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count268
+\lst@gtempboxa=\box48
+\lst@token=\toks25
+\lst@length=\count269
+\lst@currlwidth=\dimen177
+\lst@column=\count270
+\lst@pos=\count271
+\lst@lostspace=\dimen178
+\lst@width=\dimen179
+\lst@newlines=\count272
+\lst@lineno=\count273
+\lst@maxwidth=\dimen180
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count274
+\lst@skipnumbers=\count275
+\lst@framebox=\box49
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/09/10 1.8c listings configuration
+))
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
+
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count268
-\l__pdf_internal_box=\box48
+\l__kernel_color_stack_int=\count276
+\l__pdf_internal_box=\box50
 )
-No file zavrsni.aux.
+(./zavrsni.aux)
 \openout1 = `zavrsni.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -329,17 +378,17 @@ LaTeX Font Info:    ... okay on input line 4.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count269
-\scratchdimen=\dimen177
-\scratchbox=\box49
-\nofMPsegments=\count270
-\nofMParguments=\count271
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count272
-\MPscratchDim=\dimen178
-\MPnumerator=\count273
-\makeMPintoPDFobject=\count274
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count277
+\scratchdimen=\dimen181
+\scratchbox=\box51
+\nofMPsegments=\count278
+\nofMParguments=\count279
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count280
+\MPscratchDim=\dimen182
+\MPnumerator=\count281
+\makeMPintoPDFobject=\count282
+\everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -350,20 +399,22 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 15
+\c@lstlisting=\count283
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 48
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -371,47 +422,243 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 18
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 51
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [1] [3]
-No file zavrsni.toc.
+(./zavrsni.toc)
 \tf@toc=\write3
 \openout3 = `zavrsni.toc'.
 
-[4
+ [4
 
 ]
 Chapter 1.
-[1
+(./tekstovi/uvod.tex
+Overfull \hbox (4.93297pt too wide) in paragraph at lines 5--15
+\T1/ptm/m/n/12 kojima postoje kriti£ni poslovi £ije neizvr²avanje ili prekasno 
+izvr²avanje izaziva katastrofalne
+ []
+
+
+Overfull \hbox (5.44606pt too wide) in paragraph at lines 18--20
+[]\T1/ptm/m/n/12 Potrebno je razmotriti rje²enja koja ¢e osigurati da najkriti£
+niji poslovi dobiju ve¢i prioritet
+ []
+
+
+Overfull \hbox (1.49901pt too wide) in paragraph at lines 21--24
+[]\T1/ptm/m/n/12 Ideja u ovom radu je implementirati strogi sustav za rad u stv
+arnom vremenu sa ublaºenim
+ []
+
+) [1
 
 ]
 Chapter 2.
-No file zavrsni.bbl.
+(./tekstovi/osnove_teorije_rasporedivanja.tex
+Overfull \hbox (2.64235pt too wide) in paragraph at lines 26--29
+\T1/ptm/m/n/12 ve¢a od 1, i kada se svi zadatci ne mogu izvr²iti do svog krajnj
+eg roka izvr²enja. U navedenom
+ []
+
+
+Overfull \hbox (15.35828pt too wide) in paragraph at lines 30--32
+[]\T1/ptm/m/n/12 Mjera kojom ¢e se usporeživati u£inkovitost pojedinih algorita
+ma naziva se stopa uspje²nosti
+ []
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 36.
+
+Missing character: There is no ² in font cmr12!
 [2
 
-] [3] (./zavrsni.aux) ) 
+]
+Overfull \hbox (19.30032pt too wide) in paragraph at lines 48--48
+[]\T1/ptm/b/n/17.28 Opis periodi£nih zadataka u sustavima za rad u stvarnom
+ []
+
+
+Overfull \hbox (8.9395pt too wide) in paragraph at lines 59--63
+[]\T1/ptm/m/n/12 Ukupno optere¢enje sustava dobiva se kao zbroj faktora optere¢
+enja svih zadataka. Ukoliko
+ []
+
+
+Overfull \hbox (33.218pt too wide) in paragraph at lines 67--71
+\T1/ptm/m/n/12 trenutku moºe do¢i do aktivacije aperiodi£nog zadatka koji onda 
+sustav gura u stanje preoptere¢enja.
+ []
+
+
+Overfull \hbox (9.05pt too wide) in paragraph at lines 74--79
+\T1/ptm/m/n/12 bolje pona²anje u uvjetima preoptere¢enja jer na siguran na£in p
+reska¢emo izvoženje pojedinih
+ []
+
+[3]
+Overfull \hbox (16.56128pt too wide) in paragraph at lines 84--87
+\T1/ptm/m/n/12 prioritet daje onim zadatcima koji imaju raniji rok za zavr²etak
+. Ukoliko sustav nije preoptere¢en
+ []
+
+
+Overfull \hbox (5.36617pt too wide) in paragraph at lines 84--87
+\T1/ptm/m/n/12 (ukoliko je ukupni faktor optere¢enja manji od 1) ovim algoritmo
+m optimalno ¢e se rasporediti
+ []
+
+
+Overfull \hbox (0.5905pt too wide) in paragraph at lines 90--95
+\T1/ptm/m/n/12 zadatci, dok se oni koji se mogu presko£iti uvijek preska£u. Pre
+ma ovom algoritmu osigurano
+ []
+
+
+Overfull \hbox (12.55333pt too wide) in paragraph at lines 90--95
+\T1/ptm/m/n/12 je po²tivanje zadanih uvjeta, no pri manjim faktorima optere¢enj
+a ovaj algoritam nije optimalan.
+ []
+
+
+Overfull \hbox (11.10144pt too wide) in paragraph at lines 90--95
+\T1/ptm/m/n/12 koje nije nuºno izvr²iti, no oni se automatski izbacuju iz raspo
+reda. Kriti£ni zadatci rasporežuju
+ []
+
+) [4]
+Chapter 3.
+(./tekstovi/modifikacija_jezgre_FreeRtos-a.tex
+Overfull \hbox (3.4833pt too wide) in paragraph at lines 7--10
+\T1/ptm/m/n/12 zadataka. Kod FreeRTOS-a organiziran je u svega nekoliko datotek
+a i zauzima svega nekoliko
+ []
+
+
+Overfull \hbox (14.78523pt too wide) in paragraph at lines 7--10
+\T1/ptm/m/n/12 kilobajta. Datoteka u kojoj je implementirano upravljanje zadatc
+ima i njihovim rasporeživanjem
+ []
+
+
+Overfull \hbox (7.70589pt too wide) in paragraph at lines 13--17
+\T1/ptm/m/n/12 na£in da se svakom zadatku iz liste dodjeljuje jedan vremenski o
+dsje£ak procesorskog vremena
+ []
+
+
+Overfull \hbox (7.4295pt too wide) in paragraph at lines 20--22
+\T1/ptm/m/n/12 nalaze se konstante preko kojih se uklju£uju pojedine funkcional
+nosti ili postavljaju vrijednosti
+ []
+
+
+Overfull \hbox (17.43462pt too wide) in paragraph at lines 23--23
+[]\T1/ptm/b/n/17.28 Programska potpora za kontrolu izvr²avanja periodi£nih
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+) [5
+
+]
+Overfull \hbox (11.34198pt too wide) in paragraph at lines 55--57
+\T1/ptm/m/n/12 zadataka. Navedena funkcija je pro²irenje funkcije xTaskCreate s
+ novim varijablama potrebnim
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
+1.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Overfull \hbox (11.9417pt too wide) in paragraph at lines 73--77
+\T1/ptm/m/n/12 milisekundu. U FreeRTOS-u navedena funkcionalnost implementrana 
+je u xTaskIncrementTick
+ []
+
+[6]
+Overfull \hbox (2.30238pt too wide) in paragraph at lines 105--110
+[]\T1/ptm/m/n/12 Nadalje, u funkciji wakeTasks provjerava se trebaju li se zada
+tci u listi za £ekanje prebaciti
+ []
+
+[7]) [8]
+Chapter 4.
+(./tekstovi/implementacija_simulatora.tex
+Overfull \hbox (13.35829pt too wide) in paragraph at lines 13--16
+\T1/ptm/m/n/12 njegovog izvoženja te prikupljanje podataka o po²tivanju rokova 
+izvr²avanja tijekom simulacije. 
+ []
+
+
+Overfull \hbox (4.77782pt too wide) in paragraph at lines 30--37
+\T1/ptm/m/n/12 optere¢enja svih zadataka te uniformno rasporežuje faktore opter
+e¢enja. Vremenska sloºenost
+ []
+
+
+Overfull \hbox (16.60632pt too wide) in paragraph at lines 38--41
+[]\T1/ptm/m/n/12 Prije po£etka svake simulacije poziva se funkcija startTaskSet
+Generator koja poziva potrebne
+ []
+
+[9
+
+]
+Overfull \hbox (5.05342pt too wide) in paragraph at lines 59--68
+\T1/ptm/m/n/12 zajedni£kog vi²ekratnika perioda svih zadataka).Nakon zavr²etka 
+simulacije, na temelju ranije
+ []
+
+
+Overfull \hbox (11.0888pt too wide) in paragraph at lines 71--79
+\T1/ptm/m/n/12 najprije stvara csv datoteka u kojoj ¢e biti pohranjen izvje²taj
+ sa podatcima o svim simulacijama
+ []
+
+[10]) [11]
+Chapter 5.
+[12
+
+]
+Chapter 6.
+(./tekstovi/zakljucak.tex) (./zavrsni.bbl [13
+
+]
+
+Package natbib Warning: Empty `thebibliography' environment on input line 8.
+
+) [14
+
+] [15] (./zavrsni.aux) ) 
 Here is how much of TeX's memory you used:
- 5865 strings out of 483183
- 82411 string characters out of 5966292
- 327943 words of memory out of 5000000
- 20796 multiletter control sequences out of 15000+600000
- 568559 words of font info for 59 fonts, out of 8000000 for 9000
+ 8291 strings out of 483183
+ 114416 string characters out of 5966292
+ 640660 words of memory out of 5000000
+ 23152 multiletter control sequences out of 15000+600000
+ 596450 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,6n,46p,268b,196s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.e
-nc}</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
-imes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
->
-Output written on zavrsni.pdf (7 pages, 57327 bytes).
+ 49i,6n,70p,276b,1842s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.
+enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
+s/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on zavrsni.pdf (19 pages, 123003 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 103 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

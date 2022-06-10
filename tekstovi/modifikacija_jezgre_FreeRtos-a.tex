@@ -1,0 +1,114 @@
+\documentclass[../zavrsni.tex]{subfiles}
+
+\begin{document}
+
+\section{Operacijski sustav FreeRTOS}
+
+FreeRTOS je operacijski sustav za rad u stvarnom vremenu otvorenog koda (eng. open source).U ovom odjeljku bit će objašnjena 
+njegova implmenetacija i izvedba raspoređivanja zadataka. Kod FreeRTOS-a organiziran je u svega nekoliko datoteka i zauzima 
+svega nekoliko kilobajta. Datoteka u kojoj je implementirano upravljanje zadatcima i njihovim raspoređivanjem je tasks.c.
+
+%dodaj dio o tome koje su datoteke i tako to bla bla , konfiguriranje....
+
+Kod FreeRTOS-a zadatci su raspoređeni u liste za čekanje na način da postoji posebna lista za sve moguće prioritete zadataka.
+Stoga se pri raspoređivanju zadataka naprije pronađe lista najvišeg prioriteta koja nije prazna. Zadatci iz te liste dijele 
+procesorsko vrijeme na način da se svakom zadatku iz liste dodjeljuje jedan vremenski odsječak procesorskog vremena (eng. tick).
+Nakon što se zadatak izvede u jednom odsječku, vraća se na kraj liste čekanja. Ovaj način 
+
+Zadatci u FreeRTOS-u su upravljani kroz strukturu za upravljanje zadatcima (eng. TCB - Task Control Block). bla bla opisi jos ovo...
+
+Konfiguriranje FreeRTOS-a vrši se putem FreeRTOSconfig.h datoteke. U toj datoteci nalaze se konstante preko kojih se uključuju pojedine
+funkcionalnosti ili postavljaju vrijednosti bitne za rad sustva. 
+
+\section{Programska potpora za kontrolu izvršavanja periodičnih zadataka}
+
+Uključenje funkcionalnosti za podršku periodičnim zadatcima ostvareno je putem konstante unutar FreeRTOSconfig.h datoteke.
+Svi djelovi programskog koda zaduženi za periodične zadatke pisani su u odsječcima koji se kompajliraju samo ako je korištenje
+periodičnih zadataka uključeno. Navedeno je ostvareno pomoću pretprocesorske naredbe \#if. Time je korisniku omogučeno uključenje
+programske potpore za periodičke zadatke na jednostavan i brz način.
+\begin{lstlisting}[style=CStyle,caption={Pretprocesorska naredba za uključenje periodičnih zadataka},captionpos=b]
+#if ( configUSE_PERIODIC_TASK == 1 )
+
+#endif
+\end{lstlisting}
+
+\subsection{Stvaranje periodičnih zadataka}
+
+Prvi korak pri implementaciji programske podrške za izvršavanje periodičnih zadataka je proširenje TCB-a veličinama koje opisuju 
+periodičan zadatak. Ovdje su definirane sve veličine bitne za kontrolu periodičkih zadataka koje su opisane u ranijim poglavljima.
+
+\begin{lstlisting}[style=CStyle,caption={Varijable dodane u strukturu za kontrolu zadataka},captionpos=b]
+#if ( configUSE_PERIODIC_TASK == 1 )
+    uint8_t xTaskId;
+    TickType_t xTaskPeriod;
+    TickType_t start_time;
+    TickType_t xTaskDuration;
+    TickType_t xDeadline;
+    TickType_t xRemainingTicks;
+    
+    // variables used for weakly hard conditions control
+    uint8_t weakly_hard_constraint;
+    uint8_t previous_deadline_met;
+#endif
+\end{lstlisting}
+
+Nadalje napisana je funkcija xTaskCreatePeriodic koja se koristit za stvaranje periodičnih zadataka.
+Navedena funkcija je proširenje funkcije xTaskCreate s novim varijablama potrebnim za opis periodičnih zadataka.
+
+\begin{lstlisting}[style=CStyle,caption={Prototip funkcije xTaskCreatePeriodic},captionpos=b]
+BaseType_t xTaskCreatePeriodic( TaskFunction_t pxTaskCode,
+                        uint8_t id,
+                        const char * const pcName, 
+                        const configSTACK_DEPTH_TYPE usStackDepth,
+                        void * const pvParameters,
+                        UBaseType_t uxPriority,
+                        TaskHandle_t * const pxCreatedTask,
+                        TickType_t period,
+                        TickType_t duration,
+                        int weakly_hard_constraint);
+\end{lstlisting} 
+
+\subsection{Kontrola izvršenja priodičnih zadataka}
+
+Izvršavanje zadataka u SRSV-ovima podjeljeno je u vremenske odsječke. U određenim vremenskim intervalima prekida se izvođenje poslova i 
+određuje se koji posao se treba dalje izvršavati. U konkretnom slučaju simulacije na posix sustavu taj interval iznosi 1 milisekundu.
+U FreeRTOS-u navedena funkcionalnost implementrana je u xTaskIncrementTick funkciji. Prekidni sustav periodički poziva navedenu funkciju 
+i u njoj je potrebno dodati funkcionalnost kontrole periodičnih zadataka.
+
+Za potrebe ovog projekta zadatci su spremani u dvije liste. Jedna lista u kojoj se čuvaju zadatci spremni za izvršavanje, ranije 
+implementirana u FreeRTOS-u i novododana lista nazvana xWaitTaskList u kojoj su zadatci koji su na čekanju. Za dodavanje zadataka u liste
+napisane su dvije funkcije, za jedna po svakoj listi.
+
+\begin{lstlisting}[style=CStyle,caption={Definicije funkcija za dodavanje zadataka u opisane liste},captionpos=b]
+void addTaskToReadyList(TCB_t * const pxItemToAdd);
+void addTaskToWaitList(TCB_t * const pxItemToRemove);
+\end{lstlisting}
+
+Kontrola izvršavanja u ovom projektu realizirana je apsolutno na višekratnike perioda zadataka od početka simulacije.
+
+U svakom pozivu funkcije xTaskIncrementTick potrebno je proći po svim zadatcima u obje liste. Zadatci koji su spremni za izvršavanje
+možda se nebi uspjeli izvršiti do roka izvršenja čak kad bi dobili svo procesorsko vrijeme. Pošto nema koristi od posla koji se
+djelomično izvršio takve zadatke potrebno je odmah smjestiti u listu za čekanje i detektirati njihovo propuštanje roka izvršenja.
+Ova strategija zove se prekidanje poslova koji se ne mogu izvršiti do svog krajnjeg roka izvršenja(eng. job killing). Time se
+podiže kvaliteta usluge, jer je osigurano da poslovi koji se nikako neće izvršiti na vrijeme ne zauzimaju procesorsko vrijeme 
+ostalim zadatcima. Funkcionalnost prekidanja poslova implementirana je u funkciji killTasks. U njoj prolazimo po svim zadatcima koji se 
+nalaze u listi zadataka spremnih za izvršavanje i na temelju podataka o trenutnom stanju posla odlučujemo treba li ga prekinuti ili ne.
+U nastavku je priložen navedeni uvjet i graf koji opisuje navedenu situaciju prekidanja zadataka.
+\begin{lstlisting}[style=CStyle,caption={Uvjet za prekidanje izvođenja zadatka},captionpos=b]
+if((xTaskGetTickCount() - Tcb->start_time + Tcb->xRemainingTicks) > 
+Tcb->xTaskPeriod)
+\end{lstlisting}
+
+DODAJ GRAF FINO DA SE VIDI !!!!
+
+Nadalje, u funkciji wakeTasks provjerava se trebaju li se zadatci u listi za čekanje prebaciti u listu zadataka spremih za izvršavanje.
+Ukoliko je zadatak u listi za čekanje i ukoliko se program nalazi na višekratniku njegova perioda, zadatak se dodaju u listu 
+zadataka spremih za izvršavanje. Pri tome je potrebno u varijablu start\_time upisati trenutno vrijeme (trenutak u kojem se zadatak 
+krenio izvršavati). Vrijeme početka izvršavanja je važno za provjeru treba li zadatak prekinuti i je li se izvršio do krajnjeg roka 
+završetka.
+
+Varijabla xRemainingTicks u svakom trenutku pamti koliko je vremenskih odsječaka ostalo poslu da se do kraja izvrši. 
+Svaki put kada se posao izvršava ta varijabla se umanjuje za 1. Ukoliko se vrijednost xRemainingTicks smanji na 0, 
+posao je gotov i zabilježava se njegovo pravovremeno izvršavanje.
+
+\end{document}
