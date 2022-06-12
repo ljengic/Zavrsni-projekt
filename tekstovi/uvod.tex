@@ -18,7 +18,9 @@ Za primjer možemo uzeti robota koji ima sustav za izbjegavanje prepreka. (OVO D
 Potrebno je razmotriti rješenja koja će osigurati da najkritičniji poslovi dobiju veći prioritet za izvršavanje. 
 Na taj način se izbjegava šteta koja bi potencijalno nastala propuštanjem takvih zadataka. 
 
-Ideja u ovom radu je implementirati strogi sustav za rad u stvarnom vremenu sa ublaženim uvjetima (eng. weakly hard). Kod takvog sustava
+Komercijalno dostupni SRSV-ovi ne osiguravaju sigurnost sustava kada on upadne u stanje preopterećenja. Stoga je ideja ovog rada 
+modificirati SRSV otvorenog koda, za što je odabran FreeRTOS, kako bi se poslovi u stanju trajnog preopterećenja mogli kontrolirano propuštati. 
+Modifikacijom jezgre FreeRTOS-a implementiran je strogi sustav za rad u stvarnom vremenu sa ublaženim uvjetima (eng. weakly hard). Kod takvog sustava
 povremeno dopuštamo da se posao ne izvede, ali na način da se unutar određenog broja slijednih poslova samo jedan smije propustiti.
 Takvim pristupom se osigurava da nikad ne dođe do blokade pojedinog zadatka te da se njegovo izvršavanje uvijek preskače.
 

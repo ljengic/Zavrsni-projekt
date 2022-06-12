@@ -70,11 +70,17 @@ postavljeni nad simulacijom te kolika je stopa uspješnosti izvršenja zadataka 
 
 Radi usporedbe različitih algoritama nad generiranim setom zadataka potrebno je pokrenuti program uz različite faktore opterećenja. 
 Za to je implementirana bash skripa kojom se najprije stvara csv datoteka u kojoj će biti pohranjen izvještaj sa podatcima o 
-svim simulacijama pokrenutim za određeni set testnih zadataka. 
+svim simulacijama pokrenutim za određeni set testnih zadataka. Za stvaranje datoteke izvještaja napisan je poseban c program koji osim što
+stvori datoteku zapiše u nju prvi red sa nazivima pojedinih stupaca.
 Skripta nadalje pokreće simulaciju od faktora opterećenja 0.9 do 1.5, uz korake 0.01 te se nakon svakog pokretanja simulatora u 
 datoteku izvještaja upisuje jedna linija koja sadrži ranije opisane podatke.
 Pri pokretanju simulacije programu se preko argumenata prosljeđuju 3 parametra, broj zadataka, 
 faktor opterećenja te datoteka na čiji će se kraj upisivati izvještaj nakon završene simulacije.
 Faktor opterećenja se radi jednostavnosti implementacije prosljeđuje pomožen sa 100, jer bash ne podržava rad sa decimalnim brojevima.
+U nastavku je priložena slika datoteke izvještaja.
+
+DODAJ SLIKU IZVJEŠTAJA !!!
+
+OPISI KAKO SE IZ IZVJEŠTAJA DOBIJU GRAFOVI!!!
 
 \end{document}

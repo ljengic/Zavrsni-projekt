@@ -5,20 +5,33 @@
 \section{Operacijski sustav FreeRTOS}
 
 FreeRTOS je operacijski sustav za rad u stvarnom vremenu otvorenog koda (eng. open source).U ovom odjeljku bit će objašnjena 
-njegova implmenetacija i izvedba raspoređivanja zadataka. Kod FreeRTOS-a organiziran je u svega nekoliko datoteka i zauzima 
+njegova implmenetacija i izvedba raspoređivanja zadataka. Kod FreeRTOS-a organiziran je u nekoliko datoteka i zauzima 
 svega nekoliko kilobajta. Datoteka u kojoj je implementirano upravljanje zadatcima i njihovim raspoređivanjem je tasks.c.
 
-%dodaj dio o tome koje su datoteke i tako to bla bla , konfiguriranje....
+Zadatci u FreeRTOS-u su upravljani kroz strukturu za upravljanje zadatcima (eng. TCB - Task Control Block). U toj strukturi nalaze
+se sve informacije koje opisuju pojedini zadatak. Pri stvaranju novog zadatka u memoriji se alocira prostor za novu inačicu 
+ove strukture u koju se potom upisuju parametri novokreiranog zadatka.
+Zadatci su nadalje smješteni u različite liste, ovisno o tome u kojem stanju se zadatak nalazi. Postoje liste za zadatke koji su
+spremni za izvršavanje, za zadatke koji su blokirani te za zadatke koji čekaju određeno vrijeme kako bi se ponovo mogli izvršavati.
+U TCB-u svakog zadatka nalazi se informacija kojoj listi zadatak u danom trenutku pripada. Upravljanje i rad listi ostvaren je strukturama
+ListItem\_t i List\_t. ListItem\_t je struktura koja sadrži podatke o pojedinom članu liste (pokazivači na prethodni i slijedeci ListItem\_t te 
+pokazivač na TCB zadatka na kojeg se odnosi). U List\_t spremljeni su podatci o listi (broj elemenata, pokazivač na trenutni element te
+pokazivač na kraj liste).
 
-Kod FreeRTOS-a zadatci su raspoređeni u liste za čekanje na način da postoji posebna lista za sve moguće prioritete zadataka.
+
+Zadatci koji su spremni za izvršavanje podjeljeni su u različite liste ovisno o tome kolikog su prioriteta (postoji posebna lista
+ za sve moguće prioritete zadataka).
 Stoga se pri raspoređivanju zadataka naprije pronađe lista najvišeg prioriteta koja nije prazna. Zadatci iz te liste dijele 
 procesorsko vrijeme na način da se svakom zadatku iz liste dodjeljuje jedan vremenski odsječak procesorskog vremena (eng. tick).
-Nakon što se zadatak izvede u jednom odsječku, vraća se na kraj liste čekanja. Ovaj način 
+Nakon što se zadatak izvede u jednom odsječku, vraća se na kraj liste čekanja. Ovaj način raspoređivanja zadataka naziva se dijeljenje
+procesorskog vremena među zadatcima (eng. Time Slicing).
 
-Zadatci u FreeRTOS-u su upravljani kroz strukturu za upravljanje zadatcima (eng. TCB - Task Control Block). bla bla opisi jos ovo...
+FreeRTOS se konfigurira putem FreeRTOSconfig.h datoteke i korisnik treba mjenjati samo tu datoteku. U toj datoteci nalaze se 
+sve konstante preko kojih se uključuju pojedine funkcionalnosti ili postavljaju konstante bitne za rad sustva.  
 
-Konfiguriranje FreeRTOS-a vrši se putem FreeRTOSconfig.h datoteke. U toj datoteci nalaze se konstante preko kojih se uključuju pojedine
-funkcionalnosti ili postavljaju vrijednosti bitne za rad sustva. 
+Podrška za periodične zadatke nije implementirana u FreeRTOS-u te ju je potrebno dodati.
+Također navedni pristup ne rješava problem preopterećenja sustava te je potrebno modificirati jezgru FreeRTOS-a kako bi se omogučilo 
+predvidivo ponašanje ukoliko sustav uđe u trajno preopterećenje.Potrebne modifikacije detaljno su opisane u narednim podglavljima.
 
 \section{Programska potpora za kontrolu izvršavanja periodičnih zadataka}
 
@@ -99,7 +112,70 @@ if((xTaskGetTickCount() - Tcb->start_time + Tcb->xRemainingTicks) >
 Tcb->xTaskPeriod)
 \end{lstlisting}
 
-DODAJ GRAF FINO DA SE VIDI !!!!
+Opisana situacija prikazana je na vremenskom dijagramu 3.1. U primjeru imamo 3 zadatka, od kojih je zadatak broj 1 većeg prioriteta dok su
+preostala dva zadatka manjeg prioriteta. Periodi zadataka su slijedno 4, 8, i 4, dok su vremena izvršavanja 1, 5, i 2. (dodaj ovo ispod slike
+u figure radije, bit ce bolje i preglednije)
+Vidimo da je zadtak broj 2 potrošio 4 vremenska odječka procesorskog vremena, a na kraju se nije uspio izvršiti na vrijeme.
+Strategija prekidanja poslova uvodi provjeru svaki vremenski odječak može li se zadatak izvesti do roka. U navedenom primjeru u 
+trenutku t = 5 zadatak bi bio prekinut. Tada bi raspored poslova izgledao kao na dijagramu 3.2. Treba primjetiti da se uz prekidanje
+poslova povećala kvaliteta usluge jer se je zadatak broj 3 sad uspio izvršiti u oba perioda. Važna napomena uz navedeni primjer je
+da služi samo za objašnjenje strategije prekidanja poslova te je stoga pretpostavljeno da su svi zadatci jednako kritični.  
+
+\begin{figure}[h]
+    \centering
+
+    \begin{RTGrid}[width=7cm]{3}{8}
+
+      \TaskArrDead{1}{0}{4}     
+      \TaskArrDead{1}{4}{4}
+  
+      \TaskExecution{1}{0}{1}
+      \TaskExecution{1}{4}{5}
+
+      \TaskArrDead{2}{0}{8}     
+
+      \TaskExecution[color=red]{2}{3}{4}
+      \TaskExecution[color=red]{2}{5}{8}
+
+      \TaskArrDead{3}{0}{4}     
+      \TaskArrDead{3}{4}{4}
+  
+      \TaskExecution{3}{1}{3}
+
+
+    \end{RTGrid}
+
+    \caption{Primjer rasporeda bez prekidanja zadataka}
+    \label{fig:ex1}
+  \end{figure}
+
+  \begin{figure}[h]
+    \centering
+
+    \begin{RTGrid}[width=7cm]{3}{8}
+
+      \TaskArrDead{1}{0}{4}     
+      \TaskArrDead{1}{4}{4}
+  
+      \TaskExecution{1}{0}{1}
+      \TaskExecution{1}{4}{5}
+
+      \TaskArrDead{2}{0}{8}     
+
+      \TaskExecution[color=red]{2}{3}{4}
+
+      \TaskArrDead{3}{0}{4}     
+      \TaskArrDead{3}{4}{4}
+  
+      \TaskExecution{3}{1}{3}
+      \TaskExecution{3}{5}{7}
+
+
+    \end{RTGrid}
+
+    \caption{Primjer rasporeda s prekidanjem zadataka}
+    \label{fig:ex1}
+  \end{figure}
 
 Nadalje, u funkciji wakeTasks provjerava se trebaju li se zadatci u listi za čekanje prebaciti u listu zadataka spremih za izvršavanje.
 Ukoliko je zadatak u listi za čekanje i ukoliko se program nalazi na višekratniku njegova perioda, zadatak se dodaju u listu 
@@ -110,5 +186,13 @@ završetka.
 Varijabla xRemainingTicks u svakom trenutku pamti koliko je vremenskih odsječaka ostalo poslu da se do kraja izvrši. 
 Svaki put kada se posao izvršava ta varijabla se umanjuje za 1. Ukoliko se vrijednost xRemainingTicks smanji na 0, 
 posao je gotov i zabilježava se njegovo pravovremeno izvršavanje.
+
+\section{Implementacija algoritama za raspoređivanje zadataka}
+
+Algoritmi za raspoređivanje zadataka podrazumijevaju logiku kojom se odabire koji zadatak će se idući poslati na izvršavanje.
+Liste implementirane u FreeRTOS-u imaju mogućnost sortiranja po vrijednosti varijable xItemValue koju sadrži svaki član liste 
+(u ListItem\_t strukturi). To svojstvo je iskorišteno kako bi zadatke koji su spremni za izvršavanje poredali po željenom redosljedu.
+
+
 
 \end{document}

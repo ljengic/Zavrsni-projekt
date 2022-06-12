@@ -9,6 +9,8 @@ granama ljudske djelatnosti. Kod njih nam nije bitan samo rezultat izvođenja op
 i vrijeme u kojem se ta operacija izvede. Zbog toga se svakom zadatku pridjeljuje rok do kojeg se mora izvršiti.
 Kako bi sustav radio pouzdano mora se osigurati predvidivo raspoređivanje zadataka koje će osigurati da se što više 
 zadataka izvrši na vrijeme.
+SRSV mora imati implementiranu kontrolu zadataka, kontrolu vremena, raspoređivač zadataka i sustav komunikacije i sinkronizacije
+među zadatcima.
 
 S obzirom na posljedice koje izaziva propuštanje roka izvršavanjazadatke djelimo u dvije skupine :
 \begin{itemize}
@@ -23,29 +25,23 @@ paljenje signalne ledice.
 %preopterećenje ovdje objasni
 %QoS objasni
 
-U ovom radu ispitivati će se raličiti algoritmi za raspoređivanje zadataka u sustavu koji se nalazi u stanju preopterećenja.
-To je slučaj kada je suma faktora opterećenja svih zadataka veća od 1, i kada se svi zadatci ne mogu izvršiti do svog krajnjeg roka 
-izvršenja. U navedenom slučaju važno je osigurati preskakanje zadataka na predvidiv i za sustav siguran način.
-
-Mjera kojom će se uspoređivati učinkovitost pojedinih algoritama naziva se stopa uspješnosti izvršenja zadataka (eng. Quality of Service).
-Računa se kao omjer broj zadataka koji su se izvršili do krajnjeg roka završetka i ukupnopg broja svih zadataka.
-
-%\[QoS = frac{broj izvršenih zadataka do krajnjeg roka}{ukupan broj zadataka}\]
-% popravi da š bude u formuli
-\begin{equation*}
-    QoS = \frac{broj\ izvršenih\ zadataka\ do\ krajnjeg\ roka}{ukupan\ broj\ zadataka}
-\end{equation*}
-
 Zadatci u operacijskim sustavima za rad u stvarnom vremenu općenito se mogu podjeliti u 3 grupe :
 \begin{itemize}
     \item[--] Zadatak koji se trenutno izvodi (eng. running task)
     \item[--] Zadatci koji su spremi za izvođenje (eng. ready tasks)
     \item[--] Zadatci koji su blokirani i čekaju određeni događaj (eng. blocked tasks)
 \end{itemize}
-(OPISI OVO !!)
+
+Kod sustava sa jednom procesorskom jezgrom samo jedan zadatak se u određenom trenutku može izvoditi. Zadatci koji su spremni za izvođenje
+čekaju oslobođenje procesora i jedan od njih se odabire izvršavanje.
+Dio jezgre SRSV-a koji je zadužen za izbor zadatka koji je spreman za izvođenje i koji će se idući izvršavati naziva se raspoređivač 
+zadataka (eng. Task Scheduler). To je najvažniji dio jezgre SRSV-a jer o raspoređivanju zadataka ovisi kolika će biti kvaliteta usluge i
+koliko pouzdan će biti cijeli sustav.
+Neki zadatci mogu biti privremeno ili trajno blokirani i dok su u tom stanju raspoređivač zadataka ih ne uzima u obzir.
+Treba napomenuti da je ovo generalna podjela koja se razlikuje u implementaciji konkretnih SRSV-ova.
 
 
-\section{Opis periodičnih zadataka u sustavima za rad u stvarnom vremenu}
+\section{Periodični zadatci u sustavima za rad u stvarnom vremenu}
 
 Periodični zadatci su zadatci koji se iznova ponavljaju u istim vremenskim intervalima Ti. Taj interval naziva se period zadatka.
 Svaki zadatak opisuje i vrijeme njegova izvršavanja Ci (eng. Computation time). Period i vrijeme izvršavanja zajedno daju veličinu 
@@ -54,10 +50,34 @@ koju nazivamo faktor opterećenja (eng. Utilization) koja opisuje postotak zauze
     U\textsubscript{i} = \frac{C\textsubscript{i}}{D\textsubscript{i}}
 \end{equation*}
 Nadalje, bitna veličina koja opisuje svaki zadatak je krajnji rok njegova završetka (eng. deadline). U ovom radu razmatrani su 
-isključivo zadatci čiji krajnji rok završetka je jednak periodu.
+isključivo zadatci čiji krajnji rok završetka je jednak periodu. Kao primjer dan je vremenski dijagram s jednim periodičnim zadatkom.
+Period zadatka iznosi 4 vremenske jedinice, a vrijeme izvršavanja pojedinog posla 1 vremensku jedinicu. Pomoću ta dva podatka i ranije 
+dane formule proizlazi da je faktor opterećenja zadatka 0.25. Drugim rječima, ovaj zadatak zauzima 25 \% ukupnog procesorskog vremena.
+\begin{figure}[h]
+    \centering
+
+    \begin{RTGrid}[width=13cm]{1}{20}
+
+      \TaskArrDead{1}{0}{4}     
+      \TaskArrDead{1}{4}{4}
+      \TaskArrDead{1}{8}{4}
+      \TaskArrDead{1}{12}{4}
+      \TaskArrDead{1}{16}{4}
+  
+      \TaskExecution{1}{0}{1}
+      \TaskExecution{1}{4}{5}
+      \TaskExecution{1}{8}{9}
+      \TaskExecution{1}{12}{13}
+      \TaskExecution{1}{16}{17}
+
+    \end{RTGrid}
+
+    \caption{Primjer periodičnog zadatka}
+    \label{fig:ex1}
+  \end{figure}
 
 Ukupno opterećenje sustava dobiva se kao zbroj faktora opterećenja svih zadataka. Ukoliko je sustav preopterećen, tj. ukupno opterećenje mu 
-je veće od 1 neki od zadataka se neće izvršiti do svog roka za izvršavanje. U tom slučaju moraju se koristiti algoritmi koji će osigurati 
+je veće od 1 neki od zadataka se neće izvršiti do svog roka za izvršavanje. U tom slučaju koriste se algoritmi koji će osigurati 
 da se zadatci ne preskaču nasumično, već na kontroliran način kao bi se sustav zaštitio od potencijalnih oštećenja nastalih preskakanjem 
 kritičnih zadataka. Postoje dvije vrste preopterećenja sustava.
 \begin{itemize}
@@ -67,7 +87,7 @@ kritičnih zadataka. Postoje dvije vrste preopterećenja sustava.
 Kod prolaznog opterećenja sustava ima ukupno opterećenje manje ili jednako 1, no u nekom trenutku može doći do aktivacije aperiodičnog zadatka 
 koji onda sustav gura u stanje preopterećenja. Nakon što prođe određeno vrijeme i aperiodični zadatak se izvede sustav se vraća u prijašnje
 stanje i svi zadatci se izvršavaju do svog krajnjeg roka. Drugi slučaj je kada je sustav u stanju trajnog preopterećenja, kada je ukupno 
-opterećenje sustava trajno veće od 1. 
+opterećenje sustava trajno veće od 1. Tada se svi poslovi neće moći izvršiti i kontinuirano će se pojedini poslovi morati propuštati. 
 
 %treba li dodati vrste weakly hard uvjeta
 
@@ -78,6 +98,18 @@ se zadatak može jednom propustiti. Ovaj pristup osigurava znatno bolje ponašan
 način preskaćemo izvođenje pojedinih zadataka.
 
 \section{Algoritmi za raspoređivanje zadataka}
+
+U ovom radu ispitivati će se raličiti algoritmi za raspoređivanje zadataka u sustavu koji se nalazi u stanju trajnog preopterećenja.
+To je slučaj kada je suma faktora opterećenja svih zadataka veća od 1, i kada se svi zadatci ne mogu izvršiti do svog krajnjeg roka 
+izvršenja. U navedenom slučaju važno je osigurati preskakanje zadataka na predvidiv i za sustav siguran način.
+
+Mjera kojom će se uspoređivati učinkovitost pojedinih algoritama naziva se kvaliteta usluge (eng. Quality of Service).
+Računa se kao omjer broj zadataka koji su se izvršili do krajnjeg roka završetka i ukupnopg broja svih zadataka.
+
+% popravi da š bude u formuli
+\begin{equation*}
+    QoS = \frac{broj\ izvršenih\ zadataka\ do\ krajnjeg\ roka}{ukupan\ broj\ zadataka}
+\end{equation*}
 
 \subsection{EDF algoritam}
 

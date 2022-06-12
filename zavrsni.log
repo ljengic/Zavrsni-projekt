@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.23)  9 JUN 2022 13:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  12 JUN 2022 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -276,8 +276,89 @@ Package: import 2009/03/23  v 5.1
 )
 (/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.sty
 Package: subfiles 2020/02/14 v1.6 Multi-file projects (package)
+) (./rtsched.sty
+Package: rtsched 2015/05/01
+
+'rtsched' style for Latex and TikZ/PGF
+Easily draw real-time schedules in TeX/Latex.
+(c) 2005, Giuseppe Lipari, Pisa, Italy (g.lipari@sssup.it)
+(c) 2015, Antoine Bertout (bertout.antoine@gmail.com)
+Version 2.0
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks25
+\pgfutil@tempdima=\dimen177
+\pgfutil@tempdimb=\dimen178
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box48
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
+))
+Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks26
+\pgfkeys@temptoks=\toks27
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
+\pgfkeys@tmptoks=\toks28
+))
+\pgf@x=\dimen179
+\pgf@y=\dimen180
+\pgf@xa=\dimen181
+\pgf@ya=\dimen182
+\pgf@xb=\dimen183
+\pgf@yb=\dimen184
+\pgf@xc=\dimen185
+\pgf@yc=\dimen186
+\pgf@xd=\dimen187
+\pgf@yd=\dimen188
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count268
+\c@pgf@countb=\count269
+\c@pgf@countc=\count270
+\c@pgf@countd=\count271
+\t@pgf@toka=\toks29
+\t@pgf@tokb=\toks30
+\t@pgf@tokc=\toks31
+\pgf@sys@id@count=\count272
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfsyssoftpath@smallbuffer@items=\count273
+\pgfsyssoftpath@bigbuffer@items=\count274
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -294,25 +375,259 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count268
-\lst@gtempboxa=\box48
-\lst@token=\toks25
-\lst@length=\count269
-\lst@currlwidth=\dimen177
-\lst@column=\count270
-\lst@pos=\count271
-\lst@lostspace=\dimen178
-\lst@width=\dimen179
-\lst@newlines=\count272
-\lst@lineno=\count273
-\lst@maxwidth=\dimen180
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen189
+\pgfmath@count=\count275
+\pgfmath@box=\box49
+\pgfmath@toks=\toks32
+\pgfmath@stack@operand=\toks33
+\pgfmath@stack@operation=\toks34
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count276
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@picminx=\dimen190
+\pgf@picmaxx=\dimen191
+\pgf@picminy=\dimen192
+\pgf@picmaxy=\dimen193
+\pgf@pathminx=\dimen194
+\pgf@pathmaxx=\dimen195
+\pgf@pathminy=\dimen196
+\pgf@pathmaxy=\dimen197
+\pgf@xx=\dimen198
+\pgf@xy=\dimen199
+\pgf@yx=\dimen256
+\pgf@yy=\dimen257
+\pgf@zx=\dimen258
+\pgf@zy=\dimen259
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@path@lastx=\dimen260
+\pgf@path@lasty=\dimen261
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@shorten@end@additional=\dimen262
+\pgf@shorten@start@additional=\dimen263
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfpic=\box50
+\pgf@hbox=\box51
+\pgf@layerbox@main=\box52
+\pgf@picture@serial@count=\count277
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgflinewidth=\dimen264
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@pt@x=\dimen265
+\pgf@pt@y=\dimen266
+\pgf@pt@temp=\dimen267
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfarrowsep=\dimen268
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@max=\dimen269
+\pgf@sys@shading@range@num=\count278
+\pgf@shadingcount=\count279
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfexternal@startupbox=\box53
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodeparttextbox=\box54
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@nodesepstart=\dimen270
+\pgf@nodesepend=\dimen271
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen272
+\pgffor@skip=\dimen273
+\pgffor@stack=\toks35
+\pgffor@toks=\toks36
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@plot@mark@count=\count280
+\pgfplotmarksize=\dimen274
+)
+\tikz@lastx=\dimen275
+\tikz@lasty=\dimen276
+\tikz@lastxsaved=\dimen277
+\tikz@lastysaved=\dimen278
+\tikz@lastmovetox=\dimen279
+\tikz@lastmovetoy=\dimen280
+\tikzleveldistance=\dimen281
+\tikzsiblingdistance=\dimen282
+\tikz@figbox=\box55
+\tikz@figbox@bg=\box56
+\tikz@tempbox=\box57
+\tikz@tempbox@bg=\box58
+\tikztreelevel=\count281
+\tikznumberofchildren=\count282
+\tikznumberofcurrentchild=\count283
+\tikz@fig@count=\count284
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfmatrixcurrentrow=\count285
+\pgfmatrixcurrentcolumn=\count286
+\pgf@matrix@numberofcolumns=\count287
+)
+\tikz@expandcount=\count288
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+.tex
+File: pgflibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.cod
+e.tex
+File: pgflibrarypatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+\sx=\dimen283
+\sy=\dimen284
+\hy=\dimen285
+\xx=\dimen286
+\yy=\dimen287
+\xxx=\dimen288
+\yyy=\dimen289
+\xtmp=\dimen290
+\nsx=\count289
+\nsy=\count290
+\nhl=\count291
+\nvl=\count292
+\ntasks=\count293
+\tmp=\count294
+\c@myLabel=\count295
+
+beamer not loaded
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count296
+\lst@gtempboxa=\box59
+\lst@token=\toks37
+\lst@length=\count297
+\lst@currlwidth=\dimen291
+\lst@column=\count298
+\lst@pos=\count299
+\lst@lostspace=\dimen292
+\lst@width=\dimen293
+\lst@newlines=\count300
+\lst@lineno=\count301
+\lst@maxwidth=\dimen294
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count274
-\lst@skipnumbers=\count275
-\lst@framebox=\box49
+\c@lstnumber=\count302
+\lst@skipnumbers=\count303
+\lst@framebox=\box60
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/09/10 1.8c listings configuration
@@ -321,26 +636,33 @@ Package: listings 2019/09/10 1.8c (Carsten Heinz)
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count276
-\l__pdf_internal_box=\box50
+\l__kernel_color_stack_int=\count304
+\l__pdf_internal_box=\box61
 )
-(./zavrsni.aux)
+(./zavrsni.aux
+
+LaTeX Warning: Label `fig:ex1' multiply defined.
+
+
+LaTeX Warning: Label `fig:ex1' multiply defined.
+
+)
 \openout1 = `zavrsni.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -378,17 +700,17 @@ LaTeX Font Info:    ... okay on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count277
-\scratchdimen=\dimen181
-\scratchbox=\box51
-\nofMPsegments=\count278
-\nofMParguments=\count279
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count280
-\MPscratchDim=\dimen182
-\MPnumerator=\count281
-\makeMPintoPDFobject=\count282
-\everyMPtoPDFconversion=\toks27
+\scratchcounter=\count305
+\scratchdimen=\dimen295
+\scratchbox=\box62
+\nofMPsegments=\count306
+\nofMParguments=\count307
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count308
+\MPscratchDim=\dimen296
+\MPnumerator=\count309
+\makeMPintoPDFobject=\count310
+\everyMPtoPDFconversion=\toks39
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -401,20 +723,22 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count283
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 48
+
+ABD: EveryShipout initializing macros
+\c@lstlisting=\count311
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 51
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -422,15 +746,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 51
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 54
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [1] [3]
 (./zavrsni.toc)
-\tf@toc=\write3
-\openout3 = `zavrsni.toc'.
+\tf@toc=\write4
+\openout4 = `zavrsni.toc'.
 
  [4
 
@@ -449,9 +773,15 @@ niji poslovi dobiju ve¢i prioritet
  []
 
 
-Overfull \hbox (1.49901pt too wide) in paragraph at lines 21--24
-[]\T1/ptm/m/n/12 Ideja u ovom radu je implementirati strogi sustav za rad u stv
-arnom vremenu sa ublaºenim
+Overfull \hbox (9.39742pt too wide) in paragraph at lines 21--26
+\T1/ptm/m/n/12 propu²tati. Modifikacijom jezgre FreeRTOS-a implementiran je str
+ogi sustav za rad u stvarnom
+ []
+
+
+Overfull \hbox (11.66689pt too wide) in paragraph at lines 21--26
+\T1/ptm/m/n/12 vremenu sa ublaºenim uvjetima (eng. weakly hard). Kod takvog sus
+tava povremeno dopu²tamo
  []
 
 ) [1
@@ -459,104 +789,114 @@ arnom vremenu sa ublaºenim
 ]
 Chapter 2.
 (./tekstovi/osnove_teorije_rasporedivanja.tex
-Overfull \hbox (2.64235pt too wide) in paragraph at lines 26--29
-\T1/ptm/m/n/12 ve¢a od 1, i kada se svi zadatci ne mogu izvr²iti do svog krajnj
-eg roka izvr²enja. U navedenom
+Overfull \hbox (16.74156pt too wide) in paragraph at lines 7--14
+\T1/ptm/m/n/12 kontrolu vremena, rasporeživa£ zadataka i sustav komunikacije i 
+sinkronizacije mežu zadatcima. 
  []
 
-
-Overfull \hbox (15.35828pt too wide) in paragraph at lines 30--32
-[]\T1/ptm/m/n/12 Mjera kojom ¢e se usporeživati u£inkovitost pojedinih algorita
-ma naziva se stopa uspje²nosti
- []
-
-
-LaTeX Warning: Command \v invalid in math mode on input line 36.
-
-Missing character: There is no ² in font cmr12!
 [2
 
 ]
-Overfull \hbox (19.30032pt too wide) in paragraph at lines 48--48
-[]\T1/ptm/b/n/17.28 Opis periodi£nih zadataka u sustavima za rad u stvarnom
+Overfull \hbox (26.26439pt too wide) in paragraph at lines 44--44
+[]\T1/ptm/b/n/17.28 Periodi£ni zadatci u sustavima za rad u stvarnom vremenu 
  []
 
+\pgf@layerbox@foreground=\box63
+\pgf@layerboxsaved@foreground=\box64
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (8.9395pt too wide) in paragraph at lines 59--63
+Overfull \hbox (8.9395pt too wide) in paragraph at lines 79--83
 []\T1/ptm/m/n/12 Ukupno optere¢enje sustava dobiva se kao zbroj faktora optere¢
 enja svih zadataka. Ukoliko
  []
 
-
-Overfull \hbox (33.218pt too wide) in paragraph at lines 67--71
+[3]
+Overfull \hbox (33.218pt too wide) in paragraph at lines 87--91
 \T1/ptm/m/n/12 trenutku moºe do¢i do aktivacije aperiodi£nog zadatka koji onda 
 sustav gura u stanje preoptere¢enja.
  []
 
 
-Overfull \hbox (9.05pt too wide) in paragraph at lines 74--79
+Overfull \hbox (9.05pt too wide) in paragraph at lines 94--99
 \T1/ptm/m/n/12 bolje pona²anje u uvjetima preoptere¢enja jer na siguran na£in p
 reska¢emo izvoženje pojedinih
  []
 
-[3]
-Overfull \hbox (16.56128pt too wide) in paragraph at lines 84--87
+
+LaTeX Warning: Command \v invalid in math mode on input line 111.
+
+Missing character: There is no ² in font cmr12!
+
+Overfull \hbox (16.56128pt too wide) in paragraph at lines 116--119
 \T1/ptm/m/n/12 prioritet daje onim zadatcima koji imaju raniji rok za zavr²etak
 . Ukoliko sustav nije preoptere¢en
  []
 
 
-Overfull \hbox (5.36617pt too wide) in paragraph at lines 84--87
+Overfull \hbox (5.36617pt too wide) in paragraph at lines 116--119
 \T1/ptm/m/n/12 (ukoliko je ukupni faktor optere¢enja manji od 1) ovim algoritmo
 m optimalno ¢e se rasporediti
  []
 
 
-Overfull \hbox (0.5905pt too wide) in paragraph at lines 90--95
+Overfull \hbox (0.5905pt too wide) in paragraph at lines 122--127
 \T1/ptm/m/n/12 zadatci, dok se oni koji se mogu presko£iti uvijek preska£u. Pre
 ma ovom algoritmu osigurano
  []
 
 
-Overfull \hbox (12.55333pt too wide) in paragraph at lines 90--95
+Overfull \hbox (12.55333pt too wide) in paragraph at lines 122--127
 \T1/ptm/m/n/12 je po²tivanje zadanih uvjeta, no pri manjim faktorima optere¢enj
 a ovaj algoritam nije optimalan.
  []
 
 
-Overfull \hbox (11.10144pt too wide) in paragraph at lines 90--95
+Overfull \hbox (11.10144pt too wide) in paragraph at lines 122--127
 \T1/ptm/m/n/12 koje nije nuºno izvr²iti, no oni se automatski izbacuju iz raspo
 reda. Kriti£ni zadatci rasporežuju
  []
 
-) [4]
+[4]) [5]
 Chapter 3.
 (./tekstovi/modifikacija_jezgre_FreeRtos-a.tex
-Overfull \hbox (3.4833pt too wide) in paragraph at lines 7--10
-\T1/ptm/m/n/12 zadataka. Kod FreeRTOS-a organiziran je u svega nekoliko datotek
-a i zauzima svega nekoliko
- []
-
-
 Overfull \hbox (14.78523pt too wide) in paragraph at lines 7--10
 \T1/ptm/m/n/12 kilobajta. Datoteka u kojoj je implementirano upravljanje zadatc
 ima i njihovim rasporeživanjem
  []
 
 
-Overfull \hbox (7.70589pt too wide) in paragraph at lines 13--17
-\T1/ptm/m/n/12 na£in da se svakom zadatku iz liste dodjeljuje jedan vremenski o
-dsje£ak procesorskog vremena
+Overfull \hbox (19.22537pt too wide) in paragraph at lines 22--28
+\T1/ptm/m/n/12 su prioriteta (postoji posebna lista za sve mogu¢e prioritete za
+dataka). Stoga se pri rasporeživanju
  []
 
 
-Overfull \hbox (7.4295pt too wide) in paragraph at lines 20--22
-\T1/ptm/m/n/12 nalaze se konstante preko kojih se uklju£uju pojedine funkcional
-nosti ili postavljaju vrijednosti
+Overfull \hbox (25.71724pt too wide) in paragraph at lines 22--28
+\T1/ptm/m/n/12 vra¢a se na kraj liste £ekanja. Ovaj na£in rasporeživanja zadata
+ka naziva se dijeljenje procesorskog
  []
 
 
-Overfull \hbox (17.43462pt too wide) in paragraph at lines 23--23
+Overfull \hbox (12.80598pt too wide) in paragraph at lines 32--35
+\T1/ptm/m/n/12 uže u trajno preoptere¢enje.Potrebne modifikacije detaljno su op
+isane u narednim podglavljima. 
+ []
+
+[6
+
+]
+Overfull \hbox (17.43462pt too wide) in paragraph at lines 36--36
 []\T1/ptm/b/n/17.28 Programska potpora za kontrolu izvr²avanja periodi£nih
  []
 
@@ -565,31 +905,68 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-) [5
-
-]
-Overfull \hbox (11.34198pt too wide) in paragraph at lines 55--57
+)
+Overfull \hbox (11.34198pt too wide) in paragraph at lines 68--70
 \T1/ptm/m/n/12 zadataka. Navedena funkcija je pro²irenje funkcije xTaskCreate s
  novim varijablama potrebnim
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
-1.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+[7]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
+4.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Overfull \hbox (11.9417pt too wide) in paragraph at lines 73--77
+Overfull \hbox (11.9417pt too wide) in paragraph at lines 86--90
 \T1/ptm/m/n/12 milisekundu. U FreeRTOS-u navedena funkcionalnost implementrana 
 je u xTaskIncrementTick
  []
 
-[6]
-Overfull \hbox (2.30238pt too wide) in paragraph at lines 105--110
+[8]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (2.30238pt too wide) in paragraph at lines 180--185
 []\T1/ptm/m/n/12 Nadalje, u funkciji wakeTasks provjerava se trebaju li se zada
 tci u listi za £ekanje prebaciti
  []
 
-[7]) [8]
+[9]
+Overfull \hbox (6.2889pt too wide) in paragraph at lines 190--190
+[]\T1/ptm/b/n/17.28 Implementacija algoritama za rasporeživanje zadataka 
+ []
+
+
+Overfull \hbox (14.5686pt too wide) in paragraph at lines 192--195
+\T1/ptm/m/n/12 sortiranja po vrijednosti varijable xItemValue koju sadrºi svaki
+ £lan liste (u ListItem_t strukturi).
+ []
+
+
+Overfull \hbox (1.0462pt too wide) in paragraph at lines 192--195
+\T1/ptm/m/n/12 To svojstvo je iskori²teno kako bi zadatke koji su spremni za iz
+vr²avanje poredali po ºeljenom
+ []
+
+) [10]
 Chapter 4.
 (./tekstovi/implementacija_simulatora.tex
 Overfull \hbox (13.35829pt too wide) in paragraph at lines 13--16
@@ -609,7 +986,7 @@ Overfull \hbox (16.60632pt too wide) in paragraph at lines 38--41
 Generator koja poziva potrebne
  []
 
-[9
+[11
 
 ]
 Overfull \hbox (5.05342pt too wide) in paragraph at lines 59--68
@@ -618,47 +995,58 @@ simulacije, na temelju ranije
  []
 
 
-Overfull \hbox (11.0888pt too wide) in paragraph at lines 71--79
+Overfull \hbox (11.0888pt too wide) in paragraph at lines 71--81
 \T1/ptm/m/n/12 najprije stvara csv datoteka u kojoj ¢e biti pohranjen izvje²taj
  sa podatcima o svim simulacijama
  []
 
-[10]) [11]
+
+Overfull \hbox (15.50502pt too wide) in paragraph at lines 71--81
+\T1/ptm/m/n/12 nakon zavr²ene simulacije. Faktor optere¢enja se radi jednostavn
+osti implementacije proslježuje
+ []
+
+[12]) [13]
 Chapter 5.
-[12
+[14
 
 ]
 Chapter 6.
-(./tekstovi/zakljucak.tex) (./zavrsni.bbl [13
+(./tekstovi/zakljucak.tex) (./zavrsni.bbl [15
 
 ]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [14
+) [16
 
-] [15] (./zavrsni.aux) ) 
+] [17] (./zavrsni.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8291 strings out of 483183
- 114416 string characters out of 5966292
- 640660 words of memory out of 5000000
- 23152 multiletter control sequences out of 15000+600000
- 596450 words of font info for 96 fonts, out of 8000000 for 9000
+ 18687 strings out of 483183
+ 341664 string characters out of 5966292
+ 817313 words of memory out of 5000000
+ 33317 multiletter control sequences out of 15000+600000
+ 597604 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,6n,70p,276b,1842s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.
-enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
-s/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on zavrsni.pdf (19 pages, 123003 bytes).
+ 68i,9n,83p,439b,1775s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
+hvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/times/utmr8a.pfb>
+Output written on zavrsni.pdf (21 pages, 143144 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 140 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
