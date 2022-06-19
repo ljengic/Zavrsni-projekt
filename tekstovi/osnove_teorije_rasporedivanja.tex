@@ -6,53 +6,63 @@
 
 Sustavi za rad u stvarnom vremenu (eng. Real Time System) danas su neizostavan dio mnogih sustava korištenih u svim
 granama ljudske djelatnosti. Kod njih nam nije bitan samo rezultat izvođenja operacije, nego je jednako važno 
-i vrijeme u kojem se ta operacija izvede. Zbog toga se svakom zadatku pridjeljuje rok do kojeg se mora izvršiti.
+i vrijeme u kojem se ta operacija izvede. Zbog toga se svakom zadatku pridjeljuje rok do kojeg se mora izvršiti. 
+Izvršenje posla nakon njegovog krajnjeg roka za izvršavanje ekvivalentno je tome da se posao nije niti izvršio.
+
 Kako bi sustav radio pouzdano mora se osigurati predvidivo raspoređivanje zadataka koje će osigurati da se što više 
 zadataka izvrši na vrijeme.
 SRSV mora imati implementiranu kontrolu zadataka, kontrolu vremena, raspoređivač zadataka i sustav komunikacije i sinkronizacije
 među zadatcima.
 
-S obzirom na posljedice koje izaziva propuštanje roka izvršavanjazadatke djelimo u dvije skupine :
+S obzirom na posljedice koje izaziva propuštanje roka izvršavanja zadatke dijelimo u dvije skupine :
 \begin{itemize}
-    \item[--] Kritični zadatci (eng. hard real time tasks)
-    \item[--] Zadatci koji se mogu preskočiti (eng. soft real time tasks)
+    \item[--] Strogi zadatci (eng. hard real time tasks)
+    \item[--] Opcionalni zadatci (eng. soft real time tasks)
 \end{itemize}
-Kritični zadatci niti jednom ne smiju propustiti krajnji rok izvršavanja jer su to zadatci koji obavljaju važan posao. Njihovo 
-propuštanje izaziva katastrofalne posljedice koje mogu biti pogubne za cijeli sustav. Dobar primjer kritičnog zadatka je detekcija 
-pritiska papučice kočnice na automobilu. S druge strane, propuštanje nekih zadataka
-nam nije kritično i neće nanjeti štetu sustavu, nego će smanjiti performanse ili mogućnosti sustava. Primjer ovakvog zadatka je 
-paljenje signalne ledice.
-%preopterećenje ovdje objasni
-%QoS objasni
+Strogi zadatci niti jednom ne smiju propustiti krajnji rok izvršavanja jer su to zadatci koji obavljaju važan posao. Njihovo 
+propuštanje izaziva katastrofalne posljedice koje mogu biti pogubne za cijeli sustav. Dobar primjer strogog zadatka je detekcija 
+pritiska papučice kočnice na automobilu. Taj zadatak je kritičan i propuštanje njegovog izvršenja za posljedicu može imati ozbiljnu
+nesreću s ljudskim žrtvama. S druge strane, propuštanje nekih zadataka nije kritično i neće nanijeti štetu sustavu, nego će smanjiti
+ performanse ili mogućnosti sustava. Primjer ovakvog zadatka je paljenje signalne ledice ili prikaz podataka na pokazniku.
 
-Zadatci u operacijskim sustavima za rad u stvarnom vremenu općenito se mogu podjeliti u 3 grupe :
+Zadatci u operacijskim sustavima za rad u stvarnom vremenu općenito se mogu naći u jednom od 3 stanja, a to su:
 \begin{itemize}
     \item[--] Zadatak koji se trenutno izvodi (eng. running task)
     \item[--] Zadatci koji su spremi za izvođenje (eng. ready tasks)
     \item[--] Zadatci koji su blokirani i čekaju određeni događaj (eng. blocked tasks)
 \end{itemize}
 
-Kod sustava sa jednom procesorskom jezgrom samo jedan zadatak se u određenom trenutku može izvoditi. Zadatci koji su spremni za izvođenje
-čekaju oslobođenje procesora i jedan od njih se odabire izvršavanje.
+Kod sustava s jednom procesorskom jezgrom samo jedan zadatak se u određenom trenutku može izvoditi. Zadatci koji su spremni za izvođenje
+čekaju oslobođenje procesora i jedan od njih se odabire za izvršavanje.
 Dio jezgre SRSV-a koji je zadužen za izbor zadatka koji je spreman za izvođenje i koji će se idući izvršavati naziva se raspoređivač 
 zadataka (eng. Task Scheduler). To je najvažniji dio jezgre SRSV-a jer o raspoređivanju zadataka ovisi kolika će biti kvaliteta usluge i
 koliko pouzdan će biti cijeli sustav.
 Neki zadatci mogu biti privremeno ili trajno blokirani i dok su u tom stanju raspoređivač zadataka ih ne uzima u obzir.
-Treba napomenuti da je ovo generalna podjela koja se razlikuje u implementaciji konkretnih SRSV-ova.
+Zadatci se tijekom rada prebacuju između opisanih stanja, no treba napomenuti da je ovo generalna podjela koja se razlikuje u 
+implementaciji konkretnih SRSV-ova.
 
+\begin{figure}[!htb]
+    \center{\includegraphics[width=\textwidth]
+    {images/stanja_taskova.png}}
+    \caption{\label{fig:my-label} Stanja zadataka u SRSV-u}
+  \end{figure}
 
 \section{Periodični zadatci u sustavima za rad u stvarnom vremenu}
 
-Periodični zadatci su zadatci koji se iznova ponavljaju u istim vremenskim intervalima Ti. Taj interval naziva se period zadatka.
-Svaki zadatak opisuje i vrijeme njegova izvršavanja Ci (eng. Computation time). Period i vrijeme izvršavanja zajedno daju veličinu 
-koju nazivamo faktor opterećenja (eng. Utilization) koja opisuje postotak zauzeća procesora pojedinog zadatka u jednom periodu.
+Periodični zadatci su zadatci koji se iznova ponavljaju u istim vremenskim intervalima T\textsubscript{i}. Taj interval naziva se period zadatka.
+Dio zadatka izvršen u jednom periodu naziva se posao.
+Svaki zadatak opisuje i vrijeme njegova izvršavanja C\textsubscript{i} (eng. Computation time). Period i vrijeme izvršavanja zajedno daju veličinu 
+koju nazivamo faktor opterećenja (eng. Utilization factor) koja daje postotak zauzeća procesora pojedinog zadatka u jednom periodu. Pošto se poslovi
+ponavljaju jedan za drugim, to je ujedno i veličina koja govori koliko procesorskog vremena se ukupno troši na taj zadatak.
 \begin{equation*}
-    U\textsubscript{i} = \frac{C\textsubscript{i}}{D\textsubscript{i}}
+    U\textsubscript{i} = \frac{C\textsubscript{i}}{T\textsubscript{i}}
 \end{equation*}
-Nadalje, bitna veličina koja opisuje svaki zadatak je krajnji rok njegova završetka (eng. deadline). U ovom radu razmatrani su 
+Nadalje, bitna veličina koja opisuje svaki zadatak je krajnji rok njegova završetka (eng. Deadline). Krajnji rok izvršavanja je vrijeme 
+do kojeg se posao mora izvršiti kako bi donio korist sustavu. U ovom radu razmatrani su 
 isključivo zadatci čiji krajnji rok završetka je jednak periodu. Kao primjer dan je vremenski dijagram s jednim periodičnim zadatkom.
 Period zadatka iznosi 4 vremenske jedinice, a vrijeme izvršavanja pojedinog posla 1 vremensku jedinicu. Pomoću ta dva podatka i ranije 
-dane formule proizlazi da je faktor opterećenja zadatka 0.25. Drugim rječima, ovaj zadatak zauzima 25 \% ukupnog procesorskog vremena.
+dane formule proizlazi da je faktor opterećenja zadatka 0.25. Drugim riječima, ovaj zadatak zauzima 25 \% ukupnog procesorskog vremena.
+
 \begin{figure}[h]
     \centering
 
@@ -63,6 +73,7 @@ dane formule proizlazi da je faktor opterećenja zadatka 0.25. Drugim rječima, 
       \TaskArrDead{1}{8}{4}
       \TaskArrDead{1}{12}{4}
       \TaskArrDead{1}{16}{4}
+      \TaskArrival{1}{20}
   
       \TaskExecution{1}{0}{1}
       \TaskExecution{1}{4}{5}
@@ -76,7 +87,7 @@ dane formule proizlazi da je faktor opterećenja zadatka 0.25. Drugim rječima, 
     \label{fig:ex1}
   \end{figure}
 
-Ukupno opterećenje sustava dobiva se kao zbroj faktora opterećenja svih zadataka. Ukoliko je sustav preopterećen, tj. ukupno opterećenje mu 
+Ukupno opterećenje sustava dobiva se kao zbroj faktora opterećenja svih zadataka. Ako je sustav preopterećen, tj. ukupno opterećenje mu 
 je veće od 1 neki od zadataka se neće izvršiti do svog roka za izvršavanje. U tom slučaju koriste se algoritmi koji će osigurati 
 da se zadatci ne preskaču nasumično, već na kontroliran način kao bi se sustav zaštitio od potencijalnih oštećenja nastalih preskakanjem 
 kritičnih zadataka. Postoje dvije vrste preopterećenja sustava.
@@ -91,45 +102,200 @@ opterećenje sustava trajno veće od 1. Tada se svi poslovi neće moći izvršit
 
 %treba li dodati vrste weakly hard uvjeta
 
-U ovom radu ispitivat će se ponašanje sustava sa ublaženo-kritičnim uvjetima (eng. weakly hard constraints). Za razliku od 
+U ovom radu ispitivat će se ponašanje sustava s ublaženo-kritičnim uvjetima (eng. weakly hard constraints). Za razliku od 
 kritičnih zadataka, kod ublaženo-kritičnih zadataka povremeno dopuštamo da se zadatak ne izvede na vrijeme, ali na predvidiv i 
 kontroliran način. Na temelju važnosti pojedinog zadatka za rad cjelokupnog sustava određuje se u koliko slijednih perioda 
-se zadatak može jednom propustiti. Ovaj pristup osigurava znatno bolje ponašanje u uvjetima preopterećenja jer na siguran 
-način preskaćemo izvođenje pojedinih zadataka.
+se zadatak može jednom propustiti. Ovaj pristup osigurava znatno bolje ponašanje u uvjetima preopterećenja jer se propuštanje
+pojedinih poslova odvija deterministički.
 
 \section{Algoritmi za raspoređivanje zadataka}
 
-U ovom radu ispitivati će se raličiti algoritmi za raspoređivanje zadataka u sustavu koji se nalazi u stanju trajnog preopterećenja.
+U ovom radu ispitivat će se različiti algoritmi za raspoređivanje zadataka u sustavu koji se nalazi u stanju trajnog preopterećenja.
 To je slučaj kada je suma faktora opterećenja svih zadataka veća od 1, i kada se svi zadatci ne mogu izvršiti do svog krajnjeg roka 
 izvršenja. U navedenom slučaju važno je osigurati preskakanje zadataka na predvidiv i za sustav siguran način.
 
 Mjera kojom će se uspoređivati učinkovitost pojedinih algoritama naziva se kvaliteta usluge (eng. Quality of Service).
-Računa se kao omjer broj zadataka koji su se izvršili do krajnjeg roka završetka i ukupnopg broja svih zadataka.
+Računa se kao omjer broj zadataka koji su se izvršili do krajnjeg roka završetka i ukupnog broja svih zadataka.
 
 % popravi da š bude u formuli
 \begin{equation*}
-    QoS = \frac{broj\ izvršenih\ zadataka\ do\ krajnjeg\ roka}{ukupan\ broj\ zadataka}
+    QoS = \frac{broj\ izvr\v{s}enih\ zadataka\ do\ krajnjeg\ roka}{ukupan\ broj\ zadataka}
 \end{equation*}
+
+U nastavku su opisani korišteni algoritmi za raspoređivanje zadataka. 
+Uz svaki algoritam prikazan je i raspored izvršavanja seta zadataka danog u tablici. Raspored se prikazuje vremenskim dijagramom u kojem
+je vidljivo koji zadatak se u danom trenutku izvršava. 
+Za dani set zadataka zadano je da je prvi
+zadatak kritičan i mora se uvijek izvršiti, drugi zadatak ne utječe na sigurnost sustava, a treći zadatak mora se izvršiti svaki drugi put.
+
+\begin{center}
+    \begin{tabular}{||c || c c c||} 
+     \hline
+     Broj Zadatka & Period & Vrijeme izvršavanja & Faktor opterećenja \\ [0.5ex] 
+     \hline\hline
+     1 & 6 & 2 & izracunaj \\ 
+     \hline
+     2 & 8 & 2 & izracunaj \\
+     \hline
+     3 & 4 & 2 & izracunaj \\
+     \hline
+    \end{tabular}
+    \end{center}
+
+Dani set zadataka nalazi se u preopterećenju, i neki od zadataka neće zadovoljiti svoj krajnji rok završetka. Ukupni faktor opterećenja
+sustava je 1.08.
 
 \subsection{EDF algoritam}
 
-EDF algoritam (eng. Earliest Deadline First) je algoritam koji pri raspoređivanju zadataka prioritet daje onim zadatcima 
-koji imaju raniji rok za završetak. Ukoliko sustav nije preopterećen (ukoliko je ukupni faktor opterećenja manji od 1) 
-ovim algoritmom optimalno će se rasporediti zadatci i svi će se izvršiti.
+EDF algoritam (eng. Earliest Deadline First) je algoritam koji pri raspoređivanju zadataka prioritet daje onim poslovima 
+koji imaju raniji rok za završetak. Ukoliko sustav nije preopterećen (ako je ukupni faktor opterećenja manji od 1) 
+ovim algoritmom optimalno će se rasporediti zadatci i svi će se izvršiti. Na vremenskom dijagramu crnom bojom su prikazani 
+poslovi koji su propustili svoj krajnji rok izvršenja.
+
+\begin{figure}[h]
+    \centering
+
+    \begin{RTGrid}[width=13cm]{3}{24}
+
+      \TaskArrDead{1}{0}{6}     
+      \TaskArrDead{1}{6}{6}
+      \TaskArrDead{1}{12}{6}
+      \TaskArrDead{1}{18}{6}
+      \TaskArrival{1}{24}
+  
+      \TaskExecution{1}{2}{4}
+      \TaskExecution{1}{9}{11}
+      \TaskExecution{1}{16}{18}
+      \TaskExecution[color=black]{1}{23}{24}
+
+      \TaskArrDead{2}{0}{8}     
+      \TaskArrDead{2}{8}{8}
+      \TaskArrDead{2}{16}{8}
+      \TaskArrival{2}{24}
+  
+      \TaskExecution{2}{4}{7}
+      \TaskExecution{2}{13}{16}
+      \TaskExecution{2}{20}{23}
+
+      \TaskArrDead{3}{0}{4}     
+      \TaskArrDead{3}{4}{4}
+      \TaskArrDead{3}{8}{4}
+      \TaskArrDead{3}{12}{4}
+      \TaskArrDead{3}{16}{4}
+      \TaskArrDead{3}{20}{4}
+      \TaskArrival{3}{24}
+  
+      \TaskExecution{3}{0}{2}
+      \TaskExecution[color=black]{3}{7}{9}
+      \TaskExecution[color=black]{3}{11}{13}
+      \TaskExecution{3}{18}{20}
+
+    \end{RTGrid}
+
+    \caption{Raspored zadataka EDF algoritmom}
+    \label{fig:ex1}
+  \end{figure}
 
 \subsection{RTO algoritam}
 
-RTO algoritam (eng. Red Tasks Only) je algoritam prema kojemu se samo izvršavaju kritični zadatci, 
+RTO algoritam (eng. Red Tasks Only) je algoritam prema kojemu se samo izvršavaju strogi zadatci, 
 dok se oni koji se mogu preskočiti uvijek preskaču. Prema ovom algoritmu osigurano je poštivanje zadanih uvjeta, no pri manjim 
-faktorima opterećenja ovaj algoritam 
-nije optimalan. Razlog tomu je što postoji slobodno procesorsko vrijeme u kojem bi se mogli izvršiti zadatci koje nije nužno izvršiti, no 
-oni se automatski izbacuju iz rasporeda. Kritični zadatci raspoređuju se prema ranije opisanom EDF algoritmu. 
+faktorima opterećenja ovaj algoritam nije optimalan. Razlog tomu je što postoji slobodno procesorsko vrijeme u kojem bi se mogli 
+izvršiti zadatci koje nije nužno izvršiti, no oni se automatski izbacuju iz rasporeda. Kritični zadatci raspoređuju se prema 
+ranije opisanom EDF algoritmu. 
+
+\begin{figure}[h]
+    \centering
+
+    \begin{RTGrid}[width=13cm]{3}{24}
+
+        \TaskArrDead{1}{0}{6}     
+        \TaskArrDead{1}{6}{6}
+        \TaskArrDead{1}{12}{6}
+        \TaskArrDead{1}{18}{6}
+        \TaskArrival{1}{24}
+    
+        \TaskExecution[color=red]{1}{0}{2}
+        \TaskExecution[color=red]{1}{6}{8}
+        \TaskExecution[color=red]{1}{12}{14}
+        \TaskExecution[color=red]{1}{18}{20}
+  
+        \TaskArrDead{2}{0}{8}     
+        \TaskArrDead{2}{8}{8}
+        \TaskArrDead{2}{16}{8}
+        \TaskArrival{2}{24}
+    
+        \TaskArrDead{3}{0}{4}     
+        \TaskArrDead{3}{4}{4}
+        \TaskArrDead{3}{8}{4}
+        \TaskArrDead{3}{12}{4}
+        \TaskArrDead{3}{16}{4}
+        \TaskArrDead{3}{20}{4}
+        \TaskArrival{3}{24}
+    
+        \TaskExecution[color=red]{3}{2}{4}
+        \TaskExecution[color=red]{3}{8}{10}
+        \TaskExecution[color=red]{3}{16}{18}
+
+    \end{RTGrid}
+
+    \caption{Raspored zadataka RTO algoritmom}
+    \label{fig:ex1}
+  \end{figure}
+
 
 \subsection{BWP algoritam}
 
-BWP algoritam (eng. Blue When Possible) je poboljšanje ranije opisanog RTO algoritma. Kod BWP algoritma prioritet imaju kritični zadatci, 
-no i zadatci koji se ne moraju nužno izvršiti su u listi čekanja. Na taj način, ukoliko se svi kritični zadatci izvrše na red će doći
+BWP algoritam (eng. Blue When Possible) je poboljšanje ranije opisanog RTO algoritma. Kod BWP algoritma prioritet imaju strogi zadatci, 
+no i zadatci koji se ne moraju nužno izvršiti su u listi čekanja. Na taj način, ukoliko se svi kritični zadatci izvrše, na red će doći
 i opcionalni zadatci. Ovom modifikacijom znatno se poboljša stopa uspješnosti izvršenja zadataka (eng. Quality of Service), pogotovo pri
- manjim faktorima opterećenja.
+ manjim faktorima opterećenja. Zadatci su u dijagramu obojeni prema nazivu algoritma, crvena boja za stroge zadatke, a plava za zadatke 
+ čije izvršavanje je opcionalno. 
+
+ \begin{figure}[h]
+    \centering
+
+    \begin{RTGrid}[width=13cm]{3}{24}
+
+        \TaskArrDead{1}{0}{6}     
+        \TaskArrDead{1}{6}{6}
+        \TaskArrDead{1}{12}{6}
+        \TaskArrDead{1}{18}{6}
+        \TaskArrival{1}{24}
+    
+        \TaskExecution[color=red]{1}{0}{2}
+        \TaskExecution[color=red]{1}{6}{8}
+        \TaskExecution[color=red]{1}{12}{14}
+        \TaskExecution[color=red]{1}{18}{20}
+  
+        \TaskArrDead{2}{0}{8}     
+        \TaskArrDead{2}{8}{8}
+        \TaskArrDead{2}{16}{8}
+        \TaskArrival{2}{24}
+    
+        \TaskExecution[color=blue]{2}{10}{12}
+        \TaskExecution[color=blue]{2}{20}{22}
+  
+        \TaskArrDead{3}{0}{4}     
+        \TaskArrDead{3}{4}{4}
+        \TaskArrDead{3}{8}{4}
+        \TaskArrDead{3}{12}{4}
+        \TaskArrDead{3}{16}{4}
+        \TaskArrDead{3}{20}{4}
+        \TaskArrival{3}{24}
+    
+        \TaskExecution[color=red]{3}{2}{4}
+        \TaskExecution[color=blue]{3}{4}{6}
+        \TaskExecution[color=red]{3}{8}{10}
+        \TaskExecution[color=blue]{3}{14}{16}
+        \TaskExecution[color=red]{3}{16}{18}
+        \TaskExecution[color=blue]{3}{22}{24}
+
+    \end{RTGrid}
+
+    \caption{Raspored zadataka BWP algoritmom}
+    \label{fig:ex1}
+  \end{figure}
+
 
 \end{document}

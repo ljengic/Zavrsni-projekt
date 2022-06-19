@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  12 JUN 2022 15:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  19 JUN 2022 23:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -646,23 +646,32 @@ LaTeX Warning: Label `fig:ex1' multiply defined.
 
 LaTeX Warning: Label `fig:ex1' multiply defined.
 
+
+LaTeX Warning: Label `fig:ex1' multiply defined.
+
+
+LaTeX Warning: Label `fig:ex1' multiply defined.
+
+
+LaTeX Warning: Label `fig:ex1' multiply defined.
+
 )
 \openout1 = `zavrsni.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -726,19 +735,19 @@ Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count311
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 51
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 52
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -746,7 +755,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 54
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 55
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
@@ -761,44 +770,73 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ]
 Chapter 1.
 (./tekstovi/uvod.tex
-Overfull \hbox (4.93297pt too wide) in paragraph at lines 5--15
+Overfull \hbox (4.93297pt too wide) in paragraph at lines 5--11
 \T1/ptm/m/n/12 kojima postoje kriti£ni poslovi £ije neizvr²avanje ili prekasno 
 izvr²avanje izaziva katastrofalne
  []
 
 
-Overfull \hbox (5.44606pt too wide) in paragraph at lines 18--20
-[]\T1/ptm/m/n/12 Potrebno je razmotriti rje²enja koja ¢e osigurati da najkriti£
-niji poslovi dobiju ve¢i prioritet
+Overfull \hbox (10.17516pt too wide) in paragraph at lines 12--18
+[]\T1/ptm/m/n/12 Ponekad SRSV zbog iznenadne pojave dodatnih zadataka mogu u¢i 
+u stanje preoptere¢enja.
  []
 
 
-Overfull \hbox (9.39742pt too wide) in paragraph at lines 21--26
-\T1/ptm/m/n/12 propu²tati. Modifikacijom jezgre FreeRTOS-a implementiran je str
-ogi sustav za rad u stvarnom
+Overfull \hbox (3.69725pt too wide) in paragraph at lines 19--27
+\T1/ptm/m/n/12 uvjetima preoptere¢enja.’to je posao kriti£niji, to treba dobiti
+ ve¢i prioritet pri rasporeživanju.
  []
 
 
-Overfull \hbox (11.66689pt too wide) in paragraph at lines 21--26
-\T1/ptm/m/n/12 vremenu sa ublaºenim uvjetima (eng. weakly hard). Kod takvog sus
-tava povremeno dopu²tamo
+Overfull \hbox (14.43765pt too wide) in paragraph at lines 19--27
+\T1/ptm/m/n/12 Tako se izbjegava ²teta koja bi potencijalno nastala propu²tanje
+m takvih zadataka. Komercijalno
  []
 
-) [1
 
-]
+Overfull \hbox (11.81pt too wide) in paragraph at lines 19--27
+\T1/ptm/m/n/12 kako bi se poslovi u stanju trajnog preoptere¢enja mogli kontrol
+irano propu²tati. Modifikacijom
+ []
+
+[1
+
+]) [2]
 Chapter 2.
 (./tekstovi/osnove_teorije_rasporedivanja.tex
-Overfull \hbox (16.74156pt too wide) in paragraph at lines 7--14
-\T1/ptm/m/n/12 kontrolu vremena, rasporeživa£ zadataka i sustav komunikacije i 
-sinkronizacije mežu zadatcima. 
+Overfull \hbox (24.09773pt too wide) in paragraph at lines 12--16
+\T1/ptm/m/n/12 kontrolu zadataka, kontrolu vremena, rasporeživa£ zadataka i sus
+tav komunikacije i sinkronizacije
  []
 
-[2
+
+Overfull \hbox (3.0971pt too wide) in paragraph at lines 22--27
+\T1/ptm/m/n/12 nije kriti£no i ne¢e nanijeti ²tetu sustavu, nego ¢e smanjiti pe
+rformanse ili mogu¢nosti sustava.
+ []
+
+[3
 
 ]
-Overfull \hbox (26.26439pt too wide) in paragraph at lines 44--44
+Overfull \hbox (4.1396pt too wide) in paragraph at lines 35--43
+[]\T1/ptm/m/n/12 Kod sustava s jednom procesorskom jezgrom samo jedan zadatak s
+e u odreženom trenutku
+ []
+
+<images/stanja_taskova.png, id=58, 485.815pt x 285.065pt>
+File: images/stanja_taskova.png Graphic file (type png)
+<use images/stanja_taskova.png>
+Package pdftex.def Info: images/stanja_taskova.png  used on input line 46.
+(pdftex.def)             Requested size: 441.01773pt x 258.77884pt.
+
+Overfull \hbox (26.26439pt too wide) in paragraph at lines 50--50
 []\T1/ptm/b/n/17.28 Periodi£ni zadatci u sustavima za rad u stvarnom vremenu 
+ []
+
+[4 <./images/stanja_taskova.png>]
+Overfull \hbox (10.06999pt too wide) in paragraph at lines 59--65
+\T1/ptm/m/n/12 Period zadatka iznosi 4 vremenske jedinice, a vrijeme izvr²avanj
+a pojedinog posla 1 vremensku
  []
 
 \pgf@layerbox@foreground=\box63
@@ -816,58 +854,109 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (8.9395pt too wide) in paragraph at lines 79--83
-[]\T1/ptm/m/n/12 Ukupno optere¢enje sustava dobiva se kao zbroj faktora optere¢
-enja svih zadataka. Ukoliko
- []
-
-[3]
-Overfull \hbox (33.218pt too wide) in paragraph at lines 87--91
+Overfull \hbox (33.218pt too wide) in paragraph at lines 98--102
 \T1/ptm/m/n/12 trenutku moºe do¢i do aktivacije aperiodi£nog zadatka koji onda 
 sustav gura u stanje preoptere¢enja.
  []
 
 
-Overfull \hbox (9.05pt too wide) in paragraph at lines 94--99
-\T1/ptm/m/n/12 bolje pona²anje u uvjetima preoptere¢enja jer na siguran na£in p
-reska¢emo izvoženje pojedinih
+Overfull \hbox (0.53815pt too wide) in paragraph at lines 105--110
+[]\T1/ptm/m/n/12 U ovom radu ispitivat ¢e se pona²anje sustava s ublaºeno-kriti
+£nim uvjetima (eng. weakly
  []
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 111.
+Overfull \hbox (8.71425pt too wide) in paragraph at lines 105--110
+\T1/ptm/m/n/12 hard constraints). Za razliku od kriti£nih zadataka, kod ublaºen
+o-kriti£nih zadataka povremeno
+ []
+
+[5]
+
+LaTeX Warning: Command \v invalid in math mode on input line 122.
 
 Missing character: There is no ² in font cmr12!
 
-Overfull \hbox (16.56128pt too wide) in paragraph at lines 116--119
-\T1/ptm/m/n/12 prioritet daje onim zadatcima koji imaju raniji rok za zavr²etak
+Overfull \hbox (17.73756pt too wide) in paragraph at lines 150--154
+\T1/ptm/m/n/12 prioritet daje onim poslovima koji imaju raniji rok za zavr²etak
 . Ukoliko sustav nije preoptere¢en
  []
 
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (5.36617pt too wide) in paragraph at lines 116--119
-\T1/ptm/m/n/12 (ukoliko je ukupni faktor optere¢enja manji od 1) ovim algoritmo
-m optimalno ¢e se rasporediti
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (0.5905pt too wide) in paragraph at lines 122--127
+Overfull \hbox (0.5905pt too wide) in paragraph at lines 201--206
 \T1/ptm/m/n/12 zadatci, dok se oni koji se mogu presko£iti uvijek preska£u. Pre
 ma ovom algoritmu osigurano
  []
 
 
-Overfull \hbox (12.55333pt too wide) in paragraph at lines 122--127
+Overfull \hbox (12.55333pt too wide) in paragraph at lines 201--206
 \T1/ptm/m/n/12 je po²tivanje zadanih uvjeta, no pri manjim faktorima optere¢enj
 a ovaj algoritam nije optimalan.
  []
 
 
-Overfull \hbox (11.10144pt too wide) in paragraph at lines 122--127
+Overfull \hbox (11.10144pt too wide) in paragraph at lines 201--206
 \T1/ptm/m/n/12 koje nije nuºno izvr²iti, no oni se automatski izbacuju iz raspo
 reda. Kriti£ni zadatci rasporežuju
  []
 
-[4]) [5]
+[6]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [7] [8]
 Chapter 3.
 (./tekstovi/modifikacija_jezgre_FreeRtos-a.tex
 Overfull \hbox (14.78523pt too wide) in paragraph at lines 7--10
@@ -876,27 +965,21 @@ ima i njihovim rasporeživanjem
  []
 
 
-Overfull \hbox (19.22537pt too wide) in paragraph at lines 22--28
-\T1/ptm/m/n/12 su prioriteta (postoji posebna lista za sve mogu¢e prioritete za
-dataka). Stoga se pri rasporeživanju
+Overfull \hbox (31.65543pt too wide) in paragraph at lines 21--29
+[]\T1/ptm/m/n/12 Informacija o tome koji zadatak se trenutno izvr²ava pohranjen
+a je u varijabli \T1/pcr/m/n/12 pxCurrentTCB\T1/ptm/m/n/12 ,
  []
 
+[9
 
-Overfull \hbox (25.71724pt too wide) in paragraph at lines 22--28
-\T1/ptm/m/n/12 vra¢a se na kraj liste £ekanja. Ovaj na£in rasporeživanja zadata
-ka naziva se dijeljenje procesorskog
- []
-
-
-Overfull \hbox (12.80598pt too wide) in paragraph at lines 32--35
+]
+Overfull \hbox (12.80598pt too wide) in paragraph at lines 33--36
 \T1/ptm/m/n/12 uže u trajno preoptere¢enje.Potrebne modifikacije detaljno su op
 isane u narednim podglavljima. 
  []
 
-[6
 
-]
-Overfull \hbox (17.43462pt too wide) in paragraph at lines 36--36
+Overfull \hbox (17.43462pt too wide) in paragraph at lines 37--37
 []\T1/ptm/b/n/17.28 Programska potpora za kontrolu izvr²avanja periodi£nih
  []
 
@@ -905,24 +988,23 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-)
-Overfull \hbox (11.34198pt too wide) in paragraph at lines 68--70
+) [10]
+Overfull \hbox (11.34198pt too wide) in paragraph at lines 69--71
 \T1/ptm/m/n/12 zadataka. Navedena funkcija je pro²irenje funkcije xTaskCreate s
  novim varijablama potrebnim
  []
 
-[7]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
-4.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+5.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Overfull \hbox (11.9417pt too wide) in paragraph at lines 86--90
+Overfull \hbox (11.9417pt too wide) in paragraph at lines 87--91
 \T1/ptm/m/n/12 milisekundu. U FreeRTOS-u navedena funkcionalnost implementrana 
 je u xTaskIncrementTick
  []
 
-[8]
+[11]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -944,29 +1026,35 @@ Missing character: There is no ; in font nullfont!
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (2.30238pt too wide) in paragraph at lines 180--185
+Overfull \hbox (2.30238pt too wide) in paragraph at lines 183--188
 []\T1/ptm/m/n/12 Nadalje, u funkciji wakeTasks provjerava se trebaju li se zada
 tci u listi za £ekanje prebaciti
  []
 
-[9]
-Overfull \hbox (6.2889pt too wide) in paragraph at lines 190--190
+[12]
+Overfull \hbox (1.09201pt too wide) in paragraph at lines 189--192
+[]\T1/ptm/m/n/12 Varijabla \T1/pcr/m/n/12 xRemainingTicks \T1/ptm/m/n/12 u svak
+om trenutku pamti koliko je vremenskih odsje£aka
+ []
+
+
+Overfull \hbox (6.2889pt too wide) in paragraph at lines 193--193
 []\T1/ptm/b/n/17.28 Implementacija algoritama za rasporeživanje zadataka 
  []
 
 
-Overfull \hbox (14.5686pt too wide) in paragraph at lines 192--195
+Overfull \hbox (14.5686pt too wide) in paragraph at lines 195--198
 \T1/ptm/m/n/12 sortiranja po vrijednosti varijable xItemValue koju sadrºi svaki
  £lan liste (u ListItem_t strukturi).
  []
 
 
-Overfull \hbox (1.0462pt too wide) in paragraph at lines 192--195
+Overfull \hbox (1.0462pt too wide) in paragraph at lines 195--198
 \T1/ptm/m/n/12 To svojstvo je iskori²teno kako bi zadatke koji su spremni za iz
 vr²avanje poredali po ºeljenom
  []
 
-) [10]
+) [13]
 Chapter 4.
 (./tekstovi/implementacija_simulatora.tex
 Overfull \hbox (13.35829pt too wide) in paragraph at lines 13--16
@@ -986,7 +1074,7 @@ Overfull \hbox (16.60632pt too wide) in paragraph at lines 38--41
 Generator koja poziva potrebne
  []
 
-[11
+[14
 
 ]
 Overfull \hbox (5.05342pt too wide) in paragraph at lines 59--68
@@ -1006,47 +1094,48 @@ Overfull \hbox (15.50502pt too wide) in paragraph at lines 71--81
 osti implementacije proslježuje
  []
 
-[12]) [13]
+[15]) [16]
 Chapter 5.
-[14
+[17
 
 ]
 Chapter 6.
-(./tekstovi/zakljucak.tex) (./zavrsni.bbl [15
+(./tekstovi/zakljucak.tex) (./zavrsni.bbl [18
 
 ]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [16
+) [19
 
-] [17] (./zavrsni.aux)
+] [20] (./zavrsni.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18687 strings out of 483183
- 341664 string characters out of 5966292
- 817313 words of memory out of 5000000
- 33317 multiletter control sequences out of 15000+600000
- 597604 words of font info for 97 fonts, out of 8000000 for 9000
+ 18720 strings out of 483183
+ 342311 string characters out of 5966292
+ 817503 words of memory out of 5000000
+ 33345 multiletter control sequences out of 15000+600000
+ 598225 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 68i,9n,83p,439b,1775s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,8n,83p,439b,1775s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
-hvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb>
-Output written on zavrsni.pdf (21 pages, 143144 bytes).
+w/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
+ro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/times/utmr8a.pfb>
+Output written on zavrsni.pdf (24 pages, 170373 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 156 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 114 words of extra memory for PDF output out of 10000 (max. 10000000)
 

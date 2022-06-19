@@ -18,7 +18,8 @@ ListItem\_t i List\_t. ListItem\_t je struktura koja sadrži podatke o pojedinom
 pokazivač na TCB zadatka na kojeg se odnosi). U List\_t spremljeni su podatci o listi (broj elemenata, pokazivač na trenutni element te
 pokazivač na kraj liste).
 
-
+Informacija o tome koji zadatak se trenutno izvršava pohranjena je u varijabli \texttt{pxCurrentTCB}, koja je tipa pokazivač na TCB
+strukturu.
 Zadatci koji su spremni za izvršavanje podjeljeni su u različite liste ovisno o tome kolikog su prioriteta (postoji posebna lista
  za sve moguće prioritete zadataka).
 Stoga se pri raspoređivanju zadataka naprije pronađe lista najvišeg prioriteta koja nije prazna. Zadatci iz te liste dijele 
@@ -122,7 +123,7 @@ poslova povećala kvaliteta usluge jer se je zadatak broj 3 sad uspio izvršiti 
 da služi samo za objašnjenje strategije prekidanja poslova te je stoga pretpostavljeno da su svi zadatci jednako kritični.  
 
 \begin{figure}[h]
-    \centering
+  \centering
 
     \begin{RTGrid}[width=7cm]{3}{8}
 
@@ -156,6 +157,8 @@ da služi samo za objašnjenje strategije prekidanja poslova te je stoga pretpos
 
       \TaskArrDead{1}{0}{4}     
       \TaskArrDead{1}{4}{4}
+
+      % TaskArr za pocetak zadnjeg
   
       \TaskExecution{1}{0}{1}
       \TaskExecution{1}{4}{5}
@@ -183,7 +186,7 @@ zadataka spremih za izvršavanje. Pri tome je potrebno u varijablu start\_time u
 krenio izvršavati). Vrijeme početka izvršavanja je važno za provjeru treba li zadatak prekinuti i je li se izvršio do krajnjeg roka 
 završetka.
 
-Varijabla xRemainingTicks u svakom trenutku pamti koliko je vremenskih odsječaka ostalo poslu da se do kraja izvrši. 
+Varijabla \texttt{xRemainingTicks} u svakom trenutku pamti koliko je vremenskih odsječaka ostalo poslu da se do kraja izvrši. 
 Svaki put kada se posao izvršava ta varijabla se umanjuje za 1. Ukoliko se vrijednost xRemainingTicks smanji na 0, 
 posao je gotov i zabilježava se njegovo pravovremeno izvršavanje.
 

@@ -74,7 +74,7 @@
 \newcommand{\strdodatak}{Dodatak}
 \newcommand{\strsveuciliste}{SVEU\v{C}ILI\v{S}TE U ZAGREBU}
 \newcommand{\strfer}{FAKULTET ELEKTROTEHNIKE I RA\v{C}UNARSTVA}
-\newcommand{\strzavrsni}{ZAVR\v{S}NI RAD br}
+\newcommand{\strzavrsni}{ZAVR\v{S}NI RAD}
 \newcommand{\strdiplomski}{DIPLOMSKI RAD br}
 \newcommand{\strseminar}{SEMINAR}
 \newcommand{\strvoditelj}{Voditelj}
@@ -353,7 +353,7 @@
       \vfill
       \begin{center}
         \if@radzavrsni
-          {\large \strzavrsni{}.~\@thesisnumber \par}
+          {\large \strzavrsni{}}
         \else \if@raddiplomski
           {\large \strdiplomski{}.~\@thesisnumber \par}
         \else \if@radproizvoljni
