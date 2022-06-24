@@ -19,9 +19,9 @@
 \contentsline {subsection}{\numberline {3.5.2}Implementacija RTO algoritma}{16}%
 \contentsline {subsection}{\numberline {3.5.3}Implementacija BWP algoritma}{17}%
 \contentsline {chapter}{\numberline {4}Implementacija simulatora}{18}%
-\contentsline {section}{\numberline {4.1}Generiranje setova testnih zadataka}{18}%
+\contentsline {section}{\numberline {4.1}Generiranje skupova testnih zadataka}{18}%
 \contentsline {section}{\numberline {4.2}Tijek simulacije}{19}%
-\contentsline {section}{\numberline {4.3}Pokretanje simulacije}{19}%
+\contentsline {section}{\numberline {4.3}Pokretanje simulacije}{20}%
 \contentsline {chapter}{\numberline {5}Rezultati}{21}%
 \contentsline {chapter}{\numberline {6}Zaključak}{22}%
 \contentsline {section}{\numberline {6.1}First section}{22}%
