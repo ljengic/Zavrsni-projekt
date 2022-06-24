@@ -2,32 +2,38 @@
 
 \begin{document}
 
-Operacijski sustavi za rad u stvarnom vremenu (eng. Real Time Operating systems) sustavi su u kojima nije bitan samo
+Sustavi za rad u stvarnom vremenu (engl. real time operating systems) sustavi su u kojima nije bitan samo
 rezultat operacije, nego je jednako važna i pravovremenost njezina izvršenja. Najvažnija svojstva koja takvi sustavi moraju
 zadovoljavati su pouzdanost i predvidivost u izvršavanju zadataka.
-Zbog navedenog svojstva sustavi za rad u stvarnom vremenu (u daljnjem tekstu SRSV) neizostavni su dio svih ugradbenih 
+Zbog navedenog svojstva, sustavi za rad u stvarnom vremenu (u daljnjem tekstu SRSV) neizostavan su dio svih ugradbenih 
 računalnih sustava u kojima postoje kritični poslovi čije neizvršavanje ili prekasno izvršavanje izaziva katastrofalne
-posljedice. Primjeri takvih sustava su automobili i ostala prometna sredstva,vojna industrija, multimedijski sustavi, roboti itd. 
+posljedice ili znatnu degradaciju performansi. Primjeri takvih sustava su automobili i ostala prometna sredstva, vojna industrija, 
+multimedijski sustavi, sustavi automatskog upravljanja, roboti itd. 
 
 Ponekad SRSV zbog iznenadne pojave dodatnih zadataka mogu ući u stanje preopterećenja. To je stanje u kojemu procesor ne može 
-izvršiti sve poslove na vrijeme i neke od njih mora preskočiti. Međutim, preskakanje zadataka ne smije biti nasumično, nego
-mora biti kontrolirano i predvidivo. 
-Za primjer možemo uzeti robota koji ima sustav za izbjegavanje prepreka. Ako takav robot uđe u stanje preopterećenja, prioritet 
+izvršiti sve poslove na vrijeme i neke od njih mora preskočiti. Međutim, u nekim primjenama preskakanje zadataka ne smije biti nasumično, nego
+mora biti kontrolirano i predvidivo. Kod sustava automatskog upravljanja preskakanje kritičnih zadataka može sustav dovesi do nestabilnosti dok u 
+multimedijskim sustavima izaziva smanjenje performansi.
+  
+Za primjer možemo uzeti autonomni mobilni robot koji ima sustav za izbjegavanje prepreka. Za siguran rad ključno je uspješno izvođenje zadataka
+vezanih uz lokalizaciju i kontrolu motora. Ako takav robot uđe u stanje preopterećenja, prioritet 
 moraju dobiti zadatci koji su vezani uz detekciju prepreke i kontrolu motora kako bi se robot na vrijeme zaustavio ukoliko je to potrebno.
 Ostale funkcije koje robot obavlja manje su kritične te se mogu propustiti bez štete za sustav.
 
-Potrebno je razmotriti rješenja koja bi osigurala determinističko ponašanje SRSV-a u uvjetima preopterećenja.Što je posao kritičniji,
+U ovom radu razmatraju se rješenja koja bi osigurala determinističko ponašanje SRSV-a u uvjetima preopterećenja. Što je posao kritičniji,
 to treba dobiti veći prioritet pri raspoređivanju. Tako se izbjegava šteta koja bi potencijalno nastala propuštanjem takvih zadataka. 
-Komercijalno dostupni SRSV-ovi ne osiguravaju sigurnost sustava kada je on u stanju preopterećenja. Stoga je ideja ovog rada 
-modificirati SRSV otvorenog koda, za što je odabran FreeRTOS, kako bi se poslovi u stanju trajnog preopterećenja mogli kontrolirano propuštati. 
-Modifikacijom jezgre FreeRTOS-a implementiran je strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima (eng. weakly hard). Kod takvog sustava
-povremeno dopuštamo da se posao ne izvede, ali na način da se unutar određenog broja slijednih poslova samo jedan smije propustiti.
-Takvim pristupom preskakanja zadataka osigurava se da se niti jedan zadatak trajno ne blokira. Nadalje implementirati će se strategija 
+SRSV-ovi koji su najčešće zastupljeni u industrijskim primjenama obično ne osiguravaju sigurnost sustava kada je on u stanju preopterećenja. Stoga je ideja ovog rada 
+modificirati SRSV otvorenog koda, konkretno FreeRTOS, kako bi se ugradio mehanizam za smanjenje trajnog preopterećenja kontroliranim 
+propuštanjem nekritičnih poslova. Točnije,  
+modifikacijom jezgre FreeRTOS-a implementiran je strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima (engl. weakly hard real time system). Kod takvog sustava
+povremeno se dopušta da se posao ne izvede, ali u određenom broju slijedno aktiviranih poslova postoji striktno definirana donja granica na broj 
+poslova koji se moraju pravovremeno izvesti.
+Takvim pristupom preskakanja poslova osigurava se da se niti jedan zadatak trajno ne blokira. Nadalje implementirana je strategija 
 prekidanja zadataka, prema kojoj se zadatci ne nastavljaju izvršavati nakon što su došli do krajnjeg roka za izvršavanje.
 
-U literaturi se može pronaći mnogo algoritama za raspoređivanje zadataka. Neki od njih bit će implementirani u raspoređivač zadataka FreeRTOS-a 
-te kasnije uspoređivani nad istim setovima zadataka. Cilj je pronaći algoritam koji će u uvjetima preopterećenja osigurati 
-determinističko ponašanje uz što veću kvalitetu usluge, to jest uz što više izvršenih poslova do njihovog krajnjeg roka završetka
-
+U literaturi se može pronaći mnogo različitih algoritama za raspoređivanje zadataka, s obzirom na optimalnost, složenost i model zadataka na koji se odnose. 
+Neki od njih implementirani su u raspoređivač zadataka FreeRTOS-a 
+te međusobno uspoređivani nad istim skupovima zadataka. Cilj je pronaći algoritam koji će u uvjetima preopterećenja osigurati 
+determinističko ponašanje uz što veću kvalitetu usluge, to jest uz što više pravovremeno izvršenih poslova.
 
 \end{document}

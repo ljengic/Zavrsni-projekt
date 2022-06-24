@@ -74,7 +74,7 @@
 \newcommand{\strdodatak}{Dodatak}
 \newcommand{\strsveuciliste}{SVEU\v{C}ILI\v{S}TE U ZAGREBU}
 \newcommand{\strfer}{FAKULTET ELEKTROTEHNIKE I RA\v{C}UNARSTVA}
-\newcommand{\strzavrsni}{ZAVR\v{S}NI RAD}
+\newcommand{\strzavrsni}{ZAVR\v{S}NI PROJEKT}
 \newcommand{\strdiplomski}{DIPLOMSKI RAD br}
 \newcommand{\strseminar}{SEMINAR}
 \newcommand{\strvoditelj}{Voditelj}
@@ -347,6 +347,10 @@
     
       \begin{center}
         {\large \strsveuciliste}
+        
+        
+        
+        
         
         {\large\bfseries \strfer}
       \end{center}

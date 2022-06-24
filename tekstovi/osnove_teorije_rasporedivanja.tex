@@ -4,38 +4,38 @@
 
 \section{Sustavi za rad u stvarnom vremenu}
 
-Sustavi za rad u stvarnom vremenu (eng. Real Time System) danas su neizostavan dio mnogih sustava korištenih u svim
-granama ljudske djelatnosti. Kod njih nam nije bitan samo rezultat izvođenja operacije, nego je jednako važno 
-i vrijeme u kojem se ta operacija izvede. Zbog toga se svakom zadatku pridjeljuje rok do kojeg se mora izvršiti. 
+Sustavi za rad u stvarnom vremenu (engl. real time system) danas su neizostavan dio mnogih sustava korištenih u svim
+granama ljudske djelatnosti. Kod njih nije bitan samo rezultat izvođenja operacije, nego je jednako važno 
+i vrijeme u kojem se ta operacija izvede. Zbog toga se svakom zadatku pridjeljuje krajnji rok do kojeg se mora izvršiti. 
 Izvršenje posla nakon njegovog krajnjeg roka za izvršavanje ekvivalentno je tome da se posao nije niti izvršio.
 
-Kako bi sustav radio pouzdano mora se osigurati predvidivo raspoređivanje zadataka koje će osigurati da se što više 
+Kako bi sustav radio pouzdano, mora se osigurati predvidivo raspoređivanje zadataka koje će osigurati da se što više 
 zadataka izvrši na vrijeme.
 SRSV mora imati implementiranu kontrolu zadataka, kontrolu vremena, raspoređivač zadataka i sustav komunikacije i sinkronizacije
 među zadatcima.
 
 S obzirom na posljedice koje izaziva propuštanje roka izvršavanja zadatke dijelimo u dvije skupine :
 \begin{itemize}
-    \item[--] Strogi zadatci (eng. hard real time tasks)
-    \item[--] Opcionalni zadatci (eng. soft real time tasks)
+    \item[--] strogi zadatci (eng. hard real time tasks),
+    \item[--] opcionalni zadatci (eng. soft real time tasks).
 \end{itemize}
 Strogi zadatci niti jednom ne smiju propustiti krajnji rok izvršavanja jer su to zadatci koji obavljaju važan posao. Njihovo 
-propuštanje izaziva katastrofalne posljedice koje mogu biti pogubne za cijeli sustav. Dobar primjer strogog zadatka je detekcija 
+propuštanje izaziva katastrofalne posljedice koje mogu biti pogubne za cijeli sustav i njegovu okolinu. Dobar primjer strogog zadatka je detekcija 
 pritiska papučice kočnice na automobilu. Taj zadatak je kritičan i propuštanje njegovog izvršenja za posljedicu može imati ozbiljnu
 nesreću s ljudskim žrtvama. S druge strane, propuštanje nekih zadataka nije kritično i neće nanijeti štetu sustavu, nego će smanjiti
- performanse ili mogućnosti sustava. Primjer ovakvog zadatka je paljenje signalne ledice ili prikaz podataka na pokazniku.
+ performanse ili mogućnosti sustava. Primjer ovakvog zadatka je paljenje signalne lampice ili prikaz podataka na pokazniku.
 
 Zadatci u operacijskim sustavima za rad u stvarnom vremenu općenito se mogu naći u jednom od 3 stanja, a to su:
 \begin{itemize}
-    \item[--] Zadatak koji se trenutno izvodi (eng. running task)
-    \item[--] Zadatci koji su spremi za izvođenje (eng. ready tasks)
-    \item[--] Zadatci koji su blokirani i čekaju određeni događaj (eng. blocked tasks)
+    \item[--] zadatak koji se trenutno izvodi (engl. running task),
+    \item[--] zadatci koji su spremi za izvođenje (engl. ready tasks),
+    \item[--] zadatci koji su blokirani i čekaju određeni događaj (engl. blocked tasks).
 \end{itemize}
 
-Kod sustava s jednom procesorskom jezgrom samo jedan zadatak se u određenom trenutku može izvoditi. Zadatci koji su spremni za izvođenje
+Kod sustava s jednom procesorskom jezgrom samo, jedan zadatak se u određenom trenutku može izvoditi. Zadatci koji su spremni za izvođenje
 čekaju oslobođenje procesora i jedan od njih se odabire za izvršavanje.
 Dio jezgre SRSV-a koji je zadužen za izbor zadatka koji je spreman za izvođenje i koji će se idući izvršavati naziva se raspoređivač 
-zadataka (eng. Task Scheduler). To je najvažniji dio jezgre SRSV-a jer o raspoređivanju zadataka ovisi kolika će biti kvaliteta usluge i
+zadataka (engl. task scheduler). To je najvažniji dio jezgre SRSV-a jer o raspoređivanju zadataka ovisi kolika će biti kvaliteta usluge i
 koliko pouzdan će biti cijeli sustav.
 Neki zadatci mogu biti privremeno ili trajno blokirani i dok su u tom stanju raspoređivač zadataka ih ne uzima u obzir.
 Zadatci se tijekom rada prebacuju između opisanih stanja, no treba napomenuti da je ovo generalna podjela koja se razlikuje u 
@@ -49,17 +49,18 @@ implementaciji konkretnih SRSV-ova.
 
 \section{Periodični zadatci u sustavima za rad u stvarnom vremenu}
 
-Periodični zadatci su zadatci koji se iznova ponavljaju u istim vremenskim intervalima T\textsubscript{i}. Taj interval naziva se period zadatka.
+Periodični zadatci su zadatci koji se iznova ponavljaju u istim vremenskim intervalima $T_i$. Taj interval naziva se period zadatka.
 Dio zadatka izvršen u jednom periodu naziva se posao.
-Svaki zadatak opisuje i vrijeme njegova izvršavanja C\textsubscript{i} (eng. Computation time). Period i vrijeme izvršavanja zajedno daju veličinu 
-koju nazivamo faktor opterećenja (eng. Utilization factor) koja daje postotak zauzeća procesora pojedinog zadatka u jednom periodu. Pošto se poslovi
+Svaki zadatak opisuje i vrijeme njegova izvršavanja $C_i$ (engl. computation time). Period i vrijeme izvršavanja zajedno daju veličinu 
+koju nazivamo faktor opterećenja (engl. utilization factor) koja daje postotak zauzeća procesora pojedinog zadatka u jednom periodu. S obzirom da se poslovi
 ponavljaju jedan za drugim, to je ujedno i veličina koja govori koliko procesorskog vremena se ukupno troši na taj zadatak.
 \begin{equation*}
     U\textsubscript{i} = \frac{C\textsubscript{i}}{T\textsubscript{i}}
 \end{equation*}
-Nadalje, bitna veličina koja opisuje svaki zadatak je krajnji rok njegova završetka (eng. Deadline). Krajnji rok izvršavanja je vrijeme 
+Nadalje, bitna veličina koja opisuje svaki zadatak je krajnji rok njegova završetka (engl. deadline). Krajnji rok izvršavanja je vrijeme 
 do kojeg se posao mora izvršiti kako bi donio korist sustavu. U ovom radu razmatrani su 
-isključivo zadatci čiji krajnji rok završetka je jednak periodu. Kao primjer dan je vremenski dijagram s jednim periodičnim zadatkom.
+isključivo zadatci čiji je krajnji rok završetka jednak periodu. Takav krajnji rok naziva se implicitni krajnji rok završetka. 
+Kao primjer dan je vremenski dijagram s jednim periodičnim zadatkom.
 Period zadatka iznosi 4 vremenske jedinice, a vrijeme izvršavanja pojedinog posla 1 vremensku jedinicu. Pomoću ta dva podatka i ranije 
 dane formule proizlazi da je faktor opterećenja zadatka 0.25. Drugim riječima, ovaj zadatak zauzima 25 \% ukupnog procesorskog vremena.
 
@@ -88,21 +89,21 @@ dane formule proizlazi da je faktor opterećenja zadatka 0.25. Drugim riječima,
   \end{figure}
 
 Ukupno opterećenje sustava dobiva se kao zbroj faktora opterećenja svih zadataka. Ako je sustav preopterećen, tj. ukupno opterećenje mu 
-je veće od 1 neki od zadataka se neće izvršiti do svog roka za izvršavanje. U tom slučaju koriste se algoritmi koji će osigurati 
+je veće od 1, neki od zadataka se neće izvršiti do svog roka za izvršavanje. U tom slučaju koriste se algoritmi koji će osigurati 
 da se zadatci ne preskaču nasumično, već na kontroliran način kao bi se sustav zaštitio od potencijalnih oštećenja nastalih preskakanjem 
 kritičnih zadataka. Postoje dvije vrste preopterećenja sustava.
 \begin{itemize}
-    \item[--] Trajno preopterećenje (eng. Permanent Overload)
-    \item[--] Prolazno preopterećenje (eng. Transient Overload)
+    \item[--] trajno preopterećenje (eng. Permanent Overload),
+    \item[--] prolazno preopterećenje (eng. Transient Overload).
 \end{itemize}
 Kod prolaznog opterećenja sustava ima ukupno opterećenje manje ili jednako 1, no u nekom trenutku može doći do aktivacije aperiodičnog zadatka 
-koji onda sustav gura u stanje preopterećenja. Nakon što prođe određeno vrijeme i aperiodični zadatak se izvede sustav se vraća u prijašnje
-stanje i svi zadatci se izvršavaju do svog krajnjeg roka. Drugi slučaj je kada je sustav u stanju trajnog preopterećenja, kada je ukupno 
+koji onda sustav gura u stanje preopterećenja. Nakon što prođe određeno vrijeme i aperiodični zadatak se izvede, sustav se vraća u prijašnje
+stanje i svi zadatci se izvršavaju pravovremeno. Drugi slučaj je kada je sustav u stanju trajnog preopterećenja, kada je ukupno 
 opterećenje sustava trajno veće od 1. Tada se svi poslovi neće moći izvršiti i kontinuirano će se pojedini poslovi morati propuštati. 
 
 %treba li dodati vrste weakly hard uvjeta
 
-U ovom radu ispitivat će se ponašanje sustava s ublaženo-kritičnim uvjetima (eng. weakly hard constraints). Za razliku od 
+U ovom radu ispitivat će se ponašanje sustava s ublaženo-strogim uvjetima (eng. weakly hard constraints). Za razliku od 
 kritičnih zadataka, kod ublaženo-kritičnih zadataka povremeno dopuštamo da se zadatak ne izvede na vrijeme, ali na predvidiv i 
 kontroliran način. Na temelju važnosti pojedinog zadatka za rad cjelokupnog sustava određuje se u koliko slijednih perioda 
 se zadatak može jednom propustiti. Ovaj pristup osigurava znatno bolje ponašanje u uvjetima preopterećenja jer se propuštanje
@@ -111,24 +112,25 @@ pojedinih poslova odvija deterministički.
 \section{Algoritmi za raspoređivanje zadataka}
 
 U ovom radu ispitivat će se različiti algoritmi za raspoređivanje zadataka u sustavu koji se nalazi u stanju trajnog preopterećenja.
-To je slučaj kada je suma faktora opterećenja svih zadataka veća od 1, i kada se svi zadatci ne mogu izvršiti do svog krajnjeg roka 
-izvršenja. U navedenom slučaju važno je osigurati preskakanje zadataka na predvidiv i za sustav siguran način.
+U navedenom slučaju važno je osigurati preskakanje zadataka na predvidiv i za sustav siguran način.
 
 Mjera kojom će se uspoređivati učinkovitost pojedinih algoritama naziva se kvaliteta usluge (eng. Quality of Service).
 Računa se kao omjer broj zadataka koji su se izvršili do krajnjeg roka završetka i ukupnog broja svih zadataka.
 
 % popravi da š bude u formuli
 \begin{equation*}
-    QoS = \frac{broj\ izvr\v{s}enih\ zadataka\ do\ krajnjeg\ roka}{ukupan\ broj\ zadataka}
+    QoS = \frac{broj\ izvr\v{s}enih\ poslova\ do\ krajnjeg\ roka}{ukupan\ broj\ poslova}
 \end{equation*}
 
-U nastavku su opisani korišteni algoritmi za raspoređivanje zadataka. 
-Uz svaki algoritam prikazan je i raspored izvršavanja seta zadataka danog u tablici. Raspored se prikazuje vremenskim dijagramom u kojem
+U nastavku su opisani korišteni algoritmi za raspoređivanje zadataka.
+Za svaki algoritam dan je primjer generiranog rasporeda na jednostavnom primjeru skupa zadataka koji je dan u tablici 2.1. 
+Raspored se prikazuje vremenskim dijagramom u kojem
 je vidljivo koji zadatak se u danom trenutku izvršava. 
 Za dani set zadataka zadano je da je prvi
 zadatak kritičan i mora se uvijek izvršiti, drugi zadatak ne utječe na sigurnost sustava, a treći zadatak mora se izvršiti svaki drugi put.
 
-\begin{center}
+    \begin{table}
+        \begin{center}
     \begin{tabular}{||c || c c c||} 
      \hline
      Broj Zadatka & Period & Vrijeme izvršavanja & Faktor opterećenja \\ [0.5ex] 
@@ -140,17 +142,22 @@ zadatak kritičan i mora se uvijek izvršiti, drugi zadatak ne utječe na sigurn
      3 & 4 & 2 & izracunaj \\
      \hline
     \end{tabular}
-    \end{center}
+\end{center}
+    \caption{\label{tab:table-name}Skup zadataka korišten u primjerima.}
+    \end{table}
 
 Dani set zadataka nalazi se u preopterećenju, i neki od zadataka neće zadovoljiti svoj krajnji rok završetka. Ukupni faktor opterećenja
 sustava je 1.08.
 
 \subsection{EDF algoritam}
 
-EDF algoritam (eng. Earliest Deadline First) je algoritam koji pri raspoređivanju zadataka prioritet daje onim poslovima 
-koji imaju raniji rok za završetak. Ukoliko sustav nije preopterećen (ako je ukupni faktor opterećenja manji od 1) 
-ovim algoritmom optimalno će se rasporediti zadatci i svi će se izvršiti. Na vremenskom dijagramu crnom bojom su prikazani 
-poslovi koji su propustili svoj krajnji rok izvršenja.
+Algoritam EDF (engl. earliest deadline first) je algoritam koji pri raspoređivanju zadataka najveći prioritet daje onim poslovima 
+koji imaju najbliži krajnji rok završetka. 
+Ukoliko sustav nije preopterećen (ako je ukupni faktor opterećenja manji ili jednak od 1) 
+ovim algoritmom optimalno će se rasporediti zadatci i svi će se izvršiti. Ovaj algoritam nije pogodan za primjenu sa ublaženo strogim uvjetima, 
+ali u ovom radu je istražen jer se u praksi često koristi. 
+Raspored generiran EDF algoritmom prikazan je na slici 2.3.
+Na vremenskom dijagramu crnom bojom su prikazani poslovi koji su propustili svoj krajnji rok izvršenja.
 
 \begin{figure}[h]
     \centering
@@ -198,9 +205,9 @@ poslovi koji su propustili svoj krajnji rok izvršenja.
 
 \subsection{RTO algoritam}
 
-RTO algoritam (eng. Red Tasks Only) je algoritam prema kojemu se samo izvršavaju strogi zadatci, 
+Algoritam RTO (engl. red tasks only) je algoritam prema kojemu se samo izvršavaju strogi zadatci, 
 dok se oni koji se mogu preskočiti uvijek preskaču. Prema ovom algoritmu osigurano je poštivanje zadanih uvjeta, no pri manjim 
-faktorima opterećenja ovaj algoritam nije optimalan. Razlog tomu je što postoji slobodno procesorsko vrijeme u kojem bi se mogli 
+faktorima opterećenja ovaj algoritam nije optimalan. Razlog tomu je to što postoji slobodno procesorsko vrijeme u kojem bi se mogli 
 izvršiti zadatci koje nije nužno izvršiti, no oni se automatski izbacuju iz rasporeda. Kritični zadatci raspoređuju se prema 
 ranije opisanom EDF algoritmu. 
 
@@ -246,10 +253,10 @@ ranije opisanom EDF algoritmu.
 
 \subsection{BWP algoritam}
 
-BWP algoritam (eng. Blue When Possible) je poboljšanje ranije opisanog RTO algoritma. Kod BWP algoritma prioritet imaju strogi zadatci, 
-no i zadatci koji se ne moraju nužno izvršiti su u listi čekanja. Na taj način, ukoliko se svi kritični zadatci izvrše, na red će doći
-i opcionalni zadatci. Ovom modifikacijom znatno se poboljša stopa uspješnosti izvršenja zadataka (eng. Quality of Service), pogotovo pri
- manjim faktorima opterećenja. Zadatci su u dijagramu obojeni prema nazivu algoritma, crvena boja za stroge zadatke, a plava za zadatke 
+Algoritam BWP (engl. blue when possible) je poboljšanje ranije opisanog RTO algoritma. Kod BWP algoritma prioritet imaju strogi zadatci, 
+no raspoređuju se i zadatci koji se ne moraju nužno izvesti. Na taj način, ukoliko se svi kritični zadatci izvrše, na red će doći
+i opcionalni zadatci. Ovom modifikacijom znatno se poboljša kvaliteta usluge (engl. quality of service), pogotovo pri
+ manjim faktorima opterećenja. Zadatci su u dijagramu obojani prema nazivu algoritma, crvena boja za stroge zadatke, a plava za zadatke 
  čije izvršavanje je opcionalno. 
 
  \begin{figure}[h]

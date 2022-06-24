@@ -4,42 +4,49 @@
 
 \section{Operacijski sustav FreeRTOS}
 
-FreeRTOS je operacijski sustav za rad u stvarnom vremenu otvorenog koda (eng. open source).U ovom odjeljku bit će objašnjena 
+FreeRTOS je operacijski sustav za rad u stvarnom vremenu otvorenog koda (eng. open source) namjenjen primjeni u ugradbenim 
+račualnim sustavima. U ovom potpoglavlju bit će objašnjena 
 njegova implmenetacija i izvedba raspoređivanja zadataka. Kod FreeRTOS-a organiziran je u nekoliko datoteka i zauzima 
-svega nekoliko kilobajta. Datoteka u kojoj je implementirano upravljanje zadatcima i njihovim raspoređivanjem je tasks.c.
+svega nekoliko kilobajta. Datoteka u kojoj je implementirano upravljanje zadatcima i njihovim raspoređivanjem je \texttt{tasks.c}.
 
-Zadatci u FreeRTOS-u su upravljani kroz strukturu za upravljanje zadatcima (eng. TCB - Task Control Block). U toj strukturi nalaze
-se sve informacije koje opisuju pojedini zadatak. Pri stvaranju novog zadatka u memoriji se alocira prostor za novu inačicu 
+Zadatci u FreeRTOS-u su opisani strukturom za upravljanje zadatcima (eng. TCB - Task Control Block). U toj strukturi nalaze
+se sve informacije koje opisuju pojedini zadatak (ime zadatka, prioritet,broj zadatka...).  
+Zadati se stvaraju funkcijom \texttt{xTaskCreate()}.
+Pri stvaranju novog zadatka u alocira se prostor u memoriji za novu inačicu 
 ove strukture u koju se potom upisuju parametri novokreiranog zadatka.
-Zadatci su nadalje smješteni u različite liste, ovisno o tome u kojem stanju se zadatak nalazi. Postoje liste za zadatke koji su
+
+Zadatci su smješteni u različite liste, ovisno o tome u kojem stanju se zadatak nalazi. Postoje liste za zadatke koji su
 spremni za izvršavanje, za zadatke koji su blokirani te za zadatke koji čekaju određeno vrijeme kako bi se ponovo mogli izvršavati.
-U TCB-u svakog zadatka nalazi se informacija kojoj listi zadatak u danom trenutku pripada. Upravljanje i rad listi ostvaren je strukturama
-ListItem\_t i List\_t. ListItem\_t je struktura koja sadrži podatke o pojedinom članu liste (pokazivači na prethodni i slijedeci ListItem\_t te 
-pokazivač na TCB zadatka na kojeg se odnosi). U List\_t spremljeni su podatci o listi (broj elemenata, pokazivač na trenutni element te
+U TCB-u svakog zadatka nalazi se informacija kojoj listi zadatak u danom trenutku pripada. Upravljanje listama zadataka ostvareno je strukturama
+\texttt{ListItem\_t} i \texttt{List\_t}. \texttt{ListItem\_t} je struktura koja sadrži podatke o pojedinom članu liste (pokazivači na prethodni i 
+sljedeći \texttt{ListItem\_t} te 
+pokazivač na TCB zadatka na kojeg se odnosi). U \texttt{List\_t} spremljeni su podatci o listi (broj elemenata, pokazivač na trenutni element te
 pokazivač na kraj liste).
 
-Informacija o tome koji zadatak se trenutno izvršava pohranjena je u varijabli \texttt{pxCurrentTCB}, koja je tipa pokazivač na TCB
-strukturu.
-Zadatci koji su spremni za izvršavanje podjeljeni su u različite liste ovisno o tome kolikog su prioriteta (postoji posebna lista
- za sve moguće prioritete zadataka).
+Informacija o tome koji zadatak se trenutno izvršava pohranjena je u pokazivaču na TCB strukturu \texttt{pxCurrentTCB}.
+Zadatci koji su spremni za izvršavanje podijeljeni su u različite liste ovisno o tome kojeg su prioriteta (postoji posebna lista
+ za sve razine prioriteta zadataka).
 Stoga se pri raspoređivanju zadataka naprije pronađe lista najvišeg prioriteta koja nije prazna. Zadatci iz te liste dijele 
 procesorsko vrijeme na način da se svakom zadatku iz liste dodjeljuje jedan vremenski odsječak procesorskog vremena (eng. tick).
 Nakon što se zadatak izvede u jednom odsječku, vraća se na kraj liste čekanja. Ovaj način raspoređivanja zadataka naziva se dijeljenje
 procesorskog vremena među zadatcima (eng. Time Slicing).
 
-FreeRTOS se konfigurira putem FreeRTOSconfig.h datoteke i korisnik treba mjenjati samo tu datoteku. U toj datoteci nalaze se 
+FreeRTOS se konfigurira putem datoteke \texttt{FreeRTOSconfig.h} i korisnik treba mijenjati samo tu datoteku. U toj datoteci nalaze se 
 sve konstante preko kojih se uključuju pojedine funkcionalnosti ili postavljaju konstante bitne za rad sustva.  
 
-Podrška za periodične zadatke nije implementirana u FreeRTOS-u te ju je potrebno dodati.
+Podrška za upravljanje zadatcima u FreeRTOS-u ne podržava definiranje i kontrolu periodičkih zadataka, stoga je potrebno proširiti podsustav 
+za upravljanje zadatvima u FreeRTOS-u.
 Također navedni pristup ne rješava problem preopterećenja sustava te je potrebno modificirati jezgru FreeRTOS-a kako bi se omogučilo 
 predvidivo ponašanje ukoliko sustav uđe u trajno preopterećenje.Potrebne modifikacije detaljno su opisane u narednim podglavljima.
 
+dodaj za xtaskgetticks() !!!!!!!!!!!!!!
+
 \section{Programska potpora za kontrolu izvršavanja periodičnih zadataka}
 
-Uključenje funkcionalnosti za podršku periodičnim zadatcima ostvareno je putem konstante unutar FreeRTOSconfig.h datoteke.
-Svi djelovi programskog koda zaduženi za periodične zadatke pisani su u odsječcima koji se kompajliraju samo ako je korištenje
-periodičnih zadataka uključeno. Navedeno je ostvareno pomoću pretprocesorske naredbe \#if. Time je korisniku omogučeno uključenje
-programske potpore za periodičke zadatke na jednostavan i brz način.
+Uključenje funkcionalnosti za upravljanje periodičnim zadatcima ostvareno je putem konstante \texttt{configUSE\_PERIODIC\_TASK} dodane unutar 
+datoteke \texttt{FreeRTOSconfig.h}. Korisnik postavljanjem navedene konstante u 1 na brz i jednostavan način uključuje podršku za periodične zadatke.
+Svi djelovi programskog koda zaduženi za periodične zadatke pisani su u odsječcima koji se uključuju u proces prevođenja samo ako je vrijednost 
+\texttt{configUSE\_PERIODIC\_TASK} jednaka 1. Pritom je korištena pretprocesorska naredba \#if. 
 \begin{lstlisting}[style=CStyle,caption={Pretprocesorska naredba za uključenje periodičnih zadataka},captionpos=b]
 #if ( configUSE_PERIODIC_TASK == 1 )
 
@@ -53,21 +60,18 @@ periodičan zadatak. Ovdje su definirane sve veličine bitne za kontrolu periodi
 
 \begin{lstlisting}[style=CStyle,caption={Varijable dodane u strukturu za kontrolu zadataka},captionpos=b]
 #if ( configUSE_PERIODIC_TASK == 1 )
-    uint8_t xTaskId;
-    TickType_t xTaskPeriod;
-    TickType_t start_time;
-    TickType_t xTaskDuration;
-    TickType_t xDeadline;
-    TickType_t xRemainingTicks;
-    
-    // variables used for weakly hard conditions control
-    uint8_t weakly_hard_constraint;
-    uint8_t previous_deadline_met;
+  // variables used for periodic task control    
+  uint8_t xTaskId;
+  TickType_t xTaskPeriod;
+  TickType_t start_time;
+  TickType_t xTaskDuration;
+  TickType_t xDeadline;
+  TickType_t xRemainingTicks;
 #endif
 \end{lstlisting}
 
-Nadalje napisana je funkcija xTaskCreatePeriodic koja se koristit za stvaranje periodičnih zadataka.
-Navedena funkcija je proširenje funkcije xTaskCreate s novim varijablama potrebnim za opis periodičnih zadataka.
+Nadalje, napisana je funkcija \texttt{xTaskCreatePeriodic()} koja se koristi za stvaranje i inicijalizaciju periodičnih zadataka.
+Navedena funkcija je proširenje \texttt{funkcije xTaskCreate()} s novim varijablama potrebnim za opis periodičnih zadataka.
 
 \begin{lstlisting}[style=CStyle,caption={Prototip funkcije xTaskCreatePeriodic},captionpos=b]
 BaseType_t xTaskCreatePeriodic( TaskFunction_t pxTaskCode,
@@ -84,118 +88,301 @@ BaseType_t xTaskCreatePeriodic( TaskFunction_t pxTaskCode,
 
 \subsection{Kontrola izvršenja priodičnih zadataka}
 
-Izvršavanje zadataka u SRSV-ovima podjeljeno je u vremenske odsječke. U određenim vremenskim intervalima prekida se izvođenje poslova i 
-određuje se koji posao se treba dalje izvršavati. U konkretnom slučaju simulacije na posix sustavu taj interval iznosi 1 milisekundu.
-U FreeRTOS-u navedena funkcionalnost implementrana je u xTaskIncrementTick funkciji. Prekidni sustav periodički poziva navedenu funkciju 
+Izvršavanje zadataka u SRSV-ovima podjeljeno je u vremenske odsječke. U određenim vremenskim intervalima (eng. ticks) prekida se izvođenje poslova i 
+određuje se koji posao se treba dalje izvršavati.
+U FreeRTOS-u navedena funkcionalnost implementrana je u \texttt{xTaskIncrementTick()} funkciji. Prekidni sustav periodički poziva navedenu funkciju 
 i u njoj je potrebno dodati funkcionalnost kontrole periodičnih zadataka.
 
+Kontrola izvođenja periodičkih zadataka realizirana je pomoću varijable \texttt{xRemainingTicks} koja u svakom trenutku pamti 
+koliko je vremenskih odsječaka ostalo do potpunog izvršenja posla.
+Svaki vremenski odsječak u kojem se posao izvršava ta varijabla se umanjuje za 1. Ukoliko se vrijednost \texttt{xRemainingTicks} smanji na 0, 
+posao je gotov i zabilježava se njegovo pravovremeno izvršavanje. Svaki puta kada se posao kreće izvršavati, varijabla 
+\texttt{xRemainingTicks} postavlja se na vrijeme njegovog izvršavanja.
+
 Za potrebe ovog projekta zadatci su spremani u dvije liste. Jedna lista u kojoj se čuvaju zadatci spremni za izvršavanje, ranije 
-implementirana u FreeRTOS-u i novododana lista nazvana xWaitTaskList u kojoj su zadatci koji su na čekanju. Za dodavanje zadataka u liste
+implementirana u FreeRTOS-u i novododana lista nazvana \texttt{xWaitTaskList} u kojoj su zadatci koji su na čekanju. Za dodavanje zadataka u liste
 napisane su dvije funkcije, za jedna po svakoj listi.
 
-\begin{lstlisting}[style=CStyle,caption={Definicije funkcija za dodavanje zadataka u opisane liste},captionpos=b]
+\begin{lstlisting}[style=CStyle,caption={Deklaracije funkcija za dodavanje zadataka u opisane liste},captionpos=b]
 void addTaskToReadyList(TCB_t * const pxItemToAdd);
 void addTaskToWaitList(TCB_t * const pxItemToRemove);
 \end{lstlisting}
 
-Kontrola izvršavanja u ovom projektu realizirana je apsolutno na višekratnike perioda zadataka od početka simulacije.
+%U svakom pozivu funkcije \texttt{xTaskIncrementTick()} potrebno je proći po svim zadatcima u obje liste. Zadatci koji su spremni za izvršavanje
+%možda se ne bi uspjeli izvršiti do roka izvršenja čak kad bi dobili svo procesorsko vrijeme. 
 
-U svakom pozivu funkcije xTaskIncrementTick potrebno je proći po svim zadatcima u obje liste. Zadatci koji su spremni za izvršavanje
-možda se nebi uspjeli izvršiti do roka izvršenja čak kad bi dobili svo procesorsko vrijeme. Pošto nema koristi od posla koji se
-djelomično izvršio takve zadatke potrebno je odmah smjestiti u listu za čekanje i detektirati njihovo propuštanje roka izvršenja.
-Ova strategija zove se prekidanje poslova koji se ne mogu izvršiti do svog krajnjeg roka izvršenja(eng. job killing). Time se
-podiže kvaliteta usluge, jer je osigurano da poslovi koji se nikako neće izvršiti na vrijeme ne zauzimaju procesorsko vrijeme 
-ostalim zadatcima. Funkcionalnost prekidanja poslova implementirana je u funkciji killTasks. U njoj prolazimo po svim zadatcima koji se 
-nalaze u listi zadataka spremnih za izvršavanje i na temelju podataka o trenutnom stanju posla odlučujemo treba li ga prekinuti ili ne.
-U nastavku je priložen navedeni uvjet i graf koji opisuje navedenu situaciju prekidanja zadataka.
-\begin{lstlisting}[style=CStyle,caption={Uvjet za prekidanje izvođenja zadatka},captionpos=b]
-if((xTaskGetTickCount() - Tcb->start_time + Tcb->xRemainingTicks) > 
-Tcb->xTaskPeriod)
-\end{lstlisting}
+Vraćanje zadataka iz liste za čekanje u listu zadataka spremnih za izvršavanje implementirano je u funkciji \texttt{wakeTasks()}.
+U njoj se petljom iterira po svim zadatcima koji su u stanju čekanja i za svakog se provjerava treba li ga prebaciti u listu zadataka 
+spremih za izvršavanje.
+Ukoliko je zadatak u listi za čekanje i ukoliko se program nalazi na višekratniku njegova perioda, zadatak se dodaju u listu 
+zadataka spremih za izvršavanje. Pri tome je potrebno u varijablu \texttt{start\_time} upisati trenutno vrijeme (trenutak u kojemu je 
+zadatak posao spreman za izvršavanje).Također moramo osvježiti vrijednost varijable texttt{xRemainingTicks}. 
+Vrijeme početka izvršavanja je važno za provjeru treba li zadatak prekinuti i je li se izvršio do krajnjeg roka završetka 
+što će detaljnije biti objašnjeno u tesktu koji slijedi.
 
-Opisana situacija prikazana je na vremenskom dijagramu 3.1. U primjeru imamo 3 zadatka, od kojih je zadatak broj 1 većeg prioriteta dok su
-preostala dva zadatka manjeg prioriteta. Periodi zadataka su slijedno 4, 8, i 4, dok su vremena izvršavanja 1, 5, i 2. (dodaj ovo ispod slike
-u figure radije, bit ce bolje i preglednije)
-Vidimo da je zadtak broj 2 potrošio 4 vremenska odječka procesorskog vremena, a na kraju se nije uspio izvršiti na vrijeme.
-Strategija prekidanja poslova uvodi provjeru svaki vremenski odječak može li se zadatak izvesti do roka. U navedenom primjeru u 
-trenutku t = 5 zadatak bi bio prekinut. Tada bi raspored poslova izgledao kao na dijagramu 3.2. Treba primjetiti da se uz prekidanje
-poslova povećala kvaliteta usluge jer se je zadatak broj 3 sad uspio izvršiti u oba perioda. Važna napomena uz navedeni primjer je
-da služi samo za objašnjenje strategije prekidanja poslova te je stoga pretpostavljeno da su svi zadatci jednako kritični.  
+%Kontrola izvršavanja u ovom projektu realizirana je relativno na višekratnike perioda zadataka od početka simulacije.
+
+\section{Strategija prekidanja poslova}
+
+Ponekad posao dođe na red za ivršavanje, ali čak i ako dobije svo procesorsko vrijeme ne stigne se izvršiti do krajnjeg roka za izvršavanje.
+kako kod strogih zadataka nema koristi od posla koji se djelomično izvršio, ukoliko posao dođe do krajnjeg roka za izvršavanje, a nije se izvršio
+ treba prekinuti njegovo daljnje izvršavanje. Ova strategija zove se prekidanje poslova koji se ne mogu izvršiti do svog 
+ krajnjeg roka izvršenja (engl. job killing). Time se podiže kvaliteta usluge, jer je osigurano da poslovi koji se nikako neće 
+ izvršiti na vrijeme ne zauzimaju proesorsko vrijeme ostalim zadatcima. Strategiju prekidanja poslova dodatno možemo poboljšati
+ ukoliko unaprijed prolazimo po svim spremnim poslovima i provjeravamo mogu li se izvršiti do roka ako im je na raspolaganju svo 
+ procesorsko vrijeme od datog trenutka. Ako se posao nebi stigao obaviti treba ga odmah prebaciti ga u listu za čekanje i detektirati 
+ propuštanje roka izvršavanja. Uz opisani pristup zadatci koji se ne mogu izvesti neće se niti kretati izvoditi, nego će samo
+ biti detektirano njihovo propuštanje čime se dodatno poboljšava rasporedivost zadataka.
+
+Opisana situacija prikazana je na vremenskim dijagramima na slikama 3.1 i 3.2. U primjeru imamo 3 zadatka jednakih prioriteta. Radi jednostavnosti
+je pretpostavljeno da su svi zadatci jednako kritični za sustav i da je korišten EDF algoritam za raspoređivanje zadataka. 
+Periodi zadataka i vremena njihova izvršavanja dani su u tablici 3.1. Sustav je u stanju trajnog preopterećenja sa ukupnim
+faktorom opterećenja 1.42.
+
+\begin{table}
+\begin{center}
+  \begin{tabular}{||c || c c c||} 
+   \hline
+   Broj Zadatka & Period & Vrijeme izvršavanja & Faktor opterećenja \\ [0.5ex] 
+   \hline\hline
+   1 & 6 & 1 & 0.17 \\ 
+   \hline
+   2 & 8 & 6 & 0.75 \\
+   \hline
+   3 & 4 & 2 & 0.50 \\
+   \hline
+  \end{tabular}
+\end{center}
+\caption{\label{tab:table-name}Skup zadataka korišten u opisu strategije prekidanja poslova.}
+\end{table}
+
+Treba primjetiti da je bez korištenja strategije prekidanja poslova zadatak $tau_2$ potrošio 13 vremenskih odječka procesorskog vremena, a 
+na pritom se nije uspio niti jednom izvršiti na vrijeme.
+Predložena modificirana strategija prekidanja poslova uvodi provjeru svaki vremenski odječak može li se zadatak izvesti do  krajnjeg roka 
+za izvršavanje. 
+U navedenom primjeru, u 
+trenutku t = 4 sustav bi obavio provjeru može li se zadatak broj 2 izvršiti na vrijeme, zaključio bi da ne može i nebi ga niti krenio 
+izvoditi. Tada se oslobađs procesorsko vrijeme za zadatke 1 i 3 i
+raspored poslova izgleda kao na dijagramu 3.2. 
+
+Kako bi vidjeli kakav utjecaj na sustav ima prekidanje poslova za oba slučaja potrebno je izračunati kvalitetu usluge.
+Bez korištenja strategije prekidanja poslova
+izvršilo se 7 od ukupno 13 poslova. Kvaliteta usluge u tom slučaju je 0.54. Uz primjenu opisanog poboljšanja uspješno se izvelo 10 
+poslova, što daje kvalitetu usluge 0.67. Iz prikazanog primjera zaključujemo da korištenje prekidanja poslova u uvjetima 
+preopterećenog sustava znatno podiže kvalitetu usluge i poboljšava rad sustava.
+
+Važna napomena uz navedeni primjer je da služi samo za objašnjenje strategije prekidanja poslova te je stoga 
+pretpostavljeno da su svi zadatci jednako kritični.  
 
 \begin{figure}[h]
   \centering
 
-    \begin{RTGrid}[width=7cm]{3}{8}
+  \begin{RTGrid}[width=13cm]{3}{24}
 
-      \TaskArrDead{1}{0}{4}     
-      \TaskArrDead{1}{4}{4}
+      \TaskArrDead{1}{0}{6}     
+      \TaskArrDead{1}{6}{6}
+      \TaskArrDead{1}{12}{6}
+      \TaskArrDead{1}{18}{6}
+      \TaskArrival{1}{24}
   
-      \TaskExecution{1}{0}{1}
-      \TaskExecution{1}{4}{5}
+      \TaskExecution{1}{2}{3}
+      \TaskExecution{1}{11}{12}
+      \TaskExecution{1}{22}{23}
 
       \TaskArrDead{2}{0}{8}     
-
-      \TaskExecution[color=red]{2}{3}{4}
-      \TaskExecution[color=red]{2}{5}{8}
+      \TaskArrDead{2}{8}{8}
+      \TaskArrDead{2}{16}{8}
+      \TaskArrival{2}{24}
+  
+      \TaskExecution[color=red]{2}{3}{9}
+      \TaskExecution[color=red]{2}{14}{20}
+      \TaskExecution[color=red]{2}{23}{24}
 
       \TaskArrDead{3}{0}{4}     
       \TaskArrDead{3}{4}{4}
+      \TaskArrDead{3}{8}{4}
+      \TaskArrDead{3}{12}{4}
+      \TaskArrDead{3}{16}{4}
+      \TaskArrDead{3}{20}{4}
+      \TaskArrival{3}{24}
   
-      \TaskExecution{3}{1}{3}
+      \TaskExecution{3}{0}{2}
+      \TaskExecution{3}{9}{11}
+      \TaskExecution{3}{12}{14}
+      \TaskExecution{3}{20}{22}
 
+  \end{RTGrid}
 
-    \end{RTGrid}
+  \caption{Raspored zadataka bez prekidanja poslova}
+  \label{fig:ex1}
+\end{figure}
 
-    \caption{Primjer rasporeda bez prekidanja zadataka}
-    \label{fig:ex1}
-  \end{figure}
+\begin{figure}[h]
+  \centering
 
-  \begin{figure}[h]
-    \centering
+  \begin{RTGrid}[width=13cm]{3}{24}
 
-    \begin{RTGrid}[width=7cm]{3}{8}
-
-      \TaskArrDead{1}{0}{4}     
-      \TaskArrDead{1}{4}{4}
-
-      % TaskArr za pocetak zadnjeg
+      \TaskArrDead{1}{0}{6}     
+      \TaskArrDead{1}{6}{6}
+      \TaskArrDead{1}{12}{6}
+      \TaskArrDead{1}{18}{6}
+      \TaskArrival{1}{24}
   
-      \TaskExecution{1}{0}{1}
-      \TaskExecution{1}{4}{5}
+      \TaskExecution{1}{2}{3}
+      \TaskExecution{1}{6}{7}
+      \TaskExecution{1}{16}{17}
+      \TaskExecution{1}{19}{20}
 
       \TaskArrDead{2}{0}{8}     
-
-      \TaskExecution[color=red]{2}{3}{4}
+      \TaskArrDead{2}{8}{8}
+      \TaskArrDead{2}{16}{8}
+      \TaskArrival{2}{24}
+  
+      \TaskExecution{2}{10}{16}
 
       \TaskArrDead{3}{0}{4}     
       \TaskArrDead{3}{4}{4}
+      \TaskArrDead{3}{8}{4}
+      \TaskArrDead{3}{12}{4}
+      \TaskArrDead{3}{16}{4}
+      \TaskArrDead{3}{20}{4}
+      \TaskArrival{3}{24}
   
-      \TaskExecution{3}{1}{3}
-      \TaskExecution{3}{5}{7}
+      \TaskExecution{3}{0}{2}
+      \TaskExecution{3}{4}{6}
+      \TaskExecution{3}{8}{10}
+      \TaskExecution{3}{17}{19}
+      \TaskExecution{3}{20}{22}
+
+  \end{RTGrid}
+
+  \caption{Raspored zadataka sa primjenjnim prekidanjem poslova}
+  \label{fig:ex1}
+\end{figure}
+
+Funkcionalnost prekidanja poslova implementirana je u funkciji \texttt{killTasks()}. U njoj u svakom vremenskom osdječku procesorskog
+vremena iteriramo po svim zadatcima koji se 
+nalaze u listi zadataka spremnih za izvršavanje i na temelju podataka o trenutnom stanju posla odlučujemo treba li ga prekinuti ili ne.
+Uvjet za prekid dobije se tako da usporedimo vrijeme u kojem bi posao bio obavljen sa krajnjim rokom za izvršavanje. Vremena su uspoređivana
+relativno u odnosu na vrijeme kada je posao postao spreman za izvršavanje (višekratnik perida).
+U nastavku je priložen navedeni uvjet.
+\begin{lstlisting}[style=CStyle,caption={Uvjet za prekidanje izvođenja zadatka},captionpos=b]
+if((xTaskGetTickCount() - TaskTcb->start_time + TaskTcb->xRemainingTicks) > 
+TaskTcb->xTaskDeadline)
+\end{lstlisting}
 
 
-    \end{RTGrid}
+\section{Strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima}
 
-    \caption{Primjer rasporeda s prekidanjem zadataka}
-    \label{fig:ex1}
-  \end{figure}
+Kod strogog SRSV-a s ublaženim uvjetima na zadatke postavimo uvjet da se smije propustiti jedan posao u nekoliko slijednih perioda.
+Navedeno je implementirano pomoću dvije cjelobrojne varijable dodane u TCB strukturu zadatka.
 
-Nadalje, u funkciji wakeTasks provjerava se trebaju li se zadatci u listi za čekanje prebaciti u listu zadataka spremih za izvršavanje.
-Ukoliko je zadatak u listi za čekanje i ukoliko se program nalazi na višekratniku njegova perioda, zadatak se dodaju u listu 
-zadataka spremih za izvršavanje. Pri tome je potrebno u varijablu start\_time upisati trenutno vrijeme (trenutak u kojem se zadatak 
-krenio izvršavati). Vrijeme početka izvršavanja je važno za provjeru treba li zadatak prekinuti i je li se izvršio do krajnjeg roka 
-završetka.
+% vrste weakly hard uvjeta da ili ne
+\begin{figure}[h]
+\centering
+\begin{lstlisting}[style=CStyle,caption={Varijable dodane u strukturu za kontrolu zadataka},captionpos=b]
+#if ( configUSE_PERIODIC_TASK == 1 )
+  // variables used for weakly hard conditions control
+  uint8_t weakly_hard_constraint;
+  uint8_t previous_deadline_met;
+#endif
+\end{lstlisting}
+\end{figure}
 
-Varijabla \texttt{xRemainingTicks} u svakom trenutku pamti koliko je vremenskih odsječaka ostalo poslu da se do kraja izvrši. 
-Svaki put kada se posao izvršava ta varijabla se umanjuje za 1. Ukoliko se vrijednost xRemainingTicks smanji na 0, 
-posao je gotov i zabilježava se njegovo pravovremeno izvršavanje.
+Varijablom \texttt{weakly\_hard\_constraint} zadano je u koliko slijednih perioda se jedan posao smije propustiti.
+Na primjer, ukoliko je zadana vrijednost ublaženo-strogog zadatka 5, to znači da se jedan posao smije propustiti unutar pet perioda 
+koji slijede jedan za drugim.
+Poseban slučaj su vrijednosti 0 i 1. Vrijednost 0 zadavat će se za najkritičnije zadatke koji se nikada ne smiju propustiti.
+S druge strane, vrijednost 1 daje se manje bitnim zadatcima koji se uvijek mogu propustiti i čije neizvršavanje nije pogubno za sustav.
+Postavljanjem ove vrijednosti točno se zadaje kako se poslovi mogu propuštati, a bez štete za sustav. Vrijednosti se određuju 
+temeljem kritičnosti zadataka i posljedica koje nose propuštanja poslova.
+
+Kako bi sustav u svakom trenuku znao smije li propustiti neki posao potrebna je još jedna varijabla. To je varijabla 
+\texttt{previous\_deadline\_met} u kojoj je upisan broj poslova koji su se prethodno izvršili do svog krajnjeg roka za izvršavanje.
+Svaki puta kada se posao izvrši na vrijeme ova varijabla se povečava za jedan, a kada se proputi izvršavanje posla ili ga se prekine tada 
+se vrijednost varijable postavlja na 0.
+
+Poznavajući vrijednosti ovih dviju varijabli u svakom trenutku sustav zna mora li se zadatak izvršiti ili ne. Posao se mora izvršiti
+ako se prethodno zadatak izvršio manje puta od vrijednosti \texttt{weakly\_hard\_constraint} umanjene za 1. Ovaj uvjet bit će 
+korišten prilikom implementacije raspoređivanja zadataka.
+
+\begin{lstlisting}[style=CStyle,caption={Uvjet za slučaj kada se zadatak mora izvršiti},captionpos=b]
+if( TaskTcb->previous_deadline_met < (TaskTcb->weakly_hard_constraint-1))
+\end{lstlisting}
+
+Zbog usporedbe različitih algoritama, na početku simulacije (pri stvaranju zadataka) će varijabla \texttt{previous\_deadline\_met} 
+biti postavljen na 0, kako bi dobili najgori mogući slučaj i kako bi usporedbe bile valjane.
 
 \section{Implementacija algoritama za raspoređivanje zadataka}
 
 Algoritmi za raspoređivanje zadataka podrazumijevaju logiku kojom se odabire koji zadatak će se idući poslati na izvršavanje.
-Liste implementirane u FreeRTOS-u imaju mogućnost sortiranja po vrijednosti varijable xItemValue koju sadrži svaki član liste 
-(u ListItem\_t strukturi). To svojstvo je iskorišteno kako bi zadatke koji su spremni za izvršavanje poredali po željenom redosljedu.
+To je najvažniji dio SRSV-a ... DODAJ !!
+
+Liste implementirane u FreeRTOS-u imaju mogućnost sortiranja po vrijednosti varijable \texttt{xItemValue} koju sadrži svaki član liste 
+(u \texttt{ListItem\_t} strukturi). To svojstvo je iskorišteno kako bi zadatke koji su spremni za izvršavanje poredali po željenom 
+redosljedu. Element s vrha liste uvijek će biti onaj sa najmanjom vrijednosti \texttt{xItemValue} i time će imati najveći prioritet 
+pri izvršavanju. Vrijednost varijable \texttt{xItemValue} mijenja se putem macro-a  \texttt{listSET\_LIST\_ITEM\_VALUE()} 
+implementiranog u FreeRTOS-u od ranije.
+
+Prvi korak u modifikaciji raspoređivača zadataka FreeRTOS-a bio je promjena macro-a \texttt{taskSELECT\_HIGHEST\_PRIORITY\_TASK()}.
+U njemu se određuje koji zadatak će se idući poslati na izvršavanje iz liste koja trenutno sadrži zadatke najvećeg prioriteta.
+Prije izmjene zadatci su dijelili procesorsko vrijeme, svaki zadatak po jedan vremenski odsječak. To je bilo realizirano pozivom
+macro-a \texttt{listGET\_OWNER\_OF\_NEXT\_ENTRY} koji je iterirao po svim članovima listi. Umjesto toga, potrebno je svaki vremenski odsječak
+dohvatiti prvi element liste. Za to u FreeRTOS-u postoji macro \texttt{listGET\_OWNER\_OF\_HEAD\_ENTRY} koji vrati pokazivač na 
+prvi element liste. To će biti zadatak koji se treba izvršavati jer je lista sortitana u uzlaznom poretku. 
+U svakom vremenskom odsječku u varijablu \texttt{pxCurrentTCB} treba pohraniti pokazivač na prvi element liste. Time je osigurano da
+se uvijek izvodi zadatak najvećeg prioriteta, skroz dok se ne izvede, dok ga ne prekine neki kritičniji zadatak ili dok ga sustav 
+ne prekine strategijom prekidanja poslova.
+
+Nadalje je pri stavljanju zadatka u listu zadataka spremih za izvršavanje potrebno generirati i upisati vrijednost \texttt{xItemValue}
+prema kojoj će se zadatci sortirati. To je implementirano u macro funkciji \texttt{prvAddTaskToReadyList}. Za svaki algoritam 
+potrebno je imati posebno implementiranu funkciju \texttt{prvAddTaskToReadyList}. To je ostvareno preko konstanti u datoteci 
+FreeRTOSconfig.h. Za svaki algoritam definirana je jedna konstanta, i onaj algoritam kojem je vrijednost konstante 1 se koristi.
+Prije pokretanja simulacije korisnik treba odabrati koji algoritam se koristi, vrijednost njegove konstante postaviti u 1, a svih 
+ostalih u 0. Time je omogućeno da se macro \texttt{prvAddTaskToReadyList} napiše za svaki algoritam zasebno, ali unutar pretprocesorske
+naredbe \#if, te će na kraju samo jedna verzija biti uključena u program.
+
+\begin{figure}[h]
+\centering
+\begin{lstlisting}[style=CStyle,caption={Primjer uključenja algoritma BWP},captionpos=b]
+#define configEDF_ALGORITHM                        0
+#define configRTO_ALGORITHM                        0
+#define configBWP_ALGORITHM                        1
+\end{lstlisting}
+\end{figure}
+
+\subsection{Implementacija EDF algoritma}
+
+Kako je ranije opisano, EDF algoritam sortira zadatke prema vremenu krajnjeg roka za izvršavanje. Pri stavljanju zadatka u 
+listu za spremne zadatke, potrebno je izračunati apsolutno vrijeme roka za izvršenje posla. Pošto su nam rokovi za izvršavanje
+uvijek višekratnici perioda, zapravo trebamo izračunati vrijeme sljedećeg perioda. To radimo tako da od trenutnog vremena 
+oduzmemo vrijeme proteklo od početka perioda (time smo dobili početak perioda) te još nadodamo jedan period. Kod EDF algoritma
+u obzir ne uzimamo ublažene uvjete kod strogog SRSV-a, nego sve poslove promatramo jednako važnima.
+
+ZAMJENI OVO SA NEKIM PSEUDO KODOM !!!
+\begin{lstlisting}[style=CStyle,caption={Računanje \texttt{xItemValue} vrijednosti za EDF algoritam},captionpos=b]
+listSET_LIST_ITEM_VALUE(&(( pxTCB )->xStateListItem),(( pxTCB )->xTaskPeriod+xTaskGetTickCount()-(xTaskGetTickCount()%(( pxTCB )->xTaskPeriod))));
+\end{lstlisting}
 
 
+\subsection{Implementacija RTO algoritma}
+
+Kod RTO algoritma izvršavaju se samo zadatci koji se moraju izvršiti, a svi ostali se preskaču. Drugim rječima, čim neki posao 
+možemo preskočii, preskočiti ćemo ga. Zadatci koji se šalju na izvršavanje raspoređuju se po EDF algoritmu. Jedina razlika u odnosu
+na EDF algoritam je ta što provjeravamo ublažene uvjete u strogom SRSV-u te ukoliko se zadatak može prekočiti ne dodajemo ga u 
+listu zadataka koji čekaju na izvršavanje, nego on ostaje u listi za čekanje. 
+
+DODAJ PSEUDO KOD OVOG !!!!
+
+\subsection{Implementacija BWP algoritma}
+
+Kako je ranije opisano, BWP algoritam je proširenje RTO algoritma. Sada se svi zadatci stavljaju u listu zadataka spremnih za izvršavanje,
+ali opcionalni zadatci na red dolaze tek kada su svi strogi poslovi obavljeni. To je potrebno osigurati sortiranjem prema vrijednosti
+\texttt{xItemValue}. Svi poslovi i dalje će biti raspoređivani EDF algoritmom, ali podjeljeni u dvije skupine (poslovi koji se moraju
+izvršiti i oni čije je izvršavanje opcionalno). Pošto je \texttt{xItemValue} je 32-bitni cijeli broj, a manja vrijednost daje prioritet
+za izvršavanje, poslovima koji se ne moraju izvršiti postavit će se najznačajniji bit u 1. Time je osigurano da takvi poslovi budu 
+zadnji na redu za izvršavanje.  
+
+DODAJ PSEUDO KOD OVOG !!!!
 
 \end{document}
