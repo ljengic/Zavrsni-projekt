@@ -7,18 +7,20 @@
 Sustavi za rad u stvarnom vremenu (engl. real time system) danas su neizostavan dio mnogih sustava korištenih u svim
 granama ljudske djelatnosti. Kod njih nije bitan samo rezultat izvođenja operacije, nego je jednako važno 
 i vrijeme u kojem se ta operacija izvede. Zbog toga se svakom zadatku pridjeljuje krajnji rok do kojeg se mora izvršiti. 
-Izvršenje posla nakon njegovog krajnjeg roka za izvršavanje ekvivalentno je tome da se posao nije niti izvršio.
-
 Kako bi sustav radio pouzdano, mora se osigurati predvidivo raspoređivanje zadataka koje će osigurati da se što više 
 zadataka izvrši na vrijeme.
 SRSV mora imati implementiranu kontrolu zadataka, kontrolu vremena, raspoređivač zadataka i sustav komunikacije i sinkronizacije
 među zadatcima.
 
-S obzirom na posljedice koje izaziva propuštanje roka izvršavanja zadatke dijelimo u dvije skupine :
+S obzirom na posljedice koje izaziva propuštanje roka izvršavanja zadatke dijelimo u četiri skupine :
 \begin{itemize}
-    \item[--] strogi zadatci (eng. hard real time tasks),
-    \item[--] opcionalni zadatci (eng. soft real time tasks).
+    \item[--] strogi zadatci (engl. hard real time-tasks),
+    \item[--] nekritični zadatci (engl. soft real time-tasks),
+    \item[--] PREVEDI OVO KAKO GOD ZNAS (engl. firm real-time tasks),
+    \item[--] opcionalni zadatci (engl. non real-time tasks).
 \end{itemize}
+SLIKA OVDJE ONA SA 4 STANJA IZ KNJIGE !!
+
 Strogi zadatci niti jednom ne smiju propustiti krajnji rok izvršavanja jer su to zadatci koji obavljaju važan posao. Njihovo 
 propuštanje izaziva katastrofalne posljedice koje mogu biti pogubne za cijeli sustav i njegovu okolinu. Dobar primjer strogog zadatka je detekcija 
 pritiska papučice kočnice na automobilu. Taj zadatak je kritičan i propuštanje njegovog izvršenja za posljedicu može imati ozbiljnu
@@ -67,20 +69,20 @@ dane formule proizlazi da je faktor opterećenja zadatka 0.25. Drugim riječima,
 \begin{figure}[h]
     \centering
 
-    \begin{RTGrid}[width=13cm]{1}{20}
+    \begin{RTGrid}[width=13cm]{1}{8}
 
       \TaskArrDead{1}{0}{4}     
       \TaskArrDead{1}{4}{4}
-      \TaskArrDead{1}{8}{4}
-      \TaskArrDead{1}{12}{4}
-      \TaskArrDead{1}{16}{4}
-      \TaskArrival{1}{20}
+    %  \TaskArrDead{1}{8}{4}
+     % \TaskArrDead{1}{12}{4}
+     % \TaskArrDead{1}{16}{4}
+      \TaskArrival{1}{8}
   
       \TaskExecution{1}{0}{1}
       \TaskExecution{1}{4}{5}
-      \TaskExecution{1}{8}{9}
-      \TaskExecution{1}{12}{13}
-      \TaskExecution{1}{16}{17}
+     % \TaskExecution{1}{8}{9}
+     % \TaskExecution{1}{12}{13}
+     % \TaskExecution{1}{16}{17}
 
     \end{RTGrid}
 
@@ -88,7 +90,11 @@ dane formule proizlazi da je faktor opterećenja zadatka 0.25. Drugim riječima,
     \label{fig:ex1}
   \end{figure}
 
-Ukupno opterećenje sustava dobiva se kao zbroj faktora opterećenja svih zadataka. Ako je sustav preopterećen, tj. ukupno opterećenje mu 
+Ukupno opterećenje sustava dobiva se kao zbroj faktora opterećenja svih zadataka. 
+\begin{equation*}
+    U = \sum\frac{C\textsubscript{i}}{T\textsubscript{i}}
+\end{equation*}
+Ako je sustav preopterećen, tj. ukupno opterećenje mu 
 je veće od 1, neki od zadataka se neće izvršiti do svog roka za izvršavanje. U tom slučaju koriste se algoritmi koji će osigurati 
 da se zadatci ne preskaču nasumično, već na kontroliran način kao bi se sustav zaštitio od potencijalnih oštećenja nastalih preskakanjem 
 kritičnih zadataka. Postoje dvije vrste preopterećenja sustava.
@@ -105,7 +111,20 @@ opterećenje sustava trajno veće od 1. Tada se svi poslovi neće moći izvršit
 
 U ovom radu ispitivat će se ponašanje sustava s ublaženo-strogim uvjetima (eng. weakly hard constraints). Za razliku od 
 kritičnih zadataka, kod ublaženo-kritičnih zadataka povremeno dopuštamo da se zadatak ne izvede na vrijeme, ali na predvidiv i 
-kontroliran način. Na temelju važnosti pojedinog zadatka za rad cjelokupnog sustava određuje se u koliko slijednih perioda 
+kontroliran način. U određenom vremenskom okviru točno se određuju pravila propuštanja zadataka. Postoje 4 modela SRSV-a s ublaženo-strogim uvjetima :
+\begin{itemize}
+    \item[--] u $m$ slijednih perioda posao se pravovremeno izvršio u njih $n$,
+    \item[--] u $m$ slijednih perioda posao se pravovremeno izvršio u njih $n$ koji slijede jedan za drugim,
+    \item[--] u $m$ slijednih perioda posao se ne smije propustiti više od $n$ puta,
+    \item[--] u $m$ slijednih perioda posao se ne smije propustiti u njih $n$ koji slijede jedan za drugim.
+\end{itemize}
+
+U ovom radu istražen je model u kojem se u $m$ slijednih perioda zadatak ne smije propustiti više od jednom (engl. skip-over model).
+Broj $m$ naziva se faktor propuštanja (engl. skip over factor).
+Prema tom modelu 
+poslovi se dijele na one koji se moraju izvršiti (crveni poslovi) i na one čije je izvršavanje opcionalno (plavi poslovi). Posao se proglašava crvenim 
+ako je jedan od prošlih $m-1$ poslova nije pravovremeno izvršio.
+Na temelju važnosti pojedinog zadatka za rad cjelokupnog sustava određuje se u koliko slijednih perioda 
 se zadatak može jednom propustiti. Ovaj pristup osigurava znatno bolje ponašanje u uvjetima preopterećenja jer se propuštanje
 pojedinih poslova odvija deterministički.
 
@@ -129,21 +148,21 @@ je vidljivo koji zadatak se u danom trenutku izvršava.
 Za dani set zadataka zadano je da je prvi
 zadatak kritičan i mora se uvijek izvršiti, drugi zadatak ne utječe na sigurnost sustava, a treći zadatak mora se izvršiti svaki drugi put.
 
-    \begin{table}
-        \begin{center}
-    \begin{tabular}{||c || c c c||} 
-     \hline
-     Broj Zadatka & Period & Vrijeme izvršavanja & Faktor opterećenja \\ [0.5ex] 
-     \hline\hline
-     1 & 6 & 2 & izracunaj \\ 
-     \hline
-     2 & 8 & 2 & izracunaj \\
-     \hline
-     3 & 4 & 2 & izracunaj \\
-     \hline
-    \end{tabular}
-\end{center}
-    \caption{\label{tab:table-name}Skup zadataka korišten u primjerima.}
+\begin{table}[h!]
+    \begin{center}
+      \begin{tabular}{||c || c c c c||} 
+       \hline
+       Broj Zadatka & Period & Vrijeme izvršavanja & Faktor propuštanja & Faktor opterećenja \\ [0.5ex] 
+       \hline\hline
+       1 & 6 & 2 & $\infty$ & 0.33 \\ 
+       \hline
+       2 & 8 & 2 & 1 & 0.25 \\
+       \hline
+       3 & 4 & 2 & 2 & 0.50 \\
+       \hline
+      \end{tabular}
+    \end{center}
+    \caption{\label{tab:table-name}Skup zadataka korišten u primjerima}
     \end{table}
 
 Dani set zadataka nalazi se u preopterećenju, i neki od zadataka neće zadovoljiti svoj krajnji rok završetka. Ukupni faktor opterećenja
@@ -159,7 +178,7 @@ ali u ovom radu je istražen jer se u praksi često koristi.
 Raspored generiran EDF algoritmom prikazan je na slici 2.3.
 Na vremenskom dijagramu crnom bojom su prikazani poslovi koji su propustili svoj krajnji rok izvršenja.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
 
     \begin{RTGrid}[width=13cm]{3}{24}
@@ -199,19 +218,21 @@ Na vremenskom dijagramu crnom bojom su prikazani poslovi koji su propustili svoj
 
     \end{RTGrid}
 
-    \caption{Raspored zadataka EDF algoritmom}
+    \caption{Raspored zadataka algoritmom EDF}
     \label{fig:ex1}
   \end{figure}
 
 \subsection{RTO algoritam}
 
-Algoritam RTO (engl. red tasks only) je algoritam prema kojemu se samo izvršavaju strogi zadatci, 
-dok se oni koji se mogu preskočiti uvijek preskaču. Prema ovom algoritmu osigurano je poštivanje zadanih uvjeta, no pri manjim 
+Algoritam RTO (engl. red tasks only) je prvi i najjednostavniji algoritam korišten za skip-over model SRSV-a s ublaženo-strogim uvjetima.
+U njemu je implementiran mehanizam za uvažavanje faktora propuštanja kod raspoređivanja zadataka.
+Prema algoritmu RTO samo se izvršavaju crveni zadatci, dok se oni koji se mogu preskočiti uvijek preskaču. 
+Time je osigurano poštivanje zadanih uvjeta, no pri manjim 
 faktorima opterećenja ovaj algoritam nije optimalan. Razlog tomu je to što postoji slobodno procesorsko vrijeme u kojem bi se mogli 
-izvršiti zadatci koje nije nužno izvršiti, no oni se automatski izbacuju iz rasporeda. Kritični zadatci raspoređuju se prema 
+izvršiti zadatci koje nije nužno izvršiti, no oni se automatski izbacuju iz rasporeda. Strogi zadatci raspoređuju se prema 
 ranije opisanom EDF algoritmu. 
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
 
     \begin{RTGrid}[width=13cm]{3}{24}
@@ -246,7 +267,7 @@ ranije opisanom EDF algoritmu.
 
     \end{RTGrid}
 
-    \caption{Raspored zadataka RTO algoritmom}
+    \caption{Raspored zadataka algoritmom RTO}
     \label{fig:ex1}
   \end{figure}
 
@@ -254,12 +275,12 @@ ranije opisanom EDF algoritmu.
 \subsection{BWP algoritam}
 
 Algoritam BWP (engl. blue when possible) je poboljšanje ranije opisanog RTO algoritma. Kod BWP algoritma prioritet imaju strogi zadatci, 
-no raspoređuju se i zadatci koji se ne moraju nužno izvesti. Na taj način, ukoliko se svi kritični zadatci izvrše, na red će doći
-i opcionalni zadatci. Ovom modifikacijom znatno se poboljša kvaliteta usluge (engl. quality of service), pogotovo pri
+no raspoređuju se i zadatci koji se ne moraju nužno izvesti. Na taj način, ukoliko se svi strogi zadatci izvrše, na red će doći
+i opcionalni zadatci. Ovom modifikacijom znatno se poboljša kvaliteta usluge, pogotovo pri
  manjim faktorima opterećenja. Zadatci su u dijagramu obojani prema nazivu algoritma, crvena boja za stroge zadatke, a plava za zadatke 
  čije izvršavanje je opcionalno. 
 
- \begin{figure}[h]
+ \begin{figure}[h!]
     \centering
 
     \begin{RTGrid}[width=13cm]{3}{24}
@@ -300,7 +321,7 @@ i opcionalni zadatci. Ovom modifikacijom znatno se poboljša kvaliteta usluge (e
 
     \end{RTGrid}
 
-    \caption{Raspored zadataka BWP algoritmom}
+    \caption{Raspored zadataka algoritmom BWP}
     \label{fig:ex1}
   \end{figure}
 

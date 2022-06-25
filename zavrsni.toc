@@ -4,26 +4,24 @@
 \contentsline {section}{\numberline {2.1}Sustavi za rad u stvarnom vremenu}{3}%
 \contentsline {section}{\numberline {2.2}Periodični zadatci u sustavima za rad u stvarnom vremenu}{4}%
 \contentsline {section}{\numberline {2.3}Algoritmi za raspoređivanje zadataka}{6}%
-\contentsline {subsection}{\numberline {2.3.1}EDF algoritam}{6}%
-\contentsline {subsection}{\numberline {2.3.2}RTO algoritam}{7}%
-\contentsline {subsection}{\numberline {2.3.3}BWP algoritam}{7}%
-\contentsline {chapter}{\numberline {3}Modifikacija jezgre FreeRTOS-a}{9}%
-\contentsline {section}{\numberline {3.1}Operacijski sustav FreeRTOS}{9}%
-\contentsline {section}{\numberline {3.2}Programska potpora za kontrolu izvršavanja periodičnih zadataka}{10}%
-\contentsline {subsection}{\numberline {3.2.1}Stvaranje periodičnih zadataka}{10}%
-\contentsline {subsection}{\numberline {3.2.2}Kontrola izvršenja priodičnih zadataka}{11}%
-\contentsline {section}{\numberline {3.3}Strategija prekidanja poslova}{12}%
-\contentsline {section}{\numberline {3.4}Strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima}{14}%
-\contentsline {section}{\numberline {3.5}Implementacija algoritama za raspoređivanje zadataka}{15}%
-\contentsline {subsection}{\numberline {3.5.1}Implementacija EDF algoritma}{16}%
-\contentsline {subsection}{\numberline {3.5.2}Implementacija RTO algoritma}{16}%
-\contentsline {subsection}{\numberline {3.5.3}Implementacija BWP algoritma}{17}%
-\contentsline {chapter}{\numberline {4}Implementacija simulatora}{18}%
-\contentsline {section}{\numberline {4.1}Generiranje skupova testnih zadataka}{18}%
-\contentsline {section}{\numberline {4.2}Tijek simulacije}{19}%
-\contentsline {section}{\numberline {4.3}Pokretanje simulacije}{20}%
-\contentsline {chapter}{\numberline {5}Rezultati}{21}%
-\contentsline {chapter}{\numberline {6}Zaključak}{22}%
-\contentsline {section}{\numberline {6.1}First section}{22}%
-\contentsline {section}{\numberline {6.2}Second section}{22}%
-\contentsline {chapter}{Bibliography}{23}%
+\contentsline {subsection}{\numberline {2.3.1}EDF algoritam}{7}%
+\contentsline {subsection}{\numberline {2.3.2}RTO algoritam}{8}%
+\contentsline {subsection}{\numberline {2.3.3}BWP algoritam}{8}%
+\contentsline {chapter}{\numberline {3}Modifikacija jezgre FreeRTOS-a}{10}%
+\contentsline {section}{\numberline {3.1}Operacijski sustav FreeRTOS}{10}%
+\contentsline {section}{\numberline {3.2}Programska potpora za kontrolu izvršavanja periodičnih zadataka}{11}%
+\contentsline {subsection}{\numberline {3.2.1}Stvaranje periodičnih zadataka}{11}%
+\contentsline {subsection}{\numberline {3.2.2}Kontrola izvršenja priodičnih zadataka}{12}%
+\contentsline {section}{\numberline {3.3}Strategija prekidanja poslova}{13}%
+\contentsline {section}{\numberline {3.4}Strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima}{15}%
+\contentsline {section}{\numberline {3.5}Implementacija algoritama za raspoređivanje zadataka}{16}%
+\contentsline {subsection}{\numberline {3.5.1}Implementacija algoritma EDF}{17}%
+\contentsline {subsection}{\numberline {3.5.2}Implementacija algoritma RTO}{17}%
+\contentsline {subsection}{\numberline {3.5.3}Implementacija algoritma BWP}{18}%
+\contentsline {chapter}{\numberline {4}Implementacija simulatora}{19}%
+\contentsline {section}{\numberline {4.1}Generiranje skupova testnih zadataka}{19}%
+\contentsline {section}{\numberline {4.2}Tijek simulacije}{21}%
+\contentsline {section}{\numberline {4.3}Pokretanje simulacije}{22}%
+\contentsline {chapter}{\numberline {5}Rezultati}{23}%
+\contentsline {chapter}{\numberline {6}Zaključak}{24}%
+\contentsline {chapter}{Bibliography}{25}%

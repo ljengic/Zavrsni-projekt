@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  25 JUN 2022 01:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  25 JUN 2022 23:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -658,6 +658,12 @@ LaTeX Warning: Label `fig:ex1' multiply defined.
 
 LaTeX Warning: Label `fig:ex1' multiply defined.
 
+
+LaTeX Warning: Label `tab:table-name' multiply defined.
+
+
+LaTeX Warning: Label `fig:my-label' multiply defined.
+
 )
 \openout1 = `zavrsni.aux'.
 
@@ -813,13 +819,13 @@ Overfull \hbox (16.45374pt too wide) in paragraph at lines 34--38
 ) [2]
 Chapter 2.
 (./tekstovi/osnove_teorije_rasporedivanja.tex
-Overfull \hbox (24.09773pt too wide) in paragraph at lines 12--16
-\T1/ptm/m/n/12 kontrolu zadataka, kontrolu vremena, rasporeživa£ zadataka i sus
-tav komunikacije i sinkronizacije
+Overfull \hbox (16.74156pt too wide) in paragraph at lines 7--14
+\T1/ptm/m/n/12 kontrolu vremena, rasporeživa£ zadataka i sustav komunikacije i 
+sinkronizacije mežu zadatcima. 
  []
 
 
-Overfull \hbox (23.92926pt too wide) in paragraph at lines 22--27
+Overfull \hbox (23.92926pt too wide) in paragraph at lines 24--29
 \T1/ptm/m/n/12 propu²tanje nekih zadataka nije kriti£no i ne¢e nanijeti ²tetu s
 ustavu, nego ¢e smanjiti performanse
  []
@@ -827,7 +833,7 @@ ustavu, nego ¢e smanjiti performanse
 [3
 
 ]
-Overfull \hbox (7.2836pt too wide) in paragraph at lines 35--43
+Overfull \hbox (7.2836pt too wide) in paragraph at lines 37--45
 []\T1/ptm/m/n/12 Kod sustava s jednom procesorskom jezgrom samo, jedan zadatak 
 se u odreženom trenutku
  []
@@ -835,15 +841,15 @@ se u odreženom trenutku
 <images/stanja_taskova.png, id=62, 485.815pt x 285.065pt>
 File: images/stanja_taskova.png Graphic file (type png)
 <use images/stanja_taskova.png>
-Package pdftex.def Info: images/stanja_taskova.png  used on input line 46.
+Package pdftex.def Info: images/stanja_taskova.png  used on input line 48.
 (pdftex.def)             Requested size: 441.01773pt x 258.77884pt.
 
-Overfull \hbox (26.26439pt too wide) in paragraph at lines 50--50
+Overfull \hbox (26.26439pt too wide) in paragraph at lines 52--52
 []\T1/ptm/b/n/17.28 Periodi£ni zadatci u sustavima za rad u stvarnom vremenu 
  []
 
 [4 <./images/stanja_taskova.png>]
-Overfull \hbox (1.44228pt too wide) in paragraph at lines 59--66
+Overfull \hbox (1.44228pt too wide) in paragraph at lines 61--68
 \T1/ptm/m/n/12 jedinice, a vrijeme izvr²avanja pojedinog posla 1 vremensku jedi
 nicu. Pomo¢u ta dva podatka
  []
@@ -856,91 +862,77 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (33.218pt too wide) in paragraph at lines 99--103
+Overfull \hbox (33.218pt too wide) in paragraph at lines 105--109
 \T1/ptm/m/n/12 trenutku moºe do¢i do aktivacije aperiodi£nog zadatka koji onda 
 sustav gura u stanje preoptere¢enja.
  []
 
-
-Overfull \hbox (8.71425pt too wide) in paragraph at lines 106--111
+[5]
+Overfull \hbox (8.71425pt too wide) in paragraph at lines 112--115
 \T1/ptm/m/n/12 hard constraints). Za razliku od kriti£nih zadataka, kod ublaºen
 o-kriti£nih zadataka povremeno
  []
 
-[5]
 
-LaTeX Warning: Command \v invalid in math mode on input line 122.
+LaTeX Warning: Command \v invalid in math mode on input line 141.
 
 Missing character: There is no ² in font cmr12!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 [6]
-Overfull \hbox (0.5905pt too wide) in paragraph at lines 208--213
-\T1/ptm/m/n/12 zadatci, dok se oni koji se mogu presko£iti uvijek preska£u. Pre
-ma ovom algoritmu osigurano
- []
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+ [7]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 
 
-Overfull \hbox (12.55333pt too wide) in paragraph at lines 208--213
-\T1/ptm/m/n/12 je po²tivanje zadanih uvjeta, no pri manjim faktorima optere¢enj
-a ovaj algoritam nije optimalan.
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-[7]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-) [8]
+) [8] [9]
 Chapter 3.
 (./tekstovi/modifikacija_jezgre_FreeRtos-a.tex
 Overfull \hbox (6.33514pt too wide) in paragraph at lines 34--36
@@ -948,7 +940,7 @@ Overfull \hbox (6.33514pt too wide) in paragraph at lines 34--36
 config.h \T1/ptm/m/n/12 i korisnik treba mijenjati
  []
 
-[9
+[10
 
 ]
 Overfull \hbox (25.09134pt too wide) in paragraph at lines 37--41
@@ -957,7 +949,7 @@ niranje i kontrolu periodi£kih
  []
 
 
-Overfull \hbox (17.43462pt too wide) in paragraph at lines 44--44
+Overfull \hbox (17.43462pt too wide) in paragraph at lines 42--42
 []\T1/ptm/b/n/17.28 Programska potpora za kontrolu izvr²avanja periodi£nih
  []
 
@@ -967,76 +959,77 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 )
-Overfull \hbox (8.76149pt too wide) in paragraph at lines 46--50
+Overfull \hbox (8.76149pt too wide) in paragraph at lines 44--48
 \T1/ptm/m/n/12 Uklju£enje funkcionalnosti za upravljanje periodi£nim zadatcima 
 ostvareno je putem konstante
  []
 
 
-Overfull \hbox (2.81226pt too wide) in paragraph at lines 46--50
+Overfull \hbox (2.81226pt too wide) in paragraph at lines 44--48
 \T1/pcr/m/n/12 configUSE_PERIODIC_TASK \T1/ptm/m/n/12 dodane unutar datoteke \T
 1/pcr/m/n/12 FreeRTOSconfig.h\T1/ptm/m/n/12 . Korisnik
  []
 
 
-Overfull \hbox (15.87866pt too wide) in paragraph at lines 46--50
+Overfull \hbox (15.87866pt too wide) in paragraph at lines 44--48
 \T1/ptm/m/n/12 postavljanjem navedene konstante u 1 na brz i jednostavan na£in 
 uklju£uje podr²ku za periodi£ne
  []
 
 
-Overfull \hbox (2.45038pt too wide) in paragraph at lines 46--50
+Overfull \hbox (2.45038pt too wide) in paragraph at lines 44--48
 \T1/ptm/m/n/12 zadatke. Svi djelovi programskog koda zaduºeni za periodi£ne zad
 atke pisani su u odsje£cima
  []
 
 
-Overfull \hbox (10.5638pt too wide) in paragraph at lines 46--50
+Overfull \hbox (10.5638pt too wide) in paragraph at lines 44--48
 \T1/ptm/m/n/12 koji se uklju£uju u proces prevoženja samo ako je vrijednost \T1
 /pcr/m/n/12 configUSE_PERIODIC_TASK
  []
 
-[10]
-Overfull \hbox (43.03455pt too wide) in paragraph at lines 73--75
+
+Overfull \hbox (43.03455pt too wide) in paragraph at lines 71--73
 \T1/ptm/m/n/12 inicijalizaciju periodi£nih zadataka. Navedena funkcija je pro²i
 renje \T1/pcr/m/n/12 funkcije xTaskCreate()
  []
 
+[11]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
-9.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+7.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Overfull \hbox (96.00186pt too wide) in paragraph at lines 91--95
+Overfull \hbox (96.00186pt too wide) in paragraph at lines 89--93
 \T1/ptm/m/n/12 treba dalje izvr²avati. U FreeRTOS-u navedena funkcionalnost imp
 lementrana je u \T1/pcr/m/n/12 xTaskIncrementTick()
  []
 
 
-Overfull \hbox (27.79156pt too wide) in paragraph at lines 96--101
+Overfull \hbox (27.79156pt too wide) in paragraph at lines 94--99
 []\T1/ptm/m/n/12 Kontrola izvoženja periodi£kih zadataka realizirana je pomo¢u 
 varijable \T1/pcr/m/n/12 xRemainingTicks
  []
 
 
-Overfull \hbox (19.29384pt too wide) in paragraph at lines 114--122
+Overfull \hbox (19.29384pt too wide) in paragraph at lines 112--120
 []\T1/ptm/m/n/12 Vra¢anje zadataka iz liste za £ekanje u listu zadataka spremni
 h za izvr²avanje implementirano
  []
 
 
-Overfull \hbox (9.01332pt too wide) in paragraph at lines 114--122
+Overfull \hbox (9.01332pt too wide) in paragraph at lines 112--120
 \T1/ptm/m/n/12 spreman za izvr²avanje).Takožer moramo osvjeºiti vrijednost vari
 jable textttxRemainingTicks.
  []
 
-[11]
-Overfull \hbox (3.29033pt too wide) in paragraph at lines 127--136
+[12]
+Overfull \hbox (3.29033pt too wide) in paragraph at lines 125--134
 \T1/ptm/m/n/12 moºemo pobolj²ati ukoliko unaprijed prolazimo po svim spremnim p
 oslovima i provjeravamo
  []
 
-[12]
+[13]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1069,78 +1062,84 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- [13]
-Overfull \hbox (16.87434pt too wide) in paragraph at lines 277--279
-\T1/ptm/m/n/12 jedan posao u nekoliko slijednih perioda. Navedeno je implementi
-rano pomo¢u dvije cjelobrojne
+
+Overfull \hbox (6.39828pt too wide) in paragraph at lines 261--267
+\T1/ptm/m/n/12 usporedimo vrijeme u kojem bi posao bio obavljen sa krajnjim rok
+om za izvr²avanje. Vremena
  []
 
-
-Overfull \hbox (1.24846pt too wide) in paragraph at lines 292--299
+[14]
+Overfull \hbox (1.24846pt too wide) in paragraph at lines 290--299
 []\T1/ptm/m/n/12 Varijablom \T1/pcr/m/n/12 weakly_hard_constraint \T1/ptm/m/n/1
 2 zadano je u koliko slijednih perioda se jedan
  []
 
-[14]
+[15]
 Overfull \hbox (6.2889pt too wide) in paragraph at lines 316--316
 []\T1/ptm/b/n/17.28 Implementacija algoritama za rasporeživanje zadataka 
  []
 
 
-Overfull \hbox (17.2109pt too wide) in paragraph at lines 321--326
-\T1/pcr/m/n/12 xItemValue \T1/ptm/m/n/12 koju sadrºi svaki £lan liste (u \T1/pc
-r/m/n/12 ListItem_t \T1/ptm/m/n/12 strukturi). To svojstvo je iskori²teno
+Overfull \hbox (17.2109pt too wide) in paragraph at lines 321--327
+\T1/pcr/m/n/12 xItemValue \T1/ptm/m/n/12 koju sadrºi svaki £lan liste (u strukt
+uri \T1/pcr/m/n/12 ListItem_t\T1/ptm/m/n/12 ). To svojstvo je iskori²teno
  []
 
 
-Overfull \hbox (51.79506pt too wide) in paragraph at lines 327--336
+Overfull \hbox (3.66231pt too wide) in paragraph at lines 321--327
+\T1/ptm/m/n/12 izvr²avanje ²to zna£i da manja vrijednost \T1/pcr/m/n/12 xItemVa
+lue \T1/ptm/m/n/12 daje ve¢i prioritet pri rasporeživanju.
+ []
+
+
+Overfull \hbox (51.79506pt too wide) in paragraph at lines 328--337
 \T1/ptm/m/n/12 dohvatiti prvi element liste. Za to u FreeRTOS-u postoji macro \
 T1/pcr/m/n/12 listGET_OWNER_OF_HEAD_ENTRY
  []
 
 
-Overfull \hbox (1.49052pt too wide) in paragraph at lines 327--336
+Overfull \hbox (1.49052pt too wide) in paragraph at lines 328--337
 \T1/ptm/m/n/12 sortitana u uzlaznom poretku. U svakom vremenskom odsje£ku u var
 ijablu \T1/pcr/m/n/12 pxCurrentTCB
  []
 
 
-Overfull \hbox (7.07825pt too wide) in paragraph at lines 337--344
+Overfull \hbox (7.07825pt too wide) in paragraph at lines 345--353
 []\T1/ptm/m/n/12 Nadalje je pri stavljanju zadatka u listu zadataka spremih za 
 izvr²avanje potrebno generirati
  []
 
 
-Overfull \hbox (1.89932pt too wide) in paragraph at lines 337--344
+Overfull \hbox (1.89932pt too wide) in paragraph at lines 345--353
 \T1/ptm/m/n/12 macro funkciji \T1/pcr/m/n/12 prvAddTaskToReadyList\T1/ptm/m/n/1
 2 . Za svaki algoritam potrebno je imati posebno
  []
 
-
-Overfull \hbox (1.65785pt too wide) in paragraph at lines 337--344
-\T1/ptm/m/n/12 datoteci FreeRTOSconfig.h. Za svaki algoritam definirana je jedn
-a konstanta, i onaj algoritam
- []
-
-[15]
-Overfull \hbox (4.69348pt too wide) in paragraph at lines 356--361
+[16]
+Overfull \hbox (4.69348pt too wide) in paragraph at lines 365--370
 \T1/ptm/m/n/12 izvr²avanje. Pri stavljanju zadatka u listu za spremne zadatke, 
 potrebno je izra£unati apsolutno
  []
 
 
-Overfull \hbox (7.16661pt too wide) in paragraph at lines 356--361
+Overfull \hbox (7.16661pt too wide) in paragraph at lines 365--370
 \T1/ptm/m/n/12 perioda, zapravo trebamo izra£unati vrijeme sljede¢eg perioda. T
 o radimo tako da od trenutnog
  []
 
 
-Overfull \hbox (0.57658pt too wide) in paragraph at lines 370--374
-\T1/ptm/m/n/12 Kod RTO algoritma izvr²avaju se samo zadatci koji se moraju izvr
+Overfull \hbox (0.57658pt too wide) in paragraph at lines 379--383
+\T1/ptm/m/n/12 Kod algoritma RTO izvr²avaju se samo zadatci koji se moraju izvr
 ²iti, a svi ostali se preska£u.
  []
 
-[16]) [17]
+[17]
+Overfull \hbox (25.86224pt too wide) in paragraph at lines 388--394
+\T1/ptm/m/n/12 svi strogi poslovi obavljeni. To je potrebno osigurati sortiranj
+em prema vrijednosti \T1/pcr/m/n/12 xItemValue\T1/ptm/m/n/12 .
+ []
+
+) [18]
 Chapter 4.
 (./tekstovi/implementacija_simulatora.tex
 Overfull \hbox (0.12303pt too wide) in paragraph at lines 13--16
@@ -1155,128 +1154,117 @@ u rokova izvr²avanja tijekom
  []
 
 
-Overfull \hbox (6.55109pt too wide) in paragraph at lines 31--39
+Overfull \hbox (6.55109pt too wide) in paragraph at lines 31--40
 []\T1/ptm/m/n/12 Vrijednosti perioda generirane su uniformnom razdiobom. Gornja
  i donja granica intervala
  []
 
 
-Overfull \hbox (4.08177pt too wide) in paragraph at lines 31--39
+Overfull \hbox (4.08177pt too wide) in paragraph at lines 31--40
 \T1/ptm/m/n/12 provedenih simulacija vrijednosti perioda su iz intervala [20,10
 0]. Male vrijednosti izbjegnute
  []
 
 
-Overfull \hbox (1.51459pt too wide) in paragraph at lines 31--39
+Overfull \hbox (1.51459pt too wide) in paragraph at lines 31--40
 \T1/ptm/m/n/12 vrijednosti perioda svih zadataka. Nakon vremena hiperperioda, r
 aspored poslova se ponavlja
  []
 
-
-Overfull \hbox (3.27771pt too wide) in paragraph at lines 31--39
-\T1/ptm/m/n/12 konstante generiranje perioda se pokre¢e iznova. Konstanta je iz
-ra£unata tako da se simulacija
- []
-
-[18
+[19
 
 ]
-Overfull \hbox (7.48653pt too wide) in paragraph at lines 40--46
+Overfull \hbox (7.48653pt too wide) in paragraph at lines 41--47
 []\T1/ptm/m/n/12 Za generiranje faktora optere¢enja za skup testnih zadataka ko
 ri²ten je algoritam UUniFast.
  []
 
 
-Overfull \hbox (0.12224pt too wide) in paragraph at lines 40--46
+Overfull \hbox (0.12224pt too wide) in paragraph at lines 41--47
 \T1/ptm/m/n/12 Algoritam prima ukupan broj zadataka i sumu faktora optere¢enja 
 svih zadataka te uniformno
  []
 
 
-Overfull \hbox (25.42735pt too wide) in paragraph at lines 47--49
+Overfull \hbox (25.42735pt too wide) in paragraph at lines 48--50
 []\T1/ptm/m/n/12 Vrijeme izvr²avanja pojedinog zadatka dobiveno je kao umnoºak 
 perioda i faktora optere¢enja.
  []
 
 
-Overfull \hbox (0.9021pt too wide) in paragraph at lines 52--55
-\T1/ptm/m/n/12 poziva potrebne funkcije kako bi se izvr²ili svi ranije navedeni
- koraci za generiranje zadataka.
- []
-
-
-Overfull \hbox (10.57358pt too wide) in paragraph at lines 73--78
+Overfull \hbox (85.0827pt too wide) in paragraph at lines 78--84
 \T1/ptm/m/n/12 pripadaju¢em periodu. To je implementirano pomo¢u polja varijabl
-i tipa bool £ije su vrijednosti
+i tipa bool \T1/pcr/m/n/12 report[MAX_PERIOD_CNT]
  []
 
 
-Overfull \hbox (2.29459pt too wide) in paragraph at lines 73--78
-\T1/ptm/m/n/12 na po£etku simulacije postavljene na 0 i nakon ²to se posao prav
-ovremeno izvede ta vrijednost
+Overfull \hbox (22.15555pt too wide) in paragraph at lines 78--84
+\T1/ptm/m/n/12 svaki posao pojedinog zadatka upisuje 1 ako se pravovremeno izve
+o, to jest, ako je u \T1/pcr/m/n/12 report[j]
  []
 
-
-Overfull \hbox (2.18613pt too wide) in paragraph at lines 73--78
-\T1/ptm/m/n/12 se postavi u 1. Simulacija se prekida nakon hiperperioda (najman
-jeg zajedni£kog vi²ekratnika
- []
-
-[19]
-Overfull \hbox (11.0888pt too wide) in paragraph at lines 91--101
+[20]
+<images/csv.png, id=126, 801.99625pt x 261.97874pt>
+File: images/csv.png Graphic file (type png)
+<use images/csv.png>
+Package pdftex.def Info: images/csv.png  used on input line 128.
+(pdftex.def)             Requested size: 441.01773pt x 144.06476pt.
+ [21]
+Overfull \hbox (11.0888pt too wide) in paragraph at lines 134--144
 \T1/ptm/m/n/12 najprije stvara csv datoteka u kojoj ¢e biti pohranjen izvje²taj
  sa podatcima o svim simulacijama
  []
 
 
-Overfull \hbox (15.50502pt too wide) in paragraph at lines 91--101
+Overfull \hbox (15.50502pt too wide) in paragraph at lines 134--144
 \T1/ptm/m/n/12 nakon zavr²ene simulacije. Faktor optere¢enja se radi jednostavn
 osti implementacije proslježuje
  []
 
-) [20]
+) [22 <./images/csv.png>]
 Chapter 5.
-[21
+[23
 
 ]
 Chapter 6.
-(./tekstovi/zakljucak.tex) (./zavrsni.bbl [22
+(./tekstovi/zakljucak.tex) (./zavrsni.bbl [24
 
 ]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [23
+) [25
 
-] [24] (./zavrsni.aux)
+] [26] (./zavrsni.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  18733 strings out of 483183
- 342529 string characters out of 5966292
- 817677 words of memory out of 5000000
- 33356 multiletter control sequences out of 15000+600000
+ 342506 string characters out of 5966292
+ 817649 words of memory out of 5000000
+ 33355 multiletter control sequences out of 15000+600000
  599982 words of font info for 102 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 68i,8n,83p,439b,1418s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,9n,83p,439b,1418s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/couri
-er/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
-/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (29 pages, 203092 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
+r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on zavrsni.pdf (31 pages, 242568 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
+ 194 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 114 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 

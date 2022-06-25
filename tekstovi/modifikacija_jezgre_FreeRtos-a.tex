@@ -37,9 +37,7 @@ sve konstante preko kojih se uključuju pojedine funkcionalnosti ili postavljaju
 Podrška za upravljanje zadatcima u FreeRTOS-u ne podržava definiranje i kontrolu periodičkih zadataka, stoga je potrebno proširiti podsustav 
 za upravljanje zadatvima u FreeRTOS-u.
 Također navedni pristup ne rješava problem preopterećenja sustava te je potrebno modificirati jezgru FreeRTOS-a kako bi se omogučilo 
-predvidivo ponašanje ukoliko sustav uđe u trajno preopterećenje.Potrebne modifikacije detaljno su opisane u narednim podglavljima.
-
-dodaj za xtaskgetticks() !!!!!!!!!!!!!!
+predvidivo ponašanje ukoliko sustav uđe u trajno preopterećenje. Potrebne modifikacije detaljno su opisane u narednim podglavljima.
 
 \section{Programska potpora za kontrolu izvršavanja periodičnih zadataka}
 
@@ -125,21 +123,21 @@ Vrijeme početka izvršavanja je važno za provjeru treba li zadatak prekinuti i
 \section{Strategija prekidanja poslova}
 
 Ponekad posao dođe na red za ivršavanje, ali čak i ako dobije svo procesorsko vrijeme ne stigne se izvršiti do krajnjeg roka za izvršavanje.
-kako kod strogih zadataka nema koristi od posla koji se djelomično izvršio, ukoliko posao dođe do krajnjeg roka za izvršavanje, a nije se izvršio
+Kako kod strogih zadataka nema koristi od posla koji se djelomično izvršio, ukoliko posao dođe do krajnjeg roka za izvršavanje, a nije se izvršio
  treba prekinuti njegovo daljnje izvršavanje. Ova strategija zove se prekidanje poslova koji se ne mogu izvršiti do svog 
  krajnjeg roka izvršenja (engl. job killing). Time se podiže kvaliteta usluge, jer je osigurano da poslovi koji se nikako neće 
  izvršiti na vrijeme ne zauzimaju proesorsko vrijeme ostalim zadatcima. Strategiju prekidanja poslova dodatno možemo poboljšati
  ukoliko unaprijed prolazimo po svim spremnim poslovima i provjeravamo mogu li se izvršiti do roka ako im je na raspolaganju svo 
- procesorsko vrijeme od datog trenutka. Ako se posao nebi stigao obaviti treba ga odmah prebaciti ga u listu za čekanje i detektirati 
+ procesorsko vrijeme od datog trenutka. Ako se posao nebi stigao obaviti treba ga odmah prebaciti u listu za čekanje i detektirati 
  propuštanje roka izvršavanja. Uz opisani pristup zadatci koji se ne mogu izvesti neće se niti kretati izvoditi, nego će samo
  biti detektirano njihovo propuštanje čime se dodatno poboljšava rasporedivost zadataka.
 
-Opisana situacija prikazana je na vremenskim dijagramima na slikama 3.1 i 3.2. U primjeru imamo 3 zadatka jednakih prioriteta. Radi jednostavnosti
-je pretpostavljeno da su svi zadatci jednako kritični za sustav i da je korišten EDF algoritam za raspoređivanje zadataka. 
+Opisana situacija prikazana je vremenskim dijagramima na slikama 3.1 i 3.2. U primjeru imamo 3 zadatka jednakih prioriteta. Radi jednostavnosti
+je pretpostavljeno da su svi zadatci jednako kritični za sustav (ne koristi se model ublaženo-strogih uvjeta). Za raspoređivanje zadataka korišten je algoritam EDF. 
 Periodi zadataka i vremena njihova izvršavanja dani su u tablici 3.1. Sustav je u stanju trajnog preopterećenja sa ukupnim
 faktorom opterećenja 1.42.
 
-\begin{table}
+\begin{table}[h!]
 \begin{center}
   \begin{tabular}{||c || c c c||} 
    \hline
@@ -156,25 +154,25 @@ faktorom opterećenja 1.42.
 \caption{\label{tab:table-name}Skup zadataka korišten u opisu strategije prekidanja poslova.}
 \end{table}
 
-Treba primjetiti da je bez korištenja strategije prekidanja poslova zadatak $tau_2$ potrošio 13 vremenskih odječka procesorskog vremena, a 
+Treba primjetiti da je bez korištenja strategije prekidanja poslova zadatak $\tau_2$ potrošio 13 vremenskih odječka procesorskog vremena, a 
 na pritom se nije uspio niti jednom izvršiti na vrijeme.
 Predložena modificirana strategija prekidanja poslova uvodi provjeru svaki vremenski odječak može li se zadatak izvesti do  krajnjeg roka 
 za izvršavanje. 
 U navedenom primjeru, u 
-trenutku t = 4 sustav bi obavio provjeru može li se zadatak broj 2 izvršiti na vrijeme, zaključio bi da ne može i nebi ga niti krenio 
-izvoditi. Tada se oslobađs procesorsko vrijeme za zadatke 1 i 3 i
+trenutku t = 4 sustav bi obavio provjeru može li se zadatak $\tau_2$ izvršiti na vrijeme, zaključio bi da ne može i nebi ga niti krenio 
+izvoditi. Tada se oslobađa procesorsko vrijeme za zadatke $\tau_1$ i $\tau_3$ i
 raspored poslova izgleda kao na dijagramu 3.2. 
 
 Kako bi vidjeli kakav utjecaj na sustav ima prekidanje poslova za oba slučaja potrebno je izračunati kvalitetu usluge.
 Bez korištenja strategije prekidanja poslova
 izvršilo se 7 od ukupno 13 poslova. Kvaliteta usluge u tom slučaju je 0.54. Uz primjenu opisanog poboljšanja uspješno se izvelo 10 
-poslova, što daje kvalitetu usluge 0.67. Iz prikazanog primjera zaključujemo da korištenje prekidanja poslova u uvjetima 
+poslova, što daje kvalitetu usluge 0.67. Iz prikazanog primjera može se zaključiti da korištenje prekidanja poslova u uvjetima 
 preopterećenog sustava znatno podiže kvalitetu usluge i poboljšava rad sustava.
 
 Važna napomena uz navedeni primjer je da služi samo za objašnjenje strategije prekidanja poslova te je stoga 
 pretpostavljeno da su svi zadatci jednako kritični.  
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
 
   \begin{RTGrid}[width=13cm]{3}{24}
@@ -217,7 +215,7 @@ pretpostavljeno da su svi zadatci jednako kritični.
   \label{fig:ex1}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
 
   \begin{RTGrid}[width=13cm]{3}{24}
@@ -260,21 +258,21 @@ pretpostavljeno da su svi zadatci jednako kritični.
   \label{fig:ex1}
 \end{figure}
 
-Funkcionalnost prekidanja poslova implementirana je u funkciji \texttt{killTasks()}. U njoj u svakom vremenskom osdječku procesorskog
-vremena iteriramo po svim zadatcima koji se 
+Funkcionalnost prekidanja poslova implementirana je u funkciji \texttt{killTasks()} koja se poziva svaki vremenski 
+odsječak procesorskog vremena. U njoj iteriramo po svim zadatcima koji se 
 nalaze u listi zadataka spremnih za izvršavanje i na temelju podataka o trenutnom stanju posla odlučujemo treba li ga prekinuti ili ne.
 Uvjet za prekid dobije se tako da usporedimo vrijeme u kojem bi posao bio obavljen sa krajnjim rokom za izvršavanje. Vremena su uspoređivana
 relativno u odnosu na vrijeme kada je posao postao spreman za izvršavanje (višekratnik perida).
 U nastavku je priložen navedeni uvjet.
-\begin{lstlisting}[style=CStyle,caption={Uvjet za prekidanje izvođenja zadatka},captionpos=b]
+\begin{lstlisting}[style=CStyle,caption={Uvjet za prekidanje izvođenja posla},captionpos=b]
 if((xTaskGetTickCount() - TaskTcb->start_time + TaskTcb->xRemainingTicks) > 
 TaskTcb->xTaskDeadline)
 \end{lstlisting}
 
-
 \section{Strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima}
 
-Kod strogog SRSV-a s ublaženim uvjetima na zadatke postavimo uvjet da se smije propustiti jedan posao u nekoliko slijednih perioda.
+Kao što je ranije rečeno, implementiran je skip-over model SRSV-a s ublaženo-strogim uvjetima.
+Kod njega na zadatke postavimo uvjet da se smije propustiti jedan posao u nekoliko slijednih perioda.
 Navedeno je implementirano pomoću dvije cjelobrojne varijable dodane u TCB strukturu zadatka.
 
 % vrste weakly hard uvjeta da ili ne
@@ -292,13 +290,15 @@ Navedeno je implementirano pomoću dvije cjelobrojne varijable dodane u TCB stru
 Varijablom \texttt{weakly\_hard\_constraint} zadano je u koliko slijednih perioda se jedan posao smije propustiti.
 Na primjer, ukoliko je zadana vrijednost ublaženo-strogog zadatka 5, to znači da se jedan posao smije propustiti unutar pet perioda 
 koji slijede jedan za drugim.
-Poseban slučaj su vrijednosti 0 i 1. Vrijednost 0 zadavat će se za najkritičnije zadatke koji se nikada ne smiju propustiti.
+Poseban slučaj su vrijednosti 0 i 1. Vrijednost 0 zadavat će se za najkritičnije zadatke koji se nikada ne smiju propustiti. 
+U teoriji raspoređivanja, tom slučaju odgovara skip faktor vrijednosti beskonačno.
 S druge strane, vrijednost 1 daje se manje bitnim zadatcima koji se uvijek mogu propustiti i čije neizvršavanje nije pogubno za sustav.
-Postavljanjem ove vrijednosti točno se zadaje kako se poslovi mogu propuštati, a bez štete za sustav. Vrijednosti se određuju 
-temeljem kritičnosti zadataka i posljedica koje nose propuštanja poslova.
+Postavljanjem ove vrijednosti točno se zadaje kako se poslovi smiju propuštati. Vrijednosti se određuju 
+temeljem kritičnosti zadataka i posljedica koje nose propuštanja poslova, kako bi sustav nakon propuštanja poslova ostao 
+stabilan i neoštećen.
 
-Kako bi sustav u svakom trenuku znao smije li propustiti neki posao potrebna je još jedna varijabla. To je varijabla 
-\texttt{previous\_deadline\_met} u kojoj je upisan broj poslova koji su se prethodno izvršili do svog krajnjeg roka za izvršavanje.
+Da bi sustav u svakom trenuku znao smije li propustiti neki posao potrebna je još jedna varijabla. To je varijabla 
+\texttt{previous\_deadline\_met} u kojoj je upisan broj poslova koji su se prethodno pravovremeno izvršili jedan iza drugoga.
 Svaki puta kada se posao izvrši na vrijeme ova varijabla se povečava za jedan, a kada se proputi izvršavanje posla ili ga se prekine tada 
 se vrijednost varijable postavlja na 0.
 
@@ -310,37 +310,46 @@ korišten prilikom implementacije raspoređivanja zadataka.
 if( TaskTcb->previous_deadline_met < (TaskTcb->weakly_hard_constraint-1))
 \end{lstlisting}
 
-Zbog usporedbe različitih algoritama, na početku simulacije (pri stvaranju zadataka) će varijabla \texttt{previous\_deadline\_met} 
-biti postavljen na 0, kako bi dobili najgori mogući slučaj i kako bi usporedbe bile valjane.
+Zbog usporedbe različitih algoritama, na početku simulacije (pri stvaranju zadataka) varijabla \texttt{previous\_deadline\_met} će 
+biti postavljena na 0. Pri raspoređivanju zadtaka to odgovara najgorem mogućem slučaju.
 
 \section{Implementacija algoritama za raspoređivanje zadataka}
 
 Algoritmi za raspoređivanje zadataka podrazumijevaju logiku kojom se odabire koji zadatak će se idući poslati na izvršavanje.
-To je najvažniji dio SRSV-a ... DODAJ !!
+To je najvažniji dio SRSV-a jer o raspoređivanju zadataka ovisi hoće li sustav biti pouzdan i predvidljiv.
 
 Liste implementirane u FreeRTOS-u imaju mogućnost sortiranja po vrijednosti varijable \texttt{xItemValue} koju sadrži svaki član liste 
-(u \texttt{ListItem\_t} strukturi). To svojstvo je iskorišteno kako bi zadatke koji su spremni za izvršavanje poredali po željenom 
-redosljedu. Element s vrha liste uvijek će biti onaj sa najmanjom vrijednosti \texttt{xItemValue} i time će imati najveći prioritet 
-pri izvršavanju. Vrijednost varijable \texttt{xItemValue} mijenja se putem macro-a  \texttt{listSET\_LIST\_ITEM\_VALUE()} 
-implementiranog u FreeRTOS-u od ranije.
+(u strukturi \texttt{ListItem\_t}). To svojstvo je iskorišteno kako bi zadatke koji su spremni za izvršavanje poredali po željenom 
+redosljedu. Element s vrha liste uvijek će biti onaj sa najmanjom vrijednosti \texttt{xItemValue}. Njega ćemo uzimati za izvršavanje 
+ što znači da manja vrijednost \texttt{xItemValue} daje veći prioritet pri raspoređivanju.
+pri izvršavanju. Vrijednost varijable \texttt{xItemValue} mijenja se putem macro funkcije \\ \texttt{listSET\_LIST\_ITEM\_VALUE()} 
+implementirane u FreeRTOS-u.
 
 Prvi korak u modifikaciji raspoređivača zadataka FreeRTOS-a bio je promjena macro-a \texttt{taskSELECT\_HIGHEST\_PRIORITY\_TASK()}.
 U njemu se određuje koji zadatak će se idući poslati na izvršavanje iz liste koja trenutno sadrži zadatke najvećeg prioriteta.
 Prije izmjene zadatci su dijelili procesorsko vrijeme, svaki zadatak po jedan vremenski odsječak. To je bilo realizirano pozivom
-macro-a \texttt{listGET\_OWNER\_OF\_NEXT\_ENTRY} koji je iterirao po svim članovima listi. Umjesto toga, potrebno je svaki vremenski odsječak
+macro-a \texttt{listGET\_OWNER\_OF\_NEXT\_ENTRY} koji je iterirao po svim članovima liste. Umjesto toga, potrebno je svaki vremenski odsječak
 dohvatiti prvi element liste. Za to u FreeRTOS-u postoji macro \texttt{listGET\_OWNER\_OF\_HEAD\_ENTRY} koji vrati pokazivač na 
 prvi element liste. To će biti zadatak koji se treba izvršavati jer je lista sortitana u uzlaznom poretku. 
 U svakom vremenskom odsječku u varijablu \texttt{pxCurrentTCB} treba pohraniti pokazivač na prvi element liste. Time je osigurano da
 se uvijek izvodi zadatak najvećeg prioriteta, skroz dok se ne izvede, dok ga ne prekine neki kritičniji zadatak ili dok ga sustav 
 ne prekine strategijom prekidanja poslova.
 
+%\begin{figure}[h!]
+%\centering
+%\begin{lstlisting}[style=CStyle,caption={Primjer uključenja algoritma BWP},captionpos=b]
+%pxCurrentTCB=listGET_OWNER_OF_HEAD_ENTRY(&( pxReadyTasksLists[ uxTopPriority ] ) );
+%\end{lstlisting}
+%\end{figure}
+
 Nadalje je pri stavljanju zadatka u listu zadataka spremih za izvršavanje potrebno generirati i upisati vrijednost \texttt{xItemValue}
 prema kojoj će se zadatci sortirati. To je implementirano u macro funkciji \texttt{prvAddTaskToReadyList}. Za svaki algoritam 
 potrebno je imati posebno implementiranu funkciju \texttt{prvAddTaskToReadyList}. To je ostvareno preko konstanti u datoteci 
-FreeRTOSconfig.h. Za svaki algoritam definirana je jedna konstanta, i onaj algoritam kojem je vrijednost konstante 1 se koristi.
+FreeRTOSconfig.h. Za svaki algoritam definirana je jedna konstanta, i koristi se onaj algoritam kojem je vrijednost konstante 1.
 Prije pokretanja simulacije korisnik treba odabrati koji algoritam se koristi, vrijednost njegove konstante postaviti u 1, a svih 
 ostalih u 0. Time je omogućeno da se macro \texttt{prvAddTaskToReadyList} napiše za svaki algoritam zasebno, ali unutar pretprocesorske
-naredbe \#if, te će na kraju samo jedna verzija biti uključena u program.
+naredbe \#if, te će na kraju samo jedna verzija biti uključena u program. Ukoliko korisnik pokuša istovremeno uključiti više 
+algoritama program će javiti grešku.
 
 \begin{figure}[h]
 \centering
@@ -351,9 +360,9 @@ naredbe \#if, te će na kraju samo jedna verzija biti uključena u program.
 \end{lstlisting}
 \end{figure}
 
-\subsection{Implementacija EDF algoritma}
+\subsection{Implementacija algoritma EDF}
 
-Kako je ranije opisano, EDF algoritam sortira zadatke prema vremenu krajnjeg roka za izvršavanje. Pri stavljanju zadatka u 
+Kako je ranije opisano, algoritam EDF sortira zadatke prema vremenu krajnjeg roka za izvršavanje. Pri stavljanju zadatka u 
 listu za spremne zadatke, potrebno je izračunati apsolutno vrijeme roka za izvršenje posla. Pošto su nam rokovi za izvršavanje
 uvijek višekratnici perioda, zapravo trebamo izračunati vrijeme sljedećeg perioda. To radimo tako da od trenutnog vremena 
 oduzmemo vrijeme proteklo od početka perioda (time smo dobili početak perioda) te još nadodamo jedan period. Kod EDF algoritma
@@ -365,23 +374,23 @@ listSET_LIST_ITEM_VALUE(&(( pxTCB )->xStateListItem),(( pxTCB )->xTaskPeriod+xTa
 \end{lstlisting}
 
 
-\subsection{Implementacija RTO algoritma}
+\subsection{Implementacija algoritma RTO}
 
-Kod RTO algoritma izvršavaju se samo zadatci koji se moraju izvršiti, a svi ostali se preskaču. Drugim rječima, čim neki posao 
+Kod algoritma RTO izvršavaju se samo zadatci koji se moraju izvršiti, a svi ostali se preskaču. Drugim rječima, čim neki posao 
 možemo preskočii, preskočiti ćemo ga. Zadatci koji se šalju na izvršavanje raspoređuju se po EDF algoritmu. Jedina razlika u odnosu
 na EDF algoritam je ta što provjeravamo ublažene uvjete u strogom SRSV-u te ukoliko se zadatak može prekočiti ne dodajemo ga u 
 listu zadataka koji čekaju na izvršavanje, nego on ostaje u listi za čekanje. 
 
 DODAJ PSEUDO KOD OVOG !!!!
 
-\subsection{Implementacija BWP algoritma}
+\subsection{Implementacija algoritma BWP}
 
 Kako je ranije opisano, BWP algoritam je proširenje RTO algoritma. Sada se svi zadatci stavljaju u listu zadataka spremnih za izvršavanje,
-ali opcionalni zadatci na red dolaze tek kada su svi strogi poslovi obavljeni. To je potrebno osigurati sortiranjem prema vrijednosti
+ali plavi zadatci na red dolaze tek kada su svi strogi poslovi obavljeni. To je potrebno osigurati sortiranjem prema vrijednosti
 \texttt{xItemValue}. Svi poslovi i dalje će biti raspoređivani EDF algoritmom, ali podjeljeni u dvije skupine (poslovi koji se moraju
 izvršiti i oni čije je izvršavanje opcionalno). Pošto je \texttt{xItemValue} je 32-bitni cijeli broj, a manja vrijednost daje prioritet
-za izvršavanje, poslovima koji se ne moraju izvršiti postavit će se najznačajniji bit u 1. Time je osigurano da takvi poslovi budu 
-zadnji na redu za izvršavanje.  
+za izvršavanje, plavim poslovima najznačajniji bit je postavljen u 1. Time je osigurano da takvi poslovi budu 
+zadnji na redu za izvršavanje jer će im \texttt{xItemValue} biti najveći.  
 
 DODAJ PSEUDO KOD OVOG !!!!
 
