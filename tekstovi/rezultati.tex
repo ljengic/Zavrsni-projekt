@@ -1,0 +1,37 @@
+\documentclass[../zavrsni.tex]{subfiles}
+
+\begin{document}
+
+Postupkom opisanim u prošlom poglavlju generirani su izvještaji za ranije opisane algoritme koji su implementirani unutar FreeRTOS-a.
+OPIŠI KAKO SDE DOBIJU GRAFOVI , PYTHON ITD. (ili to ipak u prethodno poglavlje hmm) 
+
+Za početak će biti prikazani rezultati simulacija algoritma EDF. Graf koji prikazuje kvalitetu usluge u odnosu na faktor opterećenja 
+prikazan je na slici 5.1. 
+\begin{figure}[!htb]
+    \center{\includegraphics[width=\textwidth]
+    {images/Figure_3.png}}
+    \caption{\label{fig:my-label} Usporedba algoritama BWP i RTO}
+\end{figure}
+Algoritam EDF je izdvojen od ostala dva jer nije primjenjiv za ublaženo-stroge
+uvjete u sustavima za rad u stvarnom vremenu. Stoga je uz kvalitetu usluge, na posebnom grafu na slici N.M prikazan odnos broja kršenja 
+postavljenih uvjeta u skip over modelu i ukupnog broja zadataka. Kršenje ublaženo-strogih uvjeta prikazuje se relativno u odnosu na broj 
+poslova jer svaka simulacija ima različite vrijednosti perioda, a time i različit broj poslova.
+Vidljivo je kako opterećenje sustava raste, sve više puta se krše uvjeti postavljeni nad 
+skupom zadataka.
+
+OVDJE IDE JOS JEDAN GRAF, podatci su generirani samo ga treba plotati.
+
+U kontekstu skip-over modela ublaženo-strogih uvjeta potrebno je usporediti algoritme RTO i BWP. Graf dobiven iz podataka skupljenih simulacijama
+prikazan je na slici 5.3. Na grafu su prikazane kvalitete usluga u ovisnosti o faktoru opterećenja. Vidljivo je da BWP algoritam za mala 
+opterećenja ima puno veću kvalitetu usluge, koja opada kako opterećenje sustava raste. Kod algoritma RTO kvaliteta usluge je gotovo nepromjenjiva
+u odnosu na faktor opterećenja i znatno niža od one kod algoritma BWP. 
+
+\begin{figure}[!htb]
+    \center{\includegraphics[width=\textwidth]
+    {images/Figure_2.png}}
+    \caption{\label{fig:my-label} Usporedba algoritama BWP i RTO}
+\end{figure}
+
+\end{document}
+
+jos pokoja pametna recenica...

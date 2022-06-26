@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  25 JUN 2022 23:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  27 JUN 2022 00:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -664,6 +664,12 @@ LaTeX Warning: Label `tab:table-name' multiply defined.
 
 LaTeX Warning: Label `fig:my-label' multiply defined.
 
+
+LaTeX Warning: Label `fig:my-label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my-label' multiply defined.
+
 )
 \openout1 = `zavrsni.aux'.
 
@@ -1171,6 +1177,18 @@ Overfull \hbox (1.51459pt too wide) in paragraph at lines 31--40
 aspored poslova se ponavlja
  []
 
+
+Overfull \hbox (3.35048pt too wide) in paragraph at lines 31--40
+\T1/ptm/m/n/12 predugo. Kako bi se sprije£io opisani problem, nakon generiranja
+ perioda ra£una se vrijednost
+ []
+
+
+Overfull \hbox (13.35867pt too wide) in paragraph at lines 31--40
+\T1/ptm/m/n/12 hiperperioda i ako je ve¢a od zadane konstante generiranje perio
+da se pokre¢e iznova. Konstanta
+ []
+
 [19
 
 ]
@@ -1191,60 +1209,100 @@ Overfull \hbox (25.42735pt too wide) in paragraph at lines 48--50
 perioda i faktora optere¢enja.
  []
 
-
-Overfull \hbox (85.0827pt too wide) in paragraph at lines 78--84
-\T1/ptm/m/n/12 pripadaju¢em periodu. To je implementirano pomo¢u polja varijabl
-i tipa bool \T1/pcr/m/n/12 report[MAX_PERIOD_CNT]
- []
-
-
-Overfull \hbox (22.15555pt too wide) in paragraph at lines 78--84
-\T1/ptm/m/n/12 svaki posao pojedinog zadatka upisuje 1 ako se pravovremeno izve
-o, to jest, ako je u \T1/pcr/m/n/12 report[j]
- []
-
 [20]
+Overfull \hbox (14.54677pt too wide) in paragraph at lines 84--90
+\T1/ptm/m/n/12 svakom periodu. Tako se dobije informacija o izvoženju svakog za
+datka u svakom pripadaju¢em
+ []
+
+
+Overfull \hbox (17.48738pt too wide) in paragraph at lines 84--90
+\T1/ptm/m/n/12 periodu. To je implementirano pomo¢u polja varijabli tipa bool \
+T1/pcr/m/n/12 report[MAX_PERIOD_CNT]
+ []
+
+
+Overfull \hbox (25.31062pt too wide) in paragraph at lines 84--90
+\T1/pcr/m/n/12 report[j] \T1/ptm/m/n/12 upisana jedinica, to zna£i da se j-ti p
+osao od po£etka simulacije izveo pravovremeno.
+ []
+
 <images/csv.png, id=126, 801.99625pt x 261.97874pt>
 File: images/csv.png Graphic file (type png)
 <use images/csv.png>
-Package pdftex.def Info: images/csv.png  used on input line 128.
+Package pdftex.def Info: images/csv.png  used on input line 134.
 (pdftex.def)             Requested size: 441.01773pt x 144.06476pt.
- [21]
-Overfull \hbox (11.0888pt too wide) in paragraph at lines 134--144
-\T1/ptm/m/n/12 najprije stvara csv datoteka u kojoj ¢e biti pohranjen izvje²taj
- sa podatcima o svim simulacijama
+[21]
+Overfull \hbox (13.76596pt too wide) in paragraph at lines 140--143
+\T1/ptm/m/n/12 Pri pokretanju simulacije programu se preko argumenata proslježu
+ju 3 parametra, broj zadataka,
  []
 
 
-Overfull \hbox (15.50502pt too wide) in paragraph at lines 134--144
-\T1/ptm/m/n/12 nakon zavr²ene simulacije. Faktor optere¢enja se radi jednostavn
-osti implementacije proslježuje
+Overfull \hbox (8.6654pt too wide) in paragraph at lines 144--152
+\T1/ptm/m/n/12 automatizirao i ubrzao, implementirana je bash skripta \T1/pcr/m
+/n/12 simulation.sh\T1/ptm/m/n/12 . U skripti zadajemo
+ []
+
+
+Overfull \hbox (114.30257pt too wide) in paragraph at lines 144--152
+\T1/ptm/m/n/12 svakoj iteraciji petlje stvara se datoteka tipa csv, naziva obli
+ka \T1/pcr/m/n/12 ime_algoritma_faktor_optere¢enja.csv\T1/ptm/m/n/12 .
+ []
+
+
+Overfull \hbox (17.0059pt too wide) in paragraph at lines 144--152
+\T1/ptm/m/n/12 20 puta te ¢e se rezultati svake simulacije pohraniti u jedan re
+dak navedene datoteke. Zavr²etkom
  []
 
 ) [22 <./images/csv.png>]
 Chapter 5.
+(./tekstovi/rezultati.tex
+Overfull \hbox (15.86311pt too wide) in paragraph at lines 5--7
+\T1/ptm/m/n/12 koji su implementirani unutar FreeRTOS-a. OPI’I KAKO SDE DOBIJU 
+GRAFOVI , PYTHON
+ []
+
+<images/Figure_3.png, id=134, 497.2176pt x 356.2911pt>
+File: images/Figure_3.png Graphic file (type png)
+<use images/Figure_3.png>
+Package pdftex.def Info: images/Figure_3.png  used on input line 12.
+(pdftex.def)             Requested size: 441.01773pt x 316.03795pt.
+
+Overfull \hbox (0.81891pt too wide) in paragraph at lines 8--21
+\T1/ptm/m/n/12 odnos broja kr²enja postavljenih uvjeta u skip over modelu i uku
+pnog broja zadataka. Kr²enje
+ []
+
 [23
 
-]
+ <./images/Figure_3.png>]
+<images/Figure_2.png, id=139, 456.7464pt x 374.3586pt>
+File: images/Figure_2.png Graphic file (type png)
+<use images/Figure_2.png>
+Package pdftex.def Info: images/Figure_2.png  used on input line 31.
+(pdftex.def)             Requested size: 441.01773pt x 361.48799pt.
+) [24 <./images/Figure_2.png>]
 Chapter 6.
-(./tekstovi/zakljucak.tex) (./zavrsni.bbl [24
+(./tekstovi/zakljucak.tex) (./zavrsni.bbl [25
 
 ]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [25
+) [26
 
-] [26] (./zavrsni.aux)
+] [27] (./zavrsni.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18733 strings out of 483183
- 342506 string characters out of 5966292
- 817649 words of memory out of 5000000
- 33355 multiletter control sequences out of 15000+600000
+ 18748 strings out of 483183
+ 342813 string characters out of 5966292
+ 817647 words of memory out of 5000000
+ 33366 multiletter control sequences out of 15000+600000
  599982 words of font info for 102 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  68i,9n,83p,439b,1418s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1261,10 +1319,10 @@ ive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (31 pages, 242568 bytes).
+Output written on zavrsni.pdf (32 pages, 277804 bytes).
 PDF statistics:
- 194 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
+ 201 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 

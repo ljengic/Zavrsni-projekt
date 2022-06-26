@@ -33,16 +33,16 @@ U konkretnom slučaju provedenih simulacija vrijednosti perioda su iz intervala 
 računanju vremena izvršavanja, što u najgorem slučaju ima za posljedicu znatnu promjenu faktora opterećenja sustava. 
 Sljedeća veličina koja je potrebna za 
 provedbu simulacije je hiperperiod. To je najmanji zajednički višekratnik vrijednosti perioda svih zadataka. Nakon vremena hiperperioda, raspored poslova 
-se ponavlja jer se krajnji rokovi završetka svih zadataka poklope u isti trenutak (kao i na početku u vremenu t=0). Zbog toga je simulaciju potrebno provesti od trenutka t=0 do vrijendosti hiperperioda. 
+se ponavlja jer se krajnji rokovi završetka svih zadataka poklope u isti trenutak (kao i na početku u vremenu t=0). Zbog toga je simulaciju potrebno provesti od trenutka t=0 do vrijednosti hiperperioda. 
 Vrijednosti hiperperioda mogu biti prevelike te 
-bi zbog toga simulacije trajale predugo. Kako bi se spriječio opisani problem, nakon generiranja perioda računa se vrijesnot hiperperioda i ukoliko je veća od zadane konstante
+bi zbog toga simulacije trajale predugo. Kako bi se spriječio opisani problem, nakon generiranja perioda računa se vrijednost hiperperioda i ako je veća od zadane konstante
  generiranje perioda se pokreće iznova. Konstanta je izračunata tako da se simulacija ne izvodi više od 10 sekundi.
 
 Za generiranje faktora opterećenja za skup testnih zadataka korišten je algoritam UUniFast. Algoritam prima ukupan broj zadataka 
 i sumu faktora opterećenja svih zadataka te uniformno raspoređuje faktore opterećenja. Ovaj algoritam korišten je jer pri generiranju nasumičnih
 vrijednosti ne daje prednost niti jednoj vrijednosti. Vremenska složenost algoritma je O(n). Kako bi generirani skup zadataka bio što sličniji stvarnim uvjetima
 , nakon generiranja faktora opterećenja ugrađena je provjera da neki zadatak ne zauzima previše procesorskog vremena. Konkretno, ako neki zadatak ima faktor
-opterećenja veći od 0.75, sve vrijednosti se odbaciju i algoritam se ponavlja. Ovu provjeru bilo je potrebno napraviti i iz razloga što je moguće da faktor
+opterećenja veći od 0.75, sve vrijednosti se odbacuju i algoritam se ponavlja. Ovu provjeru bilo je potrebno napraviti i zato što je moguće da faktor
 opterećenja zadatka bude veći od 1, što nema smisla razmatrati.
 
 Vrijeme izvršavanja pojedinog zadatka dobiveno je kao umnožak perioda i faktora opterećenja.
@@ -53,6 +53,12 @@ Ublaženo-strogi uvjeti zadataka, kao i periodi, generirani su uniformnom razdio
 \begin{equation*}
     \sum\frac{C\textsubscript{i}*(S\textsubscript{i}-1)}{T\textsubscript{i}*(S\textsubscript{i})} \le 1
 \end{equation*}
+
+\begin{equation*}
+    \lfloor \frac{L}{T\textsubscript{i}}-\frac{L}{T\textsubscript{i}*S\textsubscript{i}} \rfloor
+\end{equation*}
+
+
 
 Prije početka svake simulacije poziva se funkcija \texttt{startTaskSetGenerator()} koja poziva potrebne funkcije kako bi se izvršili 
 svi ranije navedeni koraci za generiranje skupa zadataka. Navedena funkcija kao argumente prima ukupan broj zadataka koje je potrebno generirati, zadani 
@@ -76,8 +82,8 @@ void startTaskSetGenerator(double utilization,int n, char * report_file){
 \section{Tijek simulacije}
 
 Tijekom izvođenja simulacije za svaki se zadatak pamti je li izvršen do roka završetka u svakom periodu. 
-Na taj način se dobije informacija o izvođenju svakog zadatka u svakom pripadajućem periodu. To je implementirano 
-pomoću polja varijabli tipa bool \texttt{report[MAX\_PERIOD\_CNT] } koje je pridjeljeno svakom zadatku kao član strukture \texttt{periodic\_task}.
+Tako se dobije informacija o izvođenju svakog zadatka u svakom pripadajućem periodu. To je implementirano 
+pomoću polja varijabli tipa bool \texttt{report[MAX\_PERIOD\_CNT] } koje je pridijeljeno svakom zadatku kao član strukture \texttt{periodic\_task}.
 U polju se za svaki posao pojedinog zadatka upisuje 1 ako se pravovremeno izveo, to jest, ako je u \texttt{report[j]} upisana jedinica, to znači da se 
 j-ti posao od početka simulacije izveo pravovremeno. Ako je vrijednost 0 posao se nije izveo do krajnjeg roka za završetak.
 Simulacija se prekida nakon hiperperioda.
@@ -110,18 +116,18 @@ Rezultat simulacije u obliku polja tipa bool za svaki zadatak izgleda ovako:
         \item[] $\tau_3$ : 11111110111111101111101111111110.
 \end{itemize}
 
-Iz generiranog polja nula i jedinica, koje predstavljaju izvršavanje poslova, potrebno je interpertirati podatke o provedenoj simulaciji.
-Za svaki zadatak potrebno je pobrojiti propuštene rokove završetka, kao i broj kršenja ublaženo strogih ujeta postavljenih nad generiranim skupom.
+Iz generiranog polja nula i jedinica, koje predstavljaju izvršavanje poslova, potrebno je interpretirati podatke o provedenoj simulaciji.
+Za svaki zadatak potrebno je pobrojiti propuštene rokove završetka, kao i broj kršenja ublaženo strogih uvjeta postavljenih nad generiranim skupom.
 Također je bitno znati jesu li bili zadovoljeni svi ublaženo-strogi uvjeti 
 postavljeni nad skupom zadataka te kolika je kvaliteta usluge. Za sve navedeno implementirane su funkcije u datoteci \texttt{taskSetGenerator.c}.
 
 Za ranije dan primjer, iz rezultata je vidljivo da su zadovoljeni svi ublaženo-strogi uvjeti. Zadatak $\tau_1$ 
-proputio je izvršavanje 8 puta, $\tau_2$ 3 puta, a $\tau_3$ 4 puta. Propušteno je 15 poslova od ukupno 65, što
+propustio je izvršavanje 8 puta, $\tau_2$ 3 puta, a $\tau_3$ 4 puta. Propušteno je 15 poslova od ukupno 65, što
 daje kvalitetu usluge 0.80. 
 
 Za pohranu rezultata simulacija odabrana je datoteka tipa csv (engl. comma-separated values). To je datoteka u kojoj su vrijednosti odvojene zarezima 
 i koja omogućuje spremanje podataka u tablično strukturiranom formatu. Rezultat svake simulacije pohranjen je kao jedan redak ovakve datoteke sa svim ranije 
-navedenim vrijednosti koje opisuju provedenu simulaciju. Primjer datoteke izveštaja dan je da slici 4.1.
+navedenim vrijednosti koje opisuju provedenu simulaciju. Primjer datoteke izvještaja dan je da slici 4.1.
 
 \begin{figure}[!htb]
     \center{\includegraphics[width=\textwidth]
@@ -131,18 +137,18 @@ navedenim vrijednosti koje opisuju provedenu simulaciju. Primjer datoteke izveš
 
 \section{Pokretanje simulacije}
 
-Radi usporedbe različitih algoritama nad generiranim setom zadataka potrebno je pokrenuti program uz različite faktore opterećenja. 
-Za to je implementirana bash skripa kojom se najprije stvara csv datoteka u kojoj će biti pohranjen izvještaj sa podatcima o 
-svim simulacijama pokrenutim za određeni set testnih zadataka. Za stvaranje datoteke izvještaja napisan je poseban c program koji osim što
-stvori datoteku zapiše u nju prvi red sa nazivima pojedinih stupaca.
-Skripta nadalje pokreće simulaciju od faktora opterećenja 0.9 do 1.5, uz korake 0.01 te se nakon svakog pokretanja simulatora u 
-datoteku izvještaja upisuje jedna linija koja sadrži ranije opisane podatke.
 Pri pokretanju simulacije programu se preko argumenata prosljeđuju 3 parametra, broj zadataka, 
-faktor opterećenja te datoteka na čiji će se kraj upisivati izvještaj nakon završene simulacije.
-Faktor opterećenja se radi jednostavnosti implementacije prosljeđuje pomožen sa 100, jer bash ne podržava rad sa decimalnim brojevima.
-U nastavku je priložena slika datoteke izvještaja.
+faktor opterećenja te datoteka u koju će se upisivati izvještaj nakon završene simulacije.
+Faktor opterećenja se radi jednostavnosti implementacije prosljeđuje pomnožen sa 100, jer bash ne podržava rad s decimalnim brojevima.
 
-DODAJ SLIKU IZVJEŠTAJA !!!
+Za analizu rezultata potrebno je napraviti velik broj simulacija. Kako bi se taj proces automatizirao i ubrzao, implementirana 
+je bash skripta \texttt{simulation.sh}. U skripti zadajemo naziv algoritma koji se trenutno koristi (koji je uključen u 
+konfiguracijskoj datoteci). Pojedini algoritam potrebno je simulirati za faktore opterećenja u rasponu od 0.9 do 1.5 uz korake 0.05.
+Za to se petljom prolazi po svim faktorima opterećenja iz navedenog intervala. U svakoj iteraciji petlje stvara se datoteka tipa
+csv, naziva oblika \texttt{{ime\_algoritma}\_{faktor\_opterećenja}.csv}. Na primjer, uz korištenje BWP algoritma i faktora opterećenja 1.25 
+datoteka će se zvati \texttt{BWP\_125.csv}. Skripta će nadalje pokrenuti simulaciju sa zadanim faktorom opterećenja 20 puta te će se rezultati 
+svake simulacije pohraniti u jedan redak navedene datoteke. Završetkom rada skripte generirano je 13 datoteka, a u svakoj se nalaze rezultati 
+20 simulacija. Simulaciju je potrebno posebno pokrenuti za svaki ispitivani algoritam.  
 
 OPISI KAKO SE IZ IZVJEŠTAJA DOBIJU GRAFOVI!!!
 

@@ -23,5 +23,5 @@
 \contentsline {section}{\numberline {4.2}Tijek simulacije}{21}%
 \contentsline {section}{\numberline {4.3}Pokretanje simulacije}{22}%
 \contentsline {chapter}{\numberline {5}Rezultati}{23}%
-\contentsline {chapter}{\numberline {6}Zaključak}{24}%
-\contentsline {chapter}{Bibliography}{25}%
+\contentsline {chapter}{\numberline {6}Zaključak}{25}%
+\contentsline {chapter}{Bibliography}{26}%
