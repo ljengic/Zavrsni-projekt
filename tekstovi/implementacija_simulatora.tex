@@ -48,8 +48,12 @@ opterećenja zadatka bude veći od 1, što nema smisla razmatrati.
 Vrijeme izvršavanja pojedinog zadatka dobiveno je kao umnožak perioda i faktora opterećenja.
 Imena zadataka generiraju se u obliku \texttt{Task\_xx}, gdje xx predstavlja id pojedinog zadatka, počevši od 1 do broja zadataka.
 
-Ublaženo-strogi uvjeti zadataka, kao i periodi, generirani su uniformnom razdiobom. Vrijednosti su iz intervala [0,5]. DODAJ OPIS ZA UVJETE RASPOREDIVOSTI
+Ublaženo-strogi uvjeti zadataka (skip-over faktor), kao i periodi, generirani su uniformnom razdiobom. Vrijednosti su iz intervala [0,5].
+Nakon generiranja skupa zadataka potrebno je provjeriti hoće li on biti rasporedljiv. Ako nije rasporedljiv, ublaženo strogi uvjeti nanovo 
+će se generirati skroz dok uvjeti rasporedljivosti ne budu zadovoljeni. Za skip-over model postoji nužan i dovoljan uvjet za rasporedljivost 
+poslova. Za svaki generirani skup provjeravaju se navedeni ujeti, dani na sljedećim formulama: 
 
+OVO TREBA JOŠ NAPISATI !!!
 \begin{equation*}
     \sum\frac{C\textsubscript{i}*(S\textsubscript{i}-1)}{T\textsubscript{i}*(S\textsubscript{i})} \le 1
 \end{equation*}
@@ -149,9 +153,5 @@ csv, naziva oblika \texttt{{ime\_algoritma}\_{faktor\_opterećenja}.csv}. Na pri
 datoteka će se zvati \texttt{BWP\_125.csv}. Skripta će nadalje pokrenuti simulaciju sa zadanim faktorom opterećenja 20 puta te će se rezultati 
 svake simulacije pohraniti u jedan redak navedene datoteke. Završetkom rada skripte generirano je 13 datoteka, a u svakoj se nalaze rezultati 
 20 simulacija. Simulaciju je potrebno posebno pokrenuti za svaki ispitivani algoritam.  
-
-OPISI KAKO SE IZ IZVJEŠTAJA DOBIJU GRAFOVI!!!
-
-IZNOS TICKA NA KONKRETNOM SIMULATORU
 
 \end{document}

@@ -54,7 +54,7 @@ implementaciji konkretnih SRSV-ova.
 Periodični zadatci su zadatci koji se iznova ponavljaju u istim vremenskim intervalima $T_i$. Taj interval naziva se period zadatka.
 Dio zadatka izvršen u jednom periodu naziva se posao.
 Svaki zadatak opisuje i vrijeme njegova izvršavanja $C_i$ (engl. computation time). Period i vrijeme izvršavanja zajedno daju veličinu 
-koju nazivamo faktor opterećenja (engl. utilization factor) koja daje postotak zauzeća procesora pojedinog zadatka u jednom periodu. S obzirom da se poslovi
+koju nazivamo faktor opterećenja (engl. utilization factor) koja daje postotak zauzeća procesora pojedinog zadatka u jednom periodu. S obzirom na to da se poslovi
 ponavljaju jedan za drugim, to je ujedno i veličina koja govori koliko procesorskog vremena se ukupno troši na taj zadatak.
 \begin{equation*}
     U\textsubscript{i} = \frac{C\textsubscript{i}}{T\textsubscript{i}}
@@ -172,8 +172,8 @@ sustava je 1.08.
 
 Algoritam EDF (engl. earliest deadline first) je algoritam koji pri raspoređivanju zadataka najveći prioritet daje onim poslovima 
 koji imaju najbliži krajnji rok završetka. 
-Ukoliko sustav nije preopterećen (ako je ukupni faktor opterećenja manji ili jednak od 1) 
-ovim algoritmom optimalno će se rasporediti zadatci i svi će se izvršiti. Ovaj algoritam nije pogodan za primjenu sa ublaženo strogim uvjetima, 
+Ako sustav nije preopterećen (ako je ukupni faktor opterećenja manji ili jednak od 1) 
+ovim algoritmom optimalno će se rasporediti zadatci i svi će se izvršiti. Ovaj algoritam nije pogodan za primjenu s ublaženo strogim uvjetima, 
 ali u ovom radu je istražen jer se u praksi često koristi. 
 Raspored generiran EDF algoritmom prikazan je na slici 2.3.
 Na vremenskom dijagramu crnom bojom su prikazani poslovi koji su propustili svoj krajnji rok izvršenja.
@@ -275,9 +275,9 @@ ranije opisanom EDF algoritmu.
 \subsection{BWP algoritam}
 
 Algoritam BWP (engl. blue when possible) je poboljšanje ranije opisanog RTO algoritma. Kod BWP algoritma prioritet imaju strogi zadatci, 
-no raspoređuju se i zadatci koji se ne moraju nužno izvesti. Na taj način, ukoliko se svi strogi zadatci izvrše, na red će doći
+no raspoređuju se i zadatci koji se ne moraju nužno izvesti. Na taj način, ako se svi strogi zadatci izvrše, na red će doći
 i opcionalni zadatci. Ovom modifikacijom znatno se poboljša kvaliteta usluge, pogotovo pri
- manjim faktorima opterećenja. Zadatci su u dijagramu obojani prema nazivu algoritma, crvena boja za stroge zadatke, a plava za zadatke 
+ manjim faktorima opterećenja. Zadatci su u dijagramu obojeni prema nazivu algoritma, crvena boja za stroge zadatke, a plava za zadatke 
  čije izvršavanje je opcionalno. 
 
  \begin{figure}[h!]
