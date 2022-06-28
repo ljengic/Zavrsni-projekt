@@ -15,17 +15,20 @@ među zadatcima.
 S obzirom na posljedice koje izaziva propuštanje roka izvršavanja zadatke dijelimo u četiri skupine :
 \begin{itemize}
     \item[--] strogi zadatci (engl. hard real time-tasks),
-    \item[--] nekritični zadatci (engl. soft real time-tasks),
-    \item[--] PREVEDI OVO KAKO GOD ZNAS (engl. firm real-time tasks),
+    \item[--] ublaženi zadatci (engl. soft real time-tasks),
+    \item[--] čvrsti zadatci (engl. firm real-time tasks),
     \item[--] opcionalni zadatci (engl. non real-time tasks).
 \end{itemize}
+
 SLIKA OVDJE ONA SA 4 STANJA IZ KNJIGE !!
 
 Strogi zadatci niti jednom ne smiju propustiti krajnji rok izvršavanja jer su to zadatci koji obavljaju važan posao. Njihovo 
 propuštanje izaziva katastrofalne posljedice koje mogu biti pogubne za cijeli sustav i njegovu okolinu. Dobar primjer strogog zadatka je detekcija 
 pritiska papučice kočnice na automobilu. Taj zadatak je kritičan i propuštanje njegovog izvršenja za posljedicu može imati ozbiljnu
-nesreću s ljudskim žrtvama. S druge strane, propuštanje nekih zadataka nije kritično i neće nanijeti štetu sustavu, nego će smanjiti
- performanse ili mogućnosti sustava. Primjer ovakvog zadatka je paljenje signalne lampice ili prikaz podataka na pokazniku.
+nesreću s ljudskim žrtvama. Čvrsti zadatci su oni čije prekasno izvršavanje ne donosi korist sustavu, ali mu ni ne šteti.
+Za razliku od čvrstih, kod ublaženih zadataka čak i izvršavanje poslije krajnjeg roka izvršavanja donosi korist sustavu.
+Primjer ovakvog zadatka je paljenje signalne lampice ili prikaz podataka na pokazniku.
+Na kraju, imamo zadatke koji su opcionalni i nisu vremenski ograničeni, te donose jednaku korist sustavu kad god se izveli.
 
 Zadatci u operacijskim sustavima za rad u stvarnom vremenu općenito se mogu naći u jednom od 3 stanja, a to su:
 \begin{itemize}

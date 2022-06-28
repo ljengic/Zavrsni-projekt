@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  27 JUN 2022 12:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  28 JUN 2022 21:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -830,16 +830,10 @@ Overfull \hbox (16.74156pt too wide) in paragraph at lines 7--14
 sinkronizacije mežu zadatcima. 
  []
 
-
-Overfull \hbox (23.92926pt too wide) in paragraph at lines 24--29
-\T1/ptm/m/n/12 propu²tanje nekih zadataka nije kriti£no i ne¢e nanijeti ²tetu s
-ustavu, nego ¢e smanjiti performanse
- []
-
 [3
 
 ]
-Overfull \hbox (7.2836pt too wide) in paragraph at lines 37--45
+Overfull \hbox (7.2836pt too wide) in paragraph at lines 40--48
 []\T1/ptm/m/n/12 Kod sustava s jednom procesorskom jezgrom samo, jedan zadatak 
 se u odreženom trenutku
  []
@@ -847,15 +841,15 @@ se u odreženom trenutku
 <images/stanja_taskova.png, id=62, 485.815pt x 285.065pt>
 File: images/stanja_taskova.png Graphic file (type png)
 <use images/stanja_taskova.png>
-Package pdftex.def Info: images/stanja_taskova.png  used on input line 48.
+Package pdftex.def Info: images/stanja_taskova.png  used on input line 51.
 (pdftex.def)             Requested size: 441.01773pt x 258.77884pt.
 
-Overfull \hbox (26.26439pt too wide) in paragraph at lines 52--52
+Overfull \hbox (26.26439pt too wide) in paragraph at lines 55--55
 []\T1/ptm/b/n/17.28 Periodi£ni zadatci u sustavima za rad u stvarnom vremenu 
  []
 
 [4 <./images/stanja_taskova.png>]
-Overfull \hbox (1.44228pt too wide) in paragraph at lines 61--68
+Overfull \hbox (1.44228pt too wide) in paragraph at lines 64--71
 \T1/ptm/m/n/12 jedinice, a vrijeme izvr²avanja pojedinog posla 1 vremensku jedi
 nicu. Pomo¢u ta dva podatka
  []
@@ -869,19 +863,19 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (33.218pt too wide) in paragraph at lines 105--109
+Overfull \hbox (33.218pt too wide) in paragraph at lines 108--112
 \T1/ptm/m/n/12 trenutku moºe do¢i do aktivacije aperiodi£nog zadatka koji onda 
 sustav gura u stanje preoptere¢enja.
  []
 
 [5]
-Overfull \hbox (8.71425pt too wide) in paragraph at lines 112--115
+Overfull \hbox (8.71425pt too wide) in paragraph at lines 115--118
 \T1/ptm/m/n/12 hard constraints). Za razliku od kriti£nih zadataka, kod ublaºen
 o-kriti£nih zadataka povremeno
  []
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 141.
+LaTeX Warning: Command \v invalid in math mode on input line 144.
 
 Missing character: There is no ² in font cmr12!
 [6]
@@ -1234,57 +1228,57 @@ aki generirani skup provjeravaju
  []
 
 [20]
-Overfull \hbox (14.54677pt too wide) in paragraph at lines 88--94
+Overfull \hbox (14.54677pt too wide) in paragraph at lines 93--99
 \T1/ptm/m/n/12 svakom periodu. Tako se dobije informacija o izvoženju svakog za
 datka u svakom pripadaju¢em
  []
 
 
-Overfull \hbox (17.48738pt too wide) in paragraph at lines 88--94
+Overfull \hbox (17.48738pt too wide) in paragraph at lines 93--99
 \T1/ptm/m/n/12 periodu. To je implementirano pomo¢u polja varijabli tipa bool \
 T1/pcr/m/n/12 report[MAX_PERIOD_CNT]
  []
 
 
-Overfull \hbox (25.31062pt too wide) in paragraph at lines 88--94
+Overfull \hbox (25.31062pt too wide) in paragraph at lines 93--99
 \T1/pcr/m/n/12 report[j] \T1/ptm/m/n/12 upisana jedinica, to zna£i da se j-ti p
 osao od po£etka simulacije izveo pravovremeno.
  []
 
 [21]
-<images/csv.png, id=129, 801.99625pt x 261.97874pt>
+<images/csv.png, id=130, 801.99625pt x 261.97874pt>
 File: images/csv.png Graphic file (type png)
 <use images/csv.png>
-Package pdftex.def Info: images/csv.png  used on input line 138.
+Package pdftex.def Info: images/csv.png  used on input line 143.
 (pdftex.def)             Requested size: 441.01773pt x 144.06476pt.
 
-Overfull \hbox (13.76596pt too wide) in paragraph at lines 144--147
+Overfull \hbox (13.76596pt too wide) in paragraph at lines 149--152
 \T1/ptm/m/n/12 Pri pokretanju simulacije programu se preko argumenata proslježu
 ju 3 parametra, broj zadataka,
  []
 
 
-Overfull \hbox (8.6654pt too wide) in paragraph at lines 148--156
+Overfull \hbox (8.6654pt too wide) in paragraph at lines 153--161
 \T1/ptm/m/n/12 automatizirao i ubrzao, implementirana je bash skripta \T1/pcr/m
 /n/12 simulation.sh\T1/ptm/m/n/12 . U skripti zadajemo
  []
 
 
-Overfull \hbox (114.30257pt too wide) in paragraph at lines 148--156
+Overfull \hbox (114.30257pt too wide) in paragraph at lines 153--161
 \T1/ptm/m/n/12 svakoj iteraciji petlje stvara se datoteka tipa csv, naziva obli
 ka \T1/pcr/m/n/12 ime_algoritma_faktor_optere¢enja.csv\T1/ptm/m/n/12 .
  []
 
 
-Overfull \hbox (17.0059pt too wide) in paragraph at lines 148--156
+Overfull \hbox (17.0059pt too wide) in paragraph at lines 153--161
 \T1/ptm/m/n/12 20 puta te ¢e se rezultati svake simulacije pohraniti u jedan re
 dak navedene datoteke. Zavr²etkom
  []
 
-) [22 <./images/csv.png>]
+[22 <./images/csv.png>]) [23]
 Chapter 5.
 (./tekstovi/rezultati.tex
-<images/Figure_3.png, id=134, 497.2176pt x 356.2911pt>
+<images/Figure_3.png, id=138, 497.2176pt x 356.2911pt>
 File: images/Figure_3.png Graphic file (type png)
 <use images/Figure_3.png>
 Package pdftex.def Info: images/Figure_3.png  used on input line 14.
@@ -1295,25 +1289,25 @@ Overfull \hbox (0.81891pt too wide) in paragraph at lines 10--23
 pnog broja zadataka. Kr²enje
  []
 
-[23
+[24
 
  <./images/Figure_3.png>]
-<images/Figure_2.png, id=139, 456.7464pt x 374.3586pt>
+<images/Figure_2.png, id=143, 456.7464pt x 374.3586pt>
 File: images/Figure_2.png Graphic file (type png)
 <use images/Figure_2.png>
 Package pdftex.def Info: images/Figure_2.png  used on input line 33.
 (pdftex.def)             Requested size: 441.01773pt x 361.48799pt.
-) [24 <./images/Figure_2.png>]
+) [25 <./images/Figure_2.png>]
 Chapter 6.
-(./tekstovi/zakljucak.tex) (./zavrsni.bbl [25
+(./tekstovi/zakljucak.tex) (./zavrsni.bbl [26
 
 ]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [26
+) [27
 
-] [27] (./zavrsni.aux)
+] [28] (./zavrsni.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1332,17 +1326,18 @@ f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
-r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
-a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (32 pages, 278407 bytes).
+sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
+es/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on zavrsni.pdf (33 pages, 288741 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
+ 208 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  129 words of extra memory for PDF output out of 10000 (max. 10000000)
 

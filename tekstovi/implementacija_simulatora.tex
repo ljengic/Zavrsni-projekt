@@ -53,13 +53,18 @@ Nakon generiranja skupa zadataka potrebno je provjeriti hoće li on biti raspore
 će se generirati skroz dok uvjeti rasporedljivosti ne budu zadovoljeni. Za skip-over model postoji nužan i dovoljan uvjet za rasporedljivost 
 poslova. Za svaki generirani skup provjeravaju se navedeni ujeti, dani na sljedećim formulama: 
 
-OVO TREBA JOŠ NAPISATI !!!
+OVO TREBA JOŠ NAPISATI I UREDITI !!!
 \begin{equation*}
-    \sum\frac{C\textsubscript{i}*(S\textsubscript{i}-1)}{T\textsubscript{i}*(S\textsubscript{i})} \le 1
+    \sum_{i}\frac{C\textsubscript{i}(S\textsubscript{i}-1)}{T\textsubscript{i}(S\textsubscript{i})} \le 1
 \end{equation*}
 
 \begin{equation*}
-    \lfloor \frac{L}{T\textsubscript{i}}-\frac{L}{T\textsubscript{i}*S\textsubscript{i}} \rfloor
+    U_{p}^{*} \max_{L\geq0}\frac{\sum_{i}D(i,[0,L])}{L}
+\end{equation*}
+
+
+\begin{equation*}
+    D(i,[0,L])=\lfloor \frac{L}{T\textsubscript{i}}-\frac{L}{T\textsubscript{i}S\textsubscript{i}} \rfloor C\textsubscript{i}
 \end{equation*}
 
 
