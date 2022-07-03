@@ -41,6 +41,7 @@
 \renewcommand\lstlistingname{Odsječak koda}
 \renewcommand{\figurename}{Slika}
 \renewcommand{\tablename}{Tablica}
+\renewcommand\bibname{Literatura}
 
 \begin{document}
 
@@ -82,10 +83,20 @@
 \chapter{Zaključak}
 \subfile{tekstovi/zakljucak}
 
-\nocite{keys}
-\bibliography{literatura}
+%\nocite{}
 \bibliographystyle{fer}
+\bibliography{literatura}
 
+
+\begin{thebibliography}{9}
+    \bibitem{texbook}
+    Donald E. Knuth (1986) \emph{The \TeX{} Book}, Addison-Wesley Professional.
+    
+    \bibitem{lamport94}
+    Leslie Lamport (1994) \emph{\LaTeX: a document preparation system}, Addison
+    Wesley, Massachusetts, 2nd ed.
+    \end{thebibliography}
+    
 
 
 \begin{sazetak}

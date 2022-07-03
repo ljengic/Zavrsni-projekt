@@ -58,15 +58,16 @@ Nakon generiranja skupa zadataka potrebno je provjeriti hoće li on biti raspore
 će se generirati skroz dok uvjeti rasporedivosti ne budu zadovoljeni. Za skip-over model postoji nužan i dovoljan uvjet za rasporedivost 
 poslova. Za svaki generirani skup provjeravaju se navedeni uvjeti, dani sljedećim formulama: 
 
-OVO TREBA JOŠ NAPISATI I UREDITI !!!
+Nužan uvjet:
 \begin{equation*}
-    \sum_{i}\frac{C\textsubscript{i}(S\textsubscript{i}-1)}{T\textsubscript{i}(S\textsubscript{i})} \le 1
+    \sum_{i=1}^{N}\frac{C\textsubscript{i}(S\textsubscript{i}-1)}{T\textsubscript{i}(S\textsubscript{i})} \le 1
 \end{equation*}
 
+Dovoljan uvjet:
 \begin{equation*}
-    U_{p}^{*} \max_{L\geq0}\frac{\sum_{i}D(i,[0,L])}{L}
+    U_{p}^{*} \max_{L\geq0}\frac{\sum_{i=1}^{N}D(i,[0,L])}{L}
 \end{equation*}
-
+gdje je 
 
 \begin{equation*}
     D(i,[0,L])=\lfloor \frac{L}{T\textsubscript{i}}-\frac{L}{T\textsubscript{i}S\textsubscript{i}} \rfloor C\textsubscript{i}
@@ -107,7 +108,7 @@ skup zadataka korištenih u primjeru.
 
 \begin{table}[h!]
     \begin{center}
-      \begin{tabular}{||c || c c c c c||} 
+      \begin{tabular}{||c || c | c | c | c | c||} 
        \hline
        Zadatak broj & $T_i$ & $C_i$ & $S_i$ & $U_i$ & Broj poslova \\ [0.5ex] 
        \hline\hline
@@ -162,7 +163,8 @@ Kako bi se to ostvarilo, petljom se prolazi po svim faktorima opterećenja iz na
 csv, naziva oblika \texttt{{ime\_algoritma}\_{faktor\_opterećenja}.csv}. Na primjer, uz korištenje BWP algoritma i faktora opterećenja 1.25 
 datoteka će se zvati \texttt{BWP\_125.csv}. Skripta će nadalje pokrenuti simulaciju sa zadanim faktorom opterećenja 20 puta te će se rezultati 
 svake simulacije pohraniti u jedan redak navedene datoteke. Završetkom rada skripte generirano je 13 datoteka, a u svakoj se nalaze rezultati 
-20 simulacija. Simulaciju je potrebno posebno pokrenuti za svaki ispitivani algoritam. Pseudo kod opisane skripte  
+20 simulacija. Simulaciju je potrebno posebno pokrenuti za svaki ispitivani algoritam. U nastavku je prikazan pseudo kod skripte \texttt{simulation.sh}: 
+
 
 \begin{lstlisting}[style=CStyle,caption={Pseudo kod skripte \texttt{simulation.sh}},captionpos=b]
 zadavanje_algoritma;

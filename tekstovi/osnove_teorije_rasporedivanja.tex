@@ -24,7 +24,11 @@ S obzirom na posljedice koje izaziva propuštanje roka izvršavanja zadatke dije
     \item[--] opcionalni zadatci (\textit{engl. non real-time tasks}).
 \end{itemize}
 
-SLIKA OVDJE ONA SA 4 STANJA IZ KNJIGE !!
+\begin{figure}[!htb]
+  \center{\includegraphics[width=\textwidth]
+  {images/4_vrste.png}}
+  \caption{\label{fig:my-label} 4 vrste zadataka u SRSV-u}
+\end{figure}
 
 Strogi zadatci niti jednom ne smiju propustiti krajnji rok izvršavanja jer su to zadatci koji obavljaju važan posao. Njihovo 
 propuštanje izaziva katastrofalne posljedice koje mogu biti pogubne za cijeli sustav i njegovu okolinu. Dobar primjer strogog zadatka je detekcija 
@@ -33,6 +37,7 @@ nesreću s ljudskim žrtvama. Čvrsti zadatci su oni čije prekasno izvršavanje
 Za razliku od čvrstih, kod ublaženih zadataka čak i izvršavanje poslije krajnjeg roka izvršavanja donosi korist sustavu.
 Primjer ovakvog zadatka je paljenje signalne lampice ili prikaz podataka na pokazniku.
 Na kraju, imamo zadatke koji su opcionalni i nisu vremenski ograničeni, te donose jednaku korist sustavu kad god se izveli.
+Na slici 2.1 prikazana je ovisnost koristi koju izvršavanje posla donosi sustavu o vremenu izvršavanja posla za sva 4 opisana slučaja.
 
 Zadatci u operacijskim sustavima za rad u stvarnom vremenu općenito se mogu naći u jednom od 3 stanja, a to su:
 \begin{itemize}
@@ -59,15 +64,18 @@ implementaciji konkretnih SRSV-ova.
 
 \section{Periodični zadatci u sustavima za rad u stvarnom \\vremenu}
 
+Općenito, zadatci u sustavima za rad u stvarnom vremenu se označavaju sa $\tau_i$, gdje je $i$ identifikator pojedinog zadatka. 
 Periodični zadatci su zadatci koji se iznova ponavljaju u istim vremenskim intervalima $T_i$. Taj interval naziva se period zadatka.
 Dio zadatka izvršen u jednom periodu naziva se posao.
-Drugi parametar koji opisuje zadatak je trajanje njegova izvršavanja $C_i$ (engl. computation time). Period i vrijeme izvršavanja zajedno daju veličinu 
-koju nazivamo faktor opterećenja (engl. utilization factor) koja daje postotak zauzeća procesora pojedinog zadatka u jednom periodu. S obzirom na to da se poslovi
-ponavljaju jedan za drugim, to je ujedno i veličina koja govori koliko procesorskog vremena se ukupno troši na taj zadatak.
+Drugi parametar koji opisuje zadatak je trajanje njegova izvršavanja $C_i$ (\textit{engl. computation time}). Period i vrijeme izvršavanja zajedno daju veličinu 
+koju nazivamo faktor opterećenja (\textit{engl. utilization factor}):
 \begin{equation*}
-    U\textsubscript{i} = \frac{C\textsubscript{i}}{T\textsubscript{i}}
+  U\textsubscript{i} = \frac{C\textsubscript{i}}{T\textsubscript{i}}
 \end{equation*}
-Nadalje, bitna veličina koja opisuje svaki zadatak je krajnji rok njegova završetka (engl. deadline). Krajnji rok izvršavanja je vrijeme 
+Ova veličina daje postotak zauzeća procesora zadatkom $\tau_i$ u jednom periodu $T_i$. S obzirom na to da se poslovi
+ponavljaju jedan za drugim, to je ujedno i veličina koja govori koliko procesorskog vremena se ukupno troši na zadatak $\tau_i$.
+
+Nadalje, bitna veličina koja opisuje svaki zadatak je krajnji rok njegova završetka (\textit{engl. deadline}). Krajnji rok izvršavanja je vrijeme 
 do kojeg se posao mora izvršiti kako bi donio korist sustavu. U ovom radu razmatrani su 
 isključivo zadatci čiji je krajnji rok završetka jednak periodu. Takav krajnji rok naziva se implicitni krajnji rok završetka. 
 Kao primjer dan je vremenski dijagram s jednim periodičnim zadatkom.
@@ -100,7 +108,7 @@ dane formule proizlazi da je faktor opterećenja zadatka 0.25. Drugim riječima,
 
 Ukupno opterećenje sustava dobiva se kao zbroj faktora opterećenja svih zadataka. 
 \begin{equation*}
-    U = \sum\frac{C\textsubscript{i}}{T\textsubscript{i}}
+    U = \sum_{i=1}^{N}\frac{C\textsubscript{i}}{T\textsubscript{i}}
 \end{equation*}
 Ako je sustav preopterećen, tj. ukupno opterećenje mu 
 je veće od 1, neki od zadataka se neće izvršiti do svog roka za izvršavanje. U tom slučaju koriste se algoritmi koji će osigurati 
@@ -117,7 +125,7 @@ opterećenje sustava trajno veće od 1. Tada se svi poslovi neće moći izvršit
 
 %treba li dodati vrste weakly hard uvjeta
 
-U ovom radu ispitivat će se ponašanje sustava s ublaženo-strogim uvjetima (eng. weakly hard constraints). Za razliku od 
+U ovom radu ispitivat će se ponašanje sustava s ublaženo-strogim uvjetima (\textit{engl. weakly-hard constraints}). Za razliku od 
 kritičnih zadataka, kod ublaženo-kritičnih zadataka povremeno dopuštamo da se zadatak ne izvede na vrijeme, ali na predvidiv i 
 kontroliran način. U određenom vremenskom okviru točno se određuju pravila propuštanja zadataka. Postoje 4 modela SRSV-a s ublaženo-strogim uvjetima :
 \begin{itemize}
@@ -127,16 +135,25 @@ kontroliran način. U određenom vremenskom okviru točno se određuju pravila p
     \item[--] u $m$ slijednih perioda posao se ne smije propustiti u njih $n$ koji slijede jedan za drugim.
 \end{itemize}
 
-U ovom radu istražen je model u kojem se u $m$ slijednih perioda zadatak ne smije propustiti više od jednom (engl. skip-over model).
-Broj $m$ naziva se faktor propuštanja (engl. skip over factor).
+\section{Skip-over model ublaženo-strogih uvjeta}
+
+U ovom radu istražen je model u kojem se u $S_i$ slijednih perioda zadatak $\tau_i$ ne smije propustiti više od jednom (\textit{engl. skip-over model}).
+Broj $S_i$ naziva se faktor propuštanja (\textit{engl. skip-over factor}).
 Prema tom modelu 
 poslovi se dijele na one koji se moraju izvršiti (crveni poslovi) i na one čije je izvršavanje opcionalno (plavi poslovi). Posao se proglašava crvenim 
-ako je jedan od prošlih $m-1$ poslova nije pravovremeno izvršio.
+ako je jedan od prošlih $S_i-1$ poslova nije pravovremeno izvršio.
 Na temelju važnosti pojedinog zadatka za rad cjelokupnog sustava određuje se u koliko slijednih perioda 
 se zadatak može jednom propustiti. Ovaj pristup osigurava znatno bolje ponašanje u uvjetima preopterećenja jer se propuštanje
 pojedinih poslova odvija deterministički.
 
-\section{Skip-over model ublaženo strogih uvjeta}
+Opisani model jednostavno možemo opisati pomoću njegove dvije karakteristike:
+\begin{itemize}
+  \item[--] ako se plavi posao ne izvede na vrijeme, slijedećih $S_i-1$ poslova se proglašava crvenima,
+  \item[--] ako se plavi posao izvede do svog krajnjeg roka za izvršavanje, sljedeći posao je također plavi.
+\end{itemize}
+
+Dvije posebne vrijednosti faktora propuštanja su 1 i $\infty$. $S_i=1$ govori da su svi poslovi zadatka $\tau_i$ uvijek plavi i uvijek se 
+mogu propustiti. S druge strane $S_i=\infty$ označava da su svi poslovi crveni i da se niti jedan ne smije propustiti.
 
 \section{Algoritmi za raspoređivanje zadataka}
 
@@ -160,7 +177,7 @@ zadatak kritičan i mora se uvijek izvršiti, drugi zadatak ne utječe na sigurn
 
 \begin{table}[h!]
     \begin{center}
-      \begin{tabular}{||c || c c c c||} 
+      \begin{tabular}{||c || c | c | c | c||} 
        \hline
        Broj Zadatka & Period & Vrijeme izvršavanja & Faktor propuštanja & Faktor opterećenja \\ [0.5ex] 
        \hline\hline
@@ -180,7 +197,7 @@ sustava je 1.08.
 
 \subsection{Algoritam EDF}
 
-Algoritam EDF (engl. earliest deadline first) je algoritam koji pri raspoređivanju zadataka najveći prioritet daje onim poslovima 
+Algoritam EDF (\textit{engl. earliest deadline first}) je algoritam koji pri raspoređivanju zadataka najveći prioritet daje onim poslovima 
 koji imaju najbliži krajnji rok završetka. 
 Ako sustav nije preopterećen (ako je ukupni faktor opterećenja manji ili jednak od 1) 
 ovim algoritmom optimalno će se rasporediti zadatci i svi će se izvršiti. Ovaj algoritam nije pogodan za primjenu s ublaženo strogim uvjetima 
@@ -235,13 +252,13 @@ Na vremenskom dijagramu crnom bojom su prikazani poslovi koji su propustili svoj
 
 \subsection{Algoritam RTO}
 
-Algoritam RTO (engl. red tasks only) je prvi i najjednostavniji algoritam korišten za skip-over model SRSV-a s ublaženo-strogim uvjetima.
-U njemu je implementiran mehanizam za uvažavanje faktora propuštanja kod raspoređivanja zadataka.
+Algoritam RTO (\textit{engl. red tasks only}) je prvi i najjednostavniji algoritam korišten za skip-over model SRSV-a s ublaženo-strogim uvjetima.
+U njemu je implementiran mehanizam za uvažavanje faktora propuštanja $S_i$ kod raspoređivanja zadataka.
 Prema algoritmu RTO samo se izvršavaju crveni poslovi, dok se oni koji se mogu preskočiti uvijek preskaču. 
 Time je osigurano poštivanje zadanih uvjeta, no pri manjim 
 faktorima opterećenja ovaj algoritam nije optimalan. Razlog tomu je to što postoji slobodno procesorsko vrijeme u kojem bi se mogli 
 izvršiti zadatci koje nije nužno izvršiti, no oni se automatski izbacuju iz rasporeda. Strogi zadatci raspoređuju se prema 
-ranije opisanom EDF algoritmu. 
+ranije opisanom algoritmu EDF. 
 
 \begin{figure}[h!]
     \centering
@@ -285,7 +302,7 @@ ranije opisanom EDF algoritmu.
 
 \subsection{Algoritam BWP}
 
-Algoritam BWP (engl. blue when possible) je poboljšanje ranije opisanog RTO algoritma. Kod BWP algoritma prioritet imaju strogi zadatci, 
+Algoritam BWP (\textit{engl. blue when possible}) je poboljšanje ranije opisanog RTO algoritma. Kod BWP algoritma prioritet imaju strogi zadatci, 
 no raspoređuju se i zadatci koji se ne moraju nužno izvesti. Na taj način, ako se svi strogi zadatci izvrše, na red će doći
 i opcionalni zadatci. Ovom modifikacijom znatno se poboljša kvaliteta usluge, pogotovo pri
  manjim faktorima opterećenja. Zadatci su u dijagramu obojeni prema nazivu algoritma, crvena boja za stroge zadatke, a plava za zadatke 
@@ -338,13 +355,17 @@ i opcionalni zadatci. Ovom modifikacijom znatno se poboljša kvaliteta usluge, p
 
 \subsection{Usporedba opisanih algoritama}
 
-U tablici 2.2 prikazana je usporedba ranije opisanih algoritama na primjeru danom u tablici 2.1. 
+U tablici 2.2 prikazana je usporedba ranije opisanih algoritama na primjeru danom u tablici 2.1. Za svaki algoritam prikazana je 
+kvaliteta usluge i broj kršenja postavljenih ublaženo-strogih uvjeta. 
+Vidljivo je kako su kod algoritama RTO i BWP zadovoljeni svi uvjeti postavljeni nad simulacijom, uz razliku što algoritam BWP daje 
+znatno veću kvalitetu usluge. Algoritam EDF ne osigurava poštivanje zadanih ublaženo-strogih uvjeta te time nije pogodan za kontrolne 
+aplikacije s kritičnim poslovima u stanju preopterećenja.
 
 \begin{table}[h!]
   \begin{center}
-    \begin{tabular}{||c || c c ||} 
+    \begin{tabular}{||c || c | c ||} 
      \hline
-     Broj Zadatka & Kvaliteta usluge & Broj kršenja ublaženo-strogih uvjeta \\ [0.5ex] 
+     Algoritam & Kvaliteta usluge & Broj kršenja ublaženo-strogih uvjeta \\ [0.5ex] 
      \hline\hline
      EDF & 0.62 & 3 \\ 
      \hline
