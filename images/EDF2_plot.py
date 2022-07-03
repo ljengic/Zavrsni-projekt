@@ -8,15 +8,15 @@ plt.rcParams["figure.autolayout"] = True
 
 headers = ['Utilization', 'EDF',]
 
-df = pd.read_csv('EDF2.csv', names=headers)
+df = pd.read_csv('EDF2_v2.csv', names=headers)
 
 df.set_index('Utilization').plot()
 
 plt.xlabel('Faktor opterećenja')
-plt.ylabel('Kvaliteta usluge')
+plt.ylabel('Postotak poslova na kojima su prekršeni postavljeni uvjeti')
 
 plt.xlim(0.85,1.55)
-plt.ylim(0.8,1.1)
+plt.ylim(0,0.10)
 
 f = plt.figure()
 f.set_figwidth(4)

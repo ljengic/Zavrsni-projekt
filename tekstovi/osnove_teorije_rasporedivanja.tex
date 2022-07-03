@@ -8,7 +8,7 @@
 
 \section{Sustavi za rad u stvarnom vremenu}
 
-Sustavi za rad u stvarnom vremenu (engl. real time system) danas su neizostavan dio mnogih sustava korištenih u svim
+Sustavi za rad u stvarnom vremenu (\textit{engl. real-time system}) danas su neizostavan dio mnogih sustava korištenih u svim
 granama ljudske djelatnosti. Kod njih nije bitan samo rezultat izvođenja operacije, nego je jednako važno 
 i vrijeme u kojem se ta operacija izvede. Zbog toga se svakom zadatku pridjeljuje krajnji rok do kojeg se mora izvršiti. 
 Kako bi sustav radio pouzdano, mora se osigurati predvidivo raspoređivanje zadataka koje će osigurati da se što više 
@@ -18,10 +18,10 @@ među zadatcima.
 
 S obzirom na posljedice koje izaziva propuštanje roka izvršavanja zadatke dijelimo u četiri skupine :
 \begin{itemize}
-    \item[--] strogi zadatci (engl. hard real time-tasks),
-    \item[--] ublaženi zadatci (engl. soft real time-tasks),
-    \item[--] čvrsti zadatci (engl. firm real-time tasks),
-    \item[--] opcionalni zadatci (engl. non real-time tasks).
+    \item[--] strogi zadatci (\textit{engl. hard real-time tasks}),
+    \item[--] ublaženi zadatci (\textit{engl. soft real-time tasks}),
+    \item[--] čvrsti zadatci (\textit{engl. firm real-time tasks}),
+    \item[--] opcionalni zadatci (\textit{engl. non real-time tasks}).
 \end{itemize}
 
 SLIKA OVDJE ONA SA 4 STANJA IZ KNJIGE !!
@@ -36,12 +36,13 @@ Na kraju, imamo zadatke koji su opcionalni i nisu vremenski ograničeni, te dono
 
 Zadatci u operacijskim sustavima za rad u stvarnom vremenu općenito se mogu naći u jednom od 3 stanja, a to su:
 \begin{itemize}
-    \item[--] zadatak koji se trenutno izvodi (engl. running task),
-    \item[--] zadatci koji su spremi za izvođenje (engl. ready tasks),
-    \item[--] zadatci koji su blokirani i čekaju određeni događaj (engl. blocked tasks).
+    \item[--] zadatak koji se trenutno izvodi (\textit{engl. running task}),
+    \item[--] zadatci koji su spremi za izvođenje (\textit{engl. ready tasks}),
+    \item[--] zadatci koji su blokirani i čekaju određeni događaj (\textit{engl. blocked tasks}).
 \end{itemize}
 
-Kod sustava s jednom procesorskom jezgrom samo, jedan zadatak se u određenom trenutku može izvoditi. Zadatci koji su spremni za izvođenje
+Kod sustava s jednom procesorskom jezgrom, u određenom trenutku može se izvoditi samo jedan zadatak.
+Zadatci koji su spremni za izvođenje
 čekaju oslobođenje procesora i jedan od njih se odabire za izvršavanje.
 Dio jezgre SRSV-a koji je zadužen za izbor zadatka koji je spreman za izvođenje i koji će se idući izvršavati naziva se raspoređivač 
 zadataka (engl. task scheduler). To je najvažniji dio jezgre SRSV-a jer o raspoređivanju zadataka ovisi kolika će biti kvaliteta usluge i
@@ -56,11 +57,11 @@ implementaciji konkretnih SRSV-ova.
     \caption{\label{fig:my-label} Stanja zadataka u SRSV-u}
   \end{figure}
 
-\section{Periodični zadatci u sustavima za rad u stvarnom vremenu}
+\section{Periodični zadatci u sustavima za rad u stvarnom \\vremenu}
 
 Periodični zadatci su zadatci koji se iznova ponavljaju u istim vremenskim intervalima $T_i$. Taj interval naziva se period zadatka.
 Dio zadatka izvršen u jednom periodu naziva se posao.
-Svaki zadatak opisuje i vrijeme njegova izvršavanja $C_i$ (engl. computation time). Period i vrijeme izvršavanja zajedno daju veličinu 
+Drugi parametar koji opisuje zadatak je trajanje njegova izvršavanja $C_i$ (engl. computation time). Period i vrijeme izvršavanja zajedno daju veličinu 
 koju nazivamo faktor opterećenja (engl. utilization factor) koja daje postotak zauzeća procesora pojedinog zadatka u jednom periodu. S obzirom na to da se poslovi
 ponavljaju jedan za drugim, to je ujedno i veličina koja govori koliko procesorskog vremena se ukupno troši na taj zadatak.
 \begin{equation*}
@@ -106,8 +107,8 @@ je veće od 1, neki od zadataka se neće izvršiti do svog roka za izvršavanje.
 da se zadatci ne preskaču nasumično, već na kontroliran način kao bi se sustav zaštitio od potencijalnih oštećenja nastalih preskakanjem 
 kritičnih zadataka. Postoje dvije vrste preopterećenja sustava.
 \begin{itemize}
-    \item[--] trajno preopterećenje (eng. Permanent Overload),
-    \item[--] prolazno preopterećenje (eng. Transient Overload).
+    \item[--] trajno preopterećenje (\textit{engl. permanent overload}),
+    \item[--] prolazno preopterećenje (\textit{engl. transient overload}).
 \end{itemize}
 Kod prolaznog opterećenja sustava ima ukupno opterećenje manje ili jednako 1, no u nekom trenutku može doći do aktivacije aperiodičnog zadatka 
 koji onda sustav gura u stanje preopterećenja. Nakon što prođe određeno vrijeme i aperiodični zadatak se izvede, sustav se vraća u prijašnje
@@ -134,6 +135,8 @@ ako je jedan od prošlih $m-1$ poslova nije pravovremeno izvršio.
 Na temelju važnosti pojedinog zadatka za rad cjelokupnog sustava određuje se u koliko slijednih perioda 
 se zadatak može jednom propustiti. Ovaj pristup osigurava znatno bolje ponašanje u uvjetima preopterećenja jer se propuštanje
 pojedinih poslova odvija deterministički.
+
+\section{Skip-over model ublaženo strogih uvjeta}
 
 \section{Algoritmi za raspoređivanje zadataka}
 
@@ -175,12 +178,13 @@ zadatak kritičan i mora se uvijek izvršiti, drugi zadatak ne utječe na sigurn
 Dani set zadataka nalazi se u preopterećenju, i neki od zadataka neće zadovoljiti svoj krajnji rok završetka. Ukupni faktor opterećenja
 sustava je 1.08.
 
-\subsection{EDF algoritam}
+\subsection{Algoritam EDF}
 
 Algoritam EDF (engl. earliest deadline first) je algoritam koji pri raspoređivanju zadataka najveći prioritet daje onim poslovima 
 koji imaju najbliži krajnji rok završetka. 
 Ako sustav nije preopterećen (ako je ukupni faktor opterećenja manji ili jednak od 1) 
-ovim algoritmom optimalno će se rasporediti zadatci i svi će se izvršiti. Ovaj algoritam nije pogodan za primjenu s ublaženo strogim uvjetima, 
+ovim algoritmom optimalno će se rasporediti zadatci i svi će se izvršiti. Ovaj algoritam nije pogodan za primjenu s ublaženo strogim uvjetima 
+jer ne pruža mehanizam koji garantira zadovoljenje ublaženo-strogih uvjeta,  
 ali u ovom radu je istražen jer se u praksi često koristi. 
 Raspored generiran EDF algoritmom prikazan je na slici 2.3.
 Na vremenskom dijagramu crnom bojom su prikazani poslovi koji su propustili svoj krajnji rok izvršenja.
@@ -229,11 +233,11 @@ Na vremenskom dijagramu crnom bojom su prikazani poslovi koji su propustili svoj
     \label{fig:ex1}
   \end{figure}
 
-\subsection{RTO algoritam}
+\subsection{Algoritam RTO}
 
 Algoritam RTO (engl. red tasks only) je prvi i najjednostavniji algoritam korišten za skip-over model SRSV-a s ublaženo-strogim uvjetima.
 U njemu je implementiran mehanizam za uvažavanje faktora propuštanja kod raspoređivanja zadataka.
-Prema algoritmu RTO samo se izvršavaju crveni zadatci, dok se oni koji se mogu preskočiti uvijek preskaču. 
+Prema algoritmu RTO samo se izvršavaju crveni poslovi, dok se oni koji se mogu preskočiti uvijek preskaču. 
 Time je osigurano poštivanje zadanih uvjeta, no pri manjim 
 faktorima opterećenja ovaj algoritam nije optimalan. Razlog tomu je to što postoji slobodno procesorsko vrijeme u kojem bi se mogli 
 izvršiti zadatci koje nije nužno izvršiti, no oni se automatski izbacuju iz rasporeda. Strogi zadatci raspoređuju se prema 
@@ -279,7 +283,7 @@ ranije opisanom EDF algoritmu.
   \end{figure}
 
 
-\subsection{BWP algoritam}
+\subsection{Algoritam BWP}
 
 Algoritam BWP (engl. blue when possible) je poboljšanje ranije opisanog RTO algoritma. Kod BWP algoritma prioritet imaju strogi zadatci, 
 no raspoređuju se i zadatci koji se ne moraju nužno izvesti. Na taj način, ako se svi strogi zadatci izvrše, na red će doći
@@ -332,5 +336,25 @@ i opcionalni zadatci. Ovom modifikacijom znatno se poboljša kvaliteta usluge, p
     \label{fig:ex1}
   \end{figure}
 
+\subsection{Usporedba opisanih algoritama}
+
+U tablici 2.2 prikazana je usporedba ranije opisanih algoritama na primjeru danom u tablici 2.1. 
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{||c || c c ||} 
+     \hline
+     Broj Zadatka & Kvaliteta usluge & Broj kršenja ublaženo-strogih uvjeta \\ [0.5ex] 
+     \hline\hline
+     EDF & 0.62 & 3 \\ 
+     \hline
+     RTO & 0.54 & 0 \\
+     \hline
+     BWP & 0.92 & 0 \\
+     \hline
+    \end{tabular}
+  \end{center}
+  \caption{\label{tab:table-name}Usporedba opisanih algoritama}
+  \end{table}
 
 \end{document}

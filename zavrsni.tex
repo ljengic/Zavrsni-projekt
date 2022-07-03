@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 
 \usepackage{ragged2e}
+%\usepackage[raggedright]{titlesec}
 
 \usepackage{xcolor}
 \usepackage{listings}
@@ -37,7 +38,7 @@
     language=C
 }
 
-\renewcommand\lstlistingname{Isječak koda}
+\renewcommand\lstlistingname{Odsječak koda}
 \renewcommand{\figurename}{Slika}
 \renewcommand{\tablename}{Tablica}
 
@@ -81,8 +82,11 @@
 \chapter{Zaključak}
 \subfile{tekstovi/zakljucak}
 
+\nocite{keys}
 \bibliography{literatura}
 \bibliographystyle{fer}
+
+
 
 \begin{sazetak}
 Sažetak na hrvatskom jeziku.

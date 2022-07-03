@@ -8,7 +8,7 @@
 
 
 
-Sustavi za rad u stvarnom vremenu (engl. real time operating systems) sustavi su u kojima nije bitan samo
+Sustavi za rad u stvarnom vremenu (\textit{engl. real-time systems}) sustavi su u kojima nije bitan samo
 rezultat operacije, nego je jednako važna i pravovremenost njezina izvršenja. Najvažnija svojstva koja takvi sustavi moraju
 zadovoljavati su pouzdanost i predvidivost u izvršavanju zadataka.
 Zbog navedenog svojstva, sustavi za rad u stvarnom vremenu (u daljnjem tekstu SRSV) neizostavan su dio svih ugradbenih 
@@ -17,7 +17,7 @@ posljedice ili znatnu degradaciju performansi. Primjeri takvih sustava su automo
 multimedijski sustavi, sustavi automatskog upravljanja, roboti itd. 
 
 Ponekad SRSV zbog iznenadne pojave dodatnih zadataka mogu ući u stanje preopterećenja. To je stanje u kojemu procesor ne može 
-izvršiti sve poslove na vrijeme i neke od njih mora preskočiti. Međutim, u nekim primjenama preskakanje zadataka ne smije biti nasumično, nego
+izvršiti sve instance zadataka na vrijeme i neke od njih mora preskočiti. Međutim, u nekim primjenama preskakanje instanci zadataka ne smije biti nasumično, nego
 mora biti kontrolirano i predvidivo. Kod sustava automatskog upravljanja preskakanje kritičnih zadataka može sustav dovesti do nestabilnosti dok u 
 multimedijskim sustavima izaziva smanjenje performansi.
   
@@ -31,7 +31,7 @@ to treba dobiti veći prioritet pri raspoređivanju. Tako se izbjegava šteta ko
 SRSV-ovi koji su najčešće zastupljeni u industrijskim primjenama obično ne osiguravaju sigurnost sustava kada je on u stanju preopterećenja. Stoga je ideja ovog rada 
 modificirati SRSV otvorenog koda, konkretno FreeRTOS, kako bi se ugradio mehanizam za smanjenje trajnog preopterećenja kontroliranim 
 propuštanjem nekritičnih poslova. Točnije,  
-modifikacijom jezgre FreeRTOS-a implementiran je strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima (engl. weakly hard real time system). Kod takvog sustava
+modifikacijom jezgre FreeRTOS-a implementiran je strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima (\textit{engl. weakly hard real-time system}). Kod takvog sustava
 povremeno se dopušta da se posao ne izvede, ali u određenom broju slijedno aktiviranih poslova postoji striktno definirana donja granica na broj 
 poslova koji se moraju pravovremeno izvesti.
 Takvim pristupom preskakanja poslova osigurava se da se niti jedan zadatak trajno ne blokira. Nadalje implementirana je strategija 

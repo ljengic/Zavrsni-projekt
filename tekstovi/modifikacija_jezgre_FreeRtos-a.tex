@@ -8,15 +8,15 @@
 
 \section{Operacijski sustav FreeRTOS}
 
-FreeRTOS je operacijski sustav za rad u stvarnom vremenu otvorenog koda (eng. open source) namijenjen primjeni u ugradbenim 
+FreeRTOS je operacijski sustav za rad u stvarnom vremenu otvorenog koda (\textit{engl. open source}) namijenjen primjeni u ugradbenim 
 računalnim sustavima. U ovom potpoglavlju bit će objašnjena 
 njegova implemnetacija i izvedba raspoređivanja zadataka. K\^{o}d FreeRTOS-a organiziran je u nekoliko datoteka i zauzima 
 svega nekoliko kilobajta. Datoteka u kojoj je implementirano upravljanje zadatcima i njihovim raspoređivanjem je \texttt{tasks.c}.
 
 Zadatci u FreeRTOS-u su opisani strukturom za upravljanje zadatcima (eng. TCB - Task Control Block). U toj strukturi nalaze
-se sve informacije koje opisuju pojedini zadatak (ime zadatka, prioritet,broj zadatka...).  
-Zadati se stvaraju funkcijom \texttt{xTaskCreate()}.
-Pri stvaranju novog zadatka u alocira se prostor u memoriji za novu inačicu 
+se sve informacije koje opisuju pojedini zadatak (ime zadatka, prioritet, broj zadatka...).  
+Zadatci se stvaraju funkcijom \texttt{xTaskCreate()}.
+Pri stvaranju novog zadatka alocira se prostor u memoriji za novu inačicu 
 ove strukture u koju se potom upisuju parametri novokreiranog zadatka.
 
 Zadatci su smješteni u različite liste, ovisno o tome u kojem stanju se zadatak nalazi. Postoje liste za zadatke koji su
@@ -75,7 +75,7 @@ periodičan zadatak. Ovdje su definirane sve veličine bitne za kontrolu periodi
 Nadalje, napisana je funkcija \texttt{xTaskCreatePeriodic()} koja se koristi za stvaranje i inicijalizaciju periodičnih zadataka.
 Navedena funkcija je proširenje \texttt{funkcije xTaskCreate()} s novim varijablama potrebnim za opis periodičnih zadataka.
 
-\begin{lstlisting}[style=CStyle,caption={Prototip funkcije xTaskCreatePeriodic},captionpos=b]
+\begin{lstlisting}[style=CStyle,caption={Prototip funkcije \texttt{xTaskCreatePeriodic()}},captionpos=b]
 BaseType_t xTaskCreatePeriodic( TaskFunction_t pxTaskCode,
                         uint8_t id,
                         const char * const pcName, 
@@ -90,11 +90,11 @@ BaseType_t xTaskCreatePeriodic( TaskFunction_t pxTaskCode,
 
 \subsection{Kontrola izvršenja priodičnih zadataka}
 
-Izvršavanje zadataka u SRSV-ovima podijeljeno je u vremenske odsječke. U određenim vremenskim intervalima (eng. ticks) prekida se izvođenje poslova i 
+Izvršavanje zadataka u SRSV-ovima podijeljeno je u vremenske odsječke. U određenim vremenskim intervalima (\textit{engl. ticks}) prekida se izvođenje poslova i 
 određuje se koji posao se treba dalje izvršavati.
 U FreeRTOS-u navedena funkcionalnost implementirana je u \texttt{xTaskIncrementTick()} funkciji. Prekidni sustav periodički poziva navedenu funkciju 
 i u njoj je potrebno dodati funkcionalnost kontrole periodičnih zadataka.
-Za potrebe ovog projekta zadatci su spremani u dvije liste. Jedna lista u kojoj se čuvaju zadatci spremni za izvršavanje, ranije 
+Za potrebe ovog projekta zadatci su spremani u dvije liste. To su lista u kojoj se čuvaju zadatci spremni za izvršavanje, ranije 
 implementirana u FreeRTOS-u i novododana lista nazvana \texttt{xWaitTaskList} u kojoj su zadatci koji su na čekanju. 
 
 Kontrola izvođenja periodičkih zadataka realizirana je pomoću varijable \texttt{xRemainingTicks} koja u svakom trenutku pamti 
@@ -119,7 +119,7 @@ U njoj se petljom iterira po svim zadatcima koji su u stanju čekanja i za svako
 spremih za izvršavanje.
 Ako je zadatak u listi za čekanje i ukoliko se program nalazi na višekratniku njegova perioda, zadatak se dodaju u listu 
 zadataka spremih za izvršavanje. Pri tome je potrebno u varijablu \texttt{start\_time} upisati trenutno vrijeme (trenutak u kojemu je 
-zadatak posao spreman za izvršavanje).Također moramo osvježiti vrijednost varijable texttt{xRemainingTicks}. 
+zadatak posao spreman za izvršavanje). Također moramo osvježiti vrijednost varijable \texttt{xRemainingTicks}. 
 Vrijeme početka izvršavanja je važno za provjeru treba li zadatak prekinuti i je li se izvršio do krajnjeg roka završetka 
 što će detaljnije biti objašnjeno u tekstu koji slijedi.
 
@@ -130,7 +130,7 @@ Vrijeme početka izvršavanja je važno za provjeru treba li zadatak prekinuti i
 Ponekad posao dođe na red za izvršavanje, ali čak i ako dobije sve procesorsko vrijeme ne stigne se izvršiti do krajnjeg roka za izvršavanje.
 Kako kod strogih zadataka nema koristi od posla koji se djelomično izvršio, ako posao dođe do krajnjeg roka za izvršavanje, a nije se izvršio
  treba prekinuti njegovo daljnje izvršavanje. Ova strategija zove se prekidanje poslova koji se ne mogu izvršiti do svog 
- krajnjeg roka izvršenja (engl. job killing). Time se podiže kvaliteta usluge, jer je osigurano da poslovi koji se nikako neće 
+ krajnjeg roka izvršenja (\textit{engl. job killing}). Time se podiže kvaliteta usluge, jer je osigurano da poslovi koji se nikako neće 
  izvršiti na vrijeme ne zauzimaju procesorsko vrijeme ostalim zadatcima. Strategiju prekidanja poslova dodatno možemo poboljšati
  ukoliko unaprijed prolazimo po svim spremnim poslovima i provjeravamo mogu li se izvršiti do roka ako im je na raspolaganju sve 
  procesorsko vrijeme od datog trenutka. Ako se posao ne bi stigao obaviti treba ga odmah prebaciti u listu za čekanje i detektirati 
@@ -373,9 +373,8 @@ uvijek višekratnici perioda, zapravo trebamo izračunati vrijeme sljedećeg per
 oduzmemo vrijeme proteklo od početka perioda (time smo dobili početak perioda) te još nadodamo jedan period. Kod EDF algoritma
 u obzir ne uzimamo ublažene uvjete kod strogog SRSV-a, nego sve poslove promatramo jednako važnima.
 
-ZAMJENI OVO SA NEKIM PSEUDO KODOM !!!
-\begin{lstlisting}[style=CStyle,caption={Računanje \texttt{xItemValue} vrijednosti za EDF algoritam},captionpos=b]
-listSET_LIST_ITEM_VALUE(&(( pxTCB )->xStateListItem),(( pxTCB )->xTaskPeriod+xTaskGetTickCount()-(xTaskGetTickCount()%(( pxTCB )->xTaskPeriod))));
+\begin{lstlisting}[style=CStyle,caption={Pretprocesorska naredba za uključenje periodičnih zadataka},captionpos=b]
+PESUDO KODDD
 \end{lstlisting}
 
 
@@ -386,7 +385,9 @@ možemo preskočiti, preskočit ćemo ga. Zadatci koji se šalju na izvršavanje
 na EDF algoritam je ta što provjeravamo ublažene uvjete u strogom SRSV-u te ukoliko se zadatak može preskočiti ne dodajemo ga u 
 listu zadataka koji čekaju na izvršavanje, nego on ostaje u listi za čekanje. 
 
-DODAJ PSEUDO KOD OVOG !!!!
+\begin{lstlisting}[style=CStyle,caption={Pretprocesorska naredba za uključenje periodičnih zadataka},captionpos=b]
+  PESUDO KODDD
+\end{lstlisting}
 
 \subsection{Implementacija algoritma BWP}
 
@@ -397,7 +398,8 @@ izvršiti i oni čije je izvršavanje opcionalno). Pošto je \texttt{xItemValue}
 za izvršavanje, plavim poslovima najznačajniji bit je postavljen u 1. Time je osigurano da takvi poslovi budu 
 zadnji na redu za izvršavanje jer će im \texttt{xItemValue} biti najveći.  
 
-DODAJ PSEUDO KOD OVOG !!!!
-
+\begin{lstlisting}[style=CStyle,caption={Pretprocesorska naredba za uključenje periodičnih zadataka},captionpos=b]
+  PESUDO KODDD
+\end{lstlisting}
 
 \end{document}

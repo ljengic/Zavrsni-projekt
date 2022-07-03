@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  29 JUN 2022 17:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  3 JUL 2022 18:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -674,6 +674,9 @@ LaTeX Warning: Label `fig:ex1' multiply defined.
 LaTeX Warning: Label `tab:table-name' multiply defined.
 
 
+LaTeX Warning: Label `tab:table-name' multiply defined.
+
+
 LaTeX Warning: Label `fig:ex1' multiply defined.
 
 
@@ -691,23 +694,26 @@ LaTeX Warning: Label `fig:my-label' multiply defined.
 
 LaTeX Warning: Label `fig:my-label' multiply defined.
 
+
+LaTeX Warning: Label `fig:my-label' multiply defined.
+
 )
 \openout1 = `zavrsni.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -770,21 +776,21 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 44.
+LaTeX Info: Redefining \selectfont on input line 45.
 \c@lstlisting=\count311
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 55
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 56
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -792,7 +798,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 58
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 59
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
@@ -822,7 +828,7 @@ Chapter 2.
 <images/stanja_taskova.png, id=62, 1049.9225pt x 588.1975pt>
 File: images/stanja_taskova.png Graphic file (type png)
 <use images/stanja_taskova.png>
-Package pdftex.def Info: images/stanja_taskova.png  used on input line 55.
+Package pdftex.def Info: images/stanja_taskova.png  used on input line 56.
 (pdftex.def)             Requested size: 441.01773pt x 247.06819pt.
  [4 <./images/stanja_taskova.png>]
 \pgf@layerbox@foreground=\box63
@@ -835,7 +841,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [5] [6]
 
-LaTeX Warning: Command \v invalid in math mode on input line 148.
+LaTeX Warning: Command \v invalid in math mode on input line 151.
 
 Missing character: There is no ² in font cmr12!
 Missing character: There is no ; in font nullfont!
@@ -854,9 +860,6 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [7]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -874,6 +877,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+ [8]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -890,11 +894,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) [8] [9]
+) [9]
 Chapter 3.
 (./tekstovi/modifikacija_jezgre_FreeRtos-a.tex
 Underfull \hbox (badness 1184) in paragraph at lines 38--40
@@ -1045,22 +1045,16 @@ po²tivanju rokova
 [19
 
 ]
-Underfull \hbox (badness 2245) in paragraph at lines 55--59
-[]\T1/ptm/m/n/12 Ublaºeno-strogi uvjeti zadataka (skip-over faktor), kao i peri
-odi, generirani su
+Underfull \hbox (badness 1082) in paragraph at lines 45--52
+\T1/ptm/m/n/12 nepristranost pri generiranju nasumi£nih vrijednosti faktora opt
+ere¢enja. Vremenska
  []
 
-[20]
-Underfull \hbox (badness 3492) in paragraph at lines 97--103
-\T1/ptm/m/n/12 u svakom periodu. Tako se dobije informacija o izvoženju svakog 
-zadatka u
- []
-
-[21]
+[20] [21]
 <images/csv.png, id=130, 801.99625pt x 261.97874pt>
 File: images/csv.png Graphic file (type png)
 <use images/csv.png>
-Package pdftex.def Info: images/csv.png  used on input line 147.
+Package pdftex.def Info: images/csv.png  used on input line 148.
 (pdftex.def)             Requested size: 441.01773pt x 144.06476pt.
  [22 <./images/csv.png>]) [23]
 Chapter 5.
@@ -1073,31 +1067,44 @@ Package pdftex.def Info: images/Figure_3.png  used on input line 18.
  [24
 
  <./images/Figure_3.png>]
-<images/Figure_2.png, id=143, 456.7464pt x 374.3586pt>
+<images/poseban.png, id=143, 553.5882pt x 344.0052pt>
+File: images/poseban.png Graphic file (type png)
+<use images/poseban.png>
+Package pdftex.def Info: images/poseban.png  used on input line 29.
+(pdftex.def)             Requested size: 441.01773pt x 274.06023pt.
+<images/Figure_2.png, id=144, 456.7464pt x 374.3586pt>
 File: images/Figure_2.png Graphic file (type png)
 <use images/Figure_2.png>
-Package pdftex.def Info: images/Figure_2.png  used on input line 37.
+Package pdftex.def Info: images/Figure_2.png  used on input line 41.
 (pdftex.def)             Requested size: 441.01773pt x 361.48799pt.
-) [25 <./images/Figure_2.png>]
+) [25 <./images/poseban.png>] [26 <./images/Figure_2.png>]
 Chapter 6.
-(./tekstovi/zakljucak.tex) (./zavrsni.bbl [26
+(./tekstovi/zakljucak.tex)
+
+Package natbib Warning: Citation `keys' undefined on input line 85.
+
+(./zavrsni.bbl [27
 
 ]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [27
+) [28
 
-] [28] (./zavrsni.aux)
+]
+
+Package natbib Warning: There were undefined citations.
+
+[29] (./zavrsni.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18813 strings out of 483183
- 344229 string characters out of 5966292
- 813238 words of memory out of 5000000
- 33424 multiletter control sequences out of 15000+600000
+ 18839 strings out of 483183
+ 344680 string characters out of 5966292
+ 812232 words of memory out of 5000000
+ 33449 multiletter control sequences out of 15000+600000
  599982 words of font info for 102 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  68i,9n,83p,439b,1775s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1115,10 +1122,10 @@ mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (33 pages, 302800 bytes).
+Output written on zavrsni.pdf (34 pages, 333240 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
+ 213 PDF objects out of 1000 (max. 8388607)
+ 134 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 129 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
