@@ -26,9 +26,9 @@ vezanih uz lokalizaciju i kontrolu motora. Ako takav robot uđe u stanje preopte
 moraju dobiti zadatci koji su vezani uz detekciju prepreke i kontrolu motora kako bi se robot na vrijeme zaustavio ukoliko je to potrebno.
 Ostale funkcije koje robot obavlja manje su kritične te se mogu propustiti bez štete za sustav.
 
-U ovom radu razmatraju se rješenja koja bi osigurala determinističko ponašanje SRSV-a u uvjetima preopterećenja. Što je posao kritičniji,
+U ovom radu razmatraju se rješenja koja bi osigurala determinističko ponašanje SRSV-a u uvjetima preopterećenja. Što je instanca zadatka, tzv. posao, kritičniji,
 to treba dobiti veći prioritet pri raspoređivanju. Tako se izbjegava šteta koja bi potencijalno nastala propuštanjem takvih zadataka. 
-SRSV-ovi koji su najčešće zastupljeni u industrijskim primjenama obično ne osiguravaju sigurnost sustava kada je on u stanju preopterećenja. Stoga je ideja ovog rada 
+SRSV-i koji su najčešće zastupljeni u industrijskim primjenama obično ne osiguravaju sigurnost sustava kada je on u stanju preopterećenja. Stoga je ideja ovog rada 
 modificirati SRSV otvorenog koda, konkretno FreeRTOS, kako bi se ugradio mehanizam za smanjenje trajnog preopterećenja kontroliranim 
 propuštanjem nekritičnih poslova. Točnije,  
 modifikacijom jezgre FreeRTOS-a implementiran je strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima (\textit{engl. weakly hard real-time system}). Kod takvog sustava

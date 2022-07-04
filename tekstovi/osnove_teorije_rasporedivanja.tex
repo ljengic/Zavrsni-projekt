@@ -118,7 +118,7 @@ kritičnih zadataka. Postoje dvije vrste preopterećenja sustava.
     \item[--] trajno preopterećenje (\textit{engl. permanent overload}),
     \item[--] prolazno preopterećenje (\textit{engl. transient overload}).
 \end{itemize}
-Kod prolaznog opterećenja sustava ima ukupno opterećenje manje ili jednako 1, no u nekom trenutku može doći do aktivacije aperiodičnog zadatka 
+Kod prolaznog opterećenja sustav ima ukupno opterećenje manje ili jednako 1, no u nekom trenutku može doći do aktivacije aperiodičnog zadatka 
 koji onda sustav gura u stanje preopterećenja. Nakon što prođe određeno vrijeme i aperiodični zadatak se izvede, sustav se vraća u prijašnje
 stanje i svi zadatci se izvršavaju pravovremeno. Drugi slučaj je kada je sustav u stanju trajnog preopterećenja, kada je ukupno 
 opterećenje sustava trajno veće od 1. Tada se svi poslovi neće moći izvršiti i kontinuirano će se pojedini poslovi morati propuštati. 
@@ -126,16 +126,16 @@ opterećenje sustava trajno veće od 1. Tada se svi poslovi neće moći izvršit
 %treba li dodati vrste weakly hard uvjeta
 
 U ovom radu ispitivat će se ponašanje sustava s ublaženo-strogim uvjetima (\textit{engl. weakly-hard constraints}). Za razliku od 
-kritičnih zadataka, kod ublaženo-kritičnih zadataka povremeno dopuštamo da se zadatak ne izvede na vrijeme, ali na predvidiv i 
+strogih zadataka, kod ublaženo-kritičnih zadataka povremeno dopuštamo da se zadatak ne izvede na vrijeme, ali na predvidiv i 
 kontroliran način. U određenom vremenskom okviru točno se određuju pravila propuštanja zadataka. Postoje 4 modela SRSV-a s ublaženo-strogim uvjetima :
 \begin{itemize}
-    \item[--] u $m$ slijednih perioda posao se pravovremeno izvršio u njih $n$,
-    \item[--] u $m$ slijednih perioda posao se pravovremeno izvršio u njih $n$ koji slijede jedan za drugim,
+    \item[--] u $m$ slijednih perioda posao se mora pravovremeno izvršiti u njih $n$,
+    \item[--] u $m$ slijednih perioda posao se mora pravovremeno izvršiti u njih $n$ koji slijede jedan za drugim,
     \item[--] u $m$ slijednih perioda posao se ne smije propustiti više od $n$ puta,
     \item[--] u $m$ slijednih perioda posao se ne smije propustiti u njih $n$ koji slijede jedan za drugim.
 \end{itemize}
 
-\section{Skip-over model ublaženo-strogih uvjeta}
+\section{Skip-over model zadataka ublaženo-strogih uvjeta}
 
 U ovom radu istražen je model u kojem se u $S_i$ slijednih perioda zadatak $\tau_i$ ne smije propustiti više od jednom (\textit{engl. skip-over model}).
 Broj $S_i$ naziva se faktor propuštanja (\textit{engl. skip-over factor}).
@@ -148,7 +148,7 @@ pojedinih poslova odvija deterministički.
 
 Opisani model jednostavno možemo opisati pomoću njegove dvije karakteristike:
 \begin{itemize}
-  \item[--] ako se plavi posao ne izvede na vrijeme, slijedećih $S_i-1$ poslova se proglašava crvenima,
+  \item[--] ako se plavi posao ne izvede na vrijeme, sljedećih $S_i-1$ poslova se proglašava crvenima,
   \item[--] ako se plavi posao izvede do svog krajnjeg roka za izvršavanje, sljedeći posao je također plavi.
 \end{itemize}
 

@@ -3,7 +3,7 @@
 \contentsline {chapter}{\numberline {2}Operacijski sustavi za rad u stvarnom vremenu}{3}%
 \contentsline {section}{\numberline {2.1}Sustavi za rad u stvarnom vremenu}{3}%
 \contentsline {section}{\numberline {2.2}Periodični zadatci u sustavima za rad u stvarnom \\vremenu}{5}%
-\contentsline {section}{\numberline {2.3}Skip-over model ublaženo-strogih uvjeta}{7}%
+\contentsline {section}{\numberline {2.3}Skip-over model zadataka ublaženo-strogih uvjeta}{7}%
 \contentsline {section}{\numberline {2.4}Algoritmi za raspoređivanje zadataka}{7}%
 \contentsline {subsection}{\numberline {2.4.1}Algoritam EDF}{8}%
 \contentsline {subsection}{\numberline {2.4.2}Algoritam RTO}{9}%
@@ -26,4 +26,3 @@
 \contentsline {section}{\numberline {4.3}Pokretanje simulacije}{23}%
 \contentsline {chapter}{\numberline {5}Rezultati}{25}%
 \contentsline {chapter}{\numberline {6}Zaključak}{28}%
-\contentsline {chapter}{Literatura}{29}%

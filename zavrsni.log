@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  4 JUL 2022 09:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  4 JUL 2022 19:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -700,19 +700,6 @@ LaTeX Warning: Label `fig:my-label' multiply defined.
 
 LaTeX Warning: Label `fig:my-label' multiply defined.
 
-
-! Package natbib Error: Bibliography not compatible with author-year citations.
-
-(natbib)                Press <return> to continue in numerical citation style.
-
-
-See the natbib package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.94 ...mand\NAT@force@numbers{}\NAT@force@numbers
-                                                  
-? 
 )
 \openout1 = `zavrsni.aux'.
 
@@ -813,14 +800,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 60
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [1] [3]
-(./zavrsni.toc [4
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [3] (./zavrsni.toc [4
 
 ])
 \tf@toc=\write4
@@ -839,7 +819,7 @@ u stanje
 ]) [2]
 Chapter 2.
 (./tekstovi/osnove_teorije_rasporedivanja.tex
-<images/4_vrste.png, id=59, 1447.4075pt x 893.3375pt>
+<images/4_vrste.png, id=53, 1447.4075pt x 893.3375pt>
 File: images/4_vrste.png Graphic file (type png)
 <use images/4_vrste.png>
 Package pdftex.def Info: images/4_vrste.png  used on input line 29.
@@ -847,7 +827,7 @@ Package pdftex.def Info: images/4_vrste.png  used on input line 29.
  [3
 
 ]
-<images/stanja_taskova.png, id=64, 1049.9225pt x 588.1975pt>
+<images/stanja_taskova.png, id=59, 1049.9225pt x 588.1975pt>
 File: images/stanja_taskova.png Graphic file (type png)
 <use images/stanja_taskova.png>
 Package pdftex.def Info: images/stanja_taskova.png  used on input line 61.
@@ -930,6 +910,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ) [9] [10]
 Chapter 3.
 (./tekstovi/modifikacija_jezgre_FreeRtos-a.tex
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 14
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
 Underfull \hbox (badness 1184) in paragraph at lines 38--40
 []\T1/ptm/m/n/12 FreeRTOS se konfigurira putem datoteke \T1/pcr/m/n/12 FreeRTOS
 config.h \T1/ptm/m/n/12 i korisnik treba
@@ -1078,7 +1064,7 @@ ere¢enja. Vremenska
  []
 
 [21] [22]
-<images/csv.png, id=135, 801.99625pt x 261.97874pt>
+<images/csv.png, id=130, 801.99625pt x 261.97874pt>
 File: images/csv.png Graphic file (type png)
 <use images/csv.png>
 Package pdftex.def Info: images/csv.png  used on input line 149.
@@ -1086,7 +1072,7 @@ Package pdftex.def Info: images/csv.png  used on input line 149.
  [23 <./images/csv.png>]) [24]
 Chapter 5.
 (./tekstovi/rezultati.tex
-<images/Figure_3.png, id=143, 497.2176pt x 356.2911pt>
+<images/Figure_3.png, id=138, 497.2176pt x 356.2911pt>
 File: images/Figure_3.png Graphic file (type png)
 <use images/Figure_3.png>
 Package pdftex.def Info: images/Figure_3.png  used on input line 18.
@@ -1094,12 +1080,12 @@ Package pdftex.def Info: images/Figure_3.png  used on input line 18.
  [25
 
  <./images/Figure_3.png>]
-<images/poseban.png, id=148, 553.5882pt x 344.0052pt>
+<images/poseban.png, id=143, 553.5882pt x 344.0052pt>
 File: images/poseban.png Graphic file (type png)
 <use images/poseban.png>
 Package pdftex.def Info: images/poseban.png  used on input line 29.
 (pdftex.def)             Requested size: 441.01773pt x 274.06023pt.
-<images/Figure_2.png, id=149, 456.7464pt x 374.3586pt>
+<images/Figure_2.png, id=144, 456.7464pt x 374.3586pt>
 File: images/Figure_2.png Graphic file (type png)
 <use images/Figure_2.png>
 Package pdftex.def Info: images/Figure_2.png  used on input line 41.
@@ -1110,25 +1096,17 @@ Chapter 6.
 No file zavrsni.bbl.
 [28
 
-]
-Underfull \hbox (badness 1127) in paragraph at lines 96--98
-[]\T1/ptm/m/n/12 Leslie Lamport (1994) \T1/ptm/m/it/12 L[]T[]X: a document prep
-aration system\T1/ptm/m/n/12 , Addison Wesley,
- []
-
-[29
-
-] [30] (./zavrsni.aux)
+] [29] (./zavrsni.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18850 strings out of 483183
- 344889 string characters out of 5966292
- 812328 words of memory out of 5000000
- 33460 multiletter control sequences out of 15000+600000
- 602830 words of font info for 104 fonts, out of 8000000 for 9000
+ 18836 strings out of 483183
+ 344717 string characters out of 5966292
+ 813302 words of memory out of 5000000
+ 33451 multiletter control sequences out of 15000+600000
+ 596458 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  68i,9n,83p,439b,1775s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1139,16 +1117,15 @@ type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
-es/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (35 pages, 389277 bytes).
+></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
+utmri8a.pfb>
+Output written on zavrsni.pdf (33 pages, 370482 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
+ 204 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
