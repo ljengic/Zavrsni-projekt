@@ -376,7 +376,8 @@ oduzmemo vrijeme proteklo od početka perioda (time smo dobili početak perioda)
 Kod generiranja rasporeda algoritmom EDF, ne uzimaju se u obzir ublaženo-strogi uvjeti.
 
 \begin{lstlisting}[style=CStyle,caption={Pseudokod implementacije algoritma EDF},captionpos=b]
-PESUDO KODDD
+xItemValue = trenutno vrijeme + period -(trenutno vrijeme + period)
+ubacivanje zadatka u listu za cekanje;
 \end{lstlisting}
 
 
@@ -388,7 +389,10 @@ na EDF algoritam je ta što provjeravamo ublažene uvjete u strogom SRSV-u te uk
 listu zadataka koji čekaju na izvršavanje, nego on ostaje u listi za čekanje. 
 
 \begin{lstlisting}[style=CStyle,caption={Pseudokod implementacije algoritma RTO},captionpos=b]
-  PESUDO KODDD
+if(previous_deadline_met < (weakly_hard_constraint-1)){
+  xItemValue = trenutno vrijeme + period -(trenutno vrijeme + period)
+  ubacivanje zadatka u listu za cekanje;
+}
 \end{lstlisting}
 
 \subsection{Implementacija algoritma BWP}
@@ -401,7 +405,14 @@ za izvršavanje, najznačajniji bit prioriteta plavih poslova postavljen je u 1.
 zadnji na redu za izvršavanje jer će im \texttt{xItemValue} biti najveći.  
 
 \begin{lstlisting}[style=CStyle,caption={Pseudokod implementacije algoritma BWP},captionpos=b]
-  PESUDO KODDD
+if(previous_deadline_met < (weakly_hard_constraint-1)){
+  xItemValue = trenutno vrijeme + period -(trenutno vrijeme + period) 
+}
+else{
+  xItemValue = trenutno vrijeme + period -(trenutno vrijeme + period)
+  xItemValue |= (1 << 31)
+}
+ubacivanje zadatka u listu za cekanje;
 \end{lstlisting}
 
 \end{document}
