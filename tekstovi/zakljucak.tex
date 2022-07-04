@@ -8,7 +8,11 @@
 
 U ovom radu opisana je modifikacija operacijskog sustava za rad u stvarnom vremenu FreeRTOS. Za početak, objašnjenje su osnove sustava za 
 rad u stvarnom vremenu i problem koji nastaje kada sustav uđe u stanje trajnog preopterećenja. Nadalje su opisane osnove teorije raspoređivanja 
-zadataka sa opisom nekoliko jednostavnih algoritama.
+zadataka s opisom nekoliko jednostavnih algoritama. 
+U FreeRTOS-u je implementirana podrška za periodične zadatke i model SRSV-a sa strogo-ublaženim uvjetima.
+Također je implementirana strategija prekidanja poslova koja je dodatno poboljšala rasporedivost poslova.
+Za potrebe rada razvijen je generator testnih zadataka te su različiti algoritmi ispitivani na velikom broju skupova zadataka.
+Nadalje, podatci prikupljeni simulacijama su obrađeni kako bi se mogli usporediti isptivani algoritmi.
 
 Rezultati dobiveni provedenim simulacijama očekivani su i u skladu sa iznesenom teorijom. U uvjetima trajnog preopterećenja, uz korištenje skip-over modela,  
 algoritam BWP daje najveću kvalitetu usluge uz zadovoljene sve postavljene uvjete. Algoritam osigurava kontrolirano propuštanje poslova te je upotrebljiv 
