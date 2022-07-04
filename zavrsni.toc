@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {3.4}Strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima}{16}%
 \contentsline {section}{\numberline {3.5}Implementacija algoritama za raspoređivanje zadataka}{17}%
 \contentsline {subsection}{\numberline {3.5.1}Implementacija algoritma EDF}{18}%
-\contentsline {subsection}{\numberline {3.5.2}Implementacija algoritma RTO}{18}%
+\contentsline {subsection}{\numberline {3.5.2}Implementacija algoritma RTO}{19}%
 \contentsline {subsection}{\numberline {3.5.3}Implementacija algoritma BWP}{19}%
 \contentsline {chapter}{\numberline {4}Implementacija simulatora}{20}%
 \contentsline {section}{\numberline {4.1}Generiranje skupova testnih zadataka}{20}%
