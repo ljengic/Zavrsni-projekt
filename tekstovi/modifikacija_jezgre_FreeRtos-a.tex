@@ -8,12 +8,12 @@
 
 \section{Operacijski sustav FreeRTOS}
 
-FreeRTOS je operacijski sustav za rad u stvarnom vremenu otvorenog koda (\textit{engl. open source}) namijenjen primjeni u ugradbenim 
+FreeRTOS je operacijski sustav za rad u stvarnom vremenu otvorenog koda (engl. \textit{open source}) namijenjen primjeni u ugradbenim 
 računalnim sustavima. U ovom potpoglavlju bit će objašnjena 
 njegova implemnetacija i izvedba raspoređivanja zadataka. K\^{o}d FreeRTOS-a organiziran je u nekoliko datoteka i zauzima 
 svega nekoliko kilobajta. Datoteka u kojoj je implementirano upravljanje zadatcima i njihovim raspoređivanjem je \texttt{tasks.c}.
 
-Zadatci u FreeRTOS-u su opisani strukturom za upravljanje zadatcima (\textit{engl. TCB - task control block}). U toj strukturi nalaze
+Zadatci u FreeRTOS-u su opisani strukturom za upravljanje zadatcima (engl. \textit{TCB - task control block}). U toj strukturi nalaze
 se sve informacije koje opisuju pojedini zadatak (ime zadatka, prioritet, broj zadatka...).  
 Zadatci se stvaraju funkcijom \texttt{xTaskCreate()}.
 Pri stvaranju novog zadatka alocira se prostor u memoriji za novu inačicu 
@@ -31,9 +31,9 @@ Informacija o tome koji zadatak se trenutno izvršava pohranjena je u pokazivač
 Zadatci koji su spremni za izvršavanje podijeljeni su u različite liste ovisno o tome kojeg su prioriteta (postoji posebna lista
  za sve razine prioriteta zadataka).
 Stoga se pri raspoređivanju zadataka najprije pronađe lista najvišeg prioriteta koja nije prazna. Zadatci iz te liste dijele 
-procesorsko vrijeme tako da se svakom zadatku iz liste dodjeljuje jedan vremenski odsječak procesorskog vremena (\textit{engl. tick}).
+procesorsko vrijeme tako da se svakom zadatku iz liste dodjeljuje jedan vremenski odsječak procesorskog vremena (engl. \textit{tick}).
 Nakon što se zadatak izvede u jednom odsječku, vraća se na kraj liste čekanja. Ovaj način raspoređivanja zadataka naziva se dijeljenje
-procesorskog vremena među zadatcima (\textit{engl. time slicing}).
+procesorskog vremena među zadatcima (engl. \textit{time slicing}).
 
 FreeRTOS se konfigurira putem datoteke \texttt{FreeRTOSconfig.h} i korisnik treba mijenjati samo tu datoteku. U toj datoteci nalaze se 
 sve konstante preko kojih se uključuju pojedine funkcionalnosti ili postavljaju konstante bitne za rad sustava.  
@@ -90,7 +90,7 @@ BaseType_t xTaskCreatePeriodic( TaskFunction_t pxTaskCode,
 
 \subsection{Kontrola izvršenja priodičnih zadataka}
 
-Izvršavanje zadataka u SRSV-ima podijeljeno je u vremenske odsječke. U određenim vremenskim intervalima (\textit{engl. ticks}) prekida se izvođenje poslova i 
+Izvršavanje zadataka u SRSV-ima podijeljeno je u vremenske odsječke. U određenim vremenskim intervalima (engl. \textit{ticks}) prekida se izvođenje poslova i 
 određuje se koji posao se treba dalje izvršavati.
 U FreeRTOS-u navedena funkcionalnost implementirana je u funkciji \texttt{xTaskIncrementTick()}. Prekidni sustav periodički poziva navedenu funkciju 
 i u njoj je potrebno dodati funkcionalnost kontrole periodičnih zadataka.
@@ -132,7 +132,7 @@ Ponekad posao dođe na red za izvršavanje, ali čak i ako dobije sve procesorsk
 Kako kod strogih zadataka nema koristi od posla koji se djelomično izvršio, ako se posao samo djelomično izvršio do krajnjeg roka za izvršenje, 
 treba prekinuti njegovo daljnje izvršavanje.
  Ova strategija zove se prekidanje poslova 
- (\textit{engl. job killing}). Time se podiže kvaliteta usluge, jer je osigurano da poslovi koji se nikako neće 
+ (engl. \textit{job killing}). Time se podiže kvaliteta usluge, jer je osigurano da poslovi koji se nikako neće 
  izvršiti na vrijeme ne zauzimaju procesorsko vrijeme ostalim zadatcima. Strategiju prekidanja poslova dodatno možemo poboljšati
  ukoliko unaprijed prolazimo po svim spremnim poslovima i provjeravamo mogu li se izvršiti do roka ako im je na raspolaganju sve 
  procesorsko vrijeme od danog trenutka. Ako se posao ne bi stigao obaviti treba ga odmah prebaciti u listu za čekanje i detektirati 
