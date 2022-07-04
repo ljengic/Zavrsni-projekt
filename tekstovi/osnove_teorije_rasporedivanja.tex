@@ -160,7 +160,7 @@ mogu propustiti. S druge strane $S_i=\infty$ označava da su svi poslovi crveni 
 U ovom radu ispitivat će se različiti algoritmi za raspoređivanje zadataka u sustavu koji se nalazi u stanju trajnog preopterećenja.
 U navedenom slučaju važno je osigurati preskakanje zadataka na predvidiv i za sustav siguran način.
 
-Mjera kojom će se uspoređivati učinkovitost pojedinih algoritama naziva se kvaliteta usluge (eng. Quality of Service).
+Mjera kojom će se uspoređivati učinkovitost pojedinih algoritama naziva se kvaliteta usluge (\textit{eng. Quality of Service}).
 Računa se kao omjer broj zadataka koji su se izvršili do krajnjeg roka završetka i ukupnog broja svih zadataka.
 
 % popravi da š bude u formuli
@@ -169,7 +169,7 @@ Računa se kao omjer broj zadataka koji su se izvršili do krajnjeg roka završe
 \end{equation*}
 
 U nastavku su opisani korišteni algoritmi za raspoređivanje zadataka.
-Za svaki algoritam dan je primjer generiranog rasporeda na jednostavnom primjeru skupa zadataka koji je dan u tablici 2.1. 
+Za svaki algoritam dan je primjer generiranog rasporeda na jednostavnom skupu zadataka koji je dan u tablici 2.1. 
 Raspored se prikazuje vremenskim dijagramom u kojem
 je vidljivo koji zadatak se u danom trenutku izvršava. 
 Za dani set zadataka zadano je da je prvi
@@ -179,13 +179,13 @@ zadatak kritičan i mora se uvijek izvršiti, drugi zadatak ne utječe na sigurn
     \begin{center}
       \begin{tabular}{||c || c | c | c | c||} 
        \hline
-       Broj Zadatka & Period & Vrijeme izvršavanja & Faktor propuštanja & Faktor opterećenja \\ [0.5ex] 
+       Zadatak & Period & Vrijeme izvršavanja & Faktor propuštanja & Faktor opterećenja \\ [0.5ex] 
        \hline\hline
-       1 & 6 & 2 & $\infty$ & 0.33 \\ 
+       $\tau_1$ & 6 & 2 & $\infty$ & 0.33 \\ 
        \hline
-       2 & 8 & 2 & 1 & 0.25 \\
+       $\tau_2$ & 8 & 2 & 1 & 0.25 \\
        \hline
-       3 & 4 & 2 & 2 & 0.50 \\
+       $\tau_3$ & 4 & 2 & 2 & 0.50 \\
        \hline
       \end{tabular}
     \end{center}
@@ -199,11 +199,11 @@ sustava je 1.08.
 
 Algoritam EDF (\textit{engl. earliest deadline first}) je algoritam koji pri raspoređivanju zadataka najveći prioritet daje onim poslovima 
 koji imaju najbliži krajnji rok završetka. 
-Ako sustav nije preopterećen (ako je ukupni faktor opterećenja manji ili jednak od 1) 
+Ako sustav nije preopterećen (ako je ukupni faktor opterećenja manji ili jednak 1) 
 ovim algoritmom optimalno će se rasporediti zadatci i svi će se izvršiti. Ovaj algoritam nije pogodan za primjenu s ublaženo strogim uvjetima 
 jer ne pruža mehanizam koji garantira zadovoljenje ublaženo-strogih uvjeta,  
 ali u ovom radu je istražen jer se u praksi često koristi. 
-Raspored generiran EDF algoritmom prikazan je na slici 2.3.
+Raspored generiran algoritmom EDF prikazan je na slici 2.4.
 Na vremenskom dijagramu crnom bojom su prikazani poslovi koji su propustili svoj krajnji rok izvršenja.
 
 \begin{figure}[h!]
@@ -258,7 +258,7 @@ Prema algoritmu RTO samo se izvršavaju crveni poslovi, dok se oni koji se mogu 
 Time je osigurano poštivanje zadanih uvjeta, no pri manjim 
 faktorima opterećenja ovaj algoritam nije optimalan. Razlog tomu je to što postoji slobodno procesorsko vrijeme u kojem bi se mogli 
 izvršiti zadatci koje nije nužno izvršiti, no oni se automatski izbacuju iz rasporeda. Strogi zadatci raspoređuju se prema 
-ranije opisanom algoritmu EDF. 
+ranije opisanom algoritmu EDF. Raspored generiran algoritmom BWP prikazan je na slici 2.5. 
 
 \begin{figure}[h!]
     \centering
@@ -306,7 +306,7 @@ Algoritam BWP (\textit{engl. blue when possible}) je poboljšanje ranije opisano
 no raspoređuju se i zadatci koji se ne moraju nužno izvesti. Na taj način, ako se svi strogi zadatci izvrše, na red će doći
 i opcionalni zadatci. Ovom modifikacijom znatno se poboljša kvaliteta usluge, pogotovo pri
  manjim faktorima opterećenja. Zadatci su u dijagramu obojeni prema nazivu algoritma, crvena boja za stroge zadatke, a plava za zadatke 
- čije izvršavanje je opcionalno. 
+ čije izvršavanje je opcionalno. Raspored generiran algoritmom BWP prikazan je na slici 2.6.
 
  \begin{figure}[h!]
     \centering

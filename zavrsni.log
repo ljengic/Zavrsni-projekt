@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  4 JUL 2022 19:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.6.10)  4 JUL 2022 21:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -904,10 +904,7 @@ Missing character: There is no ; in font nullfont!
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) [9] [10]
+[9]) [10]
 Chapter 3.
 (./tekstovi/modifikacija_jezgre_FreeRtos-a.tex
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 14
@@ -1007,42 +1004,24 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 322--322
+Underfull \hbox (badness 10000) in paragraph at lines 323--323
 []\T1/ptm/b/n/17.28 Implementacija algoritama za rasporeživanje
  []
 
 
-Underfull \hbox (badness 2512) in paragraph at lines 334--343
-[]\T1/ptm/m/n/12 Prvi korak u modifikaciji rasporeživa£a zadataka FreeRTOS-a bi
-o je promjena
- []
-
-
-Underfull \hbox (badness 3679) in paragraph at lines 334--343
-\T1/ptm/m/n/12 zadatak ¢e se idu¢i poslati na izvr²avanje iz liste koja trenutn
-o sadrºi zadatke
- []
-
-
-Underfull \hbox (badness 3271) in paragraph at lines 334--343
-\T1/ptm/m/n/12 najve¢eg prioriteta. Prije izmjene zadatci su dijelili procesors
-ko vrijeme, svaki
- []
-
-
-Underfull \hbox (badness 3240) in paragraph at lines 334--343
-\T1/ptm/m/n/12 zadatak po jedan vremenski odsje£ak. To je bilo realizirano pozi
-vom macro-a
+Underfull \hbox (badness 6641) in paragraph at lines 335--344
+\T1/ptm/m/n/12 koji je iterirao po svim £lanovima liste. Umjesto toga, potrebno
+ je svaki
  []
 
 [17]
-Underfull \hbox (badness 1728) in paragraph at lines 351--359
+Underfull \hbox (badness 1728) in paragraph at lines 352--360
 \T1/ptm/m/n/12 njegove konstante postaviti u 1, a svih ostalih u 0. Time je omo
 gu¢eno da se
  []
 
 
-Underfull \hbox (badness 1831) in paragraph at lines 351--359
+Underfull \hbox (badness 1831) in paragraph at lines 352--360
 \T1/ptm/m/n/12 macro \T1/pcr/m/n/12 prvAddTaskToReadyList \T1/ptm/m/n/12 napi²e
  za svaki algoritam zasebno, ali unutar
  []
@@ -1104,7 +1083,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  18836 strings out of 483183
  344717 string characters out of 5966292
- 813302 words of memory out of 5000000
+ 812298 words of memory out of 5000000
  33451 multiletter control sequences out of 15000+600000
  596458 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1122,7 +1101,7 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on zavrsni.pdf (33 pages, 370482 bytes).
+Output written on zavrsni.pdf (33 pages, 370950 bytes).
 PDF statistics:
  204 PDF objects out of 1000 (max. 8388607)
  126 compressed objects within 2 object streams
