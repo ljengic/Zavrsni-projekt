@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.7.5)  5 JUL 2022 19:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.7.5)  5 JUL 2022 21:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -668,12 +668,6 @@ LaTeX Warning: Label `fig:my-label' multiply defined.
 LaTeX Warning: Label `fig:ex1' multiply defined.
 
 
-LaTeX Warning: Label `fig:ex1' multiply defined.
-
-
-LaTeX Warning: Label `tab:table-name' multiply defined.
-
-
 LaTeX Warning: Label `tab:table-name' multiply defined.
 
 
@@ -681,6 +675,12 @@ LaTeX Warning: Label `fig:ex1' multiply defined.
 
 
 LaTeX Warning: Label `fig:ex1' multiply defined.
+
+
+LaTeX Warning: Label `fig:ex1' multiply defined.
+
+
+LaTeX Warning: Label `tab:table-name' multiply defined.
 
 
 LaTeX Warning: Label `tab:table-name' multiply defined.
@@ -851,7 +851,47 @@ Missing character: There is no ; in font nullfont!
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [8]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+ [10]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -888,7 +928,10 @@ Missing character: There is no ; in font nullfont!
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9]) [10]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [11] [12]
 Poglavlje 3.
 (./tekstovi/modifikacija_jezgre_FreeRtos-a.tex
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 14
@@ -896,7 +939,7 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 14
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [11
+) [13
 
 ]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -904,58 +947,29 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-) [12]
+) [14]
 Underfull \hbox (badness 10000) in paragraph at lines 101--106
 []\T1/ptm/m/n/12 Kontrola iz-vo-že-nja pe-ri-odi£-kih za-da-taka re-ali-zi-rana
  je po-mo¢u va-ri-ja-ble
  []
 
-[13] [14]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
- [15] [16]
-Underfull \hbox (badness 2426) in paragraph at lines 337--346
+[15]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16] [17]
+Underfull \hbox (badness 2426) in paragraph at lines 200--209
 \T1/ptm/m/n/12 koji je ite-ri-rao po svim £la-no-vima liste. Umjesto toga, po-t
 rebno je svaki vre-
  []
 
 
-Underfull \hbox (badness 1337) in paragraph at lines 337--346
+Underfull \hbox (badness 1337) in paragraph at lines 200--209
 \T1/ptm/m/n/12 men-ski od-sje-£ak do-hva-titi prvi ele-ment liste. Za to u Free
 RTOS-u pos-toji ma-kro
  []
 
-[17] [18] [19]) [20]
+[18] [19]) [20]
 Poglavlje 4.
 (./tekstovi/implementacija_simulatora.tex [21
 
@@ -995,7 +1009,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  18864 strings out of 481239
  345586 string characters out of 5920378
- 828660 words of memory out of 5000000
+ 829665 words of memory out of 5000000
  33729 multiletter control sequences out of 15000+600000
  592777 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1013,7 +1027,7 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on zavrsni.pdf (34 pages, 363426 bytes).
+Output written on zavrsni.pdf (34 pages, 364594 bytes).
 PDF statistics:
  208 PDF objects out of 1000 (max. 8388607)
  130 compressed objects within 2 object streams

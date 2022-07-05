@@ -3,21 +3,21 @@
 \contentsline {chapter}{\numberline {2}Operacijski sustavi za rad u stvarnom vremenu}{3}%
 \contentsline {section}{\numberline {2.1}Sustavi za rad u stvarnom vremenu}{3}%
 \contentsline {section}{\numberline {2.2}Periodični zadatci u sustavima za rad u stvarnom \\vremenu}{5}%
-\contentsline {section}{\numberline {2.3}Skip-over model zadataka ublaženo-strogih uvjeta}{7}%
-\contentsline {section}{\numberline {2.4}Algoritmi za raspoređivanje zadataka}{7}%
-\contentsline {subsection}{\numberline {2.4.1}Algoritam EDF}{8}%
-\contentsline {subsection}{\numberline {2.4.2}Algoritam RTO}{8}%
-\contentsline {subsection}{\numberline {2.4.3}Algoritam BWP}{9}%
-\contentsline {subsection}{\numberline {2.4.4}Usporedba opisanih algoritama}{10}%
-\contentsline {chapter}{\numberline {3}Modifikacija jezgre FreeRTOS-a}{11}%
-\contentsline {section}{\numberline {3.1}Operacijski sustav FreeRTOS}{11}%
-\contentsline {section}{\numberline {3.2}Programska potpora za kontrolu izvršavanja periodičnih zadataka}{12}%
-\contentsline {subsection}{\numberline {3.2.1}Stvaranje periodičnih zadataka}{12}%
-\contentsline {subsection}{\numberline {3.2.2}Kontrola izvršenja priodičnih zadataka}{13}%
-\contentsline {section}{\numberline {3.3}Strategija prekidanja poslova}{14}%
+\contentsline {section}{\numberline {2.3}Skip-over model zadataka i strategija prekidanja \\poslova}{7}%
+\contentsline {section}{\numberline {2.4}Algoritmi za raspoređivanje zadataka}{9}%
+\contentsline {subsection}{\numberline {2.4.1}Algoritam EDF}{10}%
+\contentsline {subsection}{\numberline {2.4.2}Algoritam RTO}{10}%
+\contentsline {subsection}{\numberline {2.4.3}Algoritam BWP}{11}%
+\contentsline {subsection}{\numberline {2.4.4}Usporedba opisanih algoritama}{11}%
+\contentsline {chapter}{\numberline {3}Modifikacija jezgre FreeRTOS-a}{13}%
+\contentsline {section}{\numberline {3.1}Operacijski sustav FreeRTOS}{13}%
+\contentsline {section}{\numberline {3.2}Programska potpora za kontrolu izvršavanja periodičnih zadataka}{14}%
+\contentsline {subsection}{\numberline {3.2.1}Stvaranje periodičnih zadataka}{14}%
+\contentsline {subsection}{\numberline {3.2.2}Kontrola izvršenja priodičnih zadataka}{15}%
+\contentsline {section}{\numberline {3.3}Strategija prekidanja poslova}{16}%
 \contentsline {section}{\numberline {3.4}Strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima}{16}%
 \contentsline {section}{\numberline {3.5}Implementacija algoritama za raspoređivanje zadataka}{17}%
-\contentsline {subsection}{\numberline {3.5.1}Implementacija algoritma EDF}{18}%
+\contentsline {subsection}{\numberline {3.5.1}Implementacija algoritma EDF}{19}%
 \contentsline {subsection}{\numberline {3.5.2}Implementacija algoritma RTO}{19}%
 \contentsline {subsection}{\numberline {3.5.3}Implementacija algoritma BWP}{19}%
 \contentsline {chapter}{\numberline {4}Implementacija simulatora}{21}%
