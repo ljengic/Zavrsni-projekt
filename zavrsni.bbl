@@ -1,14 +1,29 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{4}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[ST (2021)]{stm32f4_manual}
-\emph{RM0351 Reference manual STM32L47xxx, STM32L48xxx, STM32L49xxx and
-  STM32L4Axxx advanced Arm®-based 32-bit MCUs}.
-\newblock ST Microelectronics, 2021.
-\newblock Rev. 9.
+\bibitem[Buttazzo(2011)]{knjiga_buttazzo}
+Giorgio~C. Buttazzo.
+\newblock \emph{Hard real time computing systems}.
+\newblock Springer Science+Business Media, 2011.
+
+\bibitem[Jelenković(2021)]{jelenkovic_skripta}
+Leonardo Jelenković.
+\newblock Sustavi za rad u stvarnom vremenu, 2021.
+
+\bibitem[Salamun(2020)]{diplomski_Karla_Salamun}
+Karla Salamun.
+\newblock Primjena genetskog programiranja za raspoređivanje zadataka u
+  sustavima za rad u stvarnom vremenu.
+\newblock Magistarski rad, Sveučilište u Zagrebu, Fakultet elektrotehnike i
+  računarstva, 2020.
+
+\bibitem[Tomas~Docekal(2017)]{clanak_1}
+Zdenek~Slanina Tomas~Docekal.
+\newblock Control system based on freertos for data acquisition and
+  distribution on swarm robotics platform, 2017.
 
 \end{thebibliography}

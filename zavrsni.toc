@@ -6,9 +6,9 @@
 \contentsline {section}{\numberline {2.3}Skip-over model zadataka ublaženo-strogih uvjeta}{7}%
 \contentsline {section}{\numberline {2.4}Algoritmi za raspoređivanje zadataka}{7}%
 \contentsline {subsection}{\numberline {2.4.1}Algoritam EDF}{8}%
-\contentsline {subsection}{\numberline {2.4.2}Algoritam RTO}{9}%
+\contentsline {subsection}{\numberline {2.4.2}Algoritam RTO}{8}%
 \contentsline {subsection}{\numberline {2.4.3}Algoritam BWP}{9}%
-\contentsline {subsection}{\numberline {2.4.4}Usporedba opisanih algoritama}{9}%
+\contentsline {subsection}{\numberline {2.4.4}Usporedba opisanih algoritama}{10}%
 \contentsline {chapter}{\numberline {3}Modifikacija jezgre FreeRTOS-a}{11}%
 \contentsline {section}{\numberline {3.1}Operacijski sustav FreeRTOS}{11}%
 \contentsline {section}{\numberline {3.2}Programska potpora za kontrolu izvršavanja periodičnih zadataka}{12}%

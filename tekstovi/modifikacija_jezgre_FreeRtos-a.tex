@@ -378,9 +378,9 @@ oduzmemo vrijeme proteklo od početka perioda (time smo dobili početak perioda)
 Kod generiranja rasporeda algoritmom EDF, ne uzimaju se u obzir ublaženo-strogi uvjeti.
 
 \begin{lstlisting}[style=CStyle,caption={Pseudokod implementacije algoritma EDF},captionpos=b]
-xItemValue = trenutno vrijeme + period -(trenutno vrijeme + 
+xItemValue = trenutno_vrijeme + period -(trenutno_vrijeme + 
              period)
-ubacivanje zadatka u listu za cekanje();
+ubacivanje_zadatka_u_listu_za_cekanje();
 \end{lstlisting}
 
 
@@ -393,9 +393,9 @@ listu zadataka koji čekaju na izvršavanje, nego on ostaje u listi za čekanje.
 
 \begin{lstlisting}[style=CStyle,caption={Pseudokod implementacije algoritma RTO},captionpos=b]
 if(previous_deadline_met < (weakly_hard_constraint-1)){
-  xItemValue = trenutno vrijeme + period -(trenutno vrijeme + 
+  xItemValue = trenutno_vrijeme + period -(trenutno_vrijeme + 
                period)
-  ubacivanje zadatka u listu za cekanje();
+  ubacivanje_zadatka_u_listu_za_cekanje();
 }
 \end{lstlisting}
 
@@ -410,15 +410,15 @@ zadnji na redu za izvršavanje jer će im \texttt{xItemValue} biti najveći.
 
 \begin{lstlisting}[style=CStyle,caption={Pseudokod implementacije algoritma BWP},captionpos=b]
 if(previous_deadline_met < (weakly_hard_constraint-1)){
-  xItemValue = trenutno vrijeme + period -(trenutno vrijeme + 
+  xItemValue = trenutno_vrijeme + period -(trenutno_vrijeme + 
                period) 
 }
 else{
-  xItemValue = trenutno vrijeme + period -(trenutno vrijeme + 
+  xItemValue = trenutno_vrijeme + period -(trenutno_vrijeme + 
                period)
   xItemValue |= (1 << 31)
 }
-ubacivanje zadatka u listu za cekanje();
+ubacivanje_zadatka_u_listu_za_cekanje();
 \end{lstlisting}
 
 \end{document}

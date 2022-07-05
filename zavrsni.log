@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.7.5)  5 JUL 2022 13:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.7.5)  5 JUL 2022 19:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -662,7 +662,7 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 LaTeX Warning: Label `fig:my-label' multiply defined.
 
 
-LaTeX Warning: Label `fig:ex1' multiply defined.
+LaTeX Warning: Label `fig:my-label' multiply defined.
 
 
 LaTeX Warning: Label `fig:ex1' multiply defined.
@@ -822,6 +822,13 @@ File: images/stanja_taskova.png Graphic file (type png)
 Package pdftex.def Info: images/stanja_taskova.png  used on input line 61.
 (pdftex.def)             Requested size: 441.01773pt x 247.06819pt.
  [4 <./images/4_vrste.png>]
+<images/luka_slika.pdf, id=64, 416.37807pt x 291.90173pt>
+File: images/luka_slika.pdf Graphic file (type pdf)
+<use images/luka_slika.pdf>
+Package pdftex.def Info: images/luka_slika.pdf  used on input line 87.
+(pdftex.def)             Requested size: 441.01773pt x 309.17384pt.
+
+[5 <./images/stanja_taskova.png>] [6 <./images/luka_slika.pdf>] [7]
 \pgf@layerbox@foreground=\box65
 \pgf@layerboxsaved@foreground=\box66
 Missing character: There is no ; in font nullfont!
@@ -830,28 +837,21 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5 <./images/stanja_taskova.png>] [6] [7]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
- [8]
+[8]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -960,7 +960,7 @@ Poglavlje 4.
 (./tekstovi/implementacija_simulatora.tex [21
 
 ] [22] [23]
-<images/csv.png, id=133, 801.99625pt x 261.97874pt>
+<images/csv.png, id=136, 801.99625pt x 261.97874pt>
 File: images/csv.png Graphic file (type png)
 <use images/csv.png>
 Package pdftex.def Info: images/csv.png  used on input line 150.
@@ -968,7 +968,7 @@ Package pdftex.def Info: images/csv.png  used on input line 150.
  [24 <./images/csv.png>]) [25]
 Poglavlje 5.
 (./tekstovi/rezultati.tex
-<images/kvaliteta.png, id=141, 539.8569pt x 394.5942pt>
+<images/kvaliteta.png, id=144, 539.8569pt x 394.5942pt>
 File: images/kvaliteta.png Graphic file (type png)
 <use images/kvaliteta.png>
 Package pdftex.def Info: images/kvaliteta.png  used on input line 19.
@@ -976,7 +976,7 @@ Package pdftex.def Info: images/kvaliteta.png  used on input line 19.
  [26
 
  <./images/kvaliteta.png>]
-<images/propusteno.png, id=146, 582.4962pt x 410.4936pt>
+<images/propusteno.png, id=149, 582.4962pt x 410.4936pt>
 File: images/propusteno.png Graphic file (type png)
 <use images/propusteno.png>
 Package pdftex.def Info: images/propusteno.png  used on input line 39.
@@ -985,25 +985,7 @@ Package pdftex.def Info: images/propusteno.png  used on input line 39.
 Poglavlje 6.
 (./tekstovi/zakljucak.tex) (./zavrsni.bbl [28
 
-]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-0.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 10--13
-[]\T1/ptm/m/it/12 RM0351 Re-fe-rence ma-nual STM32L47xxx, STM32L48xxx, STM32L49
-xxx and
- []
-
-
-Underfull \hbox (badness 1292) in paragraph at lines 10--13
-\T1/ptm/m/it/12 STM32L4Axxx advan-ced Arm\TS1/ptm/m/it/12 ®\T1/ptm/m/it/12 -bas
-ed 32-bit MCUs\T1/ptm/m/n/12 .  ST Mi-cro-elec-tro-nics, 2021.
- []
-
-) [29
+]) [29
 
 ] [30] (./zavrsni.aux)
 
@@ -1011,11 +993,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18888 strings out of 481239
- 345704 string characters out of 5920378
- 828534 words of memory out of 5000000
- 33750 multiletter control sequences out of 15000+600000
- 593110 words of font info for 93 fonts, out of 8000000 for 9000
+ 18864 strings out of 481239
+ 345586 string characters out of 5920378
+ 828660 words of memory out of 5000000
+ 33729 multiletter control sequences out of 15000+600000
+ 592777 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,9n,83p,439b,1764s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1031,10 +1013,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on zavrsni.pdf (34 pages, 361361 bytes).
+Output written on zavrsni.pdf (34 pages, 363426 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
+ 208 PDF objects out of 1000 (max. 8388607)
+ 130 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 139 words of extra memory for PDF output out of 10000 (max. 10000000)
 

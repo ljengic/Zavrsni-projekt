@@ -75,35 +75,17 @@ koju nazivamo faktor opterećenja (engl. \textit{utilization factor}):
 Ova veličina daje postotak zauzeća procesora zadatkom $\tau_i$ u jednom periodu $T_i$. S obzirom na to da se poslovi
 ponavljaju jedan za drugim, to je ujedno i veličina koja govori koliko procesorskog vremena se ukupno troši na zadatak $\tau_i$.
 
-Nadalje, bitna veličina koja opisuje svaki zadatak je krajnji rok njegova završetka (engl. \textit{deadline}). Krajnji rok izvršavanja je vrijeme 
+Nadalje, bitna veličina koja opisuje svaki zadatak je krajnji rok njegova završetka $D_i$  (engl. \textit{deadline}). Krajnji rok izvršavanja je vrijeme 
 do kojeg se posao mora izvršiti kako bi donio korist sustavu. U ovom radu razmatrani su 
 isključivo zadatci čiji je krajnji rok završetka jednak periodu. Takav krajnji rok naziva se implicitni krajnji rok završetka. 
 Kao primjer dan je vremenski dijagram s jednim periodičnim zadatkom.
 Period zadatka iznosi 4 vremenske jedinice, a vrijeme izvršavanja pojedinog posla 1 vremensku jedinicu. Pomoću ta dva podatka i ranije 
 dane formule proizlazi da je faktor opterećenja zadatka 0.25. Drugim riječima, ovaj zadatak zauzima 25 \% ukupnog procesorskog vremena.
 
-\begin{figure}[h]
-    \centering
-
-    \begin{RTGrid}[width=13cm]{1}{8}
-
-      \TaskArrDead{1}{0}{4}     
-      \TaskArrDead{1}{4}{4}
-    %  \TaskArrDead{1}{8}{4}
-     % \TaskArrDead{1}{12}{4}
-     % \TaskArrDead{1}{16}{4}
-      \TaskArrival{1}{8}
-  
-      \TaskExecution{1}{0}{1}
-      \TaskExecution{1}{4}{5}
-     % \TaskExecution{1}{8}{9}
-     % \TaskExecution{1}{12}{13}
-     % \TaskExecution{1}{16}{17}
-
-    \end{RTGrid}
-
-    \caption{Primjer periodičnog zadatka}
-    \label{fig:ex1}
+  \begin{figure}[!htb]
+    \center{\includegraphics[width=\textwidth]
+    {images/luka_slika.pdf}}
+    \caption{\label{fig:my-label} Primjer periodičnog zadatka}
   \end{figure}
 
 Ukupno opterećenje sustava dobiva se kao zbroj faktora opterećenja svih zadataka. 
