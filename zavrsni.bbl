@@ -1,4 +1,4 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -10,9 +10,35 @@ Giorgio~C. Buttazzo.
 \newblock \emph{Hard real time computing systems}.
 \newblock Springer Science+Business Media, 2011.
 
+\bibitem[Gambier()]{clanak_7}
+A.~Gambier.
+\newblock Real-time control systems: A tutorial.
+
+\bibitem[Guillem~Bernat(2001)]{clanak_2}
+Albert~LlamosõÂ Guillem~Bernat, Alan~Burns.
+\newblock Weakly hard real-time systems, 2001.
+
 \bibitem[Jelenković(2021)]{jelenkovic_skripta}
 Leonardo Jelenković.
 \newblock Sustavi za rad u stvarnom vremenu, 2021.
+
+\bibitem[Karla~Salamun i Džapo(2001)]{clanak_3}
+Ivan~Pavić Karla~Salamun i Hrvoje Džapo.
+\newblock Dynamic priority assignment in freertos kernel for improving
+  performance metrics, 2001.
+
+\bibitem[M.~Naeem~Shehzad(2014)]{clanak_5}
+Yvon Trinquet Umer~Farooq M.~Naeem~Shehzad, A.M.~Déplanche.
+\newblock Efﬁcient data generation for the testing of real-time
+  multiprocessor scheduling algorithms., 2014.
+
+\bibitem[Paul~Emberson i Davis(2010)]{clanak_6}
+Roger~Stafford Paul~Emberson i Robert~I. Davis.
+\newblock Techniques for the synthesis of multiprocessor tasksets, 2010.
+
+\bibitem[Queudet-Marchand i Chetto()]{clanak_4}
+Audrey Queudet-Marchand i Maryline Chetto.
+\newblock Quality of service scheduling in the firm real-time systems.
 
 \bibitem[Salamun(2020)]{diplomski_Karla_Salamun}
 Karla Salamun.

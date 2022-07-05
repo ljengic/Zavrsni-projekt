@@ -11,12 +11,12 @@
 \contentsline {subsection}{\numberline {2.4.4}Usporedba opisanih algoritama}{11}%
 \contentsline {chapter}{\numberline {3}Modifikacija jezgre FreeRTOS-a}{13}%
 \contentsline {section}{\numberline {3.1}Operacijski sustav FreeRTOS}{13}%
-\contentsline {section}{\numberline {3.2}Programska potpora za kontrolu izvršavanja periodičnih zadataka}{14}%
+\contentsline {section}{\numberline {3.2}Programska potpora za kontrolu izvršavanja \\periodičnih zadataka}{14}%
 \contentsline {subsection}{\numberline {3.2.1}Stvaranje periodičnih zadataka}{14}%
 \contentsline {subsection}{\numberline {3.2.2}Kontrola izvršenja priodičnih zadataka}{15}%
 \contentsline {section}{\numberline {3.3}Strategija prekidanja poslova}{16}%
 \contentsline {section}{\numberline {3.4}Strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima}{16}%
-\contentsline {section}{\numberline {3.5}Implementacija algoritama za raspoređivanje zadataka}{17}%
+\contentsline {section}{\numberline {3.5}Implementacija algoritama za raspoređivanje \\zadataka}{17}%
 \contentsline {subsection}{\numberline {3.5.1}Implementacija algoritma EDF}{19}%
 \contentsline {subsection}{\numberline {3.5.2}Implementacija algoritma RTO}{19}%
 \contentsline {subsection}{\numberline {3.5.3}Implementacija algoritma BWP}{19}%

@@ -43,7 +43,7 @@ za upravljanje zadatcima u FreeRTOS-u.
 Također navedeni pristup ne rješava problem preopterećenja sustava te je potrebno modificirati jezgru FreeRTOS-a kako bi se omogućilo 
 predvidivo ponašanje ako sustav uđe u trajno preopterećenje. Potrebne modifikacije detaljno su opisane u narednim poglavljima.
 
-\section{Programska potpora za kontrolu izvršavanja periodičnih zadataka}
+\section{Programska potpora za kontrolu izvršavanja \\periodičnih zadataka}
 
 Uključenje funkcionalnosti za upravljanje periodičnim zadatcima ostvareno je putem konstante \texttt{configUSE\_PERIODIC\_TASK} dodane unutar 
 datoteke \texttt{FreeRTOSconfig.h}. Korisnik postavljanjem navedene konstante u 1 na brz i jednostavan način uključuje podršku za periodične zadatke.
@@ -185,7 +185,7 @@ weakly_hard_constraint-1))
 Zbog usporedbe različitih algoritama, na početku simulacije (pri stvaranju zadataka) varijabla \texttt{previous\_deadline\_met} će 
 biti postavljena na 0. Pri raspoređivanju zadataka to odgovara najgorem mogućem slučaju.
 
-\section{Implementacija algoritama za raspoređivanje zadataka}
+\section{Implementacija algoritama za raspoređivanje \\zadataka}
 
 Algoritmi za raspoređivanje zadataka podrazumijevaju logiku kojom se odabire koji zadatak će se idući poslati na izvršavanje.
 To je najvažniji dio SRSV-a jer o raspoređivanju zadataka ovisi hoće li sustav biti pouzdan i predvidljiv.

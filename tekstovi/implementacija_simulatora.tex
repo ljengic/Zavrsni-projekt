@@ -44,7 +44,7 @@ bi zbog toga simulacije trajale predugo. Kako bi se spriječio opisani problem, 
 
 Za generiranje faktora opterećenja za skup testnih zadataka korišten je algoritam UUniFast. Algoritam prima ukupan broj zadataka 
 i sumu faktora opterećenja svih zadataka te uniformno raspoređuje faktore opterećenja. 
-Ovaj algoritam se koristi jer osigurava nepristranost pri generiranju nasumičnih vrijednosti faktora opterećenja.
+Ovaj algoritam se koristi jer osigurava nepristranost pri generiranju nasumičnih vrijednosti faktora opterećenja \cite{clanak_5}.
 Vremenska složenost algoritma je O(n). Kako bi generirani skup zadataka bio što sličniji stvarnim uvjetima
 nakon generiranja faktora opterećenja ugrađena je provjera da neki zadatak ne zauzima previše procesorskog vremena. Konkretno, ako neki zadatak ima faktor
 opterećenja veći od 0.75, sve vrijednosti se odbacuju i algoritam se ponavlja. Ovu provjeru bilo je potrebno napraviti i zato što je moguće da faktor
