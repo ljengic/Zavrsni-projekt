@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
 
-headers = ['Utilization', 'BWP','RTO']
+headers = ['Utilization', 'BWP','RTO','EDF']
 
 df = pd.read_csv('BWP_and_RTO.csv', names=headers)
 

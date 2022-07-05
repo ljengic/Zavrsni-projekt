@@ -79,7 +79,8 @@ Navedena funkcija je proširenje funkcije \texttt{xTaskCreate()} s novim varijab
 BaseType_t xTaskCreatePeriodic( TaskFunction_t pxTaskCode,
                         uint8_t id,
                         const char * const pcName, 
-                        const configSTACK_DEPTH_TYPE usStackDepth,
+                        const configSTACK_DEPTH_TYPE 
+                        usStackDepth,
                         void * const pvParameters,
                         UBaseType_t uxPriority,
                         TaskHandle_t * const pxCreatedTask,
@@ -272,8 +273,8 @@ Uvjet za prekid dobije se tako da usporedimo vrijeme u kojem bi posao bio obavlj
 relativno u odnosu na vrijeme kada je posao postao spreman za izvršavanje (višekratnik perioda).
 U nastavku je priložen navedeni uvjet.
 \begin{lstlisting}[style=CStyle,caption={Uvjet za prekidanje izvođenja posla},captionpos=b]
-if(xTaskGetTickCount() - TaskTcb->start_time + TaskTcb->xRemainingTicks > 
-TaskTcb->xTaskDeadline)
+if(xTaskGetTickCount() - TaskTcb->start_time + TaskTcb->
+xRemainingTicks > TaskTcb->xTaskDeadline)
 \end{lstlisting}
 
 \section{Strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima}
@@ -314,7 +315,8 @@ ako se prethodno zadatak izvršio manje puta od vrijednosti \texttt{weakly\_hard
 korišten prilikom implementacije raspoređivanja zadataka.
 
 \begin{lstlisting}[style=CStyle,caption={Uvjet za slučaj kada se zadatak mora izvršiti},captionpos=b]
-if( TaskTcb->previous_deadline_met < (TaskTcb->weakly_hard_constraint-1))
+if( TaskTcb->previous_deadline_met < (TaskTcb->
+weakly_hard_constraint-1))
 \end{lstlisting}
 
 Zbog usporedbe različitih algoritama, na početku simulacije (pri stvaranju zadataka) varijabla \texttt{previous\_deadline\_met} će 
@@ -376,8 +378,9 @@ oduzmemo vrijeme proteklo od početka perioda (time smo dobili početak perioda)
 Kod generiranja rasporeda algoritmom EDF, ne uzimaju se u obzir ublaženo-strogi uvjeti.
 
 \begin{lstlisting}[style=CStyle,caption={Pseudokod implementacije algoritma EDF},captionpos=b]
-xItemValue = trenutno vrijeme + period -(trenutno vrijeme + period)
-ubacivanje zadatka u listu za cekanje;
+xItemValue = trenutno vrijeme + period -(trenutno vrijeme + 
+             period)
+ubacivanje zadatka u listu za cekanje();
 \end{lstlisting}
 
 
@@ -390,8 +393,9 @@ listu zadataka koji čekaju na izvršavanje, nego on ostaje u listi za čekanje.
 
 \begin{lstlisting}[style=CStyle,caption={Pseudokod implementacije algoritma RTO},captionpos=b]
 if(previous_deadline_met < (weakly_hard_constraint-1)){
-  xItemValue = trenutno vrijeme + period -(trenutno vrijeme + period)
-  ubacivanje zadatka u listu za cekanje;
+  xItemValue = trenutno vrijeme + period -(trenutno vrijeme + 
+               period)
+  ubacivanje zadatka u listu za cekanje();
 }
 \end{lstlisting}
 
@@ -406,13 +410,15 @@ zadnji na redu za izvršavanje jer će im \texttt{xItemValue} biti najveći.
 
 \begin{lstlisting}[style=CStyle,caption={Pseudokod implementacije algoritma BWP},captionpos=b]
 if(previous_deadline_met < (weakly_hard_constraint-1)){
-  xItemValue = trenutno vrijeme + period -(trenutno vrijeme + period) 
+  xItemValue = trenutno vrijeme + period -(trenutno vrijeme + 
+               period) 
 }
 else{
-  xItemValue = trenutno vrijeme + period -(trenutno vrijeme + period)
+  xItemValue = trenutno vrijeme + period -(trenutno vrijeme + 
+               period)
   xItemValue |= (1 << 31)
 }
-ubacivanje zadatka u listu za cekanje;
+ubacivanje zadatka u listu za cekanje();
 \end{lstlisting}
 
 \end{document}

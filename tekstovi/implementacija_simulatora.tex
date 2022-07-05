@@ -79,7 +79,8 @@ Prije početka svake simulacije poziva se funkcija \texttt{startTaskSetGenerator
 svi ranije navedeni koraci za generiranje skupa zadataka. Navedena funkcija kao argumente prima ukupan broj zadataka koje je potrebno generirati, zadani 
 faktor opterećenja i putanju do datoteke u koju će se pohraniti rezultati simulacije.
 \begin{lstlisting}[style=CStyle,caption={Funckija \texttt{startTaskSetGenerator()}},captionpos=b]
-void startTaskSetGenerator(double utilization,int n, char * report_file){
+void startTaskSetGenerator(double utilization,int n,
+                           char * report_file){
     TASK_CNT = n; 
     total_utilization = utilization; 
     file_path = report_file;
@@ -123,7 +124,7 @@ skup zadataka korištenih u primjeru.
     \caption{\label{tab:table-name}Skup zadataka korišten u opisu strategije prekidanja poslova.}
     \end{table}
 
-Rezultat simulacije u obliku polja tipa bool za svaki zadatak izgleda ovako:
+Rezultat simulacije danog primjera u obliku polja tipa bool:
 
 \begin{itemize}
         \item[] $\tau_1$ : 001001010001,
@@ -165,15 +166,15 @@ datoteka će se zvati \texttt{BWP\_125.csv}. Skripta će nadalje pokrenuti simul
 svake simulacije pohraniti u jedan redak navedene datoteke. Završetkom rada skripte generirano je 13 datoteka, a u svakoj se nalaze rezultati 
 20 simulacija. Simulaciju je potrebno posebno pokrenuti za svaki ispitivani algoritam. U nastavku je prikazan pseudo kod skripte \texttt{simulation.sh}: 
 
-
 \begin{lstlisting}[style=CStyle,caption={Pseudo kod skripte \texttt{simulation.sh}},captionpos=b]
 zadavanje_algoritma;
 for (i=90;i<=150;i+=5) do
 	faktor_opterecenja=i;
-	generiranje_imena_datoteke;
-	stvaranje_datoteke_izvjestaja;
+	generiranje_imena_datoteke();
+	stvaranje_datoteke_izvjestaja();
 	for (j=0;j<20;j+=1) do
-		pokretanje_simulacije(faktor_opterecenja,broj_zadataka,ime_datoteke);
+		pokretanje_simulacije(faktor_opterecenja,
+        broj_zadataka,ime_datoteke);
 	done
 done
 \end{lstlisting}
