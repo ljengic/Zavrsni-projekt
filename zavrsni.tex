@@ -50,6 +50,8 @@
 \renewcommand{\tablename}{Tablica}
 \renewcommand\bibname{Literatura}
 
+\hyphenation{FreeRTOS}
+
 \begin{document}
 
 % TODO: Navedite broj rada.
@@ -93,24 +95,28 @@
 \bibliographystyle{fer}
 
 \begin{sazetak}
-U ovom radu opisana je modifikacija operacijskog sustava za rad u stvarnom vremenu FreeRTOS.
-U FreeRTOS je ugrađena podrška za kontrolu periodičnih zadataka. Korišten je model strogog sustava za rad u stvarnom vremenu 
+U ovom radu opisana je modifikacija operacijskog sustava za rad u stvarnom vremenu FreeRTOS koja omogućuje podršku za model strogih zadataka s ublaženim uvjetima (engl. \textit{weakly hard real-time system}).
+U FreeRTOS je ugrađena podrška za inicijalizaciju i kontrolu periodičnih zadataka. Korišten je model strogog sustava za rad u stvarnom vremenu 
 s ublaženim uvjetima te strategija prekidanja poslova.
-Nadalje implementirani su različiti algoritmi za raspoređivanje zadataka. Algoritmi su ispitivani i uspoređivani na velikom 
-broju generiranih skupova zadataka. Za potrebe ovog rada, razvijen je generator testnih skupova zadataka. 
-Dobiveni rezultati su u skladu s očekivanja i poklapaju se s iznesenom teroijom. 
+Nadalje, implementirani su različiti algoritmi za raspoređivanje zadataka. Algoritmi su ispitivani i uspoređivani kroz simulacije na velikom 
+broju skupova zadataka. Testni skupovi zadataka generirani su posebnom skriptom za generiranje velikog broja skupova zadataka sa zadanim parametrima, koja je implementirana u sklopu ovog rada. 
+Dobiveni rezultati su u skladu s očekivanjima te se poklapaju s iznesenim teorijskim razmatranjima i postojećim rezultatima koji su poznati iz literature.
 
 \kljucnerijeci{sustavi za rad u stvarnom vremenu, FreeRTOS, raspoređivanje zadataka, \textit{skip-over model}, strategija prekidanja poslova.}
 \end{sazetak}
 
 % TODO: Navedite naslov na engleskom jeziku.
-%\engtitle{Modification of FreeRTOS for Control Applications }
-%\begin{abstract}
+\engtitle{Modification of FreeRTOS for Control Applications }
+\begin{abstract}
+This thesis describes a modification of FreeRTOS which implements the weakly hard real-time system model. 
+Firstly, software support for initializing and controlling the execution of periodic real-time tasks is implemented.
+The execution of periodic real-time tasks is implemented according to the weakly hard real-time model and job killing strategy.
+Further, various scheduling algorithms are implemented. The performance of the algorithms is evaluated and compared by simulating the execution of a large number of synthetically generated task sets.
+The task sets for testing are generated through a script for generating a large number of task sets with predefined parameters, which is also implemented in this work.
+The obtained results coincide with the described theoretical remarks and previous results known from the literature.
 
-%This thesis describes modification of FreeRTOS real-time operating system.
 
-
-%\keywords{Real time systems, FreeRTOS, task scheduling, skip-over model, job killing.}
-%\end{abstract}
+\keywords{Real time systems, FreeRTOS, task scheduling, skip-over model, job killing.}
+\end{abstract}
 
 \end{document}

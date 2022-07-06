@@ -56,22 +56,22 @@ Imena zadataka generiraju se u obliku \texttt{Task\_xx}, gdje xx predstavlja ide
 Faktori preskakanja, kao i periodi, generirani su uniformnom razdiobom. Vrijednosti su iz intervala [0,5].
 Nakon generiranja skupa zadataka potrebno je provjeriti hoće li on biti rasporediv. Ako nije, ublaženo strogi uvjeti nanovo 
 će se generirati skroz dok uvjeti rasporedivosti ne budu zadovoljeni. Za skip-over model postoji nužan i dovoljan uvjet za rasporedivost 
-poslova\cite{clanak_4}. Za svaki generirani skup provjeravaju se navedeni uvjeti, dani sljedećim formulama: 
+poslova \cite{clanak_4}. Za svaki generirani skup provjerava se funkcija potražnje procesora $D$ u vremenskom intervalu $[0, L]$, kao što je prikazano u sljedećim izrazima. 
 
 Nužan uvjet:
-\begin{equation*}
+\begin{equation}
     \sum_{i=1}^{N}\frac{C\textsubscript{i}(S\textsubscript{i}-1)}{T\textsubscript{i}(S\textsubscript{i})} \le 1
-\end{equation*}
+\end{equation}
 
 Dovoljan uvjet:
-\begin{equation*}
+\begin{equation}
     U_{p}^{*} \max_{L\geq0}\frac{\sum_{i=1}^{N}D(i,[0,L])}{L}
-\end{equation*}
+\end{equation}
 gdje je 
 
-\begin{equation*}
-    D(i,[0,L])=\lfloor \frac{L}{T\textsubscript{i}}-\frac{L}{T\textsubscript{i}S\textsubscript{i}} \rfloor C\textsubscript{i}
-\end{equation*}
+\begin{equation}
+    D(i,[0,L])=\bigg\lfloor \frac{L}{T\textsubscript{i}}-\frac{L}{T\textsubscript{i}S\textsubscript{i}} \bigg\rfloor C\textsubscript{i}
+\end{equation}
 
 
 
@@ -99,7 +99,7 @@ void startTaskSetGenerator(double utilization,int n,
 
 Tijekom izvođenja simulacije za svaki se posao pamti je li izvršen do roka završetka.  
 Tako se dobije informacija o izvođenju svakog zadatka s obzirom na pripadajući faktor preskakanja. To je implementirano 
-pomoću polja varijabli tipa bool \texttt{report[MAX\_PERIOD\_CNT] } koje je pridijeljeno svakom zadatku kao član strukture \texttt{periodic\_task}.
+pomoću polja varijabli tipa \textit{bool} \texttt{report[MAX\_PERIOD\_CNT] } koje je pridijeljeno svakom zadatku kao član strukture \texttt{periodic\_task}.
 U polju se za svaki posao pojedinog zadatka upisuje 1 ako se pravovremeno izveo, to jest, ako je u \texttt{report[j]} upisana jedinica, to znači da se 
 j-ti posao od početka simulacije izveo pravovremeno. Ako je vrijednost 0 posao se nije izveo do krajnjeg roka za završetak.
 Simulacija se prekida nakon hiperperioda.
@@ -124,7 +124,7 @@ skup zadataka korištenih u primjeru.
     \caption{\label{tab:table-name}Skup zadataka korišten u opisu strategije prekidanja poslova.}
     \end{table}
 
-Rezultat simulacije danog primjera u obliku polja tipa bool:
+Rezultat simulacije danog primjera u obliku polja tipa \textit{bool}:
 
 \begin{itemize}
         \item[] $\tau_1$ : 001001010001,
@@ -164,9 +164,9 @@ Kako bi se to ostvarilo, petljom se prolazi po svim faktorima opterećenja iz na
 csv, naziva oblika \texttt{{ime\_algoritma}\_{faktor\_opterećenja}.csv}. Na primjer, uz korištenje BWP algoritma i faktora opterećenja 1.25 
 datoteka će se zvati \texttt{BWP\_125.csv}. Skripta će nadalje pokrenuti simulaciju sa zadanim faktorom opterećenja 20 puta te će se rezultati 
 svake simulacije pohraniti u jedan redak navedene datoteke. Završetkom rada skripte generirano je 13 datoteka, a u svakoj se nalaze rezultati 
-20 simulacija. Simulaciju je potrebno posebno pokrenuti za svaki ispitivani algoritam. U nastavku je prikazan pseudo kod skripte \texttt{simulation.sh}: 
+20 simulacija. Simulaciju je potrebno posebno pokrenuti za svaki ispitivani algoritam. U nastavku je prikazan pseudokod skripte \texttt{simulation.sh}: 
 
-\begin{lstlisting}[style=CStyle,caption={Pseudo kod skripte \texttt{simulation.sh}},captionpos=b]
+\begin{lstlisting}[style=CStyle,caption={Pseudokod skripte \texttt{simulation.sh}},captionpos=b]
 zadavanje_algoritma;
 for (i=90;i<=150;i+=5) do
 	faktor_opterecenja=i;

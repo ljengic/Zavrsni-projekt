@@ -19,7 +19,7 @@ izvršiti sve instance zadataka na vrijeme i neke od njih mora preskočiti. Međ
 mora biti kontrolirano i predvidivo. Kod sustava automatskog upravljanja preskakanje kritičnih zadataka može sustav dovesti do nestabilnosti dok u 
 multimedijskim sustavima izaziva smanjenje performansi.
   
-Za primjer možemo uzeti autonomni mobilni robot\cite{clanak_3} koji ima sustav za izbjegavanje prepreka. Za siguran rad ključno je uspješno izvođenje zadataka
+Primjer takvog sustava je autonomni mobilni robot \cite{clanak_3} koji ima sustav za izbjegavanje prepreka. Za siguran rad ključno je uspješno izvođenje zadataka
 vezanih uz lokalizaciju i kontrolu motora. Ako takav robot uđe u stanje preopterećenja, prioritet 
 moraju dobiti zadatci koji su vezani uz detekciju prepreke i kontrolu motora kako bi se robot na vrijeme zaustavio ukoliko je to potrebno.
 Ostale funkcije koje robot obavlja manje su kritične te se mogu propustiti bez štete za sustav.
@@ -32,12 +32,14 @@ propuštanjem nekritičnih poslova. Točnije,
 modifikacijom jezgre FreeRTOS-a implementiran je strogi sustav za rad u stvarnom vremenu s ublaženim uvjetima (engl. \textit{weakly hard real-time system}). Kod takvog sustava
 povremeno se dopušta da se posao ne izvede, ali u određenom broju slijedno aktiviranih poslova postoji striktno definirana donja granica na broj 
 poslova koji se moraju pravovremeno izvesti.
-Takvim pristupom preskakanja poslova osigurava se da se niti jedan zadatak trajno ne blokira. Nadalje implementirana je strategija 
+Takvim pristupom preskakanja poslova osigurava se da se niti jedan zadatak trajno ne blokira.
+Uvjeti koji definiraju minimalni broj poslova koji se moraju pravovremeno izvesti nazivaju se ublaženo-strogim uvjetima.
+Nadalje, implementirana je strategija 
 prekidanja zadataka, prema kojoj se zadatci ne nastavljaju izvršavati nakon što su došli do krajnjeg roka za izvršavanje.
 
 U literaturi se može pronaći mnogo različitih algoritama za raspoređivanje zadataka, s obzirom na optimalnost, složenost i model zadataka na koji se odnose. 
-Neki od njih implementirani su u raspoređivač zadataka FreeRTOS-a 
+U sklopu ovog rada, neki od njih su implementirani u raspoređivač zadataka FreeRTOS-a 
 te međusobno uspoređivani nad istim skupovima zadataka. Cilj je pronaći algoritam koji će u uvjetima preopterećenja osigurati 
-determinističko ponašanje uz što veću kvalitetu usluge, to jest uz što više pravovremeno izvršenih poslova.
+determinističko ponašanje uz što veću kvalitetu usluge, točnije, što veći broj pravovremeno izvršenih poslova.
 
 \end{document}
