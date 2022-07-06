@@ -16,7 +16,7 @@ zadataka izvrši na vrijeme.
 SRSV mora imati implementiranu kontrolu zadataka, kontrolu vremena, raspoređivač zadataka i sustav komunikacije i sinkronizacije
 među zadatcima.
 
-S obzirom na posljedice koje izaziva propuštanje roka izvršavanja zadatke dijelimo u četiri skupine :
+S obzirom na posljedice koje izaziva propuštanje roka izvršavanja zadatke dijelimo u četiri skupine\cite{knjiga_buttazzo} :
 \begin{itemize}
     \item[--] strogi zadatci (engl. \textit{hard real-time tasks}),
     \item[--] ublaženi zadatci (engl. \textit{soft real-time tasks}),
@@ -95,7 +95,7 @@ Ukupno opterećenje sustava dobiva se kao zbroj faktora opterećenja svih zadata
 Ako je sustav preopterećen, tj. ukupno opterećenje mu 
 je veće od 1, neki od zadataka se neće izvršiti do svog roka za izvršavanje. U tom slučaju koriste se algoritmi koji će osigurati 
 da se zadatci ne preskaču nasumično, već na kontroliran način kao bi se sustav zaštitio od potencijalnih oštećenja nastalih preskakanjem 
-kritičnih zadataka. Postoje dvije vrste preopterećenja sustava.
+kritičnih zadataka. Postoje dvije vrste preopterećenja sustava\cite{clanak_3}.
 \begin{itemize}
     \item[--] trajno preopterećenje (engl. \textit{permanent overload}),
     \item[--] prolazno preopterećenje (engl. \textit{transient overload}).
@@ -109,7 +109,7 @@ opterećenje sustava trajno veće od 1. Tada se svi poslovi neće moći izvršit
 
 U ovom radu ispitivat će se ponašanje sustava s ublaženo-strogim uvjetima (engl. \textit{weakly-hard constraints}). Za razliku od 
 strogih zadataka, kod ublaženo-kritičnih zadataka povremeno dopuštamo da se zadatak ne izvede na vrijeme, ali na predvidiv i 
-kontroliran način. U određenom vremenskom okviru točno se određuju pravila propuštanja zadataka. Postoje 4 modela SRSV-a s ublaženo-strogim uvjetima :
+kontroliran način. U određenom vremenskom okviru točno se određuju pravila propuštanja zadataka. Postoje 4 modela SRSV-a s ublaženo-strogim uvjetima\cite{clanak_2} :
 \begin{itemize}
     \item[--] u $m$ slijednih perioda posao se mora pravovremeno izvršiti u njih $n$,
     \item[--] u $m$ slijednih perioda posao se mora pravovremeno izvršiti u njih $n$ koji slijede jedan za drugim,

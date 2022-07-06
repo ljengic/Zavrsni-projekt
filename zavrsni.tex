@@ -87,23 +87,30 @@
 \chapter{Zaključak}
 \subfile{tekstovi/zakljucak}
 
-\nocite{*}
+%\nocite{*}
 
 \bibliography{literatura}
 \bibliographystyle{fer}
 
 \begin{sazetak}
-Sažetak na hrvatskom jeziku.
+U ovom radu opisana je modifikacija operacijskog sustava za rad u stvarnom vremenu FreeRTOS.
+U FreeRTOS je ugrađena podrška za kontrolu periodičnih zadataka. Korišten je model strogog sustava za rad u stvarnom vremenu 
+s ublaženim uvjetima te strategija prekidanja poslova.
+Nadalje implementirani su različiti algoritmi za raspoređivanje zadataka. Algoritmi su ispitivani i uspoređivani na velikom 
+broju generiranih skupova zadataka. Za potrebe ovog rada, razvijen je generator testnih skupova zadataka. 
+Dobiveni rezultati su u skladu s očekivanja i poklapaju se s iznesenom teroijom. 
 
-\kljucnerijeci{Ključne riječi, odvojene zarezima.}
+\kljucnerijeci{sustavi za rad u stvarnom vremenu, FreeRTOS, raspoređivanje zadataka, \textit{skip-over model}, strategija prekidanja poslova.}
 \end{sazetak}
 
 % TODO: Navedite naslov na engleskom jeziku.
-\engtitle{Title}
-\begin{abstract}
-Abstract.
+%\engtitle{Modification of FreeRTOS for Control Applications }
+%\begin{abstract}
 
-\keywords{Keywords.}
-\end{abstract}
+%This thesis describes modification of FreeRTOS real-time operating system.
+
+
+%\keywords{Real time systems, FreeRTOS, task scheduling, skip-over model, job killing.}
+%\end{abstract}
 
 \end{document}
