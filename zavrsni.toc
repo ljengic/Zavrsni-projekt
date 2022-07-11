@@ -4,8 +4,8 @@
 \contentsline {section}{\numberline {2.1}Sustavi za rad u stvarnom vremenu}{3}%
 \contentsline {section}{\numberline {2.2}Periodični zadatci u sustavima za rad u stvarnom \\vremenu}{5}%
 \contentsline {section}{\numberline {2.3}\textit {Skip-over} model zadataka i strategija prekidanja \\poslova}{7}%
-\contentsline {section}{\numberline {2.4}Algoritmi za raspoređivanje zadataka}{9}%
-\contentsline {subsection}{\numberline {2.4.1}Algoritam EDF}{10}%
+\contentsline {section}{\numberline {2.4}Algoritmi za raspoređivanje zadataka}{8}%
+\contentsline {subsection}{\numberline {2.4.1}Algoritam EDF}{9}%
 \contentsline {subsection}{\numberline {2.4.2}Algoritam RTO}{10}%
 \contentsline {subsection}{\numberline {2.4.3}Algoritam BWP}{11}%
 \contentsline {subsection}{\numberline {2.4.4}Usporedba opisanih algoritama}{11}%

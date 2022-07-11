@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.7.5)  11 JUL 2022 09:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.7.5)  11 JUL 2022 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -820,13 +820,14 @@ Package pdftex.def Info: images/stanja_zadataka_novo.png  used on input line 61
 .
 (pdftex.def)             Requested size: 441.01773pt x 246.31322pt.
  [4 <./images/4_vrste_finalno.png>]
-<images/luka_slika.pdf, id=64, 416.37807pt x 291.90173pt>
-File: images/luka_slika.pdf Graphic file (type pdf)
-<use images/luka_slika.pdf>
-Package pdftex.def Info: images/luka_slika.pdf  used on input line 86.
-(pdftex.def)             Requested size: 441.01773pt x 309.17384pt.
- [5 <./images/stanja_zadataka_novo.png>] [6 <./images/luka_slika.pdf>]
-[7]
+<images/periodican_task_popravljeno.png, id=64, 1008.01593pt x 481.04718pt>
+File: images/periodican_task_popravljeno.png Graphic file (type png)
+<use images/periodican_task_popravljeno.png>
+Package pdftex.def Info: images/periodican_task_popravljeno.png  used on input 
+line 86.
+(pdftex.def)             Requested size: 441.01773pt x 210.46497pt.
+ [5 <./images/stanja_zadataka_novo.png>] [6 <./images/periodican_task_popravlje
+no.png>] [7]
 \pgf@layerbox@foreground=\box65
 \pgf@layerboxsaved@foreground=\box66
 Missing character: There is no ; in font nullfont!
@@ -889,7 +890,6 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- [10]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -906,6 +906,11 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -922,7 +927,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-) [11] [12]
+ [11]) [12]
 Poglavlje 3.
 (./tekstovi/modifikacija_jezgre_FreeRtos-a.tex
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 14
@@ -965,7 +970,7 @@ Poglavlje 4.
 (./tekstovi/implementacija_simulatora.tex [21
 
 ] [22] [23]
-<images/csv.png, id=137, 801.99625pt x 261.97874pt>
+<images/csv.png, id=136, 801.99625pt x 261.97874pt>
 File: images/csv.png Graphic file (type png)
 <use images/csv.png>
 Package pdftex.def Info: images/csv.png  used on input line 149.
@@ -973,7 +978,7 @@ Package pdftex.def Info: images/csv.png  used on input line 149.
  [24 <./images/csv.png>]) [25]
 Poglavlje 5.
 (./tekstovi/rezultati.tex
-<images/kvaliteta.png, id=145, 539.8569pt x 394.5942pt>
+<images/kvaliteta.png, id=144, 539.8569pt x 394.5942pt>
 File: images/kvaliteta.png Graphic file (type png)
 <use images/kvaliteta.png>
 Package pdftex.def Info: images/kvaliteta.png  used on input line 19.
@@ -981,7 +986,7 @@ Package pdftex.def Info: images/kvaliteta.png  used on input line 19.
  [26
 
  <./images/kvaliteta.png>]
-<images/propusteno.png, id=150, 582.4962pt x 410.4936pt>
+<images/propusteno.png, id=149, 582.4962pt x 410.4936pt>
 File: images/propusteno.png Graphic file (type png)
 <use images/propusteno.png>
 Package pdftex.def Info: images/propusteno.png  used on input line 39.
@@ -999,8 +1004,8 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  18877 strings out of 481239
- 345808 string characters out of 5920378
- 829826 words of memory out of 5000000
+ 345886 string characters out of 5920378
+ 829823 words of memory out of 5000000
  33738 multiletter control sequences out of 15000+600000
  595545 words of font info for 94 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
@@ -1018,10 +1023,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (34 pages, 411383 bytes).
+Output written on zavrsni.pdf (34 pages, 429798 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
+ 211 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
