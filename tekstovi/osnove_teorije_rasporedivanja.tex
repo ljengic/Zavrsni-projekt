@@ -26,8 +26,8 @@ S obzirom na posljedice koje izaziva propuštanje roka izvršavanja zadatke dije
 
 \begin{figure}[!htb]
   \center{\includegraphics[width=\textwidth]
-  {images/4_vrste.png}}
-  \caption{\label{fig:my-label} 4 vrste zadataka u SRSV-u \cite{diplomski_Karla_Salamun}}
+  {images/4_vrste_finalno.png}}
+  \caption{\label{fig:my-label} Četiri vrste zadataka u SRSV-u, modificirano iz \cite{diplomski_Karla_Salamun}}
 \end{figure}
 
 Strogi zadatci niti jednom ne smiju propustiti krajnji rok izvršavanja jer su to zadatci koji obavljaju važan posao. Njihovo 
@@ -37,9 +37,9 @@ nesreću s ljudskim žrtvama. Čvrsti zadatci su oni čije prekasno izvršavanje
 Za razliku od čvrstih, kod ublaženih zadataka čak i izvršavanje poslije krajnjeg roka izvršavanja donosi korist sustavu.
 Primjer ovakvog zadatka je paljenje signalne lampice ili prikaz podataka na pokazniku.
 Na kraju, imamo zadatke koji su opcionalni i nisu vremenski ograničeni, te donose jednaku korist sustavu kad god se izveli.
-Na slici 2.1 prikazana je ovisnost koristi koju izvršavanje posla donosi sustavu o vremenu izvršavanja posla za sva 4 opisana slučaja.
+Na slici 2.1 prikazana je ovisnost koristi koju izvršavanje posla donosi sustavu o vremenu izvršavanja posla za sva četiri opisana slučaja.
 
-Zadatci u operacijskim sustavima za rad u stvarnom vremenu općenito se mogu naći u jednom od 3 stanja, a to su:
+Zadatci u operacijskim sustavima za rad u stvarnom vremenu općenito se mogu naći u jednom od tri stanja, a to su:
 \begin{itemize}
     \item[--] zadatak koji se trenutno izvodi (engl. \textit{running task}),
     \item[--] zadatci koji su spremi za izvođenje (engl. \textit{ready tasks}),
@@ -58,7 +58,7 @@ implementaciji konkretnih SRSV-ova.
 
 \begin{figure}[!htb]
     \center{\includegraphics[width=\textwidth]
-    {images/stanja_taskova.png}}
+    {images/stanja_zadataka_novo.png}}
     \caption{\label{fig:my-label} Stanja zadataka u SRSV-u}
   \end{figure}
 
@@ -78,39 +78,38 @@ ponavljaju jedan za drugim, to je ujedno i veličina koja govori koliko procesor
 Nadalje, bitna veličina koja opisuje svaki zadatak je krajnji rok njegova završetka $D_i$  (engl. \textit{deadline}). Krajnji rok izvršavanja je vrijeme 
 do kojeg se posao mora izvršiti kako bi donio korist sustavu. U ovom radu razmatrani su 
 isključivo zadatci čiji je krajnji rok završetka jednak periodu. Takav krajnji rok naziva se implicitni krajnji rok završetka. 
-Na slici \ref{fig:periodic} prikazan je primjer vremenskog dijagrama s jednim periodičnim zadatkom.
-Period zadatka iznosi 4 vremenske jedinice, a vrijeme izvršavanja pojedinog posla 1 vremensku jedinicu. Pomoću ta dva podatka i ranije 
-dane formule proizlazi da je faktor opterećenja zadatka 0.25. Drugim riječima, ovaj zadatak zauzima 25 \% ukupnog procesorskog vremena.
-
+Na slici 2.3 prikazan je primjer vremenskog dijagrama s jednim periodičnim zadatkom.
+Period zadatka iznosi četiri vremenske jedinice, a vrijeme izvršavanja pojedinog posla jednu vremensku jedinicu. Pomoću ta dva podatka i ranije 
+dane formule proizlazi da je faktor opterećenja zadatka 0,25. Drugim riječima, ovaj zadatak zauzima 25 \% ukupnog procesorskog vremena.
   \begin{figure}[!htb]
     \center{\includegraphics[width=\textwidth]
     {images/luka_slika.pdf}}
     \label{fig:periodic} 
     \caption{Primjer periodičnog zadatka}
   \end{figure}
-
+\linebreak
 Ukupno opterećenje sustava dobiva se kao zbroj faktora opterećenja svih zadataka. 
 \begin{equation*}
     U = \sum_{i=1}^{N}\frac{C\textsubscript{i}}{T\textsubscript{i}}
 \end{equation*}
 Ako je sustav preopterećen, tj. ukupno opterećenje mu 
-je veće od 1, neki od zadataka se neće izvršiti do svog roka za izvršavanje. U tom slučaju koriste se algoritmi koji će osigurati 
+je veće od jedan, neki od zadataka se neće izvršiti do svog roka za izvršavanje. U tom slučaju koriste se algoritmi koji će osigurati 
 da se zadatci ne preskaču nasumično, već na kontroliran način kao bi se sustav zaštitio od potencijalnih oštećenja nastalih preskakanjem 
 kritičnih zadataka. Postoje dvije vrste preopterećenja sustava \cite{clanak_3}:
 \begin{itemize}
     \item[--] trajno preopterećenje (engl. \textit{permanent overload}),
     \item[--] prolazno preopterećenje (engl. \textit{transient overload}).
 \end{itemize}
-Kod prolaznog opterećenja sustav ima ukupno opterećenje manje ili jednako 1, no u nekom trenutku može doći do aktivacije aperiodičnog zadatka 
+Kod prolaznog opterećenja sustav ima ukupno opterećenje manje ili jednako jedan, no u nekom trenutku može doći do aktivacije aperiodičnog zadatka 
 koji onda sustav gura u stanje preopterećenja. Nakon što prođe određeno vrijeme i aperiodični zadatak se izvede, sustav se vraća u prijašnje
 stanje i svi zadatci se izvršavaju pravovremeno. Drugi slučaj je kada je sustav u stanju trajnog preopterećenja, kada je ukupno 
-opterećenje sustava trajno veće od 1. Tada se svi poslovi neće moći izvršiti i kontinuirano će se pojedini poslovi morati propuštati. 
+opterećenje sustava trajno veće od jedan. Tada se svi poslovi neće moći izvršiti i kontinuirano će se pojedini poslovi morati propuštati. 
 
 %treba li dodati vrste weakly hard uvjeta
 
 U ovom radu ispitivat će se ponašanje sustava s ublaženo-strogim uvjetima (engl. \textit{weakly-hard constraints}). Za razliku od 
 strogih zadataka, kod ublaženo-kritičnih zadataka povremeno dopuštamo da se zadatak ne izvede na vrijeme, ali na predvidiv i 
-kontroliran način. U određenom vremenskom okviru točno se određuju pravila propuštanja zadataka. Postoje 4 modela SRSV-a s ublaženo-strogim uvjetima \cite{clanak_2} :
+kontroliran način. U određenom vremenskom okviru točno se određuju pravila propuštanja zadataka. Postoje četiri modela SRSV-a s ublaženo-strogim uvjetima \cite{clanak_2} :
 \begin{itemize}
     \item[--] u $m$ slijednih perioda posao se mora pravovremeno izvršiti u njih $n$,
     \item[--] u $m$ slijednih perioda posao se mora pravovremeno izvršiti u njih $n$ uzastopnih,
@@ -118,7 +117,7 @@ kontroliran način. U određenom vremenskom okviru točno se određuju pravila p
     \item[--] u $m$ slijednih perioda posao se ne smije propustiti u njih $n$ uzastopnih.
 \end{itemize}
 
-\section{Skip-over model zadataka i strategija prekidanja \\poslova}
+\section{\textit{Skip-over} model zadataka i strategija prekidanja \\poslova}
 
 U ovom radu istražen je model u kojem se u $S_i$ slijednih perioda zadatak $\tau_i$ ne smije propustiti više od jednom (engl. \textit{skip-over model}).
 Broj $S_i$ naziva se faktor propuštanja (engl. \textit{skip factor}).
@@ -149,9 +148,10 @@ treba prekinuti njegovo daljnje izvršavanje.
  biti zabilježeno njihovo propuštanje čime se dodatno poboljšava rasporedivost zadataka.
 
 Opisana situacija prikazana je vremenskim dijagramima na slikama 2.4 i 2.5. U primjeru imamo 3 zadatka jednakih prioriteta. Radi jednostavnosti
-je pretpostavljeno da su svi zadatci jednako kritični za sustav (ne koristi se model ublaženo-strogih uvjeta). Za raspoređivanje zadataka korišten je algoritam EDF, koji je detaljno  opisan u sljedećem potpoglavlju. 
+je pretpostavljeno da su svi zadatci jednako kritični za sustav (ne koristi se model ublaženo-strogih uvjeta). 
+Poslovi su raspoređivani na način da posao koji ima najraniji rok za završetak ima najveći prioritet. 
 Periodi zadataka i vremena njihova izvršavanja dani su u tablici 2.1. Sustav je u stanju trajnog preopterećenja s ukupnim
-faktorom opterećenja 1.42.
+faktorom opterećenja 1,42.
 
 \begin{table}[h!]
 \begin{center}
@@ -159,11 +159,11 @@ faktorom opterećenja 1.42.
    \hline
    Zadatak & Period & Vrijeme izvršavanja & Faktor opterećenja \\ [0.5ex] 
    \hline\hline
-   $\tau_1$ & 6 & 1 & 0.17 \\ 
+   $\tau_1$ & 6 & 1 & 0,17 \\ 
    \hline
-   $\tau_2$ & 8 & 6 & 0.75 \\
+   $\tau_2$ & 8 & 6 & 0,75 \\
    \hline
-   $\tau_3$ & 4 & 2 & 0.50 \\
+   $\tau_3$ & 4 & 2 & 0,50 \\
    \hline
   \end{tabular}
 \end{center}
@@ -175,14 +175,14 @@ da se pritom nije uspio niti jednom izvršiti na vrijeme.
 Predložena modificirana strategija prekidanja poslova uvodi provjeru u svakom vremenskom odsječku može li se zadatak izvesti do  krajnjeg roka 
 za izvršavanje. 
 U navedenom primjeru, u 
-trenutku t = 4 sustav bi obavio provjeru može li se zadatak $\tau_2$ izvršiti na vrijeme, zaključio bi da ne može i ne bi ga niti krenuo
+trenutku $t = 4$ sustav bi obavio provjeru može li se zadatak $\tau_2$ izvršiti na vrijeme, zaključio bi da ne može i ne bi ga niti krenuo
 izvoditi. Tada se oslobađa procesorsko vrijeme za zadatke $\tau_1$ i $\tau_3$ i
 raspored poslova izgleda kao na dijagramu 2.5. 
 
 Kako bi se prikazalo kakav utjecaj na sustav ima prekidanje poslova za oba slučaja potrebno je izračunati kvalitetu usluge.
 Bez korištenja strategije prekidanja poslova
-izvršilo se 7 od ukupno 13 poslova. Kvaliteta usluge u tom slučaju je 0.54. Uz primjenu opisanog poboljšanja uspješno se izvelo 10 
-poslova, što daje kvalitetu usluge 0.67. Iz prikazanog primjera može se zaključiti da korištenje prekidanja poslova u uvjetima 
+izvršilo se 7 od ukupno 13 poslova. Kvaliteta usluge u tom slučaju je 0,54. Uz primjenu opisanog poboljšanja uspješno se izvelo 10 
+poslova, što daje kvalitetu usluge 0,67. Iz prikazanog primjera može se zaključiti da korištenje prekidanja poslova u uvjetima 
 preopterećenog sustava znatno podiže kvalitetu usluge i poboljšava rad sustava.
 
 Važna napomena uz navedeni primjer je da služi samo za objašnjenje strategije prekidanja poslova te je stoga 
@@ -300,11 +300,11 @@ zadatak kritičan i mora se uvijek izvršiti, drugi zadatak ne utječe na sigurn
        \hline
        Zadatak & Period & Vrijeme izvršavanja & Faktor propuštanja & Faktor opterećenja \\ [0.5ex] 
        \hline\hline
-       $\tau_1$ & 6 & 2 & $\infty$ & 0.33 \\ 
+       $\tau_1$ & 6 & 2 & $\infty$ & 0,33 \\ 
        \hline
-       $\tau_2$ & 8 & 2 & 1 & 0.25 \\
+       $\tau_2$ & 8 & 2 & 1 & 0,25 \\
        \hline
-       $\tau_3$ & 4 & 2 & 2 & 0.50 \\
+       $\tau_3$ & 4 & 2 & 2 & 0,50 \\
        \hline
       \end{tabular}
     \end{center}
@@ -312,7 +312,7 @@ zadatak kritičan i mora se uvijek izvršiti, drugi zadatak ne utječe na sigurn
     \end{table}
 
 Dani set zadataka nalazi se u preopterećenju, i neki od zadataka neće zadovoljiti svoj krajnji rok završetka. Ukupni faktor opterećenja
-sustava je 1.08.
+sustava je 1,08.
 
 \subsection{Algoritam EDF}
 
@@ -427,7 +427,7 @@ i opcionalni zadatci. Ovom modifikacijom znatno se poboljša kvaliteta usluge, p
  manjim faktorima opterećenja. Zadatci su u dijagramu obojeni prema nazivu algoritma, crvena boja za stroge zadatke, a plava za zadatke 
  čije izvršavanje je opcionalno. Raspored generiran algoritmom BWP prikazan je na slici 2.8.
 
- \begin{figure}[h!]
+ \begin{figure}[ht!]
     \centering
 
     \begin{RTGrid}[width=13cm]{3}{24}
@@ -480,17 +480,17 @@ Vidljivo je kako su kod algoritama RTO i BWP zadovoljeni svi uvjeti postavljeni 
 znatno veću kvalitetu usluge. Algoritam EDF ne osigurava poštivanje zadanih ublaženo-strogih uvjeta te time nije pogodan za kontrolne 
 aplikacije s kritičnim poslovima u stanju preopterećenja.
 
-\begin{table}[h!]
+\begin{table}[ht!]
   \begin{center}
     \begin{tabular}{||c || c | c ||} 
      \hline
      Algoritam & Kvaliteta usluge & Broj kršenja ublaženo-strogih uvjeta \\ [0.5ex] 
      \hline\hline
-     EDF & 0.62 & 3 \\ 
+     EDF & 0,62 & 3 \\ 
      \hline
-     RTO & 0.54 & 0 \\
+     RTO & 0,54 & 0 \\
      \hline
-     BWP & 0.92 & 0 \\
+     BWP & 0,92 & 0 \\
      \hline
     \end{tabular}
   \end{center}

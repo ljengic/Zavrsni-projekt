@@ -14,7 +14,7 @@ njegova implemnetacija i izvedba raspoređivanja zadataka. K\^{o}d FreeRTOS-a or
 svega nekoliko kilobajta. Datoteka u kojoj je implementirano upravljanje zadatcima i njihovim raspoređivanjem je \texttt{tasks.c}.
 
 Zadatci u FreeRTOS-u su opisani strukturom za upravljanje zadatcima (engl. \textit{TCB - task control block}). U toj strukturi nalaze
-se sve informacije koje opisuju pojedini zadatak (ime zadatka, prioritet, broj zadatka...).  
+se sve informacije koje opisuju pojedini zadatak (ime zadatka, prioritet, broj zadatka itd.).  
 Zadatci se stvaraju funkcijom \texttt{xTaskCreate()}.
 Pri stvaranju novog zadatka alocira se prostor u memoriji za novu inačicu 
 ove strukture u koju se potom upisuju parametri novokreiranog zadatka.
@@ -217,9 +217,9 @@ ne prekine strategijom prekidanja poslova.
 Nadalje je pri stavljanju zadatka u listu zadataka spremih za izvršavanje potrebno generirati i upisati vrijednost \texttt{xItemValue}
 prema kojoj će se zadatci sortirati. To je implementirano u makro funkciji \texttt{prvAddTaskToReadyList}. Za svaki algoritam 
 potrebno je imati posebno implementiranu funkciju \texttt{prvAddTaskToReadyList}. To je ostvareno preko konstanti u datoteci 
-\texttt{FreeRTOSconfig.h}. Za svaki algoritam definirana je jedna konstanta, i koristi se onaj algoritam kojem je vrijednost konstante 1.
-Prije pokretanja simulacije korisnik treba odabrati koji algoritam se koristi, vrijednost njegove konstante postaviti u 1, a svih 
-ostalih u 0. Time je omogućeno da se macro \texttt{prvAddTaskToReadyList} napiše za svaki algoritam zasebno, ali unutar pretprocesorske
+\texttt{FreeRTOSconfig.h}. Za svaki algoritam definirana je jedna konstanta, i koristi se onaj algoritam kojem je vrijednost konstante jednaka jedan.
+Prije pokretanja simulacije korisnik treba odabrati koji algoritam se koristi, vrijednost njegove konstante postaviti u jedan, a svih 
+ostalih u nula. Time je omogućeno da se makro \texttt{prvAddTaskToReadyList} napiše za svaki algoritam zasebno, ali unutar pretprocesorske
 naredbe \#if, te će na kraju samo jedna verzija biti uključena u program. Ako korisnik pokuša istovremeno uključiti više 
 algoritama program će javiti grešku.
 
@@ -268,7 +268,7 @@ Kako je ranije opisano, BWP algoritam je proširenje RTO algoritma. Sada se svi 
 ali plavi zadatci na red dolaze tek kada su svi strogi poslovi obavljeni. To je potrebno osigurati sortiranjem prema vrijednosti
 \texttt{xItemValue}. Svi poslovi i dalje će biti raspoređivani EDF algoritmom, ali podijeljeni u dvije skupine (poslovi koji se moraju
 izvršiti i oni čije je izvršavanje opcionalno). Pošto je \texttt{xItemValue} 32-bitni cijeli broj, a manja vrijednost daje prioritet
-za izvršavanje, najznačajniji bit prioriteta plavih poslova postavljen je u 1. Time je osigurano da takvi poslovi budu 
+za izvršavanje, najznačajniji bit prioriteta plavih poslova postavljen je u jedinicu. Time je osigurano da takvi poslovi budu 
 zadnji na redu za izvršavanje jer će im \texttt{xItemValue} biti najveći.  
 
 \begin{lstlisting}[style=CStyle,caption={Pseudokod implementacije algoritma BWP},captionpos=b]

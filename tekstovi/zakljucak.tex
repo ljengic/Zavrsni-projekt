@@ -6,16 +6,16 @@
 
 \justifying
 
-U ovom radu opisana je modifikacija operacijskog sustava za rad u stvarnom vremenu FreeRTOS koja omogućuje podršku za model strogih zadataka s ublaženim uvjetima (engl. \textit{weakly hard real-time system}). Za početak, predočene su osnove sustava za 
-rad u stvarnom vremenu i problem koji nastaje kada sustav uđe u stanje trajnog preopterećenja. Nadalje su opisane osnove teorije raspoređivanja 
+U radu je opisana modifikacija operacijskog sustava za rad u stvarnom vremenu FreeRTOS koja omogućuje podršku za model strogih zadataka s ublaženim uvjetima (engl. \textit{weakly hard real-time system}). U uvodnom dijelu rada opisani su osnovni pojmovi vezani uz sustave za 
+rad u stvarnom vremenu te problemi koji nastaju kada sustav uđe u stanje trajnog preopterećenja. Nadalje, opisane su osnove teorije raspoređivanja 
 zadataka s opisom nekoliko jednostavnih algoritama. 
-U operacijskom sustavu FreeRTOS je implementirana podrška za periodične zadatke i model SRSV-a s ublaženo-strogim uvjetima.
-Također je implementirana strategija prekidanja poslova koja je dodatno poboljšala rasporedivost poslova.
-Za potrebe rada razvijen je generator testnih zadataka te su različiti algoritmi ispitivani i uspoređivani na velikom broju skupova zadataka.
-Nadalje, podatci prikupljeni simulacijama su obrađeni kako bi se mogli usporediti isptivani algoritmi.
+U jezgri operacijskog sustava FreeRTOS implementirana je podrška za periodične zadatke i model SRSV-a s ublaženo-strogim uvjetima.
+Također, implementirana je strategija prekidanja poslova koja je dodatno poboljšala rasporedivost poslova.
+Za potrebe rada razvijen je i generator testnih zadataka te su različiti algoritmi ispitivani i uspoređivani na velikom broju skupova zadataka.
+Podatci prikupljeni simulacijama obrađeni su kako bi se mogli usporediti ispitivani algoritmi.
 
-Rezultati dobiveni provedenim simulacijama očekivani su i u skladu s iznesenim teorijskim razmatranjima \cite{knjiga_buttazzo}. U uvjetima trajnog preopterećenja, uz korištenje skip-over modela,  
+Rezultati dobiveni provedenim simulacijama očekivani su i u skladu s iznesenim teorijskim razmatranjima~\cite{knjiga_buttazzo}. U uvjetima trajnog preopterećenja, uz korištenje \textit{skip-over} modela,  
 algoritam BWP daje najveću kvalitetu usluge uz zadovoljene sve postavljene uvjete. Algoritam osigurava kontrolirano propuštanje poslova te je upotrebljiv 
-u kontrolnim aplikacijama u kojima postoje kritični poslovi čije propuštanje mora biti determinističko.
+u kontrolnim aplikacijama u kojima postoje kritični poslovi čije propuštanje mora biti determinističko. Modifikacije jezgre FreeRTOS-a izrađene u ovom radu mogu se koristiti neovisno o sklopovskoj platformi.
 
 \end{document}

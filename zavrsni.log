@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.7.5)  6 JUL 2022 10:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.7.5)  11 JUL 2022 09:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -662,9 +662,6 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 LaTeX Warning: Label `fig:my-label' multiply defined.
 
 
-LaTeX Warning: Label `fig:my-label' multiply defined.
-
-
 LaTeX Warning: Label `fig:ex1' multiply defined.
 
 
@@ -697,20 +694,20 @@ LaTeX Warning: Label `fig:my-label' multiply defined.
 )
 \openout1 = `zavrsni.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -774,21 +771,21 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 53.
+LaTeX Info: Redefining \selectfont on input line 55.
 \c@lstlisting=\count312
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 64
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 66
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -808,27 +805,28 @@ Poglavlje 1.
 ]) [2]
 Poglavlje 2.
 (./tekstovi/osnove_teorije_rasporedivanja.tex
-<images/4_vrste.png, id=53, 1447.4075pt x 893.3375pt>
-File: images/4_vrste.png Graphic file (type png)
-<use images/4_vrste.png>
-Package pdftex.def Info: images/4_vrste.png  used on input line 29.
-(pdftex.def)             Requested size: 441.01773pt x 272.1881pt.
+<images/4_vrste_finalno.png, id=53, 1085.55562pt x 670.00313pt>
+File: images/4_vrste_finalno.png Graphic file (type png)
+<use images/4_vrste_finalno.png>
+Package pdftex.def Info: images/4_vrste_finalno.png  used on input line 29.
+(pdftex.def)             Requested size: 441.01773pt x 272.19832pt.
  [3
 
 ]
-<images/stanja_taskova.png, id=59, 1049.9225pt x 588.1975pt>
-File: images/stanja_taskova.png Graphic file (type png)
-<use images/stanja_taskova.png>
-Package pdftex.def Info: images/stanja_taskova.png  used on input line 61.
-(pdftex.def)             Requested size: 441.01773pt x 247.06819pt.
- [4 <./images/4_vrste.png>]
+<images/stanja_zadataka_novo.png, id=59, 2614.76875pt x 1460.45625pt>
+File: images/stanja_zadataka_novo.png Graphic file (type png)
+<use images/stanja_zadataka_novo.png>
+Package pdftex.def Info: images/stanja_zadataka_novo.png  used on input line 61
+.
+(pdftex.def)             Requested size: 441.01773pt x 246.31322pt.
+ [4 <./images/4_vrste_finalno.png>]
 <images/luka_slika.pdf, id=64, 416.37807pt x 291.90173pt>
 File: images/luka_slika.pdf Graphic file (type pdf)
 <use images/luka_slika.pdf>
-Package pdftex.def Info: images/luka_slika.pdf  used on input line 87.
+Package pdftex.def Info: images/luka_slika.pdf  used on input line 86.
 (pdftex.def)             Requested size: 441.01773pt x 309.17384pt.
-
-[5 <./images/stanja_taskova.png>] [6 <./images/luka_slika.pdf>] [7]
+ [5 <./images/stanja_zadataka_novo.png>] [6 <./images/luka_slika.pdf>]
+[7]
 \pgf@layerbox@foreground=\box65
 \pgf@layerboxsaved@foreground=\box66
 Missing character: There is no ; in font nullfont!
@@ -924,13 +922,6 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 ) [11] [12]
 Poglavlje 3.
 (./tekstovi/modifikacija_jezgre_FreeRtos-a.tex
@@ -974,15 +965,15 @@ Poglavlje 4.
 (./tekstovi/implementacija_simulatora.tex [21
 
 ] [22] [23]
-<images/csv.png, id=136, 801.99625pt x 261.97874pt>
+<images/csv.png, id=137, 801.99625pt x 261.97874pt>
 File: images/csv.png Graphic file (type png)
 <use images/csv.png>
-Package pdftex.def Info: images/csv.png  used on input line 150.
+Package pdftex.def Info: images/csv.png  used on input line 149.
 (pdftex.def)             Requested size: 441.01773pt x 144.06476pt.
  [24 <./images/csv.png>]) [25]
 Poglavlje 5.
 (./tekstovi/rezultati.tex
-<images/kvaliteta.png, id=144, 539.8569pt x 394.5942pt>
+<images/kvaliteta.png, id=145, 539.8569pt x 394.5942pt>
 File: images/kvaliteta.png Graphic file (type png)
 <use images/kvaliteta.png>
 Package pdftex.def Info: images/kvaliteta.png  used on input line 19.
@@ -990,7 +981,7 @@ Package pdftex.def Info: images/kvaliteta.png  used on input line 19.
  [26
 
  <./images/kvaliteta.png>]
-<images/propusteno.png, id=149, 582.4962pt x 410.4936pt>
+<images/propusteno.png, id=150, 582.4962pt x 410.4936pt>
 File: images/propusteno.png Graphic file (type png)
 <use images/propusteno.png>
 Package pdftex.def Info: images/propusteno.png  used on input line 39.
@@ -1007,13 +998,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18872 strings out of 481239
- 345670 string characters out of 5920378
- 829780 words of memory out of 5000000
- 33736 multiletter control sequences out of 15000+600000
- 592777 words of font info for 92 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 68i,9n,83p,439b,1764s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18877 strings out of 481239
+ 345808 string characters out of 5920378
+ 829826 words of memory out of 5000000
+ 33738 multiletter control sequences out of 15000+600000
+ 595545 words of font info for 94 fonts, out of 8000000 for 9000
+ 1142 hyphenation exceptions out of 8191
+ 68i,10n,83p,829b,1764s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
@@ -1025,12 +1016,12 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
-utmri8a.pfb>
-Output written on zavrsni.pdf (34 pages, 366423 bytes).
+ype1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
+/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on zavrsni.pdf (34 pages, 411383 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
+ 212 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
